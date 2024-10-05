@@ -1,0 +1,28 @@
+@layer typography {
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    font-size: 1.6rem;
+  }
+
+  mark,
+  .highlight-color {
+    color: var(--color--yellow-400);
+    background: none;
+  }
+
+  mark {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  blockquote {
+    text-wrap: balance;
+  }
+
+  section > :where(h1, h2, h3, h4, h5, h6, p) {
+    text-wrap: balance;
+  }
+}

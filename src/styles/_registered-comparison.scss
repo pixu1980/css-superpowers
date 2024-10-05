@@ -1,0 +1,40 @@
+@layer registered-comparison {
+  [registered-comparison] {
+    display: flex;
+    gap: 1rem;
+    place-items: center;
+    place-content: center;
+
+    .registered {
+      --coffee-color: #c0ffee;
+      background-image: linear-gradient(to right, #fff, var(--coffee-color));
+      transition: --coffee-color 1s ease-in-out;
+
+      &:hover,
+      &:focus {
+        --coffee-color: #b4d455;
+      }
+    }
+
+    .unregistered {
+      --unregistered--coffee-color: #c0ffee;
+      background-image: linear-gradient(to right, #fff, var(--unregistered--coffee-color));
+      transition: --unregistered--coffee-color 1s ease-in-out;
+
+      &:hover,
+      &:focus {
+        --unregistered--coffee-color: #b4d455;
+      }
+    }
+
+    button {
+      appearance: none;
+
+      padding: 1rem;
+      border: 1px solid black;
+      border-radius: 0.5rem;
+
+      font-size: 1.5rem;
+    }
+  }
+}

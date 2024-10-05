@@ -1,0 +1,22 @@
+{
+  "name": "css-over-engineering",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "clear:cache": "rm -rf .parcel-cache",
+    "preslides": "yarn clear:cache",
+    "slides": "parcel src/index.html -p 6001",
+    "preexample": "yarn clear:cache",
+    "example": "parcel src/example/example.html -p 6002",
+    "preexample:form": "yarn clear:cache",
+    "example:form": "parcel src/example-form/example-form.html -p 6003"
+  },
+  "browserslist": "last 2 versions",
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.12.0",
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "reveal.js": "^5.1.0"
+  }
+}

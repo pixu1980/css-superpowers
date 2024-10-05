@@ -1,0 +1,103 @@
+:root {
+  --website--gutter: 1.5rem;
+
+  --website--color: rgb(50, 50, 50);
+  --website--background-color: rgb(240, 240, 240);
+
+  --website--header--size: 8rem;
+  --website--header--box-shadow--color: var(--website--color);
+  --website--header--box-shadow: 0 1rem 2rem 0
+    color-mix(in srgb, var(--website--header--box-shadow--color), transparent 90%);
+
+  --website--aside--size: 20rem;
+  --website--footer--size: 5rem;
+
+  --website--font-size-base: 2.4rem;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --website--color: rgb(250, 250, 250);
+    --website--background-color: rgb(50, 50, 50);
+
+    --website--header--box-shadow--color: rgb(0, 0, 0);
+    --website--header--box-shadow: 0 1rem 2rem 0
+      color-mix(in srgb, var(--website--header--box-shadow--color), transparent 80%);
+  }
+} */
+
+html {
+  font-size: 10px;
+
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'aside content'
+    'footer footer';
+  grid-template-columns: var(--website--aside--size) 1fr;
+  grid-template-rows: var(--website--header--size) 1fr var(--website--footer--size);
+
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  color: var(--website--color);
+  background-color: var(--website--background-color);
+
+  font-size: var(--website--font-size-base);
+}
+
+header {
+  grid-area: header;
+
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  place-content: center;
+  place-items: center;
+
+  background-color: var(--website--background-color);
+  /* background-color: #FAEDCB; */
+  box-shadow: var(--website--header--box-shadow);
+
+  padding: var(--website--gutter);
+}
+
+aside {
+  grid-area: aside;
+
+  padding: var(--website--gutter);
+
+  /* background-color: #C9E4DE; */
+}
+
+main {
+  grid-area: content;
+
+  padding: var(--website--gutter);
+
+  /* background-color: #C6DEF1; */
+
+  h1 {
+    margin: 0;
+  }
+}
+
+footer {
+  grid-area: footer;
+
+  display: flex;
+  place-content: center;
+
+  padding: var(--website--gutter);
+
+  /* background-color: #F2C6DE; */
+}

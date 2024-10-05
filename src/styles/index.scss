@@ -1,0 +1,24 @@
+@import '~/node_modules/reveal.js/dist/reset.css';
+@import '~/node_modules/reveal.js/dist/reveal.css';
+@import '~/node_modules/reveal.js/dist/theme/black.css';
+@import '~/node_modules/reveal.js/plugin/highlight/monokai.css';
+
+@import 'palette';
+@import 'typography.properties';
+@import 'intro.properties';
+@import 'registered-comparison.properties';
+
+@import 'reveal';
+
+@layer talk {
+  @import 'typography';
+  @import 'intro';
+  @import 'intro.animations';
+  @import 'registered-comparison';
+  
+  [pixu] {
+    img {
+      border-radius: 50%;
+    }
+  }
+}
