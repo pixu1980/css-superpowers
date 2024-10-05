@@ -6,7 +6,7 @@
     "clear:cache": "rm -rf .parcel-cache",
     "preslides": "yarn clear:cache",
     "slides": "parcel src/index.html -p 6001",
-    "build:slides": "parcel build src/index.html",
+    "build:slides": "parcel build src/index.html --public-url ./",
     "preexample": "yarn clear:cache",
     "example": "parcel src/example/example.html -p 6002",
     "preexample:form": "yarn clear:cache",
