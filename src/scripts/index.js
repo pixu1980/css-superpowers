@@ -17,7 +17,7 @@ const slides = Reveal({
   highlight: {
     // Configurazione di highlight.js
     highlightOnLoad: true,
-    tabReplace: '  ', // 2 spazi
+    tabReplace: '  ', // 2 spazi,
   },
   ...(window.location.href.includes('?print-pdf') && {
     pdfSeparateFragments: false

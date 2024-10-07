@@ -4,20 +4,24 @@
   "license": "MIT",
   "scripts": {
     "clear:cache": "rm -rf .parcel-cache",
-    "preslides": "yarn clear:cache",
+    "clear:dist": "rm -rf dist",
+    "clear": "yarn clear:dist && yarn clear:cache",
+    "preslides": "yarn clear",
     "slides": "parcel src/index.html -p 6001",
     "build:slides": "parcel build src/index.html --public-url ./",
-    "preexample": "yarn clear:cache",
+    "preexample": "yarn clear",
     "example": "parcel src/example/example.html -p 6002",
-    "preexample:form": "yarn clear:cache",
+    "preexample:form": "yarn clear",
     "example:form": "parcel src/example-form/example-form.html -p 6003"
   },
-  "browserslist": "last 2 versions",
+  "dependencies": {
+    "reveal.js": "5.1.0"
+  },
   "devDependencies": {
     "@parcel/transformer-sass": "2.12.0",
-    "parcel": "^2.12.0"
-  },
-  "dependencies": {
-    "reveal.js": "^5.1.0"
+    "parcel": "2.12.0",
+    "lightningcss": "1.27.0",
+    "posthtml-include": "2.0.1",
+    "sharp": "^0.31.1"
   }
 }

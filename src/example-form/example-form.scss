@@ -102,7 +102,11 @@ footer {
   /* background-color: #F2C6DE; */
 }
 
-
+@layer reveal {
+  :root {
+    --ui--font-size: 4rem;
+  }
+}
 
 @layer ui {
   :root {
@@ -129,3 +133,5 @@ footer {
     font-size: var(--ui--font-size);
   }
 }
+
+@layer ui, ui.button, ui.input, reveal;

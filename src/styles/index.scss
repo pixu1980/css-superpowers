@@ -1,24 +1,22 @@
-@import '~/node_modules/reveal.js/dist/reset.css';
-@import '~/node_modules/reveal.js/dist/reveal.css';
-@import '~/node_modules/reveal.js/dist/theme/black.css';
-@import '~/node_modules/reveal.js/plugin/highlight/monokai.css';
-
-@import 'palette';
-@import 'typography.properties';
-@import 'intro.properties';
-@import 'registered-comparison.properties';
+@import 'npm:reveal.js/dist/reset.css' layer(reveal);
+@import 'npm:reveal.js/dist/reveal.css' layer(reveal);
+@import 'npm:reveal.js/dist/theme/black.css' layer(reveal);
+@import 'npm:reveal.js/plugin/highlight/monokai.css' layer(reveal);
 
 @import 'reveal';
 
+@import 'intro.properties';
+@import 'registered-comparison.properties';
+
+// @layer talk, reveal;
+// @layer reveal, talk;
+
 @layer talk {
+  @import 'palette';
   @import 'typography';
   @import 'intro';
   @import 'intro.animations';
+  @import 'pixu';
   @import 'registered-comparison';
-  
-  [pixu] {
-    img {
-      border-radius: 50%;
-    }
-  }
+  @import 'outro';
 }

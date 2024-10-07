@@ -1,4 +1,10 @@
 @layer typography {
+  :root {
+    --r-main-font-size: 2.5em;
+    --r-heading-text-transform: none;
+    --r-link-color: var(--color--yellow-400);
+  }
+
   html {
     font-size: 10px;
   }
@@ -22,7 +28,7 @@
     text-wrap: balance;
   }
 
-  section > :where(h1, h2, h3, h4, h5, h6, p) {
+  section > :where(h1, h2, h3, h4, h5, h6, p, blockquote, q) {
     text-wrap: balance;
   }
 }
