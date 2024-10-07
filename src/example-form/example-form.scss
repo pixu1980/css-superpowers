@@ -109,29 +109,25 @@ footer {
 }
 
 @layer ui {
-  :root {
-    --ui--font-size: 3rem;
+  @layer button {
+    :root {
+      --ui--font-size: 3.5rem;
+    }
+
+    button {
+      font-size: var(--ui--font-size);
+    }
+  }
+
+  @layer input {
+    :root {
+      --ui--font-size: 4.5rem;
+    }
+
+    input {
+      font-size: var(--ui--font-size);
+    }
   }
 }
 
-@layer ui.button {
-  :root {
-    --ui--font-size: 3.5rem;
-  }
-
-  button {
-    font-size: var(--ui--font-size);
-  }
-}
-
-@layer ui.input {
-  :root {
-    --ui--font-size: 4.5rem;
-  }
-
-  input {
-    font-size: var(--ui--font-size);
-  }
-}
-
-@layer ui, ui.button, ui.input, reveal;
+@layer ui, reveal;

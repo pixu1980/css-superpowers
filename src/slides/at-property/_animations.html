@@ -1,0 +1,98 @@
+<section>
+  <h4>Animations with registered properties</h4>
+  <pre>
+      <code class="hljs css" data-trim data-line-numbers>
+@property --intro--color--fade {
+  initial-value: #b19cd8;
+  inherits: false;
+  syntax: '&lt;color&gt;';
+}
+
+:root {
+  --intro--color--purple-400: #b19cd8;
+
+  ...
+  
+  --intro--color--red-400: #e86a58;
+}
+      </code>
+    </pre>
+</section>
+<section>
+  <h4>Animations with registered properties</h4>
+  <pre>
+      <code class="hljs css" data-trim data-line-numbers>
+@keyframes intro {
+  0% {
+    --intro--color--fade: var(--intro--color--purple-400);
+  }
+  
+  ...
+
+  100% {
+    --intro--color--fade: var(--intro--color--red-400);
+  }
+}
+      </code>
+    </pre>
+</section>
+<section>
+  <h4>Animations with registered properties</h4>
+  <pre>
+        <code class="hljs css" data-trim data-line-numbers>
+h2 {
+  --stagger--delay: 300ms;
+  --stagger--index: 0;
+
+  span {
+    color: var(--intro--color--fade);
+    animation: intro 5s linear calc(var(--stagger--delay) * var(--stagger--index)) infinite alternate;
+
+    &:nth-child(1) { --stagger--index: 0; }
+    &:nth-child(2) { --stagger--index: 1; } // u
+
+    ... 
+    
+    &:nth-child(10) { --stagger--index: 9; }
+    &:nth-child(11) { --stagger--index: 10; }
+  }
+}
+        </code>
+      </pre>
+</section>
+<section intro>
+  <h4>Animations with registered properties</h4>
+  <h2>
+    <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>p</span><span>o</span><span>w</span
+    ><span>e</span><span>r</span><span>s</span>
+  </h2>
+  <pre>
+      <code class="hljs html" data-trim data-line-numbers>
+&lt;h2&gt;
+  &lt;span&gt;S&lt;/span&gt;
+  &lt;span&gt;u&lt;/span&gt;
+  &lt;span&gt;p&lt;/span&gt;
+  &lt;span&gt;e&lt;/span&gt;
+  &lt;span&gt;r&lt;/span&gt;
+  &lt;span&gt;p&lt;/span&gt;
+  &lt;span&gt;o&lt;/span&gt;
+  &lt;span&gt;w&lt;/span&gt;
+  &lt;span&gt;e&lt;/span&gt;
+  &lt;span&gt;r&lt;/span&gt;
+  &lt;span&gt;s&lt;/span&gt;
+&lt;/h2&gt;
+      </code>
+    </pre>
+</section>
+<section>
+  <h4>TODO</h4>
+  <p>
+    https://codepen.io/pixu1980/pen/jOgrpyY<br />
+    https://codepen.io/pixu1980/pen/vYoKjdd<br />
+    https://codepen.io/pixu1980/pen/YzmWjNX<br />
+    https://codepen.io/pixu1980/pen/wvVWxgd<br />
+    https://codepen.io/pixu1980/pen/bGXejgR<br />
+    https://codepen.io/pixu1980/pen/NWQrBdv<br />
+    https://codepen.io/jh3y/pen/yLdgMmP
+  </p>
+</section>

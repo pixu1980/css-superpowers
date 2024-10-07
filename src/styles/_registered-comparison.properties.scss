@@ -1,4 +1,10 @@
-@property --coffee-color {
+@property --registered--color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #202020;
+}
+
+@property --registered--background-color {
   syntax: '<color>';
   inherits: false;
   initial-value: #c0ffee;

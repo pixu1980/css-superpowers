@@ -1,23 +1,15 @@
 
-// <!-- Include le librerie JavaScript di reveal.js -->
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/plugin/notes/notes.min.js"></script>
-
-// <!-- Include Highlight.js per la sintassi del codice -->
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-
 import Reveal from 'reveal.js';
 import Notes from 'reveal.js/plugin/notes/notes';
 import Highlight from 'reveal.js/plugin/highlight/highlight';
 
-// Inizializzazione di reveal.js
+// reveal.js initialization
 const slides = Reveal({
   plugins: [Notes, Highlight],
-  // Opzioni per evidenziare il codice
+  // highlight.js options
   highlight: {
-    // Configurazione di highlight.js
     highlightOnLoad: true,
-    tabReplace: '  ', // 2 spazi,
+    tabReplace: '  ',
   },
   ...(window.location.href.includes('?print-pdf') && {
     pdfSeparateFragments: false
@@ -29,6 +21,7 @@ const slides = Reveal({
   history: true,
 });
 
+// keyboard interaction configuration
 slides.configure({
   keyboard: {
     8: 'prev',

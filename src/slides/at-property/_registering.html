@@ -1,0 +1,23 @@
+<section>
+  <h4>Registering a property via CSS</h4>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+@property --coffee-color {
+  syntax: "&lt;color&gt;";
+  inherits: false;
+  initial-value: #c0ffee;
+}
+    </code>
+  </pre>
+  <h4>Registering a property via JS</h4>
+  <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+window.CSS.registerProperty({
+  name: "--coffee-color",
+  syntax: "&lt;color&gt;",
+  inherits: false,
+  initialValue: "#c0ffee",
+});
+    </code>
+  </pre>
+</section>

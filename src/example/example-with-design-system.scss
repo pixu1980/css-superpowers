@@ -1,0 +1,140 @@
+// @layer design-system {
+//   @layer reset {
+//     * {
+//       box-sizing: border-box;
+//       ...
+//     }
+//   }
+  
+//   @layer colors {
+//     :root {
+//       --ds--colors--dark: #202020;
+//       --ds--colors--light: #fefefe;
+//       ...
+      
+//       --ds--colors--teal-100: #b2f5ea;
+//       --ds--colors--teal-200: #81e6d9;
+//       --ds--colors--teal-300: #4fd1c5;
+//       --ds--colors--teal-400: #38b2ac;
+//       --ds--colors--teal-500: #319795;
+//       --ds--colors--teal-600: #2c7a7b;
+//       --ds--colors--teal-700: #285e61;
+      
+//       ...
+//     }
+//   }
+    
+//   @layer elevations {
+//     :root {
+//       --ds--elevations--shadow-color-1: hsla(210, 3%, 36%, 0.16);
+//       --ds--elevations--shadow-color-2: hsla(213, 5%, 42%, 0.38);
+
+//       // Elements closest to the application background, for example cards.
+//       --mui--elevation-400: 0 1px 7px 1px var(--mui--elevation--shadow-color-1),
+//         0 1px 7px -1px var(--mui--elevation--shadow-color-2);
+
+//       // Tooltips, etc.
+//       --mui--elevation-500: 0 2px 4px -1px var(--mui--elevation--shadow-color-1),
+//         0 3px 12px -1px var(--mui--elevation--shadow-color-2);
+  
+//       ...
+//   }
+
+    
+//   @layer typography {
+//     :root {
+//       --ds--typography--ratio: 1.125; // major second
+//       --ds--typography--font-family: Verdana;
+//       --ds--typography--font-size: 1.6rem;
+//       --ds--typography--font-weight: 400;
+//       --ds--typography--line-height: 1.3;
+      
+//       ...
+      
+//       --ds--typography--font-style: normal;
+//       --ds--typography--letter-spacing: initial;
+//       --ds--typography--word-spacing: initial;
+      
+//       // type scale
+//       --ds--typography--h6--font-size: calc(var(--ds--typography--font-size) * var(--ds--typography--ratio));
+//       --ds--typography--h5--font-size: calc(var(--ds--typography--h6--font-size) * var(--ds--typography--ratio));
+//       --ds--typography--h4--font-size: calc(var(--ds--typography--h5--font-size) * var(--ds--typography--ratio));
+//       --ds--typography--h3--font-size: calc(var(--ds--typography--h4--font-size) * var(--ds--typography--ratio));
+//       --ds--typography--h2--font-size: calc(var(--ds--typography--h3--font-size) * var(--ds--typography--ratio));
+//       --ds--typography--h1--font-size: calc(var(--ds--typography--h2--font-size) * var(--ds--typography--ratio));
+//     }
+    
+//     body {
+//       font-family: var(--ds--typography--font-family);
+//       font-size: var(--ds--typography--font-size);
+//       font-style: var(--ds--typography--font-style);
+//       font-weight: var(--ds--typography--font-weight);
+//       line-height: var(--ds--typography--line-height);
+//       letter-spacing: var(--ds--typography--letter-spacing);
+//       word-spacing: var(--ds--typography--word-spacing);
+      
+//       * {
+//         --ds--typography--font-size: inherit;
+//         --ds--typography--font-weight: inherit;
+//         --ds--typography--line-height: inherit;
+//         --ds--typography--font-style: inherit;
+
+//         font-family: var(--ds--typography--font-family);
+//         font-size: var(--ds--typography--font-size);
+//         font-weight: var(--ds--typography--font-weight);
+//         line-height: var(--ds--typography--line-height);
+//         font-style: var(--ds--typography--font-style);
+//         letter-spacing: var(--ds--typography--letter-spacing);
+//         word-spacing: var(--ds--typography--word-spacing);
+//       }
+//     }
+    
+//     h1 {
+//       --ds--typography--font-size: var(--ds--typography--h1--font-size);
+//     }
+
+//     h2 {
+//       --ds--typography--font-size: var(--ds--typography--h2--font-size);
+//     }
+
+//     h3 {
+//       --ds--typography--font-size: var(--ds--typography--h3--font-size);
+//     }
+
+//     h4 {
+//       --ds--typography--font-size: var(--ds--typography--h4--font-size);
+//     }
+
+//     h5 {
+//       --ds--typography--font-size: var(--ds--typography--h5--font-size);
+//     }
+
+//     h6 {
+//       --ds--typography--font-size: var(--ds--typography--h6--font-size);
+//     }
+//   }
+  
+//   @layer iconography {
+    
+//   }
+  
+//   @layer grid-system {
+    
+//   }
+  
+//   @layer components {
+//     button {
+//       border-size: 1px solid lightgray;
+//     }
+//   }
+    
+//   @layer layout {
+//     body {
+//       display: grid;
+//       grid-template-areas:
+//         'header header'
+//         'aside main'
+//         'footer footer';
+//     }
+//   }
+// } 

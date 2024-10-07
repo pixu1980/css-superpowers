@@ -1,0 +1,193 @@
+<section>
+  <section>
+    <h4>CSS <mark>APIs</mark> approach</h4>
+  </section>
+
+  <section>
+    <p>
+      Let's <mark>"seed"</mark> a Design System codebase,<br />
+      combining <mark>--*</mark> and <mark>@layer</mark>
+    </p>
+  </section>
+
+  <section>
+    <small>
+      <p>
+        Example Design System CSS APIs codebase (1/4)<br />
+        <mark>reset</mark> layer
+      </p>
+    </small>
+    <pre>
+        <code class="hljs css" data-trim data-line-numbers>
+@layer design-system {
+  @layer reset {
+    * {
+      box-sizing: border-box;
+      ...
+    }
+  }
+  
+  ...
+} 
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <small>
+      <p>
+        Example Design System CSS APIs codebase (2/4)<br />
+        <mark>color palette and elevations</mark> layers
+      </p>
+    </small>
+    <pre>
+        <code class="hljs css" data-trim data-line-numbers>
+@layer design-system {
+  ...
+    
+  @layer colors {
+    :root {
+      --ds--colors--dark: #202020;
+      --ds--colors--light: #fefefe;
+
+      --ds--colors--purple: #9f7aea;
+      --ds--colors--cyan: #0bc5ea;
+      --ds--colors--green: #48bb78;
+      --ds--colors--yellow: #ecc94b;
+      --ds--colors--red: #f56565;
+
+      ...
+    }
+  }
+    
+  @layer elevations {
+    :root {
+      --ds--elevations--shadow-color-1: hsla(210, 3%, 36%, 0.16);
+      --ds--elevations--shadow-color-2: hsla(213, 5%, 42%, 0.38);
+
+      // Cards, etc...
+      --ds--elevation-400: 0 1px 7px 1px var(--ds--elevation--shadow-color-1),
+        0 1px 7px -1px var(--ds--elevation--shadow-color-2);
+
+      // Tooltips, etc...
+      --ds--elevation-500: 0 2px 4px -1px var(--ds--elevation--shadow-color-1),
+        0 3px 12px -1px var(--ds--elevation--shadow-color-2);
+  
+      ...
+    }
+  }
+} 
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <small>
+      <p>
+        Example Design System CSS APIs codebase (3/4)<br />
+        <mark>typography and iconography</mark> layers
+      </p>
+    </small>
+    <pre>
+        <code class="hljs css" data-trim data-line-numbers>
+@layer design-system {
+  ...
+    
+  @layer typography {
+    :root {
+      --ds--typography--ratio: 1.125; // major second
+      --ds--typography--font-family: Verdana;
+      --ds--typography--font-size: 1.6rem;
+      --ds--typography--font-weight: 400;
+      --ds--typography--line-height: 1.3;
+      
+      ...
+    }
+    
+    body {
+      font-family: var(--ds--typography--font-family);
+      font-size: var(--ds--typography--font-size);
+      font-weight: var(--ds--typography--font-weight);
+      line-height: var(--ds--typography--line-height);
+
+      ...
+    }
+  }
+  
+  @layer iconography { /* iconography classes */ }
+} 
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <small>
+      <p>
+        Example Design System CSS APIs codebase (4/4)<br />
+        <mark>components</mark> layer
+      </p>
+    </small>
+    <pre>
+        <code class="hljs css" data-trim data-line-numbers>
+@layer design-system {
+  ...
+  
+  @layer components {
+    :root {
+      /* common components variables */
+    }
+    
+    @layer button { /* buttons component variables and styles */ }
+    @layer input { /* input component variables and styles */ }
+    @layer select { /* select component variables and styles */ }
+    
+    ...
+  }
+} 
+      </code>
+    </pre>
+  </section>
+
+  <section>
+    <h4>
+      <mark>That's it!</mark><br />
+      CSS APIs is ready to use
+    </h4>
+  </section>
+
+  <section>
+    <p>
+      Every variable defined<br />
+      in a <mark>layered :root {}</mark> selector<br />
+      can be easily overridden into an <mark>un-layered :root {}</mark> selector
+    </p>
+  </section>
+
+  <section>
+    <small><p>Example Overriding the Design System CSS APIs codebase</p></small>
+    <pre>
+      <code class="hljs css" data-trim data-line-numbers>
+@layer design-system {
+  ...
+  
+  @layer components {
+    ...
+  }
+}
+          
+:root {
+  --ds--colors--dark: #202020;
+  --ds--colors--light: #fefefe;
+
+  --ds--elevations--shadow-color-1: hsla(210, 3%, 36%, 0.16);
+  --ds--elevations--shadow-color-2: hsla(213, 5%, 42%, 0.38);
+
+  --ds--typography--font-size: 2.2rem;
+  --ds--typography--line-height: 1.25;
+  
+  ...
+}
+      </code>
+    </pre>
+  </section>
+</section>

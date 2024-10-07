@@ -1,0 +1,39 @@
+<section>
+  <h4>What are the differences between registered and unregistered custom properties?</h4>
+</section>
+<section>
+  <p>Registered properties are animatable and transitionable</p>
+  <div registered-comparison>
+    <button class="unregistered">Unregistered</button>
+    <button class="registered">Registered</button>
+  </div>
+  <pre>
+    <code class="hljs html" data-trim data-line-numbers>
+&lt;button class="unregistered"&gt;Background Not Registered&lt;/button&gt;
+&lt;button class="registered"&gt;Background Registered&lt;/button&gt;
+    </code>
+  </pre>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+button.unregistered {
+  --unregistered--coffee-color: #c0ffee;
+  background-color: var(--unregistered--coffee-color);
+  transition: --unregistered--coffee-color 1s ease-in-out; // this will NOT work
+
+  &:hover,  &:focus {
+    --unregistered--coffee-color: #b4d455;
+  }
+}
+
+button.registered {
+  --coffee-color: #c0ffee;
+  background-color: var(--coffee-color);
+  transition: --coffee-color 1s ease-in-out; // this will work
+
+  &:hover, &:focus {
+    --coffee-color: #b4d455;
+  }
+}
+    </code>
+  </pre>
+</section>

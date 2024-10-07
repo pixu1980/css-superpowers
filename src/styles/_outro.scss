@@ -1,10 +1,10 @@
 @layer outro {
   div:is([links]) {
     display: flex;
-    gap: 1.5rem;
+    gap: 0;
     flex-flow: row nowrap;
     justify-content: center;
-    margin-block-start: 0.5rem;
+    margin-block-start: 10rem;
 
     figure {
       flex-grow: 1;
