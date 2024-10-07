@@ -1,149 +1,5 @@
-<!DOCTYPE html>
-<html lang="it">
-  <head>
-    <meta charset="utf-8">
-    <title>CSS Superpowers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/index.e378193d.css">
-  </head>
-  <body>
-    <div class="reveal">
-  <div class="slides">
-    <section intro="">
-  <h2>
-    CSS <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>p</span><span>o</span><span>w</span><span>e</span><span>r</span><span>s</span>
-  </h2>
-  <h3>with <mark>@property (--*)</mark> and <mark>@layer</mark></h3>
-</section>
-
-<section pixu="">
-  <figure>
-    <picture>
-      <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
-      <img src="/pixu.8cd71433.jpg" alt="Slides">
-    </picture>
-  </figure>
-  <h3>Emiliano <mark>Pisu</mark></h3>
-  <p>
-    Frontend Development Lead
-    <br>
-    @ <mark>MONK</mark> Software
-  </p>
-  <small>
-    <ul>
-      <li>Company: www.monksoftware.it</li>
-      <li>LinkedIn: www.linkedin.com/in/pixu1980</li>
-    </ul>
-  </small>
-</section>
-
-<section>
-  <section>
-    <h4><mark>Over-engineering</mark> CSS codebase</h4>
-    <p class="fragment">with an <mark>eye on the future</mark></p>
-  </section>
-
-  <section>
-    <blockquote>
-      <img src="/doc-brown.13385c3b.jpg">
-      Please excuse the crudity of this model: <mark>I didn't have time</mark> to build it to scale or paint it.
-    </blockquote>
-    <p><small>Doc. Emmet L. Brown (1955)</small></p>
-  </section>
-
-  <section>
-    <h4>So... <mark>what is</mark> Over-engineering?</h4>
-  </section>
-
-  <section>
-    <blockquote>
-      Over-engineering is the act of <mark>designing a product</mark>, or <mark>providing a solution</mark> to a
-      problem, that is complicated in a way that <mark>provides no value</mark> or could have been designed to be
-      simpler.
-    </blockquote>
-    <p><small>Wikipedia</small></p>
-  </section>
-
-  <section>
-    <h4>
-      Ehm... So...<br>
-      <span class="fragment">
-        how are we gonna <mark>feel</mark><br>
-        at the end of the day?
-      </span>
-    </h4>
-  </section>
-
-  <section>
-    <img src="/family-guy.582dbce9.gif">
-    <br>
-    <h4>not like this... I'm promise 😄!!!</h4>
-  </section>
-</section>
-
-
-    <section>
-  <section>
-    <h4>What are we going to <br><mark>talk about</mark> today?</h4>
-  </section>
-  <section>
-    <h4>CSS Custom Properties</h4>
-    <small>
-      <p><mark>--*</mark> and <mark>@property</mark></p>
-      <ul>
-        <li class="fragment">centralizing values</li>
-        <li class="fragment">flowing with the cascade</li>
-        <li class="fragment">dynamic and conditional overrides</li>
-        <li class="fragment">registered properties and animations</li>
-        <li class="fragment">interactions with js</li>
-      </ul>
-    </small>
-  </section>
-  <section>
-    <h4>CSS Layers</h4>
-    <small>
-      <p><mark>@layer</mark></p>
-      <ul>
-        <li class="fragment">definition</li>
-        <li class="fragment">organization</li>
-        <li class="fragment">order of "execution"</li>
-        <li class="fragment">reverse cascade</li>
-      </ul>
-    </small>
-  </section>
-  <section>
-    <h4>exposing CSS <mark>APIs</mark></h4>
-    <small>
-      <p>combining variables and layers</p>
-      <ul>
-        <li class="fragment">efficiency</li>
-        <li class="fragment">maintenance</li>
-        <li class="fragment">evolution</li>
-      </ul>
-    </small>
-  </section>
-</section>
-
-    <section>
-  <section>
-    <h4>CSS Custom Properties</h4>
-    <small>
-      <p><mark>--*</mark> and <mark>@property</mark></p>
-      <p class="fragment">
-        Introduced by Firefox in July 2014,<br>
-        and fully supported across browsers<br>
-        since April 2017<br>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank" rel="noopener noreferrer">
-          (DOCS)
-        </a>
-      </p>
-    </small>
-  </section>
-
-  <section>
-    <h4><mark>Centralizing</mark> values</h4>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>CSS Superpowers</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="index.2524597c.css"></head><body> <div class="reveal"> <div class="slides"> <section intro> <h2> CSS <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>p</span><span>o</span><span>w</span><span>e</span><span>r</span><span>s</span> </h2> <h3>with <mark>@property (--*)</mark> and <mark>@layer</mark></h3> </section> <section pixu> <figure> <picture> <source srcset="pixu.fedf8a6d.webp" type="image/webp"> <img src="pixu.06482de6.jpg" alt="Slides"> </picture> </figure> <h3>Emiliano <mark>Pisu</mark></h3> <p> Frontend Development Lead <br> @ <mark>MONK</mark> Software </p> <small> <ul> <li>Company: www.monksoftware.it</li> <li>LinkedIn: www.linkedin.com/in/pixu1980</li> </ul> </small> </section> <section> <section> <h4><mark>Over-engineering</mark> CSS codebase</h4> <p class="fragment">with an <mark>eye on the future</mark></p> </section> <section> <blockquote> <img src="doc-brown.4bed2164.jpg"> Please excuse the crudity of this model: <mark>I didn't have time</mark> to build it to scale or paint it. </blockquote> <p><small>Doc. Emmet L. Brown (1955)</small></p> </section> <section> <h4>So... <mark>what is</mark> Over-engineering?</h4> </section> <section> <blockquote> Over-engineering is the act of <mark>designing a product</mark>, or <mark>providing a solution</mark> to a problem, that is complicated in a way that <mark>provides no value</mark> or could have been designed to be simpler. </blockquote> <p><small>Wikipedia</small></p> </section> <section> <h4> Ehm... So...<br> <span class="fragment"> how are we gonna <mark>feel</mark><br> at the end of the day? </span> </h4> </section> <section> <img src="family-guy.06ff7d67.gif"> <br> <h4>not like this... I'm promise 😄!!!</h4> </section> </section> <section> <section> <h4>What are we going to <br><mark>talk about</mark> today?</h4> </section> <section> <h4>CSS Custom Properties</h4> <small> <p><mark>--*</mark> and <mark>@property</mark></p> <ul> <li class="fragment">centralizing values</li> <li class="fragment">flowing with the cascade</li> <li class="fragment">dynamic and conditional overrides</li> <li class="fragment">registered properties and animations</li> <li class="fragment">interactions with js</li> </ul> </small> </section> <section> <h4>CSS Layers</h4> <small> <p><mark>@layer</mark></p> <ul> <li class="fragment">definition</li> <li class="fragment">organization</li> <li class="fragment">order of "execution"</li> <li class="fragment">reverse cascade</li> </ul> </small> </section> <section> <h4>exposing CSS <mark>APIs</mark></h4> <small> <p>combining variables and layers</p> <ul> <li class="fragment">efficiency</li> <li class="fragment">maintenance</li> <li class="fragment">evolution</li> </ul> </small> </section> </section> <section> <section> <h4>CSS Custom Properties</h4> <small> <p><mark>--*</mark> and <mark>@property</mark></p> <p class="fragment"> Introduced by Firefox in July 2014,<br> and fully supported across browsers<br> since April 2017<br> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank" rel="noopener noreferrer"> (DOCS) </a> </p> </small> </section> <section> <h4><mark>Centralizing</mark> values</h4> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 :root {
   --primary-color: #3498db;
   --font-size-base: 16px;
@@ -154,13 +10,8 @@ body {
   font-size: var(--font-size-base);
 }
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4>Flowing with the <mark>cascade</mark></h4>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Flowing with the <mark>cascade</mark></h4> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 :root {
   --primary-color: #3498db;
   --font-size-base: 16px;
@@ -173,13 +24,8 @@ body {
   font-size: var(--font-size-base);
 }
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4><mark>Dynamic</mark> and <mark>Conditional</mark> overrides...</h4>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4><mark>Dynamic</mark> and <mark>Conditional</mark> overrides...</h4> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 :root {
   --background-color: #ffffff;
   --text-color: #000000;
@@ -195,13 +41,8 @@ body {
   color: var(--text-color);
 }
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4>...the same goes for <mark>Responsive</mark></h4>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>...the same goes for <mark>Responsive</mark></h4> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 :root {
   --padding: 8px;
 }
@@ -216,19 +57,8 @@ body {
   padding: var(--padding);
 }
       </code>
-    </pre>
-  </section>
-  <section>
-    <h4>Javascript interaction</h4>
-    <small>
-      <p>Common js "CRUD" operations with CSS custom properties<br></p>
-    </small>
-  </section>
-
-  <section>
-    <p>Reading a variable from an element</p>
-    <pre>
-      <code class="hljs javascript" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Javascript interaction</h4> <small> <p>Common js "CRUD" operations with CSS custom properties<br></p> </small> </section> <section> <p>Reading a variable from an element</p> <pre>
+      <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
 // gets the "--primary-color" value
@@ -245,13 +75,8 @@ button.style.getPropertyValue('--primary-color');
 //! the element itself nor any of its ancestors
 getComputedStyle(button).getPropertyValue('--primary-color');
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <p>Reading a variable from :root</p>
-    <pre>
-      <code class="hljs javascript" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <p>Reading a variable from :root</p> <pre>
+      <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
 // gets the "--primary-color" value
@@ -260,95 +85,48 @@ const root = document.documentElement;
 //! may be an empty string if the variable is not defined
 getComputedStyle(root).getPropertyValue('--primary-color');
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4>Writing a variable to an element</h4>
-    <pre>
-      <code class="hljs javascript" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Writing a variable to an element</h4> <pre>
+      <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
 // sets the "--primary-color" value
 // to the element's CSSStyleDeclaration
 button.style.setProperty('--primary-color', '#e74c3c');
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4>Writing a variable to :root</h4>
-    <pre>
-      <code class="hljs javascript" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Writing a variable to :root</h4> <pre>
+      <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
 // sets the "--primary-color" value 
 // to the root element's CSSStyleDeclaration
 root.style.setProperty('--primary-color', '#e74c3c');
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4>Deleting a variable from an element</h4>
-    <pre>
-      <code class="hljs javascript" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Deleting a variable from an element</h4> <pre>
+      <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
 // deletes the "--primary-color" variable
 // from the element's CSSStyleDeclaration
 button.style.removeProperty('--primary-color');
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4>Deleting a variable from :root</h4>
-    <pre>
-      <code class="hljs javascript" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Deleting a variable from :root</h4> <pre>
+      <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
 // deletes the "--primary-color" variable
 // from the root element's CSSStyleDeclaration
 root.style.removeProperty('--primary-color');
       </code>
-    </pre>
-  </section>
-</section>
-
-    <section>
-  <section>
-    <h4><mark>@property</mark> definition</h4>
-    <h5>and the CSS Properties and Values API</h5>
-    <small class="fragment">
-      <p>
-        Introduced by Chrome in August 2020,<br>
-        and fully supported across browsers<br>
-        since <mark>July 2024</mark><br>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" target="_blank" rel="noopener noreferrer">
-          (@property DOCS)
-        </a>
-        <br>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API" target="_blank" rel="noopener noreferrer">
-          (CSS Properties and Values API DOCS)
-        </a>
-      </p>
-    </small>
-  </section>
-  <section>
-  <h4>Registering a property via CSS</h4>
-  <pre>
-    <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> </section> <section> <section> <h4><mark>@property</mark> definition</h4> <h5>and the CSS Properties and Values API</h5> <small class="fragment"> <p> Introduced by Chrome in August 2020,<br> and fully supported across browsers<br> since <mark>July 2024</mark><br> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" target="_blank" rel="noopener noreferrer"> (@property DOCS) </a> <br> <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API" target="_blank" rel="noopener noreferrer"> (CSS Properties and Values API DOCS) </a> </p> </small> </section> <section> <h4>Registering a property via CSS</h4> <pre>
+    <code class="css hljs" data-trim data-line-numbers>
 @property --coffee-color {
   syntax: "&lt;color&gt;";
   inherits: false;
   initial-value: #c0ffee;
 }
     </code>
-  </pre>
-  <h4>Registering a property via JS</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+  </pre> <h4>Registering a property via JS</h4> <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
 window.CSS.registerProperty({
   name: "--coffee-color",
   syntax: "&lt;color&gt;",
@@ -356,26 +134,13 @@ window.CSS.registerProperty({
   initialValue: "#c0ffee",
 });
     </code>
-  </pre>
-</section>
-
-  <section>
-  <h4>What are the differences between registered and unregistered custom properties?</h4>
-</section>
-<section>
-  <p>Registered properties are animatable and transitionable</p>
-  <div registered-comparison="">
-    <button class="unregistered">Unregistered</button>
-    <button class="registered">Registered</button>
-  </div>
-  <pre>
-    <code class="hljs html" data-trim="" data-line-numbers="">
+  </pre> </section> <section> <h4>What are the differences between registered and unregistered custom properties?</h4> </section> <section> <p>Registered properties are animatable and transitionable</p> <div registered-comparison> <button class="unregistered">Unregistered</button> <button class="registered">Registered</button> </div> <pre>
+    <code class="hljs html" data-trim data-line-numbers>
 &lt;button class="unregistered"&gt;Background Not Registered&lt;/button&gt;
 &lt;button class="registered"&gt;Background Registered&lt;/button&gt;
     </code>
-  </pre>
-  <pre>
-    <code class="hljs css" data-trim="" data-line-numbers="">
+  </pre> <pre>
+    <code class="css hljs" data-trim data-line-numbers>
 button.unregistered {
   --unregistered--coffee-color: #c0ffee;
   background-color: var(--unregistered--coffee-color);
@@ -396,13 +161,8 @@ button.registered {
   }
 }
     </code>
-  </pre>
-</section>
-
-  <section>
-  <h4>Animations with registered properties</h4>
-  <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+  </pre> </section> <section> <h4>Animations with registered properties</h4> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 @property --intro--color--fade {
   initial-value: #b19cd8;
   inherits: false;
@@ -417,12 +177,8 @@ button.registered {
   --intro--color--red-400: #e86a58;
 }
       </code>
-    </pre>
-</section>
-<section>
-  <h4>Animations with registered properties</h4>
-  <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Animations with registered properties</h4> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 @keyframes intro {
   0% {
     --intro--color--fade: var(--intro--color--purple-400);
@@ -435,12 +191,8 @@ button.registered {
   }
 }
       </code>
-    </pre>
-</section>
-<section>
-  <h4>Animations with registered properties</h4>
-  <pre>
-        <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>Animations with registered properties</h4> <pre>
+        <code class="css hljs" data-trim data-line-numbers>
 h2 {
   --stagger--delay: 300ms;
   --stagger--index: 0;
@@ -459,15 +211,8 @@ h2 {
   }
 }
         </code>
-      </pre>
-</section>
-<section intro="">
-  <h4>Animations with registered properties</h4>
-  <h2>
-    <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>p</span><span>o</span><span>w</span><span>e</span><span>r</span><span>s</span>
-  </h2>
-  <pre>
-      <code class="hljs html" data-trim="" data-line-numbers="">
+      </pre> </section> <section intro> <h4>Animations with registered properties</h4> <h2> <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>p</span><span>o</span><span>w</span><span>e</span><span>r</span><span>s</span> </h2> <pre>
+      <code class="hljs html" data-trim data-line-numbers>
 &lt;h2&gt;
   &lt;span&gt;S&lt;/span&gt;
   &lt;span&gt;u&lt;/span&gt;
@@ -482,43 +227,8 @@ h2 {
   &lt;span&gt;s&lt;/span&gt;
 &lt;/h2&gt;
       </code>
-    </pre>
-</section>
-<section>
-  <h4>TODO</h4>
-  <p>
-    https://codepen.io/pixu1980/pen/jOgrpyY<br>
-    https://codepen.io/pixu1980/pen/vYoKjdd<br>
-    https://codepen.io/pixu1980/pen/YzmWjNX<br>
-    https://codepen.io/pixu1980/pen/wvVWxgd<br>
-    https://codepen.io/pixu1980/pen/bGXejgR<br>
-    https://codepen.io/pixu1980/pen/NWQrBdv<br>
-    https://codepen.io/jh3y/pen/yLdgMmP
-  </p>
-</section>
-
-</section>
-
-    <section>
-  <section>
-    <h4>CSS Layers</h4>
-    <small>
-      <p><mark>@layer</mark></p>
-      <p class="fragment">
-        Introduced by Firefox in February 2022,<br>
-        and fully supported across browsers<br>
-        since March 2022<br>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" target="_blank" rel="noopener noreferrer">
-          (DOCS)
-        </a>
-      </p>
-    </small>
-  </section>
-
-  <section>
-    <p>CSS Layers Example</p>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4>TODO</h4> <p> https://codepen.io/pixu1980/pen/jOgrpyY<br> https://codepen.io/pixu1980/pen/vYoKjdd<br> https://codepen.io/pixu1980/pen/YzmWjNX<br> https://codepen.io/pixu1980/pen/wvVWxgd<br> https://codepen.io/pixu1980/pen/bGXejgR<br> https://codepen.io/pixu1980/pen/NWQrBdv<br> https://codepen.io/jh3y/pen/yLdgMmP </p> </section> </section> <section> <section> <h4>CSS Layers</h4> <small> <p><mark>@layer</mark></p> <p class="fragment"> Introduced by Firefox in February 2022,<br> and fully supported across browsers<br> since March 2022<br> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer" target="_blank" rel="noopener noreferrer"> (DOCS) </a> </p> </small> </section> <section> <p>CSS Layers Example</p> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
         
 @layer reset {
   // https://css-tricks.com/css-remedy/        
@@ -545,22 +255,12 @@ h2 {
   }
 }
 
-    </code></pre>
-  </section>
-
-  <section>
-    <p>Layers Order</p>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </code></pre> </section> <section> <p>Layers Order</p> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 @layer reset, layout, components;
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <p>Layers depths levels</p>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <p>Layers depths levels</p> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 @layer ui {
   @layer button {
     :root {
@@ -583,13 +283,8 @@ h2 {
   } 
 }
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <p>Reverse Cascade</p>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <p>Reverse Cascade</p> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 :root {
   --ui--font-size: 10px;
 }
@@ -620,31 +315,8 @@ h2 {
   }
 }
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <img src="/reverse-cascade.be96b91e.gif" style="width: 50%">
-    <br>
-    <h4>
-      Look at me Ma'...<br>
-      i'm <mark>reversing waterfalls</mark> like Shiryu
-    </h4>
-  </section>
-
-  <section>
-    <h4>That's awesome, but...</h4>
-    <p class="fragment">What about <mark>old CSS codebase</mark> and <mark>third party dependencies</mark>?</p>
-  </section>
-
-  <section>
-    <h4>The <mark>layer()</mark> function will be your best friend</h4>
-  </section>
-
-  <section>
-    <h4>@import ... layer() pattern</h4>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <img src="reverse-cascade.ce6dd5ac.gif" style="width:50%"> <br> <h4> Look at me Ma'...<br> i'm <mark>reversing waterfalls</mark> like Shiryu </h4> </section> <section> <h4>That's awesome, but...</h4> <p class="fragment">What about <mark>old CSS codebase</mark> and <mark>third party dependencies</mark>?</p> </section> <section> <h4>The <mark>layer()</mark> function will be your best friend</h4> </section> <section> <h4>@import ... layer() pattern</h4> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 @import 'path-to-old-dependency.css' layer(old-library.old-dependency);
 @import 'path-to-old-dependency.theme.css' layer(old-library.old-dependency);
 @import 'path-to-other-old-dependency.css' layer(old-library.other-old-dependency);
@@ -653,31 +325,8 @@ h2 {
   ...
 }
       </code>
-    </pre>
-  </section>
-</section>
-
-    <section>
-  <section>
-    <h4>CSS <mark>APIs</mark> approach</h4>
-  </section>
-
-  <section>
-    <p>
-      Let's <mark>"seed"</mark> a Design System codebase,<br>
-      combining <mark>--*</mark> and <mark>@layer</mark>
-    </p>
-  </section>
-
-  <section>
-    <small>
-      <p>
-        Example Design System CSS APIs codebase (1/4)<br>
-        <mark>reset</mark> layer
-      </p>
-    </small>
-    <pre>
-        <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> </section> <section> <section> <h4>CSS <mark>APIs</mark> approach</h4> </section> <section> <p> Let's <mark>"seed"</mark> a Design System codebase,<br> combining <mark>--*</mark> and <mark>@layer</mark> </p> </section> <section> <small> <p> Example Design System CSS APIs codebase (1/4)<br> <mark>reset</mark> layer </p> </small> <pre>
+        <code class="css hljs" data-trim data-line-numbers>
 @layer design-system {
   @layer reset {
     * {
@@ -689,18 +338,8 @@ h2 {
   ...
 } 
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <small>
-      <p>
-        Example Design System CSS APIs codebase (2/4)<br>
-        <mark>color palette and elevations</mark> layers
-      </p>
-    </small>
-    <pre>
-        <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <small> <p> Example Design System CSS APIs codebase (2/4)<br> <mark>color palette and elevations</mark> layers </p> </small> <pre>
+        <code class="css hljs" data-trim data-line-numbers>
 @layer design-system {
   ...
     
@@ -737,18 +376,8 @@ h2 {
   }
 } 
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <small>
-      <p>
-        Example Design System CSS APIs codebase (3/4)<br>
-        <mark>typography and iconography</mark> layers
-      </p>
-    </small>
-    <pre>
-        <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <small> <p> Example Design System CSS APIs codebase (3/4)<br> <mark>typography and iconography</mark> layers </p> </small> <pre>
+        <code class="css hljs" data-trim data-line-numbers>
 @layer design-system {
   ...
     
@@ -776,18 +405,8 @@ h2 {
   @layer iconography { /* iconography classes */ }
 } 
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <small>
-      <p>
-        Example Design System CSS APIs codebase (4/4)<br>
-        <mark>components</mark> layer
-      </p>
-    </small>
-    <pre>
-        <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <small> <p> Example Design System CSS APIs codebase (4/4)<br> <mark>components</mark> layer </p> </small> <pre>
+        <code class="css hljs" data-trim data-line-numbers>
 @layer design-system {
   ...
   
@@ -804,28 +423,8 @@ h2 {
   }
 } 
       </code>
-    </pre>
-  </section>
-
-  <section>
-    <h4>
-      <mark>That's it!</mark><br>
-      CSS APIs is ready to use
-    </h4>
-  </section>
-
-  <section>
-    <p>
-      Every variable defined<br>
-      in a <mark>layered :root {}</mark> selector<br>
-      can be easily overridden into an <mark>un-layered :root {}</mark> selector
-    </p>
-  </section>
-
-  <section>
-    <small><p>Example Overriding the Design System CSS APIs codebase</p></small>
-    <pre>
-      <code class="hljs css" data-trim="" data-line-numbers="">
+    </pre> </section> <section> <h4> <mark>That's it!</mark><br> CSS APIs is ready to use </h4> </section> <section> <p> Every variable defined<br> in a <mark>layered :root {}</mark> selector<br> can be easily overridden into an <mark>un-layered :root {}</mark> selector </p> </section> <section> <small><p>Example Overriding the Design System CSS APIs codebase</p></small> <pre>
+      <code class="css hljs" data-trim data-line-numbers>
 @layer design-system {
   ...
   
@@ -847,378 +446,4 @@ h2 {
   ...
 }
       </code>
-    </pre>
-  </section>
-</section>
-
-    <section>
-  <section>
-    <h4>Case Studies</h4>
-  </section>
-  <section>
-  <h4>Case Study 1: Re-branding (1/3)</h4>
-  <small>
-    <p>
-      Re-branding is the process of <mark>redefining the identity</mark> of a product, company, or service to reflect a new vision,
-      updated values, or a change in market positioning. This process may include:
-    </p>
-  </small>
-</section>
-<section>
-  <h4>Case Study 1: Re-branding (2/3)</h4>
-  <small>
-    <ul>
-      <li class="fragment"><mark>Updating</mark> Logo and Aesthetics: New colors, typography, and visual styles</li>
-      <li class="fragment"><mark>Redefining</mark> Tone of Voice: New language or communication to connect with a different audience</li>
-      <li class="fragment"><mark>Renewed</mark> Positioning: Adapting the brand to attract new customer segments or respond to market changes</li>
-      <li class="fragment"><mark>Revamping</mark> User Experience: Changing the design of the website, apps, and all visual touchpoints</li>
-    </ul>
-  </small>
-</section>
-<section>
-  <h4>Case Study 1: Re-branding (3/3)</h4>
-  <small>
-    <p>
-      Goal: Create <mark>a more modern perception</mark> in line with the target audience, increasing competitiveness and fostering
-      <mark>an emotional connection</mark> with customers.
-    </p>
-  </small>
-</section>
-
-  <section>
-  <h4>Case Study 2: Re-selling (1/3)</h4>
-  <small>
-    <p>
-      Re-selling is the process of <mark>selling an existing product</mark> to new customers or markets, adapting it to
-      meet each customer's specific needs without creating a new product from scratch. This process may include:
-    </p>
-  </small>
-</section>
-<section>
-  <h4>Case Study 2: Re-selling (2/3)</h4>
-  <small>
-    <ul>
-      <li class="fragment">
-        Aesthetic <mark>Customization</mark>: Adapting colors, logo, and typography for new customers
-      </li>
-      <li class="fragment">
-        Multi-Tenant <mark>Design</mark>: Making the product easily configurable for multiple customers without altering
-        the main code
-      </li>
-      <li class="fragment">
-        <mark>Scalability</mark>: Creating a product that is flexible and ready to be adapted efficiently for new
-        customers
-      </li>
-      <li class="fragment">
-        Code <mark>Reusability</mark>: Avoiding duplication and keeping the code modular to reduce implementation costs
-        and time
-      </li>
-    </ul>
-  </small>
-</section>
-<section>
-  <h4>Case Study 2: Re-selling (3/3)</h4>
-  <small>
-    <p>
-      Goal: <mark>Maximize the profitability</mark> of an existing product by adapting it for new sales while ensuring
-      efficiency and maintainability.
-    </p>
-  </small>
-</section>
-
-  <section>
-  <h4>Case Study 3: Multi-tenant (1/3)</h4>
-  <small>
-    <p>
-      Multi-tenant is <mark>a software architecture</mark> in which a single instance of an application serves multiple
-      customers (tenants), maintaining data and customization separation for each one. Each customer
-      <mark>shares the same codebase</mark> but sees the application as if it were a unique instance.
-    </p>
-  </small>
-</section>
-<section>
-  <h4>Case Study 3: Multi-tenant (2/3)</h4>
-  <small>
-    <ul>
-      <li class="fragment">
-        <mark>Resource Sharing</mark>: Infrastructure and resources are shared among tenants, reducing management costs
-      </li>
-      <li class="fragment">
-        <mark>Customization</mark> for Each Tenant: Ability to apply branding and functionality customizations without
-        modifying the main application
-      </li>
-      <li class="fragment">
-        Operational <mark>Efficiency</mark>: Maintaining a single codebase makes updates easier and reduces maintenance
-        time
-      </li>
-      <li class="fragment">
-        <mark>Scalability</mark> and Security: Each tenant can be logically isolated to ensure security and scalability
-      </li>
-    </ul>
-  </small>
-</section>
-<section>
-  <h4>Case Study 3: Multi-tenant (3/3)</h4>
-  <small>
-    <p>
-      Goal: Maximize <mark>operational efficiency and scalability</mark>, allowing each customer to have a personalized
-      experience <mark>without compromising</mark> system centralization.
-    </p>
-  </small>
-</section>
-
-</section>
-
-    <section>
-  <section>
-    <h5>10 ways <mark>CSS APIs approach</mark> can help</h5>
-  </section>
-
-  <section>
-    <h5>1. Branding Update and <mark>Consistency</mark></h5>
-    <small>
-      <ul>
-        <li>Applies to: Re-Branding</li>
-        <li>Problem: Need to update colors, fonts, and visual styles to reflect a new brand.</li>
-        <li class="fragment">
-          Solution: Use <mark>CSS Custom Properties</mark> to centralize colors and typography. A root-level update
-          allows for a quick and consistent change throughout the product.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>2. <mark>Customization</mark> for Different Clients</h5>
-    <small>
-      <ul>
-        <li>Applies to: Re-selling & Multi-Tenant</li>
-        <li>Problem: Adapting the product for different clients with distinct branding needs.</li>
-        <li class="fragment">
-          Solution: Easily override <mark>CSS Custom Properties</mark> for each client or tenant (e.g., using attributes
-          like `data-tenant`) to manage colors, fonts, and styles without duplicating code.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>3. Single Codebase <mark>Maintenance</mark></h5>
-    <small>
-      <ul>
-        <li>Applies to: Re-selling & Multi-Tenant</li>
-        <li>
-          Problem: Duplicating the codebase for different clients can be inefficient and difficult to maintain.
-        </li>
-        <li class="fragment">
-          Solution: Use <mark>CSS Custom Properties</mark> to customize the product and <mark>CSS Layers</mark> to
-          separate base styles from styles specific to each client.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>4. Reducing <mark>Technical Debt</mark></h5>
-    <small>
-      <ul>
-        <li>Applies to: All the three case studies</li>
-        <li>Problem: High specificity and style duplication.</li>
-        <li class="fragment">
-          Solution: Use <mark>CSS Layers</mark> to separate base layers, themes, and tenant-specific styles.
-          <mark>CSS Custom Properties</mark> centralize values, reducing the need for repetition and facilitating
-          maintainability.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>5. Handling <mark>Specificity Conflicts</mark></h5>
-    <small>
-      <ul>
-        <li>Applies to: Re-branding & Multi-Tenant</li>
-        <li>Problem: Overlapping styles causing conflicts during customizations.</li>
-        <li class="fragment">
-          Solution: With <mark>CSS Layers</mark>, you can control the order of style application, ensuring correct
-          precedence without increasing specificity.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>6. Support for <mark>Dynamic Theming</mark></h5>
-    <small>
-      <ul>
-        <li>Applies to: Re-selling & Multi-Tenant</li>
-        <li>Problem: Differentiating themes for various clients efficiently.</li>
-        <li class="fragment">
-          Solution: <mark>CSS Custom Properties</mark> allow for dynamic theming by simply varying global properties for
-          each client, making the process simple and scalable.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>7. <mark>Scalability</mark></h5>
-    <small>
-      <ul>
-        <li>Applies to: All the three case studies</li>
-        <li>Problem: Applying branding and style changes uniformly.</li>
-        <li class="fragment">
-          Solution: Thanks to <mark>CSS Custom Properties</mark>, a central change in color, typography, or spacing
-          immediately reflects across the application, maintaining a cleaner and more maintainable codebase.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>8. <mark>Responsive Design</mark> for Different Clients</h5>
-    <small>
-      <ul>
-        <li>Applies to: Re-selling & Multi-Tenant</li>
-        <li>Problem: Adapting layout and breakpoints to different client preferences.</li>
-        <li class="fragment">
-          Solution: Define breakpoints with <mark>CSS Custom Properties</mark>, making it possible to personalize
-          breakpoints for different clients without duplicating media queries.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>9. <mark>Gradual Transition</mark> from Old to New</h5>
-    <small>
-      <ul>
-        <li>Applies to: Re-branding</li>
-        <li>
-          Problem: Implementing the new brand without drastically impacting user experience during the transition.
-        </li>
-        <li class="fragment">
-          Solution: <mark>CSS Layers</mark> allow you to keep old rules in a separate layer while progressively
-          implementing the new design, ensuring a smoother and safer transition.
-        </li>
-      </ul>
-    </small>
-  </section>
-
-  <section>
-    <h5>10. Optimization of <mark>Testing</mark></h5>
-    <small>
-      <ul>
-        <li>Applies to: All the three case studies</li>
-        <li>
-          Problem: Ensuring that every part of the UI is updated correctly and that all customizations are consistent.
-        </li>
-        <li class="fragment">
-          Solution: <mark>CSS Custom Properties</mark> centralize values, making changes easier to control and reducing
-          the risk of inconsistencies. <mark>CSS Layers</mark> keep client-specific updates separate, minimizing
-          conflicts and simplifying testing.
-        </li>
-      </ul>
-    </small>
-  </section>
-</section>
-
-    <section>
-  <section>
-    <h4>Wrapping up</h4>
-  </section>
-  <section>
-    <p>
-      CSS Custom Properties and CSS Layers are <mark>fundamental tools</mark> for effectively addressing the needs of
-      re-branding, re-selling, and multi-tenant.
-    </p>
-  </section>
-  <section>
-    <h4>Pros</h4>
-    <small>
-      <ul>
-        <li class="fragment">Proactive Strategy</li>
-        <li class="fragment">Efficiency</li>
-        <li class="fragment">Modularity</li>
-        <li class="fragment">Maintainability</li>
-        <li class="fragment">Progressive Enhancement</li>
-        <li class="fragment">Visual Bug Hunting time reduction</li>
-      </ul>
-    </small>
-  </section>
-  <section>
-    <h4>Cons</h4>
-    <small>
-      <ul>
-        <li class="fragment">Learning & Practice Curve</li>
-        <li class="fragment">Bootstrapping projects initially more complex</li>
-        <li class="fragment">Minimum impact on performances</li>
-      </ul>
-    </small>
-  </section>
-  <section>
-    <h4>Conclusions</h4>
-    <small>
-      <ul>
-        <li class="fragment">Over-engineering as strategic investment</li>
-        <li class="fragment">Being prepared to future evolutions of CSS</li>
-        <li class="fragment"><strong>Invite to Action:</strong> Experiment & Share</li>
-      </ul>
-    </small>
-  </section>
-</section>
-
-    
-
-<section>
-  <h4>Links</h4>
-  <div links="">
-    <figure>
-      <picture>
-        <source srcset="/github-pages.59008d37.webp" type="image/webp">
-        <img src="/github-pages.b8d86e6c.png" alt="Slides">
-      </picture>
-      <figcaption>
-        <small>Slides</small>
-      </figcaption>
-    </figure>
-    <figure>
-      <picture>
-        <source srcset="/github-repo.0ec1e14e.webp" type="image/webp">
-        <img src="/github-repo.294c071c.png" alt="Slides Repo on Github">
-      </picture>
-      <figcaption>
-        <small>Repo</small>
-      </figcaption>
-    </figure>
-    <!-- <figure>
-      <picture>
-        <source srcset="./assets/qrcodes/pixu-dev.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/pixu-dev.png" alt="Pixu.dev Resume" />
-      </picture>
-      <figcaption>
-        <small>Pixu.dev Resume</small>
-      </figcaption>
-    </figure>
-    <figure>
-      <picture>
-        <source srcset="./assets/qrcodes/dout-dev.png?as=webp" type="image/webp" />
-        <img src="./assets/qrcodes/dout-dev.png" alt="Dout.dev Blog" />
-      </picture>
-      <figcaption><small>Dout.dev Blog</small></figcaption>
-    </figure> -->
-  </div>
-</section>
-
-<!-- Slide 21: Grazie -->
-<section>
-  <h2>Grazie ❤️!</h2>
-</section>
-
-    <!-- https://codepen.io/ivorjetski/pen/jOgEyPO -->
-  </div>
-</div>
-
-    <script src="/index.0fbc91cd.js" defer=""></script>
-  </body>
-</html>
+    </pre> </section> </section> <section> <section> <h4>Case Studies</h4> </section> <section> <h4>Case Study 1: Re-branding (1/3)</h4> <small> <p> Re-branding is the process of <mark>redefining the identity</mark> of a product, company, or service to reflect a new vision, updated values, or a change in market positioning. This process may include: </p> </small> </section> <section> <h4>Case Study 1: Re-branding (2/3)</h4> <small> <ul> <li class="fragment"><mark>Updating</mark> Logo and Aesthetics: New colors, typography, and visual styles</li> <li class="fragment"><mark>Redefining</mark> Tone of Voice: New language or communication to connect with a different audience</li> <li class="fragment"><mark>Renewed</mark> Positioning: Adapting the brand to attract new customer segments or respond to market changes</li> <li class="fragment"><mark>Revamping</mark> User Experience: Changing the design of the website, apps, and all visual touchpoints</li> </ul> </small> </section> <section> <h4>Case Study 1: Re-branding (3/3)</h4> <small> <p> Goal: Create <mark>a more modern perception</mark> in line with the target audience, increasing competitiveness and fostering <mark>an emotional connection</mark> with customers. </p> </small> </section> <section> <h4>Case Study 2: Re-selling (1/3)</h4> <small> <p> Re-selling is the process of <mark>selling an existing product</mark> to new customers or markets, adapting it to meet each customer's specific needs without creating a new product from scratch. This process may include: </p> </small> </section> <section> <h4>Case Study 2: Re-selling (2/3)</h4> <small> <ul> <li class="fragment"> Aesthetic <mark>Customization</mark>: Adapting colors, logo, and typography for new customers </li> <li class="fragment"> Multi-Tenant <mark>Design</mark>: Making the product easily configurable for multiple customers without altering the main code </li> <li class="fragment"> <mark>Scalability</mark>: Creating a product that is flexible and ready to be adapted efficiently for new customers </li> <li class="fragment"> Code <mark>Reusability</mark>: Avoiding duplication and keeping the code modular to reduce implementation costs and time </li> </ul> </small> </section> <section> <h4>Case Study 2: Re-selling (3/3)</h4> <small> <p> Goal: <mark>Maximize the profitability</mark> of an existing product by adapting it for new sales while ensuring efficiency and maintainability. </p> </small> </section> <section> <h4>Case Study 3: Multi-tenant (1/3)</h4> <small> <p> Multi-tenant is <mark>a software architecture</mark> in which a single instance of an application serves multiple customers (tenants), maintaining data and customization separation for each one. Each customer <mark>shares the same codebase</mark> but sees the application as if it were a unique instance. </p> </small> </section> <section> <h4>Case Study 3: Multi-tenant (2/3)</h4> <small> <ul> <li class="fragment"> <mark>Resource Sharing</mark>: Infrastructure and resources are shared among tenants, reducing management costs </li> <li class="fragment"> <mark>Customization</mark> for Each Tenant: Ability to apply branding and functionality customizations without modifying the main application </li> <li class="fragment"> Operational <mark>Efficiency</mark>: Maintaining a single codebase makes updates easier and reduces maintenance time </li> <li class="fragment"> <mark>Scalability</mark> and Security: Each tenant can be logically isolated to ensure security and scalability </li> </ul> </small> </section> <section> <h4>Case Study 3: Multi-tenant (3/3)</h4> <small> <p> Goal: Maximize <mark>operational efficiency and scalability</mark>, allowing each customer to have a personalized experience <mark>without compromising</mark> system centralization. </p> </small> </section> </section> <section> <section> <h5>10 ways <mark>CSS APIs approach</mark> can help</h5> </section> <section> <h5>1. Branding Update and <mark>Consistency</mark></h5> <small> <ul> <li>Applies to: Re-Branding</li> <li>Problem: Need to update colors, fonts, and visual styles to reflect a new brand.</li> <li class="fragment"> Solution: Use <mark>CSS Custom Properties</mark> to centralize colors and typography. A root-level update allows for a quick and consistent change throughout the product. </li> </ul> </small> </section> <section> <h5>2. <mark>Customization</mark> for Different Clients</h5> <small> <ul> <li>Applies to: Re-selling & Multi-Tenant</li> <li>Problem: Adapting the product for different clients with distinct branding needs.</li> <li class="fragment"> Solution: Easily override <mark>CSS Custom Properties</mark> for each client or tenant (e.g., using attributes like `data-tenant`) to manage colors, fonts, and styles without duplicating code. </li> </ul> </small> </section> <section> <h5>3. Single Codebase <mark>Maintenance</mark></h5> <small> <ul> <li>Applies to: Re-selling & Multi-Tenant</li> <li> Problem: Duplicating the codebase for different clients can be inefficient and difficult to maintain. </li> <li class="fragment"> Solution: Use <mark>CSS Custom Properties</mark> to customize the product and <mark>CSS Layers</mark> to separate base styles from styles specific to each client. </li> </ul> </small> </section> <section> <h5>4. Reducing <mark>Technical Debt</mark></h5> <small> <ul> <li>Applies to: All the three case studies</li> <li>Problem: High specificity and style duplication.</li> <li class="fragment"> Solution: Use <mark>CSS Layers</mark> to separate base layers, themes, and tenant-specific styles. <mark>CSS Custom Properties</mark> centralize values, reducing the need for repetition and facilitating maintainability. </li> </ul> </small> </section> <section> <h5>5. Handling <mark>Specificity Conflicts</mark></h5> <small> <ul> <li>Applies to: Re-branding & Multi-Tenant</li> <li>Problem: Overlapping styles causing conflicts during customizations.</li> <li class="fragment"> Solution: With <mark>CSS Layers</mark>, you can control the order of style application, ensuring correct precedence without increasing specificity. </li> </ul> </small> </section> <section> <h5>6. Support for <mark>Dynamic Theming</mark></h5> <small> <ul> <li>Applies to: Re-selling & Multi-Tenant</li> <li>Problem: Differentiating themes for various clients efficiently.</li> <li class="fragment"> Solution: <mark>CSS Custom Properties</mark> allow for dynamic theming by simply varying global properties for each client, making the process simple and scalable. </li> </ul> </small> </section> <section> <h5>7. <mark>Scalability</mark></h5> <small> <ul> <li>Applies to: All the three case studies</li> <li>Problem: Applying branding and style changes uniformly.</li> <li class="fragment"> Solution: Thanks to <mark>CSS Custom Properties</mark>, a central change in color, typography, or spacing immediately reflects across the application, maintaining a cleaner and more maintainable codebase. </li> </ul> </small> </section> <section> <h5>8. <mark>Responsive Design</mark> for Different Clients</h5> <small> <ul> <li>Applies to: Re-selling & Multi-Tenant</li> <li>Problem: Adapting layout and breakpoints to different client preferences.</li> <li class="fragment"> Solution: Define breakpoints with <mark>CSS Custom Properties</mark>, making it possible to personalize breakpoints for different clients without duplicating media queries. </li> </ul> </small> </section> <section> <h5>9. <mark>Gradual Transition</mark> from Old to New</h5> <small> <ul> <li>Applies to: Re-branding</li> <li> Problem: Implementing the new brand without drastically impacting user experience during the transition. </li> <li class="fragment"> Solution: <mark>CSS Layers</mark> allow you to keep old rules in a separate layer while progressively implementing the new design, ensuring a smoother and safer transition. </li> </ul> </small> </section> <section> <h5>10. Optimization of <mark>Testing</mark></h5> <small> <ul> <li>Applies to: All the three case studies</li> <li> Problem: Ensuring that every part of the UI is updated correctly and that all customizations are consistent. </li> <li class="fragment"> Solution: <mark>CSS Custom Properties</mark> centralize values, making changes easier to control and reducing the risk of inconsistencies. <mark>CSS Layers</mark> keep client-specific updates separate, minimizing conflicts and simplifying testing. </li> </ul> </small> </section> </section> <section> <section> <h4>Wrapping up</h4> </section> <section> <p> CSS Custom Properties and CSS Layers are <mark>fundamental tools</mark> for effectively addressing the needs of re-branding, re-selling, and multi-tenant. </p> </section> <section> <h4>Pros</h4> <small> <ul> <li class="fragment">Proactive Strategy</li> <li class="fragment">Efficiency</li> <li class="fragment">Modularity</li> <li class="fragment">Maintainability</li> <li class="fragment">Progressive Enhancement</li> <li class="fragment">Visual Bug Hunting time reduction</li> </ul> </small> </section> <section> <h4>Cons</h4> <small> <ul> <li class="fragment">Learning & Practice Curve</li> <li class="fragment">Bootstrapping projects initially more complex</li> <li class="fragment">Minimum impact on performances</li> </ul> </small> </section> <section> <h4>Conclusions</h4> <small> <ul> <li class="fragment">Over-engineering as strategic investment</li> <li class="fragment">Being prepared to future evolutions of CSS</li> <li class="fragment"><strong>Invite to Action:</strong> Experiment & Share</li> </ul> </small> </section> </section> <section> <h4>Links</h4> <div links> <figure> <picture> <source srcset="github-pages.1e93f05b.webp" type="image/webp"> <img src="github-pages.9a6b0290.png" alt="Slides"> </picture> <figcaption> <small>Slides</small> </figcaption> </figure> <figure> <picture> <source srcset="github-repo.f70bbea5.webp" type="image/webp"> <img src="github-repo.98b38700.png" alt="Slides Repo on Github"> </picture> <figcaption> <small>Repo</small> </figcaption> </figure>  </div> </section>  <section> <h2>Grazie ❤️!</h2> </section>  </div> </div> <script src="index.1488779d.js" type="module"></script> </body></html>
