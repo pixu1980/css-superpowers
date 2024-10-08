@@ -1,6 +1,6 @@
 {
   "name": "css-over-engineering",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "license": "MIT",
   "scripts": {
     "clear:cache": "rm -rf .parcel-cache",
@@ -9,7 +9,7 @@
     "preserve": "yarn clear",
     "serve": "parcel src/index.html -p 6001",
     "prebuild": "yarn clear",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html --public-url ./ && git add . && git commit --amend --no-edit",
     "preexample": "yarn clear",
     "example": "parcel src/example/example.html -p 6002",
     "preexample:form": "yarn clear",
