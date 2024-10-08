@@ -1,0 +1,38 @@
+<section>
+  <h4>Stop Watch with @property</h4>
+  <small>
+    <a codepen href="https://codepen.io/pixu1980/pen/wvVWxgd" target="_blank" rel="noopener noreferrer">
+      Check this on <img src="./assets/codepen.svg" />
+    </a>
+  </small>
+  <div stop-watch>
+    <form class="stopwatch">
+      <input id="start" type="checkbox" />
+      <input id="pause" type="checkbox" />
+      <label class="stopwatch__pause" for="pause"><span>Pause</span></label>
+      <label class="stopwatch__start" for="start"><span>Start</span></label>
+      <button class="stopwatch__reset" id="reset" type="reset"><span>Reset</span></button>
+      <div class="stopwatch__restart stopwatch__control">
+        <div class="reset-button"></div>
+      </div>
+      <div class="stopwatch__stop-start stopwatch__control">
+        <div class="start-button"></div>
+      </div>
+      <div class="stopwatch__shadows"></div>
+      <div class="stopwatch__content">
+        <div class="stopwatch__face">
+          <div class="digit m m--tens">0</div>
+          <div class="digit m m--singles">0</div>
+          <span>:</span>
+          <div class="digit second s s--tens">0</div>
+          <div class="digit second s s--singles">0</div>
+          <span>.</span>
+          <div class="digit digit--small ms ms--tens">0</div>
+          <div class="digit digit--small ms ms--singles">0</div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+

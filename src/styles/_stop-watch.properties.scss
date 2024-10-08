@@ -1,0 +1,35 @@
+@property --stop-watch--ms-tens {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}
+
+@property --stop-watch--ms-singles {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}
+
+@property --stop-watch--s-tens {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}
+
+@property --stop-watch--s-singles {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}
+
+@property --stop-watch--m-tens {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}
+
+@property --stop-watch--m-singles {
+  initial-value: 0;
+  inherits: false;
+  syntax: '<integer>';
+}

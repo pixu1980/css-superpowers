@@ -7,6 +7,10 @@
 
 @import 'intro.properties';
 @import 'registered-comparison.properties';
+@import 'ball-throw.properties';
+@import 'loading-border.properties';
+@import 'counter.properties';
+@import 'stop-watch.properties';
 
 // @layer talk, reveal;
 // @layer reveal, talk;
@@ -16,7 +20,23 @@
   @import 'typography';
   @import 'intro';
   @import 'intro.animations';
+  @import 'ball-throw';
+  @import 'loading-border';
+  @import 'counter';
+  @import 'stop-watch';
   @import 'pixu';
   @import 'registered-comparison';
   @import 'outro';
+
+  [codepen] {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+    img {
+      width: 4rem;
+      aspect-ratio: 1;
+      filter: invert(1);
+    }
+  }
 }

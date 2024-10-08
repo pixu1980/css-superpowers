@@ -1,0 +1,153 @@
+<section>
+  <section>
+    <h5>10 ways <mark>CSS APIs approach</mark> can help</h5>
+  </section>
+
+  <section>
+    <h5>1. Branding Update and <mark>Consistency</mark></h5>
+    <small>
+      <ul>
+        <li>Applies to: Re-Branding</li>
+        <li>Problem: Need to update colors, fonts, and visual styles to reflect a new brand.</li>
+        <li class="fragment">
+          Solution: Use <mark>CSS Custom Properties</mark> to centralize colors and typography. A root-level update
+          allows for a quick and consistent change throughout the product.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>2. <mark>Customization</mark> for Different Clients</h5>
+    <small>
+      <ul>
+        <li>Applies to: Re-selling & Multi-Tenant</li>
+        <li>Problem: Adapting the product for different clients with distinct branding needs.</li>
+        <li class="fragment">
+          Solution: Easily override <mark>CSS Custom Properties</mark> for each client or tenant (e.g., using attributes
+          like `data-tenant`) to manage colors, fonts, and styles without duplicating code.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>3. Single Codebase <mark>Maintenance</mark></h5>
+    <small>
+      <ul>
+        <li>Applies to: Re-selling & Multi-Tenant</li>
+        <li>
+          Problem: Duplicating the codebase for different clients can be inefficient and difficult to maintain.
+        </li>
+        <li class="fragment">
+          Solution: Use <mark>CSS Custom Properties</mark> to customize the product and <mark>CSS Layers</mark> to
+          separate base styles from styles specific to each client.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>4. Reducing <mark>Technical Debt</mark></h5>
+    <small>
+      <ul>
+        <li>Applies to: All the three case studies</li>
+        <li>Problem: High specificity and style duplication.</li>
+        <li class="fragment">
+          Solution: Use <mark>CSS Layers</mark> to separate base layers, themes, and tenant-specific styles.
+          <mark>CSS Custom Properties</mark> centralize values, reducing the need for repetition and facilitating
+          maintainability.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>5. Handling <mark>Specificity Conflicts</mark></h5>
+    <small>
+      <ul>
+        <li>Applies to: Re-branding & Multi-Tenant</li>
+        <li>Problem: Overlapping styles causing conflicts during customizations.</li>
+        <li class="fragment">
+          Solution: With <mark>CSS Layers</mark>, you can control the order of style application, ensuring correct
+          precedence without increasing specificity.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>6. Support for <mark>Dynamic Theming</mark></h5>
+    <small>
+      <ul>
+        <li>Applies to: Re-selling & Multi-Tenant</li>
+        <li>Problem: Differentiating themes for various clients efficiently.</li>
+        <li class="fragment">
+          Solution: <mark>CSS Custom Properties</mark> allow for dynamic theming by simply varying global properties for
+          each client, making the process simple and scalable.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>7. <mark>Scalability</mark></h5>
+    <small>
+      <ul>
+        <li>Applies to: All the three case studies</li>
+        <li>Problem: Applying branding and style changes uniformly.</li>
+        <li class="fragment">
+          Solution: Thanks to <mark>CSS Custom Properties</mark>, a central change in color, typography, or spacing
+          immediately reflects across the application, maintaining a cleaner and more maintainable codebase.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>8. <mark>Responsive Design</mark> for Different Clients</h5>
+    <small>
+      <ul>
+        <li>Applies to: Re-selling & Multi-Tenant</li>
+        <li>Problem: Adapting layout and breakpoints to different client preferences.</li>
+        <li class="fragment">
+          Solution: Define breakpoints with <mark>CSS Custom Properties</mark>, making it possible to personalize
+          breakpoints for different clients without duplicating media queries.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>9. <mark>Gradual Transition</mark> from Old to New</h5>
+    <small>
+      <ul>
+        <li>Applies to: Re-branding</li>
+        <li>
+          Problem: Implementing the new brand without drastically impacting user experience during the transition.
+        </li>
+        <li class="fragment">
+          Solution: <mark>CSS Layers</mark> allow you to keep old rules in a separate layer while progressively
+          implementing the new design, ensuring a smoother and safer transition.
+        </li>
+      </ul>
+    </small>
+  </section>
+
+  <section>
+    <h5>10. Optimization of <mark>Testing</mark></h5>
+    <small>
+      <ul>
+        <li>Applies to: All the three case studies</li>
+        <li>
+          Problem: Ensuring that every part of the UI is updated correctly and that all customizations are consistent.
+        </li>
+        <li class="fragment">
+          Solution: <mark>CSS Custom Properties</mark> centralize values, making changes easier to control and reducing
+          the risk of inconsistencies. <mark>CSS Layers</mark> keep client-specific updates separate, minimizing
+          conflicts and simplifying testing.
+        </li>
+      </ul>
+    </small>
+  </section>
+</section>

@@ -1,0 +1,17 @@
+@property --ball-throw--x {
+  inherits: false;
+  initial-value: 0%;
+  syntax: '<percentage>';
+}
+
+@property --ball-throw--y {
+  inherits: false;
+  initial-value: 0%;
+  syntax: '<percentage>';
+}
+
+@property --ball-throw--rotate {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}

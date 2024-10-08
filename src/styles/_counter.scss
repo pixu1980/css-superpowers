@@ -1,0 +1,24 @@
+@layer animations {
+  @layer counter {
+    [counter] {
+      position: relative;
+      counter-reset: ms var(--milliseconds--counter);
+      animation: count 1s steps(1000) infinite;
+      margin: 3rem auto 0;
+
+      &:after {
+        content: counter(ms);
+        font-size: 5rem;
+        color: hsl(0, 0%, 100%);
+        font-weight: bold;
+        font-family: monospace;
+      }
+    }
+
+    @keyframes count {
+      to {
+        --milliseconds--counter: 1000;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@layer animations {
+  @layer ball-throw {
+    [ball-throw] {
+      display: grid;
+      place-items: center;
+    }
+
+    .ball {
+      --ball-throw--x: 0%;
+      --ball-throw--y: 0%;
+      --ball-throw--rotate: 0deg;
+      
+      height: 10vmin;
+      width: 10vmin;
+      border-radius: 50%;
+      fill: #e6911a;
+      background: #a16512;
+      animation: throw 2.5s infinite alternate ease-in-out;
+      translate: var(--ball-throw--x) var(--ball-throw--y);
+      rotate:var(--ball-throw--rotate);
+    }
+
+    @keyframes throw {
+      0% {
+        --ball-throw--x: -500%;
+        --ball-throw--rotate: 0deg;
+      }
+      50% {
+        --ball-throw--y: -250%;
+      }
+      100% {
+        --ball-throw--x: 500%;
+        --ball-throw--rotate: 360deg;
+      }
+    }
+  }
+}
