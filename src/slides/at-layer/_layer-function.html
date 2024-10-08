@@ -1,0 +1,23 @@
+<section>
+  <h4>That's awesome, but...</h4>
+  <p class="fragment">What about <mark>old CSS codebase</mark> and <mark>third party dependencies</mark>?</p>
+</section>
+
+<section>
+  <h4>The <mark>layer()</mark> function will be your best friend</h4>
+</section>
+
+<section>
+  <h4>@import ... layer() pattern</h4>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+@import 'path-to-old-dependency.css' layer(old-library.old-dependency);
+@import 'path-to-old-dependency.theme.css' layer(old-library.old-dependency);
+@import 'path-to-other-old-dependency.css' layer(old-library.other-old-dependency);
+      
+@layer new-library {
+  ...
+}
+    </code>
+  </pre>
+</section>

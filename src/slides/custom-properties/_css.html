@@ -1,0 +1,79 @@
+
+<section>
+  <h4><mark>Centralizing</mark> values</h4>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+:root {
+--primary-color: #3498db;
+--font-size-base: 16px;
+}
+
+body {
+color: var(--primary-color);
+font-size: var(--font-size-base);
+}
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4>Flowing with the <mark>cascade</mark></h4>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+:root {
+--primary-color: #3498db;
+--font-size-base: 16px;
+}
+
+body {
+--font-size-base: 18px;
+
+color: var(--primary-color);
+font-size: var(--font-size-base);
+}
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4><mark>Dynamic</mark> and <mark>Conditional</mark> overrides...</h4>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+:root {
+--background-color: #ffffff;
+--text-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+--background-color: #000000;
+--text-color: #ffffff;
+}
+
+body {
+background-color: var(--background-color);
+color: var(--text-color);
+}
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4>...the same goes for <mark>Responsive</mark></h4>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+:root {
+--padding: 8px;
+}
+
+@media (min-width: 600px) {
+:root {
+  --padding: 16px;
+}
+}
+
+.container {
+padding: var(--padding);
+}
+    </code>
+  </pre>
+</section>

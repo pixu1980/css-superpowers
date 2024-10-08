@@ -1,0 +1,31 @@
+
+<section>
+  <p>CSS Layers Example</p>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+@layer reset {
+  // https://css-tricks.com/css-remedy/        
+
+  * {
+    box-sizing: border-box;
+    ...
+  }
+}
+
+@layer components {
+  button {
+    border-size: 1px solid lightgray;
+  }
+}
+
+@layer layout {
+  body {
+    display: grid;
+    grid-template-areas:
+      'header header'
+      'aside main'
+      'footer footer';
+  }
+}
+  </code></pre>
+</section>

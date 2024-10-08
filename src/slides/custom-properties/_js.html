@@ -1,0 +1,98 @@
+<section>
+  <section>
+    <h4>Javascript interaction</h4>
+    <small>
+      <p>Common js "CRUD" operations with CSS custom properties<br /></p>
+    </small>
+  </section>
+
+  <section>
+    <p>Reading a variable from an element</p>
+    <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const button = document.querySelector('button');
+
+// gets the "--primary-color" value
+// from element's CSSStyleDeclaration
+
+//! may be null if the variable is not defined on the element itself
+button.style.getPropertyValue('--primary-color');
+
+// gets the "--primary-color" value
+// from the element's ComputedStyle, 
+// so with inherited values too
+
+//! may be an empty string if the variable is not defined on 
+//! the element itself nor any of its ancestors
+getComputedStyle(button).getPropertyValue('--primary-color');
+    </code>
+  </pre>
+  </section>
+
+  <section>
+    <p>Reading a variable from :root</p>
+    <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const root = document.documentElement;
+
+// gets the "--primary-color" value
+// from the root element's ComputedStyle
+
+//! may be an empty string if the variable is not defined
+getComputedStyle(root).getPropertyValue('--primary-color');
+    </code>
+  </pre>
+  </section>
+
+  <section>
+    <h4>Writing a variable to an element</h4>
+    <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const button = document.querySelector('button');
+
+// sets the "--primary-color" value
+// to the element's CSSStyleDeclaration
+button.style.setProperty('--primary-color', '#e74c3c');
+    </code>
+  </pre>
+  </section>
+
+  <section>
+    <h4>Writing a variable to :root</h4>
+    <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const root = document.documentElement;
+
+// sets the "--primary-color" value 
+// to the root element's CSSStyleDeclaration
+root.style.setProperty('--primary-color', '#e74c3c');
+    </code>
+  </pre>
+  </section>
+
+  <section>
+    <h4>Deleting a variable from an element</h4>
+    <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const button = document.querySelector('button');
+
+// deletes the "--primary-color" variable
+// from the element's CSSStyleDeclaration
+button.style.removeProperty('--primary-color');
+    </code>
+  </pre>
+  </section>
+
+  <section>
+    <h4>Deleting a variable from :root</h4>
+    <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const root = document.documentElement;
+
+// deletes the "--primary-color" variable
+// from the root element's CSSStyleDeclaration
+root.style.removeProperty('--primary-color');
+    </code>
+  </pre>
+  </section>
+</section>

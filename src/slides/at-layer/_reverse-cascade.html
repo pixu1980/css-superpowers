@@ -1,0 +1,44 @@
+<section>
+  <p>Reverse Cascade</p>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+:root {
+  --ui--font-size: 10px;
+}
+    
+@layer ui {
+  :root {
+    --ui--font-size: 16px;
+  }
+
+  @layer button {
+    :root {
+      --ui--font-size: 18px;
+    }
+
+    button {
+      font-size: var(--ui--font-size);
+    }
+  }
+
+  @layer input {
+    :root {
+      --ui--font-size: 20px;
+    }
+
+    input {
+      font-size: var(--ui--font-size);
+    }
+  }
+}
+    </code>
+  </pre>
+</section>
+<section>
+  <img src="./assets/reverse-cascade.gif" style="width: 50%" />
+  <br />
+  <h4>
+    Look at me Ma'...<br />
+    i'm <mark>reversing waterfalls</mark> like Shiryu
+  </h4>
+</section>

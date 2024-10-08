@@ -1,0 +1,28 @@
+<section>
+  <p>Layers depths levels</p>
+  <pre>
+    <code class="hljs css" data-trim data-line-numbers>
+@layer ui {
+  @layer button {
+    :root {
+      --button--font-size: 18px;
+    }
+
+    button {
+      font-size: var(--button--font-size);
+    }
+  }
+
+  @layer input {
+    :root {
+      --input--font-size: 20px;
+    }
+
+    input {
+      font-size: var(--input--font-size);
+    }
+  } 
+}
+    </code>
+  </pre>
+</section>
