@@ -1,6 +1,6 @@
 {
   "name": "css-over-engineering",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "scripts": {
     "clear:cache": "rm -rf .parcel-cache",
@@ -14,7 +14,7 @@
     "example": "parcel src/example/example.html -p 6002",
     "preexample:form": "yarn clear",
     "example:form": "parcel src/example-form/example-form.html -p 6003",
-    "rel:push": "git push && git push --tags",
+    "rel:push": "git pull -r && git push && git push --tags",
     "rel:major": "yarn build && yarn version --major && yarn rel:push",
     "rel:minor": "yarn build && yarn version --minor && yarn rel:push",
     "rel:patch": "yarn build && yarn version --patch && yarn rel:push"
