@@ -1,60 +1,60 @@
-<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>CSS Superpowers</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="index.dd9c4e76.css"></head><body> <div class="reveal"> <div class="slides"> <section intro> <h2> CSS <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>p</span><span>o</span><span>w</span><span>e</span><span>r</span><span>s</span> </h2> <h3>with <mark>--*</mark>, <mark>@property</mark> and <mark>@layer</mark></h3> </section> <section pixu> <figure> <picture> <source srcset="pixu.fedf8a6d.webp" type="image/webp"> <img src="pixu.06482de6.jpg" alt="Pixu"> </picture> </figure> <h3>Emiliano <mark>Pisu</mark></h3> <p> Frontend Development Lead <br> @ <mark>MONK</mark> Software </p> <small> <ul> <li>Company: www.monksoftware.it</li> <li>LinkedIn: www.linkedin.com/in/pixu1980</li> </ul> </small> </section> <section> <section> <h4><mark>Over-engineering</mark> CSS codebase</h4> <p class="fragment">with an <mark>eye on the future</mark></p> </section> <section> <blockquote> <figure> <picture> <source srcset="doc-brown.c67090b6.webp" type="image/webp"> <img src="doc-brown.4bed2164.jpg" alt="DOC Brown"> </picture> </figure> Please excuse the crudity of this model: <mark>I didn't have time</mark> to build it to scale or paint it. </blockquote> <p><small>Doc. Emmet L. Brown (1955)</small></p> </section> <section> <h4>So... <mark>what is</mark> Over-engineering?</h4> </section> <section> <blockquote> Over-engineering is the act of <mark>designing a product</mark>, or <mark>providing a solution</mark> to a problem, that is complicated in a way that <mark>provides no value</mark> or could have been designed to be simpler. </blockquote> <p><small>Wikipedia</small></p> </section> <section> <h4> Ehm... So...<br> <span class="fragment"> how are we gonna <mark>feel</mark><br> at the end of the day? </span> </h4> </section> <section> <img src="family-guy.06ff7d67.gif"> <br> <h4>not like this... I'm promise 😄!!!</h4> </section> </section> <section> <section> <h4>What are we going to <br><mark>talk about</mark> today?</h4> </section> <section> <h4>CSS Custom Properties</h4> <small> <p><mark>--*</mark> and <mark>@property</mark></p> <ul> <li class="fragment">centralizing values</li> <li class="fragment">flowing with the cascade</li> <li class="fragment">dynamic and conditional overrides</li> <li class="fragment">registered properties and animations</li> <li class="fragment">interactions with js</li> </ul> </small> </section> <section> <h4>CSS Layers</h4> <small> <p><mark>@layer</mark></p> <ul> <li class="fragment">definition</li> <li class="fragment">organization</li> <li class="fragment">order of "execution"</li> <li class="fragment">reverse cascade</li> </ul> </small> </section> <section> <h4>CSS <mark>APIs</mark> Approach</h4> <small> <p>combining variables and layers</p> <ul> <li class="fragment">efficiency</li> <li class="fragment">maintenance</li> <li class="fragment">evolution</li> </ul> </small> </section> </section> <section> <section> <h4>CSS Custom Properties</h4> <small> <p> <mark>--*</mark> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank" rel="noopener noreferrer"> (MDN docs) </a> </p> <p class="fragment"> Introduced by Firefox in July 2014,<br> and fully supported across browsers<br> since <mark>April 2017</mark> </p> </small> </section> <section> <h4><mark>Centralizing</mark> values</h4> <pre>
+<!DOCTYPE html><html lang="it"><head><meta charset="utf-8"><title>CSS Superpowers</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="index.dd9c4e76.css"></head><body> <div class="reveal"> <div class="slides"> <section intro> <h2> CSS <span>S</span><span>u</span><span>p</span><span>e</span><span>r</span><span>p</span><span>o</span><span>w</span><span>e</span><span>r</span><span>s</span> </h2> <h3>with <mark>--*</mark>, <mark>@property</mark> and <mark>@layer</mark></h3> </section> <section pixu> <figure> <picture> <source srcset="pixu.fedf8a6d.webp" type="image/webp"> <img src="pixu.06482de6.jpg" alt="Pixu"> </picture> </figure> <h3>Emiliano <mark>Pisu</mark></h3> <p> Frontend Development Lead <br> @ <mark>MONK</mark> Software </p> <small> <ul> <li>Company: www.monksoftware.it</li> <li>LinkedIn: www.linkedin.com/in/pixu1980</li> </ul> </small> </section> <section> <section> <h4><mark>Over-engineering</mark> CSS codebase</h4> <p class="fragment">with an <mark>eye on the future</mark></p> </section> <section> <blockquote> <figure> <picture> <source srcset="doc-brown.c67090b6.webp" type="image/webp"> <img src="doc-brown.4bed2164.jpg" alt="DOC Brown"> </picture> </figure> Please excuse the crudity of this model: <mark>I didn't have time</mark> to build it to scale or paint it. </blockquote> <p><small>Doc. Emmet L. Brown (1955)</small></p> </section> <section> <h4>So... <mark>what is</mark> Over-engineering?</h4> </section> <section> <blockquote> Over-engineering is the act of <mark>designing a product</mark>, or <mark>providing a solution</mark> to a problem, that is complicated in a way that <mark>provides no value</mark> or could have been designed to be simpler. </blockquote> <p><small>Wikipedia</small></p> </section> <section> <h4> Ehm... So...<br> <span class="fragment"> how are we gonna <mark>feel</mark><br> at the end of the day? </span> </h4> </section> <section> <img src="family-guy.06ff7d67.gif"> <br> <h4>not like this... I'm promise 😄!!!</h4> </section> </section> <section> <section> <h4>What are we going to <br><mark>talk about</mark> today?</h4> </section> <section> <h4>CSS Custom Properties</h4> <small> <p><mark>--*</mark> and <mark>@property</mark></p> <ul> <li class="fragment">centralizing values</li> <li class="fragment">flowing with the cascade</li> <li class="fragment">dynamic and conditional overrides</li> <li class="fragment">registered properties and animations</li> <li class="fragment">interactions with js</li> </ul> </small> </section> <section> <h4>CSS Layers</h4> <small> <p><mark>@layer</mark></p> <ul> <li class="fragment">definition</li> <li class="fragment">organization</li> <li class="fragment">order of "execution"</li> <li class="fragment">reverse cascade</li> </ul> </small> </section> <section> <h4>CSS <mark>APIs</mark> Approach</h4> <small> <p>combining variables and layers</p> <ul> <li class="fragment">efficiency</li> <li class="fragment">maintainability</li> <li class="fragment">scalability</li> </ul> </small> </section> </section> <section> <section> <h4>CSS Custom Properties</h4> <small> <p> <mark>--*</mark> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/--*" target="_blank" rel="noopener noreferrer"> (MDN docs) </a> </p> <p class="fragment"> Introduced by Firefox in July 2014,<br> and fully supported across browsers<br> since <mark>April 2017</mark> </p> </small> </section> <section> <h4><mark>Centralizing</mark> values</h4> <pre>
     <code class="css hljs" data-trim data-line-numbers>
 :root {
---primary-color: #3498db;
---font-size-base: 16px;
+  --primary-color: #3498db;
+  --font-size-base: 16px;
 }
 
 body {
-color: var(--primary-color);
-font-size: var(--font-size-base);
+  color: var(--primary-color);
+  font-size: var(--font-size-base);
 }
     </code>
   </pre> </section> <section> <h4>Flowing with the <mark>cascade</mark></h4> <pre>
     <code class="css hljs" data-trim data-line-numbers>
 :root {
---primary-color: #3498db;
---font-size-base: 16px;
+  --primary-color: #3498db;
+  --font-size-base: 16px;
 }
 
 body {
---font-size-base: 18px;
+  --font-size-base: 18px;
 
-color: var(--primary-color);
-font-size: var(--font-size-base);
+  color: var(--primary-color);
+  font-size: var(--font-size-base);
 }
     </code>
   </pre> </section> <section> <h4><mark>Dynamic</mark> and <mark>Conditional</mark> overrides...</h4> <pre>
     <code class="css hljs" data-trim data-line-numbers>
 :root {
---background-color: #ffffff;
---text-color: #000000;
+  --background-color: #ffffff;
+  --text-color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
---background-color: #000000;
---text-color: #ffffff;
+  --background-color: #000000;
+  --text-color: #ffffff;
 }
 
 body {
-background-color: var(--background-color);
-color: var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
     </code>
   </pre> </section> <section> <h4>...the same goes for <mark>Responsive</mark></h4> <pre>
     <code class="css hljs" data-trim data-line-numbers>
 :root {
---padding: 8px;
+  --padding: 8px;
 }
 
 @media (min-width: 600px) {
-:root {
-  --padding: 16px;
-}
+  :root {
+    --padding: 16px;
+  }
 }
 
 .container {
-padding: var(--padding);
+  padding: var(--padding);
 }
     </code>
   </pre> </section> </section> <section> <section> <h4>Javascript interaction</h4> <small> <p>Common js "CRUD" operations with CSS custom properties<br></p> </small> </section> <section> <p>Reading a variable from an element</p> <pre>

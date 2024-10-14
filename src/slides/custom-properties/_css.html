@@ -4,13 +4,13 @@
   <pre>
     <code class="hljs css" data-trim data-line-numbers>
 :root {
---primary-color: #3498db;
---font-size-base: 16px;
+  --primary-color: #3498db;
+  --font-size-base: 16px;
 }
 
 body {
-color: var(--primary-color);
-font-size: var(--font-size-base);
+  color: var(--primary-color);
+  font-size: var(--font-size-base);
 }
     </code>
   </pre>
@@ -21,15 +21,15 @@ font-size: var(--font-size-base);
   <pre>
     <code class="hljs css" data-trim data-line-numbers>
 :root {
---primary-color: #3498db;
---font-size-base: 16px;
+  --primary-color: #3498db;
+  --font-size-base: 16px;
 }
 
 body {
---font-size-base: 18px;
+  --font-size-base: 18px;
 
-color: var(--primary-color);
-font-size: var(--font-size-base);
+  color: var(--primary-color);
+  font-size: var(--font-size-base);
 }
     </code>
   </pre>
@@ -40,18 +40,18 @@ font-size: var(--font-size-base);
   <pre>
     <code class="hljs css" data-trim data-line-numbers>
 :root {
---background-color: #ffffff;
---text-color: #000000;
+  --background-color: #ffffff;
+  --text-color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
---background-color: #000000;
---text-color: #ffffff;
+  --background-color: #000000;
+  --text-color: #ffffff;
 }
 
 body {
-background-color: var(--background-color);
-color: var(--text-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
     </code>
   </pre>
@@ -62,17 +62,17 @@ color: var(--text-color);
   <pre>
     <code class="hljs css" data-trim data-line-numbers>
 :root {
---padding: 8px;
+  --padding: 8px;
 }
 
 @media (min-width: 600px) {
-:root {
-  --padding: 16px;
-}
+  :root {
+    --padding: 16px;
+  }
 }
 
 .container {
-padding: var(--padding);
+  padding: var(--padding);
 }
     </code>
   </pre>
