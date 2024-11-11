@@ -1,0 +1,17 @@
+@layer code {
+  [codepen] {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    img {
+      width: 4rem;
+      aspect-ratio: 1;
+      filter: invert(1);
+    }
+  }
+
+  .hljs-ln-numbers {
+    min-width: 2ch;
+  }
+}

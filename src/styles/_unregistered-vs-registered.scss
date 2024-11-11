@@ -1,5 +1,5 @@
-@layer registered-comparison {
-  [registered-comparison] {
+@layer unregistered-vs-registered {
+  [unregistered-vs-registered] {
     display: flex;
     gap: 1rem;
     place-items: center;
@@ -15,7 +15,7 @@
 
       &:hover,
       &:focus {
-        --registered--color: #f2f2f2;
+        --registered--color: #c0ffee;
         --registered--background-color: #b4d455;
       }
     }
@@ -30,8 +30,8 @@
 
       &:hover,
       &:focus {
-        --unregistered--background-color: #b4d455;
         --unregistered--color: #c0ffee;
+        --unregistered--background-color: #b4d455;
       }
     }
 

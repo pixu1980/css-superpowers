@@ -6,7 +6,7 @@
 @import 'reveal';
 
 @import 'intro.properties';
-@import 'registered-comparison.properties';
+@import 'unregistered-vs-registered.properties';
 @import 'ball-throw.properties';
 @import 'loading-border.properties';
 @import 'counter.properties';
@@ -18,6 +18,8 @@
 @layer talk {
   @import 'palette';
   @import 'typography';
+  @import 'code';
+  @import 'comparison';
   @import 'intro';
   @import 'intro.animations';
   @import 'ball-throw';
@@ -25,18 +27,12 @@
   @import 'counter';
   @import 'stop-watch';
   @import 'pixu';
-  @import 'registered-comparison';
+  @import 'unregistered-vs-registered';
   @import 'outro';
-
-  [codepen] {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    
-    img {
-      width: 4rem;
-      aspect-ratio: 1;
-      filter: invert(1);
-    }
+  
+  * {
+    text-rendering: optimizeLegibility;
+    letter-spacing: .1px;
+    -webkit-font-smoothing: subpixel-antialias;
   }
 }

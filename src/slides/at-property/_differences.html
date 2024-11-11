@@ -1,39 +1,105 @@
 <section>
-  <h4>What are the differences between registered and unregistered custom properties?</h4>
+  <h4>
+    What is the difference
+    <br />
+    between <mark>--*</mark> and <mark>@property</mark>?
+  </h4>
 </section>
+
 <section>
-  <p>Registered properties are animatable and transitionable</p>
-  <div registered-comparison>
-    <button class="unregistered">Unregistered</button>
-    <button class="registered">Registered</button>
-  </div>
-  <pre>
-    <code class="hljs html" data-trim data-line-numbers>
-&lt;button class="unregistered"&gt;Background Not Registered&lt;/button&gt;
-&lt;button class="registered"&gt;Background Registered&lt;/button&gt;
-    </code>
-  </pre>
-  <pre>
-    <code class="hljs css" data-trim data-line-numbers>
+  <p>Registered properties are <mark>typed</mark></p>
+  <small>
+    According to
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" target="_blank" rel="noopener noreferrer">
+      MDN
+    </a>
+    supported type are: <br />
+    'length', 'number', 'percentage', 'length-percentage', 'color', 'image', 'url', 'integer', 'angle', 'time',
+    'resolution', 'transform-function', or 'custom-ident'
+  </small>
+</section>
+
+<section>
+  <p>
+    Registered properties can <br />
+    <mark>inherit</mark> or <mark>not</mark>
+  </p>
+</section>
+
+<section>
+  <p>
+    Registered properties are <br />
+    <mark>animatable</mark> and <mark>transitionable</mark>
+  </p>
+</section>
+
+<section>
+  <p>
+    For instance...
+  </p>
+</section>
+
+<section>
+  <comparison unregistered-vs-registered>
+    <left>
+      <button class="unregistered">Unregistered</button>
+      <pre>
+        <code class="hljs html" data-trim data-line-numbers>
+&lt;button class="unregistered"&gt;
+  Background Not Registered
+&lt;/button&gt;
+        </code>
+      </pre>
+      <pre>
+        <code class="hljs scss" data-trim data-line-numbers>
 button.unregistered {
-  --unregistered--coffee-color: #c0ffee;
-  background-color: var(--unregistered--coffee-color);
-  transition: --unregistered--coffee-color 1s ease-in-out; // this will NOT work
-
-  &:hover,  &:focus {
-    --unregistered--coffee-color: #b4d455;
-  }
-}
-
-button.registered {
-  --coffee-color: #c0ffee;
-  background-color: var(--coffee-color);
-  transition: --coffee-color 1s ease-in-out; // this will work
+  --unregistered-coffee-color: #202020;
+  --unregistered-coffee-background-color: #c0ffee;
+  
+  color: var(--unregistered-coffee-color);
+  background-color: var(--unregistered-coffee-background-color);
+  
+  // this will NOT work
+  transition: --unregistered-coffee-color 1s ease-in-out,
+    --unregistered-coffee-background-color 1s ease-in-out;
 
   &:hover, &:focus {
-    --coffee-color: #b4d455;
+    --unregistered-coffee-color: #c0ffee;
+    --unregistered-coffee-background-color: #b4d455;
   }
 }
-    </code>
-  </pre>
+        </code>
+      </pre>
+    </left>
+    <right>
+      <button class="registered">Registered</button>
+      <pre>
+        <code class="hljs html" data-trim data-line-numbers>
+&lt;button class="registered"&gt;
+  Background Registered
+&lt;/button&gt;
+        </code>
+      </pre>
+      <pre>
+        <code class="hljs scss" data-trim data-line-numbers>
+button.registered {
+  --coffee-color: #202020;
+  --coffee-background-color: #c0ffee;
+  
+  color: var(--coffee-color);
+  background-color: var(--coffee-background-color);
+  
+  // this will work
+  transition: --coffee-color 1s ease-in-out,
+    --coffee-background-color 1s ease-in-out;
+
+  &:hover, &:focus {
+    --coffee-color: #c0ffee;
+    --coffee-background-color: #b4d455;
+  }
+}
+        </code>
+      </pre>
+    </right>
+  </comparison>
 </section>

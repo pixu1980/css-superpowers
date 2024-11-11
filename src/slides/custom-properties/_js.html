@@ -1,14 +1,39 @@
 <section>
-  <section>
-    <h4>Javascript interaction</h4>
-    <small>
-      <p>Common js "CRUD" operations with CSS custom properties<br /></p>
-    </small>
-  </section>
+  <h4>Javascript interaction</h4>
+  <small>
+    <p>Common js "CRUD" operations with CSS custom properties<br /></p>
+  </small>
+</section>
 
-  <section>
-    <p>Reading a variable from an element</p>
-    <pre>
+<section>
+  <h4>Writing a variable to an element (<mark>C</mark>R<mark>U</mark>D)</h4>
+  <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const button = document.querySelector('button');
+
+// sets the "--primary-color" value
+// to the element's CSSStyleDeclaration
+button.style.setProperty('--primary-color', '#e74c3c');
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h4>Writing a variable to :root (<mark>C</mark>R<mark>U</mark>D)</h4>
+  <pre>
+    <code class="hljs javascript" data-trim data-line-numbers>
+const root = document.documentElement;
+
+// sets the "--primary-color" value 
+// to the root element's CSSStyleDeclaration
+root.style.setProperty('--primary-color', '#e74c3c');
+    </code>
+  </pre>
+</section>
+
+<section>
+  <p>Reading a variable from an element (C<mark>R</mark>UD)</p>
+  <pre>
     <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
@@ -27,11 +52,11 @@ button.style.getPropertyValue('--primary-color');
 getComputedStyle(button).getPropertyValue('--primary-color');
     </code>
   </pre>
-  </section>
+</section>
 
-  <section>
-    <p>Reading a variable from :root</p>
-    <pre>
+<section>
+  <p>Reading a variable from :root (C<mark>R</mark>UD)</p>
+  <pre>
     <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
@@ -42,37 +67,11 @@ const root = document.documentElement;
 getComputedStyle(root).getPropertyValue('--primary-color');
     </code>
   </pre>
-  </section>
+</section>
 
-  <section>
-    <h4>Writing a variable to an element</h4>
-    <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
-const button = document.querySelector('button');
-
-// sets the "--primary-color" value
-// to the element's CSSStyleDeclaration
-button.style.setProperty('--primary-color', '#e74c3c');
-    </code>
-  </pre>
-  </section>
-
-  <section>
-    <h4>Writing a variable to :root</h4>
-    <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
-const root = document.documentElement;
-
-// sets the "--primary-color" value 
-// to the root element's CSSStyleDeclaration
-root.style.setProperty('--primary-color', '#e74c3c');
-    </code>
-  </pre>
-  </section>
-
-  <section>
-    <h4>Deleting a variable from an element</h4>
-    <pre>
+<section>
+  <h4>Deleting a variable from an element (CRU<mark>D</mark>)</h4>
+  <pre>
     <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
@@ -81,11 +80,11 @@ const button = document.querySelector('button');
 button.style.removeProperty('--primary-color');
     </code>
   </pre>
-  </section>
+</section>
 
-  <section>
-    <h4>Deleting a variable from :root</h4>
-    <pre>
+<section>
+  <h4>Deleting a variable from :root (CRU<mark>D</mark>)</h4>
+  <pre>
     <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
@@ -94,5 +93,4 @@ const root = document.documentElement;
 root.style.removeProperty('--primary-color');
     </code>
   </pre>
-  </section>
 </section>
