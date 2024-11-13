@@ -98,7 +98,7 @@ const updateThemeAccent = (accent) => {
   document.querySelector('aside style').innerHTML = accent;
 
   requestAnimationFrame(() => {
-    rootComputedStyle = getComputedStyle(document.documentElement);
+    const rootComputedStyle = getComputedStyle(document.documentElement);
 
     document.querySelector('input[type="color"]').value = rootComputedStyle.getPropertyValue('--pix--primary');
   });
