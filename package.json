@@ -9,7 +9,7 @@
     "prestart": "yarn clear",
     "start": "parcel src/index.html -p 6001",
     "prebuild": "yarn clear",
-    "build": "parcel build src/index.html --public-url ./ && git add . && git commit --amend --no-edit && git push -f",
+    "build": "parcel build src/index.html --no-optimize --public-url ./ && git add . && git commit --amend --no-edit && git push -f",
     "rel:push": "git push && git push --tags",
     "rel:major": "yarn build && yarn version --major && yarn rel:push",
     "rel:minor": "yarn build && yarn version --minor && yarn rel:push",
