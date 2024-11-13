@@ -100,10 +100,10 @@ const $6820ce0a6d1281bf$var$updateThemeAccent = (accent)=>{
         document.querySelector('input[type="color"]').value = rootComputedStyle.getPropertyValue('--pix--primary');
     });
 };
-$6820ce0a6d1281bf$var$updateThemeAccent($6820ce0a6d1281bf$var$accents.default);
 document.querySelector('.dropdown.accent').addEventListener('change', (e)=>{
     $6820ce0a6d1281bf$var$updateThemeAccent($6820ce0a6d1281bf$var$accents[e.target.value]);
 });
+$6820ce0a6d1281bf$var$updateThemeAccent($6820ce0a6d1281bf$var$accents.default);
 
 
-//# sourceMappingURL=pix.0212be1d.js.map
+//# sourceMappingURL=pix.d48594fe.js.map

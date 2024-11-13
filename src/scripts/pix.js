@@ -104,8 +104,9 @@ const updateThemeAccent = (accent) => {
   });
 }
 
-updateThemeAccent(accents.default);
-
 document.querySelector('.dropdown.accent').addEventListener('change', (e) => {
   updateThemeAccent(accents[e.target.value]);
 });
+
+updateThemeAccent(accents.default);
+
