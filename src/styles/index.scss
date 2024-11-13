@@ -12,9 +12,6 @@
 @import 'counter.properties';
 @import 'stop-watch.properties';
 
-// @layer talk, reveal;
-// @layer reveal, talk;
-
 @layer talk {
   @import 'palette';
   @import 'typography';
@@ -29,10 +26,4 @@
   @import 'pixu';
   @import 'unregistered-vs-registered';
   @import 'outro';
-  
-  * {
-    text-rendering: optimizeLegibility;
-    letter-spacing: .1px;
-    -webkit-font-smoothing: subpixel-antialias;
-  }
 }

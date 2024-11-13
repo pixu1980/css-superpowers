@@ -6,14 +6,12 @@
     "clear:cache": "rm -rf .parcel-cache",
     "clear:dist": "rm -rf dist",
     "clear": "yarn clear:dist && yarn clear:cache",
-    "preserve": "yarn clear",
-    "serve": "parcel src/index.html -p 6001",
+    "prestart": "yarn clear",
+    "start": "parcel src/index.html -p 6001",
+    "prestart:pix": "yarn clear",
+    "start:pix": "parcel src/pix/pix.html -p 6002",
     "prebuild": "yarn clear",
     "build": "parcel build src/index.html --public-url ./ && git add . && git commit --amend --no-edit && git push -f",
-    "preexample": "yarn clear",
-    "example": "parcel src/example/example.html -p 6002",
-    "preexample:form": "yarn clear",
-    "example:form": "parcel src/example-form/example-form.html -p 6003",
     "rel:push": "git push && git push --tags",
     "rel:major": "yarn build && yarn version --major && yarn rel:push",
     "rel:minor": "yarn build && yarn version --minor && yarn rel:push",
@@ -23,10 +21,12 @@
     "reveal.js": "5.1.0"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.12.0",
+    "@parcel/transformer-inline-string": "2.13.0",
+    "@parcel/transformer-sass": "2.13.0",
     "lightningcss": "1.28.1",
-    "parcel": "2.12.0",
+    "parcel": "2.13.0",
     "posthtml-include": "2.0.1",
-    "sharp": "^0.31.1"
+    "sharp": "^0.33.5",
+    "svgo": "^3"
   }
 }
