@@ -7,12 +7,14 @@
  * Pico CSS ✨ v2.0.6 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
  */
+import defaultStyle from 'bundle-text:../styles/_accents.default.css';
 import amber from 'bundle-text:../styles/_accents.amber.css';
 import jade from 'bundle-text:../styles/_accents.jade.css';
 import purple from 'bundle-text:../styles/_accents.purple.css';
 import sand from 'bundle-text:../styles/_accents.sand.css';
 
 const accents = {
+  default: defaultStyle,
   amber,
   jade,
   purple,
@@ -92,11 +94,18 @@ const themeSwitcher = {
 // Init
 themeSwitcher.init();
 
-document.querySelector('.dropdown.accent').addEventListener('change', (e) => {
-  if (e.target.value === 'default') {
-    document.querySelector('aside style').innerHTML = '';
-    return;
-  }
+const updateThemeAccent = (accent) => {
+  document.querySelector('aside style').innerHTML = accent;
 
-  document.querySelector('aside style').innerHTML = accents[e.target.value];
+  requestAnimationFrame(() => {
+    rootComputedStyle = getComputedStyle(document.documentElement);
+
+    document.querySelector('input[type="color"]').value = rootComputedStyle.getPropertyValue('--pix--primary');
+  });
+}
+
+updateThemeAccent(accents.default);
+
+document.querySelector('.dropdown.accent').addEventListener('change', (e) => {
+  updateThemeAccent(accents[e.target.value]);
 });
