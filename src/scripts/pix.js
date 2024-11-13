@@ -7,11 +7,11 @@
  * Pico CSS ✨ v2.0.6 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
  */
-import defaultStyle from 'bundle-text:../styles/_accents.default.css';
-import amber from 'bundle-text:../styles/_accents.amber.css';
-import jade from 'bundle-text:../styles/_accents.jade.css';
-import purple from 'bundle-text:../styles/_accents.purple.css';
-import sand from 'bundle-text:../styles/_accents.sand.css';
+import defaultStyle from 'bundle-text:../styles/pix/pix.themes.default.scss';
+import amber from 'bundle-text:../styles/pix/pix.themes.amber.scss';
+import jade from 'bundle-text:../styles/pix/pix.themes.jade.scss';
+import purple from 'bundle-text:../styles/pix/pix.themes.purple.scss';
+import sand from 'bundle-text:../styles/pix/pix.themes.sand.scss';
 
 const accents = {
   default: defaultStyle,

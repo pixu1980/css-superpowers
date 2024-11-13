@@ -10,23 +10,22 @@
 /**
  * Color schemes
  */
-[data-theme='light'],
-:root:not([data-theme='dark']) {
+:is([data-theme='light'], :not([data-theme='dark'])) {
   --pix--background-color: #fff;
   --pix--color: #373c44;
-  --pix--text-selection-color: rgba(0, 166, 110, 0.25);
+  --pix--text-selection-color: rgba(149, 144, 130, 0.25);
   --pix--muted-color: #646b79;
   --pix--muted-border-color: #e7eaf0;
-  --pix--primary: #007a50;
-  --pix--primary-background: #007a50;
+  --pix--primary: #6e6a60;
+  --pix--primary-background: #ccc6b4;
   --pix--primary-border: var(--pix--primary-background);
-  --pix--primary-underline: rgba(0, 122, 80, 0.5);
-  --pix--primary-hover: #005f3d;
-  --pix--primary-hover-background: #006d46;
+  --pix--primary-underline: rgba(110, 106, 96, 0.5);
+  --pix--primary-hover: #55524a;
+  --pix--primary-hover-background: #beb8a7;
   --pix--primary-hover-border: var(--pix--primary-hover-background);
   --pix--primary-hover-underline: var(--pix--primary-hover);
-  --pix--primary-focus: rgba(0, 166, 110, 0.5);
-  --pix--primary-inverse: #fff;
+  --pix--primary-focus: rgba(149, 144, 130, 0.5);
+  --pix--primary-inverse: #000;
   --pix--secondary: #5d6b89;
   --pix--secondary-background: #525f7a;
   --pix--secondary-border: var(--pix--secondary-background);
@@ -89,7 +88,7 @@
   --pix--switch-background-color: #bfc7d9;
   --pix--switch-checked-background-color: var(--pix--primary-background);
   --pix--switch-color: #fff;
-  --pix--switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pix--switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pix--range-border-color: #dfe3eb;
   --pix--range-active-border-color: #bfc7d9;
   --pix--range-thumb-border-color: var(--pix--background-color);
@@ -109,32 +108,27 @@
   --pix--progress-color: var(--pix--primary-background);
   --pix--tooltip-background-color: var(--pix--contrast-background);
   --pix--tooltip-color: var(--pix--contrast-inverse);
+
   color-scheme: light;
-}
-[data-theme='light']
-  input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']),
-:root:not([data-theme='dark'])
-  input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']) {
-  --pix--form-element-focus-color: var(--pix--primary-focus);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :is(:not([data-theme]), [data-theme='dark']) {
     --pix--background-color: #13171f;
     --pix--color: #c2c7d0;
-    --pix--text-selection-color: rgba(0, 180, 120, 0.1875);
+    --pix--text-selection-color: rgba(163, 158, 143, 0.1875);
     --pix--muted-color: #7b8495;
     --pix--muted-border-color: #202632;
-    --pix--primary: #00b478;
-    --pix--primary-background: #007a50;
+    --pix--primary: #a39e8f;
+    --pix--primary-background: #ccc6b4;
     --pix--primary-border: var(--pix--primary-background);
-    --pix--primary-underline: rgba(0, 180, 120, 0.5);
-    --pix--primary-hover: #00cc88;
-    --pix--primary-hover-background: #00895a;
+    --pix--primary-underline: rgba(163, 158, 143, 0.5);
+    --pix--primary-hover: #beb8a7;
+    --pix--primary-hover-background: #dad4c2;
     --pix--primary-hover-border: var(--pix--primary-hover-background);
     --pix--primary-hover-underline: var(--pix--primary-hover);
-    --pix--primary-focus: rgba(0, 180, 120, 0.375);
-    --pix--primary-inverse: #fff;
+    --pix--primary-focus: rgba(163, 158, 143, 0.375);
+    --pix--primary-inverse: #000;
     --pix--secondary: #969eaf;
     --pix--secondary-background: #525f7a;
     --pix--secondary-border: var(--pix--secondary-background);
@@ -197,7 +191,7 @@
     --pix--switch-background-color: #333c4e;
     --pix--switch-checked-background-color: var(--pix--primary-background);
     --pix--switch-color: #fff;
-    --pix--switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --pix--switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
     --pix--range-border-color: #202632;
     --pix--range-active-border-color: #2a3140;
     --pix--range-thumb-border-color: var(--pix--background-color);
@@ -217,29 +211,27 @@
     --pix--progress-color: var(--pix--primary-background);
     --pix--tooltip-background-color: var(--pix--contrast-background);
     --pix--tooltip-color: var(--pix--contrast-inverse);
+
     color-scheme: dark;
   }
-  :root:not([data-theme])
-    input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']) {
-    --pix--form-element-focus-color: var(--pix--primary-focus);
-  }
 }
+
 [data-theme='dark'] {
   --pix--background-color: #13171f;
   --pix--color: #c2c7d0;
-  --pix--text-selection-color: rgba(0, 180, 120, 0.1875);
+  --pix--text-selection-color: rgba(163, 158, 143, 0.1875);
   --pix--muted-color: #7b8495;
   --pix--muted-border-color: #202632;
-  --pix--primary: #00b478;
-  --pix--primary-background: #007a50;
+  --pix--primary: #a39e8f;
+  --pix--primary-background: #ccc6b4;
   --pix--primary-border: var(--pix--primary-background);
-  --pix--primary-underline: rgba(0, 180, 120, 0.5);
-  --pix--primary-hover: #00cc88;
-  --pix--primary-hover-background: #00895a;
+  --pix--primary-underline: rgba(163, 158, 143, 0.5);
+  --pix--primary-hover: #beb8a7;
+  --pix--primary-hover-background: #dad4c2;
   --pix--primary-hover-border: var(--pix--primary-hover-background);
   --pix--primary-hover-underline: var(--pix--primary-hover);
-  --pix--primary-focus: rgba(0, 180, 120, 0.375);
-  --pix--primary-inverse: #fff;
+  --pix--primary-focus: rgba(163, 158, 143, 0.375);
+  --pix--primary-inverse: #000;
   --pix--secondary: #969eaf;
   --pix--secondary-background: #525f7a;
   --pix--secondary-border: var(--pix--secondary-background);
@@ -302,7 +294,7 @@
   --pix--switch-background-color: #333c4e;
   --pix--switch-checked-background-color: var(--pix--primary-background);
   --pix--switch-color: #fff;
-  --pix--switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pix--switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pix--range-border-color: #202632;
   --pix--range-active-border-color: #2a3140;
   --pix--range-thumb-border-color: var(--pix--background-color);
@@ -323,9 +315,4 @@
   --pix--tooltip-background-color: var(--pix--contrast-background);
   --pix--tooltip-color: var(--pix--contrast-inverse);
   color-scheme: dark;
-}
-
-[data-theme='dark']
-  input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']) {
-  --pix--form-element-focus-color: var(--pix--primary-focus);
 }

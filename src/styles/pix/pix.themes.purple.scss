@@ -9,8 +9,7 @@
 /**
  * Color schemes
  */
-[data-theme='light'],
-:root:not([data-theme='dark']) {
+:is([data-theme='light'], :not([data-theme='dark'])) {
   --pix--background-color: #fff;
   --pix--color: #373c44;
   --pix--text-selection-color: rgba(205, 104, 224, 0.25);
@@ -108,17 +107,12 @@
   --pix--progress-color: var(--pix--primary-background);
   --pix--tooltip-background-color: var(--pix--contrast-background);
   --pix--tooltip-color: var(--pix--contrast-inverse);
+  
   color-scheme: light;
-}
-[data-theme='light']
-  input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']),
-:root:not([data-theme='dark'])
-  input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']) {
-  --pix--form-element-focus-color: var(--pix--primary-focus);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :is(:not([data-theme]), [data-theme='dark']) {
     --pix--background-color: #13171f;
     --pix--color: #c2c7d0;
     --pix--text-selection-color: rgba(212, 125, 228, 0.1875);
@@ -216,13 +210,11 @@
     --pix--progress-color: var(--pix--primary-background);
     --pix--tooltip-background-color: var(--pix--contrast-background);
     --pix--tooltip-color: var(--pix--contrast-inverse);
+    
     color-scheme: dark;
   }
-  :root:not([data-theme])
-    input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']) {
-    --pix--form-element-focus-color: var(--pix--primary-focus);
-  }
 }
+
 [data-theme='dark'] {
   --pix--background-color: #13171f;
   --pix--color: #c2c7d0;
@@ -322,8 +314,4 @@
   --pix--tooltip-background-color: var(--pix--contrast-background);
   --pix--tooltip-color: var(--pix--contrast-inverse);
   color-scheme: dark;
-}
-[data-theme='dark']
-  input:is([type='submit'], [type='button'], [type='reset'], [type='checkbox'], [type='radio'], [type='file']) {
-  --pix--form-element-focus-color: var(--pix--primary-focus);
 }

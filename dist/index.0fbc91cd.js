@@ -1,19 +1,643 @@
+// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
 
-function $parcel$interopDefault(a) {
-  return a && a.__esModule ? a.default : a;
+(function (modules, entry, mainEntry, parcelRequireName, globalName) {
+  /* eslint-disable no-undef */
+  var globalObject =
+    typeof globalThis !== 'undefined'
+      ? globalThis
+      : typeof self !== 'undefined'
+      ? self
+      : typeof window !== 'undefined'
+      ? window
+      : typeof global !== 'undefined'
+      ? global
+      : {};
+  /* eslint-enable no-undef */
+
+  // Save the require from previous bundle to this closure if any
+  var previousRequire =
+    typeof globalObject[parcelRequireName] === 'function' &&
+    globalObject[parcelRequireName];
+
+  var cache = previousRequire.cache || {};
+  // Do not use `require` to prevent Webpack from trying to bundle this call
+  var nodeRequire =
+    typeof module !== 'undefined' &&
+    typeof module.require === 'function' &&
+    module.require.bind(module);
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire =
+          typeof globalObject[parcelRequireName] === 'function' &&
+          globalObject[parcelRequireName];
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        // Try the node require function if it exists.
+        if (nodeRequire && typeof name === 'string') {
+          return nodeRequire(name);
+        }
+
+        var err = new Error("Cannot find module '" + name + "'");
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+      localRequire.cache = {};
+
+      var module = (cache[name] = new newRequire.Module(name));
+
+      modules[name][0].call(
+        module.exports,
+        localRequire,
+        module,
+        module.exports,
+        globalObject
+      );
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x) {
+      var res = localRequire.resolve(x);
+      return res === false ? {} : newRequire(res);
+    }
+
+    function resolve(x) {
+      var id = modules[name][1][x];
+      return id != null ? id : x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+  newRequire.register = function (id, exports) {
+    modules[id] = [
+      function (require, module) {
+        module.exports = exports;
+      },
+      {},
+    ];
+  };
+
+  Object.defineProperty(newRequire, 'root', {
+    get: function () {
+      return globalObject[parcelRequireName];
+    },
+  });
+
+  globalObject[parcelRequireName] = newRequire;
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  if (mainEntry) {
+    // Expose entry point to Node, AMD or browser globals
+    // Based on https://github.com/ForbesLindesay/umd/blob/master/template.js
+    var mainExports = newRequire(mainEntry);
+
+    // CommonJS
+    if (typeof exports === 'object' && typeof module !== 'undefined') {
+      module.exports = mainExports;
+
+      // RequireJS
+    } else if (typeof define === 'function' && define.amd) {
+      define(function () {
+        return mainExports;
+      });
+
+      // <script>
+    } else if (globalName) {
+      this[globalName] = mainExports;
+    }
+  }
+})({"5bBwA":[function(require,module,exports,__globalThis) {
+var global = arguments[3];
+var HMR_HOST = null;
+var HMR_PORT = null;
+var HMR_SECURE = false;
+var HMR_ENV_HASH = "d6ea1d42532a7575";
+var HMR_USE_SSE = false;
+module.bundle.HMR_BUNDLE_ID = "6e8a5cd20fbc91cd";
+"use strict";
+/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
+import type {
+  HMRAsset,
+  HMRMessage,
+} from '@parcel/reporter-dev-server/src/HMRServer.js';
+interface ParcelRequire {
+  (string): mixed;
+  cache: {|[string]: ParcelModule|};
+  hotData: {|[string]: mixed|};
+  Module: any;
+  parent: ?ParcelRequire;
+  isParcelRequire: true;
+  modules: {|[string]: [Function, {|[string]: string|}]|};
+  HMR_BUNDLE_ID: string;
+  root: ParcelRequire;
 }
+interface ParcelModule {
+  hot: {|
+    data: mixed,
+    accept(cb: (Function) => void): void,
+    dispose(cb: (mixed) => void): void,
+    // accept(deps: Array<string> | string, cb: (Function) => void): void,
+    // decline(): void,
+    _acceptCallbacks: Array<(Function) => void>,
+    _disposeCallbacks: Array<(mixed) => void>,
+  |};
+}
+interface ExtensionContext {
+  runtime: {|
+    reload(): void,
+    getURL(url: string): string;
+    getManifest(): {manifest_version: number, ...};
+  |};
+}
+declare var module: {bundle: ParcelRequire, ...};
+declare var HMR_HOST: string;
+declare var HMR_PORT: string;
+declare var HMR_ENV_HASH: string;
+declare var HMR_SECURE: boolean;
+declare var HMR_USE_SSE: boolean;
+declare var chrome: ExtensionContext;
+declare var browser: ExtensionContext;
+declare var __parcel__import__: (string) => Promise<void>;
+declare var __parcel__importScripts__: (string) => Promise<void>;
+declare var globalThis: typeof self;
+declare var ServiceWorkerGlobalScope: Object;
+*/ var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+function Module(moduleName) {
+    OldModule.call(this, moduleName);
+    this.hot = {
+        data: module.bundle.hotData[moduleName],
+        _acceptCallbacks: [],
+        _disposeCallbacks: [],
+        accept: function(fn) {
+            this._acceptCallbacks.push(fn || function() {});
+        },
+        dispose: function(fn) {
+            this._disposeCallbacks.push(fn);
+        }
+    };
+    module.bundle.hotData[moduleName] = undefined;
+}
+module.bundle.Module = Module;
+module.bundle.hotData = {};
+var checkedAssets /*: {|[string]: boolean|} */ , assetsToDispose /*: Array<[ParcelRequire, string]> */ , assetsToAccept /*: Array<[ParcelRequire, string]> */ ;
+function getHostname() {
+    return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
+}
+function getPort() {
+    return HMR_PORT || location.port;
+}
+// eslint-disable-next-line no-redeclare
+var parent = module.bundle.parent;
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+    var hostname = getHostname();
+    var port = getPort();
+    var protocol = HMR_SECURE || location.protocol == 'https:' && ![
+        'localhost',
+        '127.0.0.1',
+        '0.0.0.0'
+    ].includes(hostname) ? 'wss' : 'ws';
+    var ws;
+    if (HMR_USE_SSE) ws = new EventSource('/__parcel_hmr');
+    else try {
+        ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
+    } catch (err) {
+        if (err.message) console.error(err.message);
+        ws = {};
+    }
+    // Web extension context
+    var extCtx = typeof browser === 'undefined' ? typeof chrome === 'undefined' ? null : chrome : browser;
+    // Safari doesn't support sourceURL in error stacks.
+    // eval may also be disabled via CSP, so do a quick check.
+    var supportsSourceURL = false;
+    try {
+        (0, eval)('throw new Error("test"); //# sourceURL=test.js');
+    } catch (err) {
+        supportsSourceURL = err.stack.includes('test.js');
+    }
+    // $FlowFixMe
+    ws.onmessage = async function(event /*: {data: string, ...} */ ) {
+        checkedAssets = {} /*: {|[string]: boolean|} */ ;
+        assetsToAccept = [];
+        assetsToDispose = [];
+        var data /*: HMRMessage */  = JSON.parse(event.data);
+        if (data.type === 'reload') fullReload();
+        else if (data.type === 'update') {
+            // Remove error overlay if there is one
+            if (typeof document !== 'undefined') removeErrorOverlay();
+            let assets = data.assets.filter((asset)=>asset.envHash === HMR_ENV_HASH);
+            // Handle HMR Update
+            let handled = assets.every((asset)=>{
+                return asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
+            });
+            if (handled) {
+                console.clear();
+                // Dispatch custom event so other runtimes (e.g React Refresh) are aware.
+                if (typeof window !== 'undefined' && typeof CustomEvent !== 'undefined') window.dispatchEvent(new CustomEvent('parcelhmraccept'));
+                await hmrApplyUpdates(assets);
+                // Dispose all old assets.
+                let processedAssets = {} /*: {|[string]: boolean|} */ ;
+                for(let i = 0; i < assetsToDispose.length; i++){
+                    let id = assetsToDispose[i][1];
+                    if (!processedAssets[id]) {
+                        hmrDispose(assetsToDispose[i][0], id);
+                        processedAssets[id] = true;
+                    }
+                }
+                // Run accept callbacks. This will also re-execute other disposed assets in topological order.
+                processedAssets = {};
+                for(let i = 0; i < assetsToAccept.length; i++){
+                    let id = assetsToAccept[i][1];
+                    if (!processedAssets[id]) {
+                        hmrAccept(assetsToAccept[i][0], id);
+                        processedAssets[id] = true;
+                    }
+                }
+            } else fullReload();
+        }
+        if (data.type === 'error') {
+            // Log parcel errors to console
+            for (let ansiDiagnostic of data.diagnostics.ansi){
+                let stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
+                console.error("\uD83D\uDEA8 [parcel]: " + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
+            }
+            if (typeof document !== 'undefined') {
+                // Render the fancy html overlay
+                removeErrorOverlay();
+                var overlay = createErrorOverlay(data.diagnostics.html);
+                // $FlowFixMe
+                document.body.appendChild(overlay);
+            }
+        }
+    };
+    if (ws instanceof WebSocket) {
+        ws.onerror = function(e) {
+            if (e.message) console.error(e.message);
+        };
+        ws.onclose = function() {
+            console.warn("[parcel] \uD83D\uDEA8 Connection to the HMR server was lost");
+        };
+    }
+}
+function removeErrorOverlay() {
+    var overlay = document.getElementById(OVERLAY_ID);
+    if (overlay) {
+        overlay.remove();
+        console.log("[parcel] \u2728 Error resolved");
+    }
+}
+function createErrorOverlay(diagnostics) {
+    var overlay = document.createElement('div');
+    overlay.id = OVERLAY_ID;
+    let errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
+    for (let diagnostic of diagnostics){
+        let stack = diagnostic.frames.length ? diagnostic.frames.reduce((p, frame)=>{
+            return `${p}
+<a href="/__parcel_launch_editor?file=${encodeURIComponent(frame.location)}" style="text-decoration: underline; color: #888" onclick="fetch(this.href); return false">${frame.location}</a>
+${frame.code}`;
+        }, '') : diagnostic.stack;
+        errorHTML += `
+      <div>
+        <div style="font-size: 18px; font-weight: bold; margin-top: 20px;">
+          \u{1F6A8} ${diagnostic.message}
+        </div>
+        <pre>${stack}</pre>
+        <div>
+          ${diagnostic.hints.map((hint)=>"<div>\uD83D\uDCA1 " + hint + '</div>').join('')}
+        </div>
+        ${diagnostic.documentation ? `<div>\u{1F4DD} <a style="color: violet" href="${diagnostic.documentation}" target="_blank">Learn more</a></div>` : ''}
+      </div>
+    `;
+    }
+    errorHTML += '</div>';
+    overlay.innerHTML = errorHTML;
+    return overlay;
+}
+function fullReload() {
+    if ('reload' in location) location.reload();
+    else if (extCtx && extCtx.runtime && extCtx.runtime.reload) extCtx.runtime.reload();
+}
+function getParents(bundle, id) /*: Array<[ParcelRequire, string]> */ {
+    var modules = bundle.modules;
+    if (!modules) return [];
+    var parents = [];
+    var k, d, dep;
+    for(k in modules)for(d in modules[k][1]){
+        dep = modules[k][1][d];
+        if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) parents.push([
+            bundle,
+            k
+        ]);
+    }
+    if (bundle.parent) parents = parents.concat(getParents(bundle.parent, id));
+    return parents;
+}
+function updateLink(link) {
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var newLink = link.cloneNode();
+    newLink.onload = function() {
+        if (link.parentNode !== null) // $FlowFixMe
+        link.parentNode.removeChild(link);
+    };
+    newLink.setAttribute('href', // $FlowFixMe
+    href.split('?')[0] + '?' + Date.now());
+    // $FlowFixMe
+    link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+    if (cssTimeout) return;
+    cssTimeout = setTimeout(function() {
+        var links = document.querySelectorAll('link[rel="stylesheet"]');
+        for(var i = 0; i < links.length; i++){
+            // $FlowFixMe[incompatible-type]
+            var href /*: string */  = links[i].getAttribute('href');
+            var hostname = getHostname();
+            var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
+            var absolute = /^https?:\/\//i.test(href) && href.indexOf(location.origin) !== 0 && !servedFromHMRServer;
+            if (!absolute) updateLink(links[i]);
+        }
+        cssTimeout = null;
+    }, 50);
+}
+function hmrDownload(asset) {
+    if (asset.type === 'js') {
+        if (typeof document !== 'undefined') {
+            let script = document.createElement('script');
+            script.src = asset.url + '?t=' + Date.now();
+            if (asset.outputFormat === 'esmodule') script.type = 'module';
+            return new Promise((resolve, reject)=>{
+                var _document$head;
+                script.onload = ()=>resolve(script);
+                script.onerror = reject;
+                (_document$head = document.head) === null || _document$head === void 0 || _document$head.appendChild(script);
+            });
+        } else if (typeof importScripts === 'function') {
+            // Worker scripts
+            if (asset.outputFormat === 'esmodule') return import(asset.url + '?t=' + Date.now());
+            else return new Promise((resolve, reject)=>{
+                try {
+                    importScripts(asset.url + '?t=' + Date.now());
+                    resolve();
+                } catch (err) {
+                    reject(err);
+                }
+            });
+        }
+    }
+}
+async function hmrApplyUpdates(assets) {
+    global.parcelHotUpdate = Object.create(null);
+    let scriptsToRemove;
+    try {
+        // If sourceURL comments aren't supported in eval, we need to load
+        // the update from the dev server over HTTP so that stack traces
+        // are correct in errors/logs. This is much slower than eval, so
+        // we only do it if needed (currently just Safari).
+        // https://bugs.webkit.org/show_bug.cgi?id=137297
+        // This path is also taken if a CSP disallows eval.
+        if (!supportsSourceURL) {
+            let promises = assets.map((asset)=>{
+                var _hmrDownload;
+                return (_hmrDownload = hmrDownload(asset)) === null || _hmrDownload === void 0 ? void 0 : _hmrDownload.catch((err)=>{
+                    // Web extension fix
+                    if (extCtx && extCtx.runtime && extCtx.runtime.getManifest().manifest_version == 3 && typeof ServiceWorkerGlobalScope != 'undefined' && global instanceof ServiceWorkerGlobalScope) {
+                        extCtx.runtime.reload();
+                        return;
+                    }
+                    throw err;
+                });
+            });
+            scriptsToRemove = await Promise.all(promises);
+        }
+        assets.forEach(function(asset) {
+            hmrApply(module.bundle.root, asset);
+        });
+    } finally{
+        delete global.parcelHotUpdate;
+        if (scriptsToRemove) scriptsToRemove.forEach((script)=>{
+            if (script) {
+                var _document$head2;
+                (_document$head2 = document.head) === null || _document$head2 === void 0 || _document$head2.removeChild(script);
+            }
+        });
+    }
+}
+function hmrApply(bundle /*: ParcelRequire */ , asset /*:  HMRAsset */ ) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (asset.type === 'css') reloadCSS();
+    else if (asset.type === 'js') {
+        let deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
+        if (deps) {
+            if (modules[asset.id]) {
+                // Remove dependencies that are removed and will become orphaned.
+                // This is necessary so that if the asset is added back again, the cache is gone, and we prevent a full page reload.
+                let oldDeps = modules[asset.id][1];
+                for(let dep in oldDeps)if (!deps[dep] || deps[dep] !== oldDeps[dep]) {
+                    let id = oldDeps[dep];
+                    let parents = getParents(module.bundle.root, id);
+                    if (parents.length === 1) hmrDelete(module.bundle.root, id);
+                }
+            }
+            if (supportsSourceURL) // Global eval. We would use `new Function` here but browser
+            // support for source maps is better with eval.
+            (0, eval)(asset.output);
+            // $FlowFixMe
+            let fn = global.parcelHotUpdate[asset.id];
+            modules[asset.id] = [
+                fn,
+                deps
+            ];
+        } else if (bundle.parent) hmrApply(bundle.parent, asset);
+    }
+}
+function hmrDelete(bundle, id) {
+    let modules = bundle.modules;
+    if (!modules) return;
+    if (modules[id]) {
+        // Collect dependencies that will become orphaned when this module is deleted.
+        let deps = modules[id][1];
+        let orphans = [];
+        for(let dep in deps){
+            let parents = getParents(module.bundle.root, deps[dep]);
+            if (parents.length === 1) orphans.push(deps[dep]);
+        }
+        // Delete the module. This must be done before deleting dependencies in case of circular dependencies.
+        delete modules[id];
+        delete bundle.cache[id];
+        // Now delete the orphans.
+        orphans.forEach((id)=>{
+            hmrDelete(module.bundle.root, id);
+        });
+    } else if (bundle.parent) hmrDelete(bundle.parent, id);
+}
+function hmrAcceptCheck(bundle /*: ParcelRequire */ , id /*: string */ , depsByBundle /*: ?{ [string]: { [string]: string } }*/ ) {
+    if (hmrAcceptCheckOne(bundle, id, depsByBundle)) return true;
+    // Traverse parents breadth first. All possible ancestries must accept the HMR update, or we'll reload.
+    let parents = getParents(module.bundle.root, id);
+    let accepted = false;
+    while(parents.length > 0){
+        let v = parents.shift();
+        let a = hmrAcceptCheckOne(v[0], v[1], null);
+        if (a) // If this parent accepts, stop traversing upward, but still consider siblings.
+        accepted = true;
+        else {
+            // Otherwise, queue the parents in the next level upward.
+            let p = getParents(module.bundle.root, v[1]);
+            if (p.length === 0) {
+                // If there are no parents, then we've reached an entry without accepting. Reload.
+                accepted = false;
+                break;
+            }
+            parents.push(...p);
+        }
+    }
+    return accepted;
+}
+function hmrAcceptCheckOne(bundle /*: ParcelRequire */ , id /*: string */ , depsByBundle /*: ?{ [string]: { [string]: string } }*/ ) {
+    var modules = bundle.modules;
+    if (!modules) return;
+    if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
+        // If we reached the root bundle without finding where the asset should go,
+        // there's nothing to do. Mark as "accepted" so we don't reload the page.
+        if (!bundle.parent) return true;
+        return hmrAcceptCheck(bundle.parent, id, depsByBundle);
+    }
+    if (checkedAssets[id]) return true;
+    checkedAssets[id] = true;
+    var cached = bundle.cache[id];
+    assetsToDispose.push([
+        bundle,
+        id
+    ]);
+    if (!cached || cached.hot && cached.hot._acceptCallbacks.length) {
+        assetsToAccept.push([
+            bundle,
+            id
+        ]);
+        return true;
+    }
+}
+function hmrDispose(bundle /*: ParcelRequire */ , id /*: string */ ) {
+    var cached = bundle.cache[id];
+    bundle.hotData[id] = {};
+    if (cached && cached.hot) cached.hot.data = bundle.hotData[id];
+    if (cached && cached.hot && cached.hot._disposeCallbacks.length) cached.hot._disposeCallbacks.forEach(function(cb) {
+        cb(bundle.hotData[id]);
+    });
+    delete bundle.cache[id];
+}
+function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
+    // Execute the module.
+    bundle(id);
+    // Run the accept callbacks in the new version of the module.
+    var cached = bundle.cache[id];
+    if (cached && cached.hot && cached.hot._acceptCallbacks.length) cached.hot._acceptCallbacks.forEach(function(cb) {
+        var assetsToAlsoAccept = cb(function() {
+            return getParents(module.bundle.root, id);
+        });
+        if (assetsToAlsoAccept && assetsToAccept.length) {
+            assetsToAlsoAccept.forEach(function(a) {
+                hmrDispose(a[0], a[1]);
+            });
+            // $FlowFixMe[method-unbinding]
+            assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
+        }
+    });
+}
+
+},{}],"fFaKF":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _revealJs = require("reveal.js");
+var _revealJsDefault = parcelHelpers.interopDefault(_revealJs);
+var _notes = require("reveal.js/plugin/notes/notes");
+var _notesDefault = parcelHelpers.interopDefault(_notes);
+var _highlight = require("reveal.js/plugin/highlight/highlight");
+var _highlightDefault = parcelHelpers.interopDefault(_highlight);
+// reveal.js initialization
+const slides = (0, _revealJsDefault.default)({
+    plugins: [
+        (0, _notesDefault.default),
+        (0, _highlightDefault.default)
+    ],
+    // highlight.js options
+    highlight: {
+        highlightOnLoad: true,
+        tabReplace: '  '
+    },
+    ...window.location.href.includes('?print-pdf') && {
+        pdfSeparateFragments: false
+    },
+    hash: true,
+    // Flags if we should monitor the hash and change slides accordingly
+    respondToHashChanges: true,
+    // Push each slide change to the browser history.  Implies `hash: true`
+    history: true
+});
+// keyboard interaction configuration
+slides.configure({
+    keyboard: {
+        8: 'prev',
+        // 27: null,
+        78: null
+    }
+});
+slides.initialize();
+
+},{"reveal.js":"1B4nY","reveal.js/plugin/notes/notes":"bFmVD","reveal.js/plugin/highlight/highlight":"jDyx9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1B4nY":[function(require,module,exports,__globalThis) {
 /*!
 * reveal.js 5.1.0
 * https://revealjs.com
 * MIT licensed
 *
 * Copyright (C) 2011-2024 Hakim El Hattab, https://hakim.se
-*/ const $ef6d0cb1bf5eee6a$var$e = (e, t)=>{
+*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>X);
+const e = (e, t)=>{
     for(let i in t)e[i] = t[i];
     return e;
-}, $ef6d0cb1bf5eee6a$var$t = (e, t)=>Array.from(e.querySelectorAll(t)), $ef6d0cb1bf5eee6a$var$i = (e, t, i)=>{
+}, t = (e, t)=>Array.from(e.querySelectorAll(t)), i = (e, t, i)=>{
     i ? e.classList.add(t) : e.classList.remove(t);
-}, $ef6d0cb1bf5eee6a$var$s = (e)=>{
+}, s = (e)=>{
     if ("string" == typeof e) {
         if ("null" === e) return null;
         if ("true" === e) return !0;
@@ -21,42 +645,42 @@ function $parcel$interopDefault(a) {
         if (e.match(/^-?[\d\.]+$/)) return parseFloat(e);
     }
     return e;
-}, $ef6d0cb1bf5eee6a$var$a = (e, t)=>{
+}, a = (e, t)=>{
     e.style.transform = t;
-}, $ef6d0cb1bf5eee6a$var$n = (e, t)=>{
+}, n = (e, t)=>{
     let i = e.matches || e.matchesSelector || e.msMatchesSelector;
     return !(!i || !i.call(e, t));
-}, $ef6d0cb1bf5eee6a$var$r = (e, t)=>{
+}, r = (e, t)=>{
     if ("function" == typeof e.closest) return e.closest(t);
     for(; e;){
-        if ($ef6d0cb1bf5eee6a$var$n(e, t)) return e;
+        if (n(e, t)) return e;
         e = e.parentNode;
     }
     return null;
-}, $ef6d0cb1bf5eee6a$var$o = (e)=>{
+}, o = (e)=>{
     let t = (e = e || document.documentElement).requestFullscreen || e.webkitRequestFullscreen || e.webkitRequestFullScreen || e.mozRequestFullScreen || e.msRequestFullscreen;
     t && t.apply(e);
-}, $ef6d0cb1bf5eee6a$var$l = (e)=>{
+}, l = (e)=>{
     let t = document.createElement("style");
     return t.type = "text/css", e && e.length > 0 && (t.styleSheet ? t.styleSheet.cssText = e : t.appendChild(document.createTextNode(e))), document.head.appendChild(t), t;
-}, $ef6d0cb1bf5eee6a$var$d = ()=>{
+}, d = ()=>{
     let e = {};
     location.search.replace(/[A-Z0-9]+?=([\w\.%-]*)/gi, (t)=>{
         e[t.split("=").shift()] = t.split("=").pop();
     });
     for(let t in e){
         let i = e[t];
-        e[t] = $ef6d0cb1bf5eee6a$var$s(unescape(i));
+        e[t] = s(unescape(i));
     }
     return void 0 !== e.dependencies && delete e.dependencies, e;
-}, $ef6d0cb1bf5eee6a$var$c = {
+}, c = {
     mp4: "video/mp4",
     m4a: "video/mp4",
     ogv: "video/ogg",
     mpeg: "video/mpeg",
     webm: "video/webm"
-}, $ef6d0cb1bf5eee6a$var$h = navigator.userAgent, $ef6d0cb1bf5eee6a$var$u = /(iphone|ipod|ipad|android)/gi.test($ef6d0cb1bf5eee6a$var$h) || "MacIntel" === navigator.platform && navigator.maxTouchPoints > 1, $ef6d0cb1bf5eee6a$var$g = /android/gi.test($ef6d0cb1bf5eee6a$var$h);
-var $ef6d0cb1bf5eee6a$var$p = function(e) {
+}, h = navigator.userAgent, u = /(iphone|ipod|ipad|android)/gi.test(h) || "MacIntel" === navigator.platform && navigator.maxTouchPoints > 1, g = /android/gi.test(h);
+var p = function(e) {
     if (e) {
         var t = function(e) {
             return [].slice.call(e);
@@ -177,7 +801,7 @@ var $ef6d0cb1bf5eee6a$var$p = function(e) {
         ], i)[0];
     }
 }("undefined" == typeof window ? null : window);
-class $ef6d0cb1bf5eee6a$var$v {
+class v {
     constructor(e){
         this.Reveal = e, this.startEmbeddedIframe = this.startEmbeddedIframe.bind(this);
     }
@@ -187,13 +811,13 @@ class $ef6d0cb1bf5eee6a$var$v {
         return "boolean" != typeof t && (t = e.hasAttribute("data-preload")), t;
     }
     load(e, i = {}) {
-        e.style.display = this.Reveal.getConfig().display, $ef6d0cb1bf5eee6a$var$t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
+        e.style.display = this.Reveal.getConfig().display, t(e, "img[data-src], video[data-src], audio[data-src], iframe[data-src]").forEach((e)=>{
             ("IFRAME" !== e.tagName || this.shouldPreload(e)) && (e.setAttribute("src", e.getAttribute("data-src")), e.setAttribute("data-lazy-loaded", ""), e.removeAttribute("data-src"));
-        }), $ef6d0cb1bf5eee6a$var$t(e, "video, audio").forEach((e)=>{
+        }), t(e, "video, audio").forEach((e)=>{
             let i = 0;
-            $ef6d0cb1bf5eee6a$var$t(e, "source[data-src]").forEach((e)=>{
+            t(e, "source[data-src]").forEach((e)=>{
                 e.setAttribute("src", e.getAttribute("data-src")), e.removeAttribute("data-src"), e.setAttribute("data-lazy-loaded", ""), i += 1;
-            }), $ef6d0cb1bf5eee6a$var$u && "VIDEO" === e.tagName && e.setAttribute("playsinline", ""), i > 0 && e.load();
+            }), u && "VIDEO" === e.tagName && e.setAttribute("playsinline", ""), i > 0 && e.load();
         });
         let s = e.slideBackgroundElement;
         if (s) {
@@ -205,10 +829,10 @@ class $ef6d0cb1bf5eee6a$var$v {
                 if (n) /^data:/.test(n.trim()) ? t.style.backgroundImage = `url(${n.trim()})` : t.style.backgroundImage = n.split(",").map((e)=>`url(${((e = "")=>encodeURI(e).replace(/%5B/g, "[").replace(/%5D/g, "]").replace(/[!'()*]/g, (e)=>`%${e.charCodeAt(0).toString(16).toUpperCase()}`))(decodeURI(e.trim()))})`).join(",");
                 else if (r && !this.Reveal.isSpeakerNotes()) {
                     let e = document.createElement("video");
-                    o && e.setAttribute("loop", ""), l && (e.muted = !0), $ef6d0cb1bf5eee6a$var$u && (e.muted = !0, e.setAttribute("playsinline", "")), r.split(",").forEach((t)=>{
+                    o && e.setAttribute("loop", ""), l && (e.muted = !0), u && (e.muted = !0, e.setAttribute("playsinline", "")), r.split(",").forEach((t)=>{
                         const i = document.createElement("source");
                         i.setAttribute("src", t);
-                        let s = ((e = "")=>$ef6d0cb1bf5eee6a$var$c[e.split(".").pop()])(t);
+                        let s = ((e = "")=>c[e.split(".").pop()])(t);
                         s && i.setAttribute("type", s), e.appendChild(i);
                     }), t.appendChild(e);
                 } else if (a && !0 !== i.excludeIframes) {
@@ -223,7 +847,7 @@ class $ef6d0cb1bf5eee6a$var$v {
     }
     layout(e) {
         Array.from(e.querySelectorAll(".r-fit-text")).forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$p(e, {
+            p(e, {
                 minSize: 24,
                 maxSize: .8 * this.Reveal.getConfig().height,
                 observeMutations: !1,
@@ -234,17 +858,17 @@ class $ef6d0cb1bf5eee6a$var$v {
     unload(e) {
         e.style.display = "none";
         let i = this.Reveal.getSlideBackground(e);
-        i && (i.style.display = "none", $ef6d0cb1bf5eee6a$var$t(i, "iframe[src]").forEach((e)=>{
+        i && (i.style.display = "none", t(i, "iframe[src]").forEach((e)=>{
             e.removeAttribute("src");
-        })), $ef6d0cb1bf5eee6a$var$t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
+        })), t(e, "video[data-lazy-loaded][src], audio[data-lazy-loaded][src], iframe[data-lazy-loaded][src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
-        }), $ef6d0cb1bf5eee6a$var$t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
+        }), t(e, "video[data-lazy-loaded] source[src], audio source[src]").forEach((e)=>{
             e.setAttribute("data-src", e.getAttribute("src")), e.removeAttribute("src");
         });
     }
     formatEmbeddedContent() {
         let e = (e, i, s)=>{
-            $ef6d0cb1bf5eee6a$var$t(this.Reveal.getSlidesElement(), "iframe[" + e + '*="' + i + '"]').forEach((t)=>{
+            t(this.Reveal.getSlidesElement(), "iframe[" + e + '*="' + i + '"]').forEach((t)=>{
                 let i = t.getAttribute(e);
                 i && -1 === i.indexOf(s) && t.setAttribute(e, i + (/\?/.test(i) ? "&" : "?") + s);
             });
@@ -252,16 +876,16 @@ class $ef6d0cb1bf5eee6a$var$v {
         e("src", "youtube.com/embed/", "enablejsapi=1"), e("data-src", "youtube.com/embed/", "enablejsapi=1"), e("src", "player.vimeo.com/", "api=1"), e("data-src", "player.vimeo.com/", "api=1");
     }
     startEmbeddedContent(e) {
-        e && !this.Reveal.isSpeakerNotes() && ($ef6d0cb1bf5eee6a$var$t(e, 'img[src$=".gif"]').forEach((e)=>{
+        e && !this.Reveal.isSpeakerNotes() && (t(e, 'img[src$=".gif"]').forEach((e)=>{
             e.setAttribute("src", e.getAttribute("src"));
-        }), $ef6d0cb1bf5eee6a$var$t(e, "video, audio").forEach((e)=>{
-            if ($ef6d0cb1bf5eee6a$var$r(e, ".fragment") && !$ef6d0cb1bf5eee6a$var$r(e, ".fragment.visible")) return;
+        }), t(e, "video, audio").forEach((e)=>{
+            if (r(e, ".fragment") && !r(e, ".fragment.visible")) return;
             let t = this.Reveal.getConfig().autoPlayMedia;
-            if ("boolean" != typeof t && (t = e.hasAttribute("data-autoplay") || !!$ef6d0cb1bf5eee6a$var$r(e, ".slide-background")), t && "function" == typeof e.play) {
+            if ("boolean" != typeof t && (t = e.hasAttribute("data-autoplay") || !!r(e, ".slide-background")), t && "function" == typeof e.play) {
                 if (e.readyState > 1) this.startEmbeddedMedia({
                     target: e
                 });
-                else if ($ef6d0cb1bf5eee6a$var$u) {
+                else if (u) {
                     let t = e.play();
                     t && "function" == typeof t.catch && !1 === e.controls && t.catch(()=>{
                         e.controls = !0, e.addEventListener("play", ()=>{
@@ -270,46 +894,46 @@ class $ef6d0cb1bf5eee6a$var$v {
                     });
                 } else e.removeEventListener("loadeddata", this.startEmbeddedMedia), e.addEventListener("loadeddata", this.startEmbeddedMedia);
             }
-        }), $ef6d0cb1bf5eee6a$var$t(e, "iframe[src]").forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$r(e, ".fragment") && !$ef6d0cb1bf5eee6a$var$r(e, ".fragment.visible") || this.startEmbeddedIframe({
+        }), t(e, "iframe[src]").forEach((e)=>{
+            r(e, ".fragment") && !r(e, ".fragment.visible") || this.startEmbeddedIframe({
                 target: e
             });
-        }), $ef6d0cb1bf5eee6a$var$t(e, "iframe[data-src]").forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$r(e, ".fragment") && !$ef6d0cb1bf5eee6a$var$r(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
+        }), t(e, "iframe[data-src]").forEach((e)=>{
+            r(e, ".fragment") && !r(e, ".fragment.visible") || e.getAttribute("src") !== e.getAttribute("data-src") && (e.removeEventListener("load", this.startEmbeddedIframe), e.addEventListener("load", this.startEmbeddedIframe), e.setAttribute("src", e.getAttribute("data-src")));
         }));
     }
     startEmbeddedMedia(e) {
-        let t = !!$ef6d0cb1bf5eee6a$var$r(e.target, "html"), i = !!$ef6d0cb1bf5eee6a$var$r(e.target, ".present");
+        let t = !!r(e.target, "html"), i = !!r(e.target, ".present");
         t && i && (e.target.paused || e.target.ended) && (e.target.currentTime = 0, e.target.play()), e.target.removeEventListener("loadeddata", this.startEmbeddedMedia);
     }
     startEmbeddedIframe(e) {
         let t = e.target;
         if (t && t.contentWindow) {
-            let i = !!$ef6d0cb1bf5eee6a$var$r(e.target, "html"), s = !!$ef6d0cb1bf5eee6a$var$r(e.target, ".present");
+            let i = !!r(e.target, "html"), s = !!r(e.target, ".present");
             if (i && s) {
                 let e = this.Reveal.getConfig().autoPlayMedia;
-                "boolean" != typeof e && (e = t.hasAttribute("data-autoplay") || !!$ef6d0cb1bf5eee6a$var$r(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"method":"play"}', "*") : t.contentWindow.postMessage("slide:start", "*");
+                "boolean" != typeof e && (e = t.hasAttribute("data-autoplay") || !!r(t, ".slide-background")), /youtube\.com\/embed\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', "*") : /player\.vimeo\.com\//.test(t.getAttribute("src")) && e ? t.contentWindow.postMessage('{"method":"play"}', "*") : t.contentWindow.postMessage("slide:start", "*");
             }
         }
     }
     stopEmbeddedContent(i, s = {}) {
-        s = $ef6d0cb1bf5eee6a$var$e({
+        s = e({
             unloadIframes: !0
-        }, s), i && i.parentNode && ($ef6d0cb1bf5eee6a$var$t(i, "video, audio").forEach((e)=>{
+        }, s), i && i.parentNode && (t(i, "video, audio").forEach((e)=>{
             e.hasAttribute("data-ignore") || "function" != typeof e.pause || (e.setAttribute("data-paused-by-reveal", ""), e.pause());
-        }), $ef6d0cb1bf5eee6a$var$t(i, "iframe").forEach((e)=>{
+        }), t(i, "iframe").forEach((e)=>{
             e.contentWindow && e.contentWindow.postMessage("slide:stop", "*"), e.removeEventListener("load", this.startEmbeddedIframe);
-        }), $ef6d0cb1bf5eee6a$var$t(i, 'iframe[src*="youtube.com/embed/"]').forEach((e)=>{
+        }), t(i, 'iframe[src*="youtube.com/embed/"]').forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && "function" == typeof e.contentWindow.postMessage && e.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', "*");
-        }), $ef6d0cb1bf5eee6a$var$t(i, 'iframe[src*="player.vimeo.com/"]').forEach((e)=>{
+        }), t(i, 'iframe[src*="player.vimeo.com/"]').forEach((e)=>{
             !e.hasAttribute("data-ignore") && e.contentWindow && "function" == typeof e.contentWindow.postMessage && e.contentWindow.postMessage('{"method":"pause"}', "*");
-        }), !0 === s.unloadIframes && $ef6d0cb1bf5eee6a$var$t(i, "iframe[data-src]").forEach((e)=>{
+        }), !0 === s.unloadIframes && t(i, "iframe[data-src]").forEach((e)=>{
             e.setAttribute("src", "about:blank"), e.removeAttribute("src");
         }));
     }
 }
-const $ef6d0cb1bf5eee6a$var$m = ".slides section", $ef6d0cb1bf5eee6a$var$f = ".slides>section", $ef6d0cb1bf5eee6a$var$y = ".slides>section.present>section", $ef6d0cb1bf5eee6a$var$b = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview/, $ef6d0cb1bf5eee6a$var$w = /fade-(down|up|right|left|out|in-then-out|in-then-semi-out)|semi-fade-out|current-visible|shrink|grow/;
-class $ef6d0cb1bf5eee6a$var$E {
+const m = ".slides section", f = ".slides>section", y = ".slides>section.present>section", b = /registerPlugin|registerKeyboardShortcut|addKeyBinding|addEventListener|showPreview/, w = /fade-(down|up|right|left|out|in-then-out|in-then-semi-out)|semi-fade-out|current-visible|shrink|grow/;
+class E {
     constructor(e){
         this.Reveal = e;
     }
@@ -353,7 +977,7 @@ class $ef6d0cb1bf5eee6a$var$E {
         this.element.remove();
     }
 }
-class $ef6d0cb1bf5eee6a$var$S {
+class S {
     constructor(e){
         this.Reveal = e, this.onInput = this.onInput.bind(this), this.onBlur = this.onBlur.bind(this), this.onKeyDown = this.onKeyDown.bind(this);
     }
@@ -409,7 +1033,7 @@ class $ef6d0cb1bf5eee6a$var$S {
         setTimeout(()=>this.hide(), 1);
     }
 }
-const $ef6d0cb1bf5eee6a$var$A = (e)=>{
+const A = (e)=>{
     let t = e.match(/^#([0-9a-f]{3})$/i);
     if (t && t[1]) return t = t[1], {
         r: 17 * parseInt(t.charAt(0), 16),
@@ -436,7 +1060,7 @@ const $ef6d0cb1bf5eee6a$var$A = (e)=>{
         a: parseFloat(a[4])
     } : null;
 };
-class $ef6d0cb1bf5eee6a$var$R {
+class R {
     constructor(e){
         this.Reveal = e;
     }
@@ -446,7 +1070,7 @@ class $ef6d0cb1bf5eee6a$var$R {
     create() {
         this.element.innerHTML = "", this.element.classList.add("no-transition"), this.Reveal.getHorizontalSlides().forEach((e)=>{
             let i = this.createBackground(e, this.element);
-            $ef6d0cb1bf5eee6a$var$t(e, "section").forEach((e)=>{
+            t(e, "section").forEach((e)=>{
                 this.createBackground(e, i), i.classList.add("stack");
             });
         }), this.Reveal.getConfig().parallaxBackgroundImage ? (this.element.style.backgroundImage = 'url("' + this.Reveal.getConfig().parallaxBackgroundImage + '")', this.element.style.backgroundSize = this.Reveal.getConfig().parallaxBackgroundSize, this.element.style.backgroundRepeat = this.Reveal.getConfig().parallaxBackgroundRepeat, this.element.style.backgroundPosition = this.Reveal.getConfig().parallaxBackgroundPosition, setTimeout(()=>{
@@ -480,13 +1104,13 @@ class $ef6d0cb1bf5eee6a$var$R {
     getContrastClass(e) {
         const t = e.slideBackgroundElement;
         let i = e.getAttribute("data-background-color");
-        if (!i || !$ef6d0cb1bf5eee6a$var$A(i)) {
+        if (!i || !A(i)) {
             let e = window.getComputedStyle(t);
             e && e.backgroundColor && (i = e.backgroundColor);
         }
         if (i) {
-            const e = $ef6d0cb1bf5eee6a$var$A(i);
-            if (e && 0 !== e.a) return "string" == typeof (s = i) && (s = $ef6d0cb1bf5eee6a$var$A(s)), (s ? (299 * s.r + 587 * s.g + 114 * s.b) / 1e3 : null) < 128 ? "has-dark-background" : "has-light-background";
+            const e = A(i);
+            if (e && 0 !== e.a) return "string" == typeof (s = i) && (s = A(s)), (s ? (299 * s.r + 587 * s.g + 114 * s.b) / 1e3 : null) < 128 ? "has-dark-background" : "has-light-background";
         }
         var s;
         return null;
@@ -502,7 +1126,7 @@ class $ef6d0cb1bf5eee6a$var$R {
     update(e = !1) {
         let i = this.Reveal.getConfig(), s = this.Reveal.getCurrentSlide(), a = this.Reveal.getIndices(), n = null, r = i.rtl ? "future" : "past", o = i.rtl ? "past" : "future";
         if (Array.from(this.element.childNodes).forEach((i, s)=>{
-            i.classList.remove("past", "present", "future"), s < a.h ? i.classList.add(r) : s > a.h ? i.classList.add(o) : (i.classList.add("present"), n = i), (e || s === a.h) && $ef6d0cb1bf5eee6a$var$t(i, ".slide-background").forEach((e, t)=>{
+            i.classList.remove("past", "present", "future"), s < a.h ? i.classList.add(r) : s > a.h ? i.classList.add(o) : (i.classList.add("present"), n = i), (e || s === a.h) && t(i, ".slide-background").forEach((e, t)=>{
                 e.classList.remove("past", "present", "future");
                 const i = "number" == typeof a.v ? a.v : 0;
                 t < i ? e.classList.add("past") : t > i ? e.classList.add("future") : (e.classList.add("present"), s === a.h && (n = e));
@@ -548,8 +1172,8 @@ class $ef6d0cb1bf5eee6a$var$R {
         this.element.remove();
     }
 }
-let $ef6d0cb1bf5eee6a$var$k = 0;
-class $ef6d0cb1bf5eee6a$var$L {
+let k = 0;
+class L {
     constructor(e){
         this.Reveal = e;
     }
@@ -557,17 +1181,17 @@ class $ef6d0cb1bf5eee6a$var$L {
         this.reset();
         let i = this.Reveal.getSlides(), s = i.indexOf(t), a = i.indexOf(e);
         if (e && t && e.hasAttribute("data-auto-animate") && t.hasAttribute("data-auto-animate") && e.getAttribute("data-auto-animate-id") === t.getAttribute("data-auto-animate-id") && !(s > a ? t : e).hasAttribute("data-auto-animate-restart")) {
-            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || $ef6d0cb1bf5eee6a$var$l();
+            this.autoAnimateStyleSheet = this.autoAnimateStyleSheet || l();
             let i = this.getAutoAnimateOptions(t);
             e.dataset.autoAnimate = "pending", t.dataset.autoAnimate = "pending", i.slideDirection = s > a ? "forward" : "backward";
             let n = "none" === e.style.display;
             n && (e.style.display = this.Reveal.getConfig().display);
-            let r = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, i, $ef6d0cb1bf5eee6a$var$k++));
+            let r = this.getAutoAnimatableElements(e, t).map((e)=>this.autoAnimateElements(e.from, e.to, e.options || {}, i, k++));
             if (n && (e.style.display = "none"), "false" !== t.dataset.autoAnimateUnmatched && !0 === this.Reveal.getConfig().autoAnimateUnmatched) {
                 let e = .8 * i.duration, s = .2 * i.duration;
                 this.getUnmatchedAutoAnimateElements(t).forEach((e)=>{
                     let t = this.getAutoAnimateOptions(e, i), s = "unmatched";
-                    t.duration === i.duration && t.delay === i.delay || (s = "unmatched-" + $ef6d0cb1bf5eee6a$var$k++, r.push(`[data-auto-animate="running"] [data-auto-animate-target="${s}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = s;
+                    t.duration === i.duration && t.delay === i.delay || (s = "unmatched-" + k++, r.push(`[data-auto-animate="running"] [data-auto-animate-target="${s}"] { transition: opacity ${t.duration}s ease ${t.delay}s; }`)), e.dataset.autoAnimateTarget = s;
                 }, this), r.push(`[data-auto-animate="running"] [data-auto-animate-target="unmatched"] { transition: opacity ${e}s ease ${s}s; }`);
             }
             this.autoAnimateStyleSheet.innerHTML = r.join(""), requestAnimationFrame(()=>{
@@ -583,9 +1207,9 @@ class $ef6d0cb1bf5eee6a$var$L {
         }
     }
     reset() {
-        $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), '[data-auto-animate]:not([data-auto-animate=""])').forEach((e)=>{
+        t(this.Reveal.getRevealElement(), '[data-auto-animate]:not([data-auto-animate=""])').forEach((e)=>{
             e.dataset.autoAnimate = "";
-        }), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
+        }), t(this.Reveal.getRevealElement(), "[data-auto-animate-target]").forEach((e)=>{
             delete e.dataset.autoAnimateTarget;
         }), this.autoAnimateStyleSheet && this.autoAnimateStyleSheet.parentNode && (this.autoAnimateStyleSheet.parentNode.removeChild(this.autoAnimateStyleSheet), this.autoAnimateStyleSheet = null);
     }
@@ -594,9 +1218,9 @@ class $ef6d0cb1bf5eee6a$var$L {
         let n = this.getAutoAnimateOptions(t, s);
         void 0 !== i.delay && (n.delay = i.delay), void 0 !== i.duration && (n.duration = i.duration), void 0 !== i.easing && (n.easing = i.easing);
         let r = this.getAutoAnimatableProperties("from", e, i), o = this.getAutoAnimatableProperties("to", t, i);
-        if (t.classList.contains("fragment") && (delete o.styles.opacity, e.classList.contains("fragment"))) (e.className.match($ef6d0cb1bf5eee6a$var$w) || [
+        if (t.classList.contains("fragment") && (delete o.styles.opacity, e.classList.contains("fragment"))) (e.className.match(w) || [
             ""
-        ])[0] === (t.className.match($ef6d0cb1bf5eee6a$var$w) || [
+        ])[0] === (t.className.match(w) || [
             ""
         ])[0] && "forward" === s.slideDirection && t.classList.add("visible", "disabled");
         if (!1 !== i.translate || !1 !== i.scale) {
@@ -627,8 +1251,8 @@ class $ef6d0cb1bf5eee6a$var$L {
             duration: this.Reveal.getConfig().autoAnimateDuration,
             delay: 0
         };
-        if (s = $ef6d0cb1bf5eee6a$var$e(s, i), t.parentNode) {
-            let e = $ef6d0cb1bf5eee6a$var$r(t.parentNode, "[data-auto-animate-target]");
+        if (s = e(s, i), t.parentNode) {
+            let e = r(t.parentNode, "[data-auto-animate-target]");
             e && (s = this.getAutoAnimateOptions(e, s));
         }
         return t.dataset.autoAnimateEasing && (s.easing = t.dataset.autoAnimateEasing), t.dataset.autoAnimateDuration && (s.duration = parseFloat(t.dataset.autoAnimateDuration)), t.dataset.autoAnimateDelay && (s.delay = parseFloat(t.dataset.autoAnimateDelay)), s;
@@ -676,9 +1300,9 @@ class $ef6d0cb1bf5eee6a$var$L {
         let i = [];
         const s = "h1, h2, h3, h4, h5, h6, p, li";
         return this.findAutoAnimateMatches(i, e, t, "[data-id]", (e)=>e.nodeName + ":::" + e.getAttribute("data-id")), this.findAutoAnimateMatches(i, e, t, s, (e)=>e.nodeName + ":::" + e.innerText), this.findAutoAnimateMatches(i, e, t, "img, video, iframe", (e)=>e.nodeName + ":::" + (e.getAttribute("src") || e.getAttribute("data-src"))), this.findAutoAnimateMatches(i, e, t, "pre", (e)=>e.nodeName + ":::" + e.innerText), i.forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$n(e.from, s) ? e.options = {
+            n(e.from, s) ? e.options = {
                 scale: !1
-            } : $ef6d0cb1bf5eee6a$var$n(e.from, "pre") && (e.options = {
+            } : n(e.from, "pre") && (e.options = {
                 scale: !1,
                 styles: [
                     "width",
@@ -732,7 +1356,7 @@ class $ef6d0cb1bf5eee6a$var$L {
         }, []);
     }
 }
-class $ef6d0cb1bf5eee6a$var$C {
+class C {
     constructor(e){
         this.Reveal = e, this.active = !1, this.activatedCallbacks = [], this.onScroll = this.onScroll.bind(this);
     }
@@ -740,7 +1364,7 @@ class $ef6d0cb1bf5eee6a$var$C {
         if (this.active) return;
         const e = this.Reveal.getState();
         this.active = !0, this.slideHTMLBeforeActivation = this.Reveal.getSlidesElement().innerHTML;
-        const i = $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$f), s = $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), ".backgrounds>.slide-background");
+        const i = t(this.Reveal.getRevealElement(), f), s = t(this.Reveal.getRevealElement(), ".backgrounds>.slide-background");
         let a;
         this.viewportElement.classList.add("loading-scroll-mode", "reveal-scroll");
         const n = window.getComputedStyle(this.viewportElement);
@@ -765,7 +1389,7 @@ class $ef6d0cb1bf5eee6a$var$C {
             this.Reveal.isVerticalStack(e) ? e.querySelectorAll("section").forEach((e, i)=>{
                 d(e, t, i, !0);
             }) : d(e, t, 0);
-        }, this), this.createProgressBar(), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), r.forEach((e)=>o.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
+        }, this), this.createProgressBar(), t(this.Reveal.getRevealElement(), ".stack").forEach((e)=>e.remove()), r.forEach((e)=>o.appendChild(e)), this.Reveal.slideContent.layout(this.Reveal.getSlidesElement()), this.Reveal.layout(), this.Reveal.setState(e), this.activatedCallbacks.forEach((e)=>e()), this.activatedCallbacks = [], this.restoreScrollPosition(), this.viewportElement.classList.remove("loading-scroll-mode"), this.viewportElement.addEventListener("scroll", this.onScroll, {
             passive: !0
         });
     }
@@ -969,13 +1593,13 @@ class $ef6d0cb1bf5eee6a$var$C {
         return this.Reveal.getViewportElement();
     }
 }
-class $ef6d0cb1bf5eee6a$var$x {
+class x {
     constructor(e){
         this.Reveal = e;
     }
     async activate() {
-        const e = this.Reveal.getConfig(), i = $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$m), s = e.slideNumber && /all|print/i.test(e.showSlideNumber), a = this.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), n = Math.floor(a.width * (1 + e.margin)), r = Math.floor(a.height * (1 + e.margin)), o = a.width, d = a.height;
-        await new Promise(requestAnimationFrame), $ef6d0cb1bf5eee6a$var$l("@page{size:" + n + "px " + r + "px; margin: 0px;}"), $ef6d0cb1bf5eee6a$var$l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + o + "px; max-height:" + d + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = n + "px", document.body.style.height = r + "px";
+        const e = this.Reveal.getConfig(), i = t(this.Reveal.getRevealElement(), m), s = e.slideNumber && /all|print/i.test(e.showSlideNumber), a = this.Reveal.getComputedSlideSize(window.innerWidth, window.innerHeight), n = Math.floor(a.width * (1 + e.margin)), r = Math.floor(a.height * (1 + e.margin)), o = a.width, d = a.height;
+        await new Promise(requestAnimationFrame), l("@page{size:" + n + "px " + r + "px; margin: 0px;}"), l(".reveal section>img, .reveal section>video, .reveal section>iframe{max-width: " + o + "px; max-height:" + d + "px}"), document.documentElement.classList.add("reveal-print", "print-pdf"), document.body.style.width = n + "px", document.body.style.height = r + "px";
         const c = this.Reveal.getViewportElement();
         let h;
         if (c) {
@@ -1023,7 +1647,7 @@ class $ef6d0cb1bf5eee6a$var$x {
                             e.classList.remove("visible", "current-fragment");
                         });
                     });
-                } else $ef6d0cb1bf5eee6a$var$t(f, ".fragment:not(.fade-out)").forEach(function(e) {
+                } else t(f, ".fragment:not(.fade-out)").forEach(function(e) {
                     e.classList.add("visible");
                 });
             }
@@ -1035,7 +1659,7 @@ class $ef6d0cb1bf5eee6a$var$x {
         return "print" === this.Reveal.getConfig().view;
     }
 }
-class $ef6d0cb1bf5eee6a$var$P {
+class P {
     constructor(e){
         this.Reveal = e;
     }
@@ -1043,12 +1667,12 @@ class $ef6d0cb1bf5eee6a$var$P {
         !1 === e.fragments ? this.disable() : !1 === t.fragments && this.enable();
     }
     disable() {
-        $ef6d0cb1bf5eee6a$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     enable() {
-        $ef6d0cb1bf5eee6a$var$t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
+        t(this.Reveal.getSlidesElement(), ".fragment").forEach((e)=>{
             e.classList.remove("visible"), e.classList.remove("current-fragment");
         });
     }
@@ -1086,7 +1710,7 @@ class $ef6d0cb1bf5eee6a$var$P {
     }
     sortAll() {
         this.Reveal.getHorizontalSlides().forEach((e)=>{
-            let i = $ef6d0cb1bf5eee6a$var$t(e, "section");
+            let i = t(e, "section");
             i.forEach((e, t)=>{
                 this.sort(e.querySelectorAll(".fragment"));
             }, this), 0 === i.length && this.sort(e.querySelectorAll(".fragment"));
@@ -1161,13 +1785,13 @@ class $ef6d0cb1bf5eee6a$var$P {
         return this.goto(null, -1);
     }
 }
-class $ef6d0cb1bf5eee6a$var$T {
+class T {
     constructor(e){
         this.Reveal = e, this.active = !1, this.onSlideClicked = this.onSlideClicked.bind(this);
     }
     activate() {
         if (this.Reveal.getConfig().overview && !this.Reveal.isScrollView() && !this.isActive()) {
-            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$m).forEach((e)=>{
+            this.active = !0, this.Reveal.getRevealElement().classList.add("overview"), this.Reveal.cancelAutoSlide(), this.Reveal.getSlidesElement().appendChild(this.Reveal.getBackgroundsElement()), t(this.Reveal.getRevealElement(), m).forEach((e)=>{
                 e.classList.contains("stack") || e.addEventListener("click", this.onSlideClicked, !0);
             });
             const e = 70, i = this.Reveal.getComputedSlideSize();
@@ -1185,12 +1809,12 @@ class $ef6d0cb1bf5eee6a$var$T {
     }
     layout() {
         this.Reveal.getHorizontalSlides().forEach((e, i)=>{
-            e.setAttribute("data-index-h", i), $ef6d0cb1bf5eee6a$var$a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && $ef6d0cb1bf5eee6a$var$t(e, "section").forEach((e, t)=>{
-                e.setAttribute("data-index-h", i), e.setAttribute("data-index-v", t), $ef6d0cb1bf5eee6a$var$a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            e.setAttribute("data-index-h", i), a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), e.classList.contains("stack") && t(e, "section").forEach((e, t)=>{
+                e.setAttribute("data-index-h", i), e.setAttribute("data-index-v", t), a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         }), Array.from(this.Reveal.getBackgroundsElement().childNodes).forEach((e, i)=>{
-            $ef6d0cb1bf5eee6a$var$a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), $ef6d0cb1bf5eee6a$var$t(e, ".slide-background").forEach((e, t)=>{
-                $ef6d0cb1bf5eee6a$var$a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
+            a(e, "translate3d(" + i * this.overviewSlideWidth + "px, 0, 0)"), t(e, ".slide-background").forEach((e, t)=>{
+                a(e, "translate3d(0, " + t * this.overviewSlideHeight + "px, 0)");
             });
         });
     }
@@ -1208,10 +1832,10 @@ class $ef6d0cb1bf5eee6a$var$T {
         if (this.Reveal.getConfig().overview) {
             this.active = !1, this.Reveal.getRevealElement().classList.remove("overview"), this.Reveal.getRevealElement().classList.add("overview-deactivating"), setTimeout(()=>{
                 this.Reveal.getRevealElement().classList.remove("overview-deactivating");
-            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getRevealElement(), $ef6d0cb1bf5eee6a$var$m).forEach((e)=>{
-                $ef6d0cb1bf5eee6a$var$a(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
-            }), $ef6d0cb1bf5eee6a$var$t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
-                $ef6d0cb1bf5eee6a$var$a(e, "");
+            }, 1), this.Reveal.getRevealElement().appendChild(this.Reveal.getBackgroundsElement()), t(this.Reveal.getRevealElement(), m).forEach((e)=>{
+                a(e, ""), e.removeEventListener("click", this.onSlideClicked, !0);
+            }), t(this.Reveal.getBackgroundsElement(), ".slide-background").forEach((e)=>{
+                a(e, "");
             }), this.Reveal.transformSlides({
                 overview: ""
             });
@@ -1244,7 +1868,7 @@ class $ef6d0cb1bf5eee6a$var$T {
         }
     }
 }
-class $ef6d0cb1bf5eee6a$var$N {
+class N {
     constructor(e){
         this.Reveal = e, this.shortcuts = {}, this.bindings = {}, this.onDocumentKeyDown = this.onDocumentKeyDown.bind(this);
     }
@@ -1363,10 +1987,10 @@ class $ef6d0cb1bf5eee6a$var$N {
             66,
             86,
             190
-        ].includes(i) || 191 === i && !e.shiftKey ? this.Reveal.togglePause() : 70 === i ? $ef6d0cb1bf5eee6a$var$o(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : 65 === i ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(s) : 71 === i ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : 63 !== i && 191 !== i || !e.shiftKey ? 112 === i ? this.Reveal.toggleHelp() : u = !1 : this.Reveal.toggleHelp()), u ? e.preventDefault && e.preventDefault() : 27 !== i && 79 !== i || (!1 === this.Reveal.closeOverlay() && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
+        ].includes(i) || 191 === i && !e.shiftKey ? this.Reveal.togglePause() : 70 === i ? o(t.embedded ? this.Reveal.getViewportElement() : document.documentElement) : 65 === i ? t.autoSlideStoppable && this.Reveal.toggleAutoSlide(s) : 71 === i ? t.jumpToSlide && this.Reveal.toggleJumpToSlide() : 63 !== i && 191 !== i || !e.shiftKey ? 112 === i ? this.Reveal.toggleHelp() : u = !1 : this.Reveal.toggleHelp()), u ? e.preventDefault && e.preventDefault() : 27 !== i && 79 !== i || (!1 === this.Reveal.closeOverlay() && this.Reveal.overview.toggle(), e.preventDefault && e.preventDefault()), this.Reveal.cueAutoSlide();
     }
 }
-class $ef6d0cb1bf5eee6a$var$M {
+class M {
     MAX_REPLACE_STATE_FREQUENCY = 1e3;
     constructor(e){
         this.Reveal = e, this.writeURLTimeout = 0, this.replaceStateTimestamp = 0, this.onWindowHashChange = this.onWindowHashChange.bind(this);
@@ -1434,13 +2058,13 @@ class $ef6d0cb1bf5eee6a$var$M {
         this.readURL();
     }
 }
-class $ef6d0cb1bf5eee6a$var$I {
+class I {
     constructor(e){
         this.Reveal = e, this.onNavigateLeftClicked = this.onNavigateLeftClicked.bind(this), this.onNavigateRightClicked = this.onNavigateRightClicked.bind(this), this.onNavigateUpClicked = this.onNavigateUpClicked.bind(this), this.onNavigateDownClicked = this.onNavigateDownClicked.bind(this), this.onNavigatePrevClicked = this.onNavigatePrevClicked.bind(this), this.onNavigateNextClicked = this.onNavigateNextClicked.bind(this), this.onEnterFullscreen = this.onEnterFullscreen.bind(this);
     }
     render() {
         const e = this.Reveal.getConfig().rtl, i = this.Reveal.getRevealElement();
-        this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = `<button class="navigate-left" aria-label="${e ? "next slide" : "previous slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-right" aria-label="${e ? "previous slide" : "next slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-left"), this.controlsRight = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-right"), this.controlsUp = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-up"), this.controlsDown = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-down"), this.controlsPrev = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-prev"), this.controlsNext = $ef6d0cb1bf5eee6a$var$t(i, ".navigate-next"), this.controlsFullscreen = $ef6d0cb1bf5eee6a$var$t(i, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
+        this.element = document.createElement("aside"), this.element.className = "controls", this.element.innerHTML = `<button class="navigate-left" aria-label="${e ? "next slide" : "previous slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-right" aria-label="${e ? "previous slide" : "next slide"}"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-up" aria-label="above slide"><div class="controls-arrow"></div></button>\n\t\t\t<button class="navigate-down" aria-label="below slide"><div class="controls-arrow"></div></button>`, this.Reveal.getRevealElement().appendChild(this.element), this.controlsLeft = t(i, ".navigate-left"), this.controlsRight = t(i, ".navigate-right"), this.controlsUp = t(i, ".navigate-up"), this.controlsDown = t(i, ".navigate-down"), this.controlsPrev = t(i, ".navigate-prev"), this.controlsNext = t(i, ".navigate-next"), this.controlsFullscreen = t(i, ".enter-fullscreen"), this.controlsRightArrow = this.element.querySelector(".navigate-right"), this.controlsLeftArrow = this.element.querySelector(".navigate-left"), this.controlsDownArrow = this.element.querySelector(".navigate-down");
     }
     configure(e, t) {
         this.element.style.display = e.controls ? "block" : "none", this.element.setAttribute("data-controls-layout", e.controlsLayout), this.element.setAttribute("data-controls-back-arrows", e.controlsBackArrows);
@@ -1450,7 +2074,7 @@ class $ef6d0cb1bf5eee6a$var$I {
             "touchstart",
             "click"
         ];
-        $ef6d0cb1bf5eee6a$var$g && (e = [
+        g && (e = [
             "touchstart"
         ]), e.forEach((e)=>{
             this.controlsLeft.forEach((t)=>t.addEventListener(e, this.onNavigateLeftClicked, !1)), this.controlsRight.forEach((t)=>t.addEventListener(e, this.onNavigateRightClicked, !1)), this.controlsUp.forEach((t)=>t.addEventListener(e, this.onNavigateUpClicked, !1)), this.controlsDown.forEach((t)=>t.addEventListener(e, this.onNavigateDownClicked, !1)), this.controlsPrev.forEach((t)=>t.addEventListener(e, this.onNavigatePrevClicked, !1)), this.controlsNext.forEach((t)=>t.addEventListener(e, this.onNavigateNextClicked, !1)), this.controlsFullscreen.forEach((t)=>t.addEventListener(e, this.onEnterFullscreen, !1));
@@ -1533,10 +2157,10 @@ class $ef6d0cb1bf5eee6a$var$I {
     }
     onEnterFullscreen(e) {
         const t = this.Reveal.getConfig(), i = this.Reveal.getViewportElement();
-        $ef6d0cb1bf5eee6a$var$o(t.embedded ? i : i.parentElement);
+        o(t.embedded ? i : i.parentElement);
     }
 }
-class $ef6d0cb1bf5eee6a$var$B {
+class B {
     constructor(e){
         this.Reveal = e, this.onProgressClicked = this.onProgressClicked.bind(this);
     }
@@ -1572,7 +2196,7 @@ class $ef6d0cb1bf5eee6a$var$B {
         this.element.remove();
     }
 }
-class $ef6d0cb1bf5eee6a$var$H {
+class H {
     constructor(e){
         this.Reveal = e, this.lastMouseWheelStep = 0, this.cursorHidden = !1, this.cursorInactiveTimeout = 0, this.onDocumentCursorActive = this.onDocumentCursorActive.bind(this), this.onDocumentMouseScroll = this.onDocumentMouseScroll.bind(this);
     }
@@ -1599,7 +2223,7 @@ class $ef6d0cb1bf5eee6a$var$H {
         }
     }
 }
-const $ef6d0cb1bf5eee6a$var$D = (e, t)=>{
+const D = (e, t)=>{
     const i = document.createElement("script");
     i.type = "text/javascript", i.async = !1, i.defer = !1, i.src = e, "function" == typeof t && (i.onload = i.onreadystatechange = (e)=>{
         ("load" === e.type || /loaded|complete/.test(i.readyState)) && (i.onload = i.onreadystatechange = i.onerror = null, t());
@@ -1609,7 +2233,7 @@ const $ef6d0cb1bf5eee6a$var$D = (e, t)=>{
     const s = document.querySelector("head");
     s.insertBefore(i, s.lastChild);
 };
-class $ef6d0cb1bf5eee6a$var$F {
+class F {
     constructor(e){
         this.Reveal = e, this.state = "idle", this.registeredPlugins = {}, this.asyncDependencies = [];
     }
@@ -1624,7 +2248,7 @@ class $ef6d0cb1bf5eee6a$var$F {
                     t && "function" == typeof t.callback && t.callback(), 0 == --s && this.initPlugins().then(e);
                 };
                 i.forEach((e)=>{
-                    "string" == typeof e.id ? (this.registerPlugin(e), t(e)) : "string" == typeof e.src ? $ef6d0cb1bf5eee6a$var$D(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
+                    "string" == typeof e.id ? (this.registerPlugin(e), t(e)) : "string" == typeof e.src ? D(e.src, ()=>t(e)) : (console.warn("Unrecognized plugin format", e), t());
                 });
             } else this.initPlugins().then(e);
         });
@@ -1649,7 +2273,7 @@ class $ef6d0cb1bf5eee6a$var$F {
     }
     loadAsync() {
         return this.state = "loaded", this.asyncDependencies.length && this.asyncDependencies.forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$D(e.src, e.callback);
+            D(e.src, e.callback);
         }), Promise.resolve();
     }
     registerPlugin(e) {
@@ -1672,7 +2296,7 @@ class $ef6d0cb1bf5eee6a$var$F {
         }), this.registeredPlugins = {}, this.asyncDependencies = [];
     }
 }
-class $ef6d0cb1bf5eee6a$var$z {
+class z {
     constructor(e){
         this.Reveal = e, this.touchStartX = 0, this.touchStartY = 0, this.touchStartCount = 0, this.touchCaptured = !1, this.onPointerDown = this.onPointerDown.bind(this), this.onPointerMove = this.onPointerMove.bind(this), this.onPointerUp = this.onPointerUp.bind(this), this.onTouchStart = this.onTouchStart.bind(this), this.onTouchMove = this.onTouchMove.bind(this), this.onTouchEnd = this.onTouchEnd.bind(this);
     }
@@ -1685,7 +2309,7 @@ class $ef6d0cb1bf5eee6a$var$z {
         e.removeEventListener("pointerdown", this.onPointerDown, !1), e.removeEventListener("pointermove", this.onPointerMove, !1), e.removeEventListener("pointerup", this.onPointerUp, !1), e.removeEventListener("MSPointerDown", this.onPointerDown, !1), e.removeEventListener("MSPointerMove", this.onPointerMove, !1), e.removeEventListener("MSPointerUp", this.onPointerUp, !1), e.removeEventListener("touchstart", this.onTouchStart, !1), e.removeEventListener("touchmove", this.onTouchMove, !1), e.removeEventListener("touchend", this.onTouchEnd, !1);
     }
     isSwipePrevented(e) {
-        if ($ef6d0cb1bf5eee6a$var$n(e, "video[controls], audio[controls]")) return !0;
+        if (n(e, "video[controls], audio[controls]")) return !0;
         for(; e && "function" == typeof e.hasAttribute;){
             if (e.hasAttribute("data-prevent-swipe")) return !0;
             e = e.parentNode;
@@ -1699,7 +2323,7 @@ class $ef6d0cb1bf5eee6a$var$z {
     onTouchMove(e) {
         if (this.isSwipePrevented(e.target)) return !0;
         let t = this.Reveal.getConfig();
-        if (this.touchCaptured) $ef6d0cb1bf5eee6a$var$g && e.preventDefault();
+        if (this.touchCaptured) g && e.preventDefault();
         else {
             this.Reveal.onUserInput(e);
             let i = e.touches[0].clientX, s = e.touches[0].clientY;
@@ -1739,8 +2363,8 @@ class $ef6d0cb1bf5eee6a$var$z {
         ], this.onTouchEnd(e));
     }
 }
-const $ef6d0cb1bf5eee6a$var$q = "focus", $ef6d0cb1bf5eee6a$var$O = "blur";
-class $ef6d0cb1bf5eee6a$var$W {
+const q = "focus", O = "blur";
+class W {
     constructor(e){
         this.Reveal = e, this.onRevealPointerDown = this.onRevealPointerDown.bind(this), this.onDocumentPointerDown = this.onDocumentPointerDown.bind(this);
     }
@@ -1754,13 +2378,13 @@ class $ef6d0cb1bf5eee6a$var$W {
         this.Reveal.getRevealElement().removeEventListener("pointerdown", this.onRevealPointerDown, !1), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1);
     }
     focus() {
-        this.state !== $ef6d0cb1bf5eee6a$var$q && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $ef6d0cb1bf5eee6a$var$q;
+        this.state !== q && (this.Reveal.getRevealElement().classList.add("focused"), document.addEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = q;
     }
     blur() {
-        this.state !== $ef6d0cb1bf5eee6a$var$O && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = $ef6d0cb1bf5eee6a$var$O;
+        this.state !== O && (this.Reveal.getRevealElement().classList.remove("focused"), document.removeEventListener("pointerdown", this.onDocumentPointerDown, !1)), this.state = O;
     }
     isFocused() {
-        return this.state === $ef6d0cb1bf5eee6a$var$q;
+        return this.state === q;
     }
     destroy() {
         this.Reveal.getRevealElement().classList.remove("focused");
@@ -1769,11 +2393,11 @@ class $ef6d0cb1bf5eee6a$var$W {
         this.focus();
     }
     onDocumentPointerDown(e) {
-        let t = $ef6d0cb1bf5eee6a$var$r(e.target, ".reveal");
+        let t = r(e.target, ".reveal");
         t && t === this.Reveal.getRevealElement() || this.blur();
     }
 }
-class $ef6d0cb1bf5eee6a$var$U {
+class U {
     constructor(e){
         this.Reveal = e;
     }
@@ -1804,7 +2428,7 @@ class $ef6d0cb1bf5eee6a$var$U {
         this.element.remove();
     }
 }
-class $ef6d0cb1bf5eee6a$var$V {
+class V {
     constructor(e, t){
         this.diameter = 100, this.diameter2 = this.diameter / 2, this.thickness = 6, this.playing = !1, this.progress = 0, this.progressOffset = 1, this.container = e, this.progressCheck = t, this.canvas = document.createElement("canvas"), this.canvas.className = "playback", this.canvas.width = this.diameter, this.canvas.height = this.diameter, this.canvas.style.width = this.diameter2 + "px", this.canvas.style.height = this.diameter2 + "px", this.context = this.canvas.getContext("2d"), this.container.appendChild(this.canvas), this.render();
     }
@@ -1832,7 +2456,7 @@ class $ef6d0cb1bf5eee6a$var$V {
         this.playing = !1, this.canvas.parentNode && this.container.removeChild(this.canvas);
     }
 }
-var $ef6d0cb1bf5eee6a$var$j = {
+var j = {
     width: 960,
     height: 700,
     margin: .04,
@@ -1923,8 +2547,8 @@ var $ef6d0cb1bf5eee6a$var$j = {
     dependencies: [],
     plugins: []
 };
-const $ef6d0cb1bf5eee6a$var$K = "5.1.0";
-function $ef6d0cb1bf5eee6a$var$$(n, o) {
+const K = "5.1.0";
+function $(n, o) {
     arguments.length < 2 && (o = arguments[0], n = document.querySelector(".reveal"));
     const l = {};
     let c, h, g, p, w, A = {}, k = !1, D = !1, q = {
@@ -1933,13 +2557,13 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
     }, O = [], $ = 1, X = {
         layout: "",
         overview: ""
-    }, Y = {}, _ = "idle", J = 0, G = 0, Q = -1, Z = !1, ee = new $ef6d0cb1bf5eee6a$var$v(l), te = new $ef6d0cb1bf5eee6a$var$E(l), ie = new $ef6d0cb1bf5eee6a$var$S(l), se = new $ef6d0cb1bf5eee6a$var$L(l), ae = new $ef6d0cb1bf5eee6a$var$R(l), ne = new $ef6d0cb1bf5eee6a$var$C(l), re = new $ef6d0cb1bf5eee6a$var$x(l), oe = new $ef6d0cb1bf5eee6a$var$P(l), le = new $ef6d0cb1bf5eee6a$var$T(l), de = new $ef6d0cb1bf5eee6a$var$N(l), ce = new $ef6d0cb1bf5eee6a$var$M(l), he = new $ef6d0cb1bf5eee6a$var$I(l), ue = new $ef6d0cb1bf5eee6a$var$B(l), ge = new $ef6d0cb1bf5eee6a$var$H(l), pe = new $ef6d0cb1bf5eee6a$var$F(l), ve = new $ef6d0cb1bf5eee6a$var$W(l), me = new $ef6d0cb1bf5eee6a$var$z(l), fe = new $ef6d0cb1bf5eee6a$var$U(l);
+    }, Y = {}, _ = "idle", J = 0, G = 0, Q = -1, Z = !1, ee = new v(l), te = new E(l), ie = new S(l), se = new L(l), ae = new R(l), ne = new C(l), re = new x(l), oe = new P(l), le = new T(l), de = new N(l), ce = new M(l), he = new I(l), ue = new B(l), ge = new H(l), pe = new F(l), ve = new W(l), me = new z(l), fe = new U(l);
     function ye() {
-        D = !0, A.showHiddenSlides || $ef6d0cb1bf5eee6a$var$t(Y.wrapper, 'section[data-visibility="hidden"]').forEach((e)=>{
+        D = !0, A.showHiddenSlides || t(Y.wrapper, 'section[data-visibility="hidden"]').forEach((e)=>{
             const t = e.parentNode;
             1 === t.childElementCount && /section/i.test(t.nodeName) ? t.remove() : e.remove();
         }), function() {
-            Y.slides.classList.add("no-transition"), $ef6d0cb1bf5eee6a$var$u ? Y.wrapper.classList.add("no-hover") : Y.wrapper.classList.remove("no-hover");
+            Y.slides.classList.add("no-transition"), u ? Y.wrapper.classList.add("no-hover") : Y.wrapper.classList.remove("no-hover");
             ae.render(), te.render(), ie.render(), he.render(), ue.render(), fe.render(), Y.pauseOverlay = ((e, t, i, s = "")=>{
                 let a = e.querySelectorAll("." + i);
                 for(let t = 0; t < a.length; t++){
@@ -1956,7 +2580,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }(), A.postMessage && window.addEventListener("message", At, !1), setInterval(()=>{
             (!ne.isActive() && 0 !== Y.wrapper.scrollTop || 0 !== Y.wrapper.scrollLeft) && (Y.wrapper.scrollTop = 0, Y.wrapper.scrollLeft = 0);
         }, 1e3), document.addEventListener("fullscreenchange", xt), document.addEventListener("webkitfullscreenchange", xt), rt().forEach((e)=>{
-            $ef6d0cb1bf5eee6a$var$t(e, "section").forEach((e, t)=>{
+            t(e, "section").forEach((e, t)=>{
                 t > 0 && (e.classList.remove("present"), e.classList.remove("past"), e.classList.add("future"), e.setAttribute("aria-hidden", "true"));
             });
         }), Ee(), ae.update(!0), function() {
@@ -1991,9 +2615,9 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         const s = {
             ...A
         };
-        if ("object" == typeof t && $ef6d0cb1bf5eee6a$var$e(A, t), !1 === l.isReady()) return;
-        const a = Y.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$m).length;
-        Y.wrapper.classList.remove(s.transition), Y.wrapper.classList.add(A.transition), Y.wrapper.setAttribute("data-transition-speed", A.transitionSpeed), Y.wrapper.setAttribute("data-background-transition", A.backgroundTransition), Y.viewport.style.setProperty("--slide-width", "string" == typeof A.width ? A.width : A.width + "px"), Y.viewport.style.setProperty("--slide-height", "string" == typeof A.height ? A.height : A.height + "px"), A.shuffle && Ge(), $ef6d0cb1bf5eee6a$var$i(Y.wrapper, "embedded", A.embedded), $ef6d0cb1bf5eee6a$var$i(Y.wrapper, "rtl", A.rtl), $ef6d0cb1bf5eee6a$var$i(Y.wrapper, "center", A.center), !1 === A.pause && Ke(), A.previewLinks ? (Te(), Ne("[data-preview-link=false]")) : (Ne(), Te("[data-preview-link]:not([data-preview-link=false])")), se.reset(), w && (w.destroy(), w = null), a > 1 && A.autoSlide && A.autoSlideStoppable && (w = new $ef6d0cb1bf5eee6a$var$V(Y.wrapper, ()=>Math.min(Math.max((Date.now() - Q) / J, 0), 1)), w.on("click", Tt), Z = !1), "default" !== A.navigationMode ? Y.wrapper.setAttribute("data-navigation-mode", A.navigationMode) : Y.wrapper.removeAttribute("data-navigation-mode"), fe.configure(A, s), ve.configure(A, s), ge.configure(A, s), he.configure(A, s), ue.configure(A, s), de.configure(A, s), oe.configure(A, s), te.configure(A, s), Je();
+        if ("object" == typeof t && e(A, t), !1 === l.isReady()) return;
+        const a = Y.wrapper.querySelectorAll(m).length;
+        Y.wrapper.classList.remove(s.transition), Y.wrapper.classList.add(A.transition), Y.wrapper.setAttribute("data-transition-speed", A.transitionSpeed), Y.wrapper.setAttribute("data-background-transition", A.backgroundTransition), Y.viewport.style.setProperty("--slide-width", "string" == typeof A.width ? A.width : A.width + "px"), Y.viewport.style.setProperty("--slide-height", "string" == typeof A.height ? A.height : A.height + "px"), A.shuffle && Ge(), i(Y.wrapper, "embedded", A.embedded), i(Y.wrapper, "rtl", A.rtl), i(Y.wrapper, "center", A.center), !1 === A.pause && Ke(), A.previewLinks ? (Te(), Ne("[data-preview-link=false]")) : (Ne(), Te("[data-preview-link]:not([data-preview-link=false])")), se.reset(), w && (w.destroy(), w = null), a > 1 && A.autoSlide && A.autoSlideStoppable && (w = new V(Y.wrapper, ()=>Math.min(Math.max((Date.now() - Q) / J, 0), 1)), w.on("click", Tt), Z = !1), "default" !== A.navigationMode ? Y.wrapper.setAttribute("data-navigation-mode", A.navigationMode) : Y.wrapper.removeAttribute("data-navigation-mode"), fe.configure(A, s), ve.configure(A, s), ge.configure(A, s), he.configure(A, s), ue.configure(A, s), de.configure(A, s), oe.configure(A, s), te.configure(A, s), Je();
     }
     function Se() {
         window.addEventListener("resize", Lt, !1), A.touch && me.bind(), A.keyboard && de.bind(), A.progress && ue.bind(), A.respondToHashChanges && ce.bind(), he.bind(), ve.bind(), Y.slides.addEventListener("click", kt, !1), Y.slides.addEventListener("transitionend", Rt, !1), Y.pauseOverlay.addEventListener("click", Ke, !1), A.focusBodyOnPageVisibilityChange && document.addEventListener("visibilitychange", Ct, !1);
@@ -2008,11 +2632,11 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         n.removeEventListener(e, t, i);
     }
     function Le(e) {
-        "string" == typeof e.layout && (X.layout = e.layout), "string" == typeof e.overview && (X.overview = e.overview), X.layout ? $ef6d0cb1bf5eee6a$var$a(Y.slides, X.layout + " " + X.overview) : $ef6d0cb1bf5eee6a$var$a(Y.slides, X.overview);
+        "string" == typeof e.layout && (X.layout = e.layout), "string" == typeof e.overview && (X.overview = e.overview), X.layout ? a(Y.slides, X.layout + " " + X.overview) : a(Y.slides, X.overview);
     }
     function Ce({ target: t = Y.wrapper, type: i, data: s, bubbles: a = !0 }) {
         let n = document.createEvent("HTMLEvents", 1, 2);
-        return n.initEvent(i, a, !0), $ef6d0cb1bf5eee6a$var$e(n, s), t.dispatchEvent(n), t === Y.wrapper && Pe(i), n;
+        return n.initEvent(i, a, !0), e(n, s), t.dispatchEvent(n), t === Y.wrapper && Pe(i), n;
     }
     function xe(e) {
         Ce({
@@ -2033,7 +2657,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
                 eventName: t,
                 state: ut()
             };
-            $ef6d0cb1bf5eee6a$var$e(s, i), window.parent.postMessage(JSON.stringify(s), "*");
+            e(s, i), window.parent.postMessage(JSON.stringify(s), "*");
         }
     }
     function Te(e = "a") {
@@ -2074,14 +2698,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         if (Y.wrapper && !re.isActive()) {
             const e = Y.viewport.offsetWidth, t = Y.viewport.offsetHeight;
             if (!A.disableLayout) {
-                $ef6d0cb1bf5eee6a$var$u && !A.embedded && document.documentElement.style.setProperty("--vh", .01 * window.innerHeight + "px");
+                u && !A.embedded && document.documentElement.style.setProperty("--vh", .01 * window.innerHeight + "px");
                 const i = ne.isActive() ? Fe(e, t) : Fe(), s = $;
                 De(A.width, A.height), Y.slides.style.width = i.width + "px", Y.slides.style.height = i.height + "px", $ = Math.min(i.presentationWidth / i.width, i.presentationHeight / i.height), $ = Math.max($, A.minScale), $ = Math.min($, A.maxScale), 1 === $ || ne.isActive() ? (Y.slides.style.zoom = "", Y.slides.style.left = "", Y.slides.style.top = "", Y.slides.style.bottom = "", Y.slides.style.right = "", Le({
                     layout: ""
                 })) : (Y.slides.style.zoom = "", Y.slides.style.left = "50%", Y.slides.style.top = "50%", Y.slides.style.bottom = "auto", Y.slides.style.right = "auto", Le({
                     layout: "translate(-50%, -50%) scale(" + $ + ")"
                 }));
-                const a = Array.from(Y.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$m));
+                const a = Array.from(Y.wrapper.querySelectorAll(m));
                 for(let e = 0, t = a.length; e < t; e++){
                     const t = a[e];
                     "none" !== t.style.display && (A.center || t.classList.contains("center") ? t.classList.contains("stack") ? t.style.top = 0 : t.style.top = Math.max((i.height - t.scrollHeight) / 2, 0) + "px" : t.style.top = "");
@@ -2104,7 +2728,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }
     }
     function De(e, i) {
-        $ef6d0cb1bf5eee6a$var$t(Y.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
+        t(Y.slides, "section > .stretch, section > .r-stretch").forEach((t)=>{
             let s = ((e, t = 0)=>{
                 if (e) {
                     let i, s = e.style.height;
@@ -2181,7 +2805,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             }
         }).defaultPrevented) return;
         g = p;
-        const r = Y.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$f);
+        const r = Y.wrapper.querySelectorAll(f);
         if (ne.isActive()) {
             const t = ne.getSlideByIndices(e, i);
             return void (t && ne.scrollToSlide(t));
@@ -2191,14 +2815,14 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         const o = O.concat();
         O.length = 0;
         let l = c || 0, d = h || 0;
-        c = Qe($ef6d0cb1bf5eee6a$var$f, void 0 === e ? c : e), h = Qe($ef6d0cb1bf5eee6a$var$y, void 0 === i ? h : i);
+        c = Qe(f, void 0 === e ? c : e), h = Qe(y, void 0 === i ? h : i);
         let u = c !== l || h !== d;
         u || (g = null);
         let v = r[c], m = v.querySelectorAll("section");
         n.classList.toggle("is-vertical-slide", m.length > 1), p = m[h] || v;
         let b = !1;
         u && g && p && !le.isActive() && (_ = "running", b = _e(g, p, l, d), b && Y.slides.classList.add("disable-slide-transitions")), tt(), He(), le.isActive() && le.update(), void 0 !== s && oe.goto(s), g && g !== p && (g.classList.remove("present"), g.setAttribute("aria-hidden", "true"), Ue() && setTimeout(()=>{
-            $ef6d0cb1bf5eee6a$var$t(Y.wrapper, $ef6d0cb1bf5eee6a$var$f + ".stack").forEach((e)=>{
+            t(Y.wrapper, f + ".stack").forEach((e)=>{
                 ze(e, 0);
             });
         }, 0));
@@ -2235,7 +2859,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         });
     }
     function Qe(e, i) {
-        let s = $ef6d0cb1bf5eee6a$var$t(Y.wrapper, e), a = s.length, n = ne.isActive() || re.isActive(), r = !1, o = !1;
+        let s = t(Y.wrapper, e), a = s.length, n = ne.isActive() || re.isActive(), r = !1, o = !1;
         if (a) {
             A.loop && (i >= a && (r = !0), (i %= a) < 0 && (i = a + i, o = !0)), i = Math.max(Math.min(i, a - 1), 0);
             for(let e = 0; e < a; e++){
@@ -2254,12 +2878,12 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         return i;
     }
     function Ze(e) {
-        $ef6d0cb1bf5eee6a$var$t(e, ".fragment").forEach((e)=>{
+        t(e, ".fragment").forEach((e)=>{
             e.classList.add("visible"), e.classList.remove("current-fragment");
         });
     }
     function et(e) {
-        $ef6d0cb1bf5eee6a$var$t(e, ".fragment.visible").forEach((e)=>{
+        t(e, ".fragment.visible").forEach((e)=>{
             e.classList.remove("visible", "current-fragment");
         });
     }
@@ -2267,9 +2891,9 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         let e, i, s = rt(), a = s.length;
         if (a && void 0 !== c) {
             let n = le.isActive() ? 10 : A.viewDistance;
-            $ef6d0cb1bf5eee6a$var$u && (n = le.isActive() ? 6 : A.mobileViewDistance), re.isActive() && (n = Number.MAX_VALUE);
+            u && (n = le.isActive() ? 6 : A.mobileViewDistance), re.isActive() && (n = Number.MAX_VALUE);
             for(let r = 0; r < a; r++){
-                let o = s[r], l = $ef6d0cb1bf5eee6a$var$t(o, "section"), d = l.length;
+                let o = s[r], l = t(o, "section"), d = l.length;
                 if (e = Math.abs((c || 0) - r) || 0, A.loop && (e = Math.abs(((c || 0) - r) % (a - n)) || 0), e < n ? ee.load(o) : ee.unload(o), d) {
                     let t = qe(o);
                     for(let s = 0; s < d; s++){
@@ -2282,7 +2906,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }
     }
     function it({ includeFragments: e = !1 } = {}) {
-        let t = Y.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$f), i = Y.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$y), s = {
+        let t = Y.wrapper.querySelectorAll(f), i = Y.wrapper.querySelectorAll(y), s = {
             left: c > 0,
             right: c < t.length - 1,
             up: h > 0,
@@ -2317,7 +2941,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             if (ne.isActive()) s = parseInt(e.getAttribute("data-index-h"), 10), e.getAttribute("data-index-v") && (a = parseInt(e.getAttribute("data-index-v"), 10));
             else {
                 let i = Oe(e), n = i ? e.parentNode : e, r = rt();
-                s = Math.max(r.indexOf(n), 0), a = void 0, i && (a = Math.max($ef6d0cb1bf5eee6a$var$t(e.parentNode, "section").indexOf(e), 0));
+                s = Math.max(r.indexOf(n), 0), a = void 0, i && (a = Math.max(t(e.parentNode, "section").indexOf(e), 0));
             }
         }
         if (!e && p) {
@@ -2333,13 +2957,13 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         };
     }
     function nt() {
-        return $ef6d0cb1bf5eee6a$var$t(Y.wrapper, $ef6d0cb1bf5eee6a$var$m + ':not(.stack):not([data-visibility="uncounted"])');
+        return t(Y.wrapper, m + ':not(.stack):not([data-visibility="uncounted"])');
     }
     function rt() {
-        return $ef6d0cb1bf5eee6a$var$t(Y.wrapper, $ef6d0cb1bf5eee6a$var$f);
+        return t(Y.wrapper, f);
     }
     function ot() {
-        return $ef6d0cb1bf5eee6a$var$t(Y.wrapper, ".slides>section>section");
+        return t(Y.wrapper, ".slides>section>section");
     }
     function lt() {
         return rt().length > 1;
@@ -2367,7 +2991,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
     function gt() {
         if (pt(), p && !1 !== A.autoSlide) {
             let e = p.querySelector(".current-fragment[data-autoslide]"), i = e ? e.getAttribute("data-autoslide") : null, s = p.parentNode ? p.parentNode.getAttribute("data-autoslide") : null, a = p.getAttribute("data-autoslide");
-            i ? J = parseInt(i, 10) : a ? J = parseInt(a, 10) : s ? J = parseInt(s, 10) : (J = A.autoSlide, 0 === p.querySelectorAll(".fragment").length && $ef6d0cb1bf5eee6a$var$t(p, "video, audio").forEach((e)=>{
+            i ? J = parseInt(i, 10) : a ? J = parseInt(a, 10) : s ? J = parseInt(s, 10) : (J = A.autoSlide, 0 === p.querySelectorAll(".fragment").length && t(p, "video, audio").forEach((e)=>{
                 e.hasAttribute("data-autoplay") && J && 1e3 * e.duration / e.playbackRate > J && (J = 1e3 * e.duration / e.playbackRate + 1e3);
             })), !J || Z || Xe() || le.isActive() || Ve() && !oe.availableRoutes().next && !0 !== A.loop || (G = setTimeout(()=>{
                 "function" == typeof A.autoSlideMethod ? A.autoSlideMethod() : St(), gt();
@@ -2411,7 +3035,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
             });
             else {
                 let i;
-                if (i = A.rtl ? $ef6d0cb1bf5eee6a$var$t(Y.wrapper, $ef6d0cb1bf5eee6a$var$f + ".future").pop() : $ef6d0cb1bf5eee6a$var$t(Y.wrapper, $ef6d0cb1bf5eee6a$var$f + ".past").pop(), i && i.classList.contains("stack")) {
+                if (i = A.rtl ? t(Y.wrapper, f + ".future").pop() : t(Y.wrapper, f + ".past").pop(), i && i.classList.contains("stack")) {
                     let e = i.querySelectorAll("section").length - 1 || void 0;
                     Ye(c - 1, e);
                 } else A.rtl ? yt({
@@ -2438,7 +3062,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
     function At(e) {
         let t = e.data;
         if ("string" == typeof t && "{" === t.charAt(0) && "}" === t.charAt(t.length - 1) && (t = JSON.parse(t), t.method && "function" == typeof l[t.method])) {
-            if (!1 === $ef6d0cb1bf5eee6a$var$b.test(t.method)) {
+            if (!1 === b.test(t.method)) {
                 const e = l[t.method].apply(l, t.args);
                 Pe("callback", {
                     method: t.method,
@@ -2459,7 +3083,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         }));
     }
     function kt(e) {
-        const t = $ef6d0cb1bf5eee6a$var$r(e.target, 'a[href^="#"]');
+        const t = r(e.target, 'a[href^="#"]');
         if (t) {
             const i = t.getAttribute("href"), s = ce.getIndicesFromHash(i);
             s && (l.slide(s.h, s.v, s.f), e.preventDefault());
@@ -2486,24 +3110,24 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         Ve() && !1 === A.loop ? (Ye(0, 0), mt()) : Z ? mt() : vt();
     }
     const Nt = {
-        VERSION: $ef6d0cb1bf5eee6a$var$K,
+        VERSION: K,
         initialize: function(e) {
             if (!n) throw 'Unable to find presentation root (<div class="reveal">).';
             if (k = !0, Y.wrapper = n, Y.slides = n.querySelector(".slides"), !Y.slides) throw 'Unable to find slides container (<div class="slides">).';
             return A = {
-                ...$ef6d0cb1bf5eee6a$var$j,
+                ...j,
                 ...A,
                 ...o,
                 ...e,
-                ...$ef6d0cb1bf5eee6a$var$d()
+                ...d()
             }, /print-pdf/gi.test(window.location.search) && (A.view = "print"), function() {
-                !0 === A.embedded ? Y.viewport = $ef6d0cb1bf5eee6a$var$r(n, ".reveal-viewport") || n : (Y.viewport = document.body, document.documentElement.classList.add("reveal-full-page"));
+                !0 === A.embedded ? Y.viewport = r(n, ".reveal-viewport") || n : (Y.viewport = document.body, document.documentElement.classList.add("reveal-full-page"));
                 Y.viewport.classList.add("reveal-viewport");
             }(), window.addEventListener("load", He, !1), pe.load(A.plugins, A.dependencies).then(ye), new Promise((e)=>l.on("ready", e));
         },
         configure: Ee,
         destroy: function() {
-            !1 !== k && (Ae(), pt(), Ne(), fe.destroy(), ve.destroy(), pe.destroy(), ge.destroy(), he.destroy(), ue.destroy(), ae.destroy(), te.destroy(), ie.destroy(), document.removeEventListener("fullscreenchange", xt), document.removeEventListener("webkitfullscreenchange", xt), document.removeEventListener("visibilitychange", Ct, !1), window.removeEventListener("message", At, !1), window.removeEventListener("load", He, !1), Y.pauseOverlay && Y.pauseOverlay.remove(), Y.statusElement && Y.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), Y.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), Y.wrapper.removeAttribute("data-transition-speed"), Y.wrapper.removeAttribute("data-background-transition"), Y.viewport.classList.remove("reveal-viewport"), Y.viewport.style.removeProperty("--slide-width"), Y.viewport.style.removeProperty("--slide-height"), Y.slides.style.removeProperty("width"), Y.slides.style.removeProperty("height"), Y.slides.style.removeProperty("zoom"), Y.slides.style.removeProperty("left"), Y.slides.style.removeProperty("top"), Y.slides.style.removeProperty("bottom"), Y.slides.style.removeProperty("right"), Y.slides.style.removeProperty("transform"), Array.from(Y.wrapper.querySelectorAll($ef6d0cb1bf5eee6a$var$m)).forEach((e)=>{
+            !1 !== k && (Ae(), pt(), Ne(), fe.destroy(), ve.destroy(), pe.destroy(), ge.destroy(), he.destroy(), ue.destroy(), ae.destroy(), te.destroy(), ie.destroy(), document.removeEventListener("fullscreenchange", xt), document.removeEventListener("webkitfullscreenchange", xt), document.removeEventListener("visibilitychange", Ct, !1), window.removeEventListener("message", At, !1), window.removeEventListener("load", He, !1), Y.pauseOverlay && Y.pauseOverlay.remove(), Y.statusElement && Y.statusElement.remove(), document.documentElement.classList.remove("reveal-full-page"), Y.wrapper.classList.remove("ready", "center", "has-horizontal-slides", "has-vertical-slides"), Y.wrapper.removeAttribute("data-transition-speed"), Y.wrapper.removeAttribute("data-background-transition"), Y.viewport.classList.remove("reveal-viewport"), Y.viewport.style.removeProperty("--slide-width"), Y.viewport.style.removeProperty("--slide-height"), Y.slides.style.removeProperty("width"), Y.slides.style.removeProperty("height"), Y.slides.style.removeProperty("zoom"), Y.slides.style.removeProperty("left"), Y.slides.style.removeProperty("top"), Y.slides.style.removeProperty("bottom"), Y.slides.style.removeProperty("right"), Y.slides.style.removeProperty("transform"), Array.from(Y.wrapper.querySelectorAll(m)).forEach((e)=>{
                 e.style.removeProperty("display"), e.style.removeProperty("top"), e.removeAttribute("hidden"), e.removeAttribute("aria-hidden");
             }));
         },
@@ -2579,8 +3203,8 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         getState: ut,
         setState: function(e) {
             if ("object" == typeof e) {
-                Ye($ef6d0cb1bf5eee6a$var$s(e.indexh), $ef6d0cb1bf5eee6a$var$s(e.indexv), $ef6d0cb1bf5eee6a$var$s(e.indexf));
-                let t = $ef6d0cb1bf5eee6a$var$s(e.paused), i = $ef6d0cb1bf5eee6a$var$s(e.overview);
+                Ye(s(e.indexh), s(e.indexv), s(e.indexf));
+                let t = s(e.paused), i = s(e.overview);
                 "boolean" == typeof t && t !== Xe() && $e(t), "boolean" == typeof i && i !== le.isActive() && le.toggle(i);
             }
         },
@@ -2639,7 +3263,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         },
         getScale: ()=>$,
         getConfig: ()=>A,
-        getQueryHash: $ef6d0cb1bf5eee6a$var$d,
+        getQueryHash: d,
         getSlidePath: ce.getHash.bind(ce),
         getRevealElement: ()=>n,
         getSlidesElement: ()=>Y.slides,
@@ -2650,7 +3274,7 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         getPlugin: pe.getPlugin.bind(pe),
         getPlugins: pe.getRegisteredPlugins.bind(pe)
     };
-    return $ef6d0cb1bf5eee6a$var$e(l, {
+    return e(l, {
         ...Nt,
         announceStatus: be,
         getStatusText: we,
@@ -2675,8 +3299,8 @@ function $ef6d0cb1bf5eee6a$var$$(n, o) {
         cancelAutoSlide: pt
     }), Nt;
 }
-let $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039 = $ef6d0cb1bf5eee6a$var$$, $ef6d0cb1bf5eee6a$var$Y = [];
-$ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.initialize = (e)=>(Object.assign($ef6d0cb1bf5eee6a$export$2e2bcd8739ae039, new $ef6d0cb1bf5eee6a$var$$(document.querySelector(".reveal"), e)), $ef6d0cb1bf5eee6a$var$Y.map((e)=>e($ef6d0cb1bf5eee6a$export$2e2bcd8739ae039)), $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.initialize()), [
+let X = $, Y = [];
+X.initialize = (e)=>(Object.assign(X, new $(document.querySelector(".reveal"), e)), Y.map((e)=>e(X)), X.initialize()), [
     "configure",
     "on",
     "off",
@@ -2684,16 +3308,45 @@ $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.initialize = (e)=>(Object.assign($ef6d0
     "removeEventListener",
     "registerPlugin"
 ].forEach((e)=>{
-    $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039[e] = (...t)=>{
-        $ef6d0cb1bf5eee6a$var$Y.push((i)=>i[e].call(null, ...t));
+    X[e] = (...t)=>{
+        Y.push((i)=>i[e].call(null, ...t));
     };
-}), $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.isReady = ()=>!1, $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039.VERSION = $ef6d0cb1bf5eee6a$var$K;
+}), X.isReady = ()=>!1, X.VERSION = K;
 
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports,__globalThis) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
-var $d16eb09acf14544d$exports = {};
+},{}],"bFmVD":[function(require,module,exports,__globalThis) {
 !function(t, e) {
-    $d16eb09acf14544d$exports = e();
-}($d16eb09acf14544d$exports, function() {
+    module.exports = e();
+}(this, function() {
     "use strict";
     function t() {
         return {
@@ -4001,11 +4654,10 @@ var $d16eb09acf14544d$exports = {};
     };
 });
 
-
-var $64e7f54992ce4b7d$exports = {};
+},{}],"jDyx9":[function(require,module,exports,__globalThis) {
 !function(e, t) {
-    $64e7f54992ce4b7d$exports = t();
-}($64e7f54992ce4b7d$exports, function() {
+    module.exports = t();
+}(this, function() {
     "use strict";
     function e(e) {
         return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;
@@ -49348,36 +50000,6 @@ var $64e7f54992ce4b7d$exports = {};
     return ()=>Rs;
 });
 
+},{}]},["5bBwA","fFaKF"], "fFaKF", "parcelRequire94c2")
 
-// reveal.js initialization
-const $ce2ab6a3784a12d8$var$slides = (0, $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039)({
-    plugins: [
-        (0, (/*@__PURE__*/$parcel$interopDefault($d16eb09acf14544d$exports))),
-        (0, (/*@__PURE__*/$parcel$interopDefault($64e7f54992ce4b7d$exports)))
-    ],
-    // highlight.js options
-    highlight: {
-        highlightOnLoad: true,
-        tabReplace: '  '
-    },
-    ...window.location.href.includes('?print-pdf') && {
-        pdfSeparateFragments: false
-    },
-    hash: true,
-    // Flags if we should monitor the hash and change slides accordingly
-    respondToHashChanges: true,
-    // Push each slide change to the browser history.  Implies `hash: true`
-    history: true
-});
-// keyboard interaction configuration
-$ce2ab6a3784a12d8$var$slides.configure({
-    keyboard: {
-        8: 'prev',
-        // 27: null,
-        78: null
-    }
-});
-$ce2ab6a3784a12d8$var$slides.initialize();
-
-
-//# sourceMappingURL=index.57e3d9e7.js.map
+//# sourceMappingURL=index.0fbc91cd.js.map
