@@ -11,6 +11,7 @@ const slides = Reveal({
     highlightOnLoad: true,
     tabReplace: '  ',
   },
+  navigationMode: 'linear',
   ...(window.location.href.includes('?print-pdf') && {
     pdfSeparateFragments: false
   }),

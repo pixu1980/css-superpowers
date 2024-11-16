@@ -1,26 +1,31 @@
 <section>
-  <h4>Registering a property via CSS</h4>
-  <pre>
-    <code class="hljs scss" data-trim data-line-numbers>
+  <h4>Registering a property</h4>
+  <comparison links>
+    <left>
+      <small>via CSS</small>
+      <pre>
+        <code class="hljs scss" data-trim data-line-numbers>
 @property --coffee-color {
   syntax: "&lt;color&gt;";
   inherits: false;
   initial-value: #c0ffee;
 }
-    </code>
-  </pre>
-</section>
-
-<section>
-  <h4>Registering a property via JS</h4>
-  <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
+//
+        </code>
+      </pre>
+    </left>
+    <right>
+      <small>via JS</small>
+      <pre>
+        <code class="hljs javascript" data-trim data-line-numbers>
 window.CSS.registerProperty({
   name: "--coffee-color",
   syntax: "&lt;color&gt;",
   inherits: false,
   initialValue: "#c0ffee",
 });
-    </code>
-  </pre>
+        </code>
+      </pre>
+    </right>
+  </comparison>
 </section>

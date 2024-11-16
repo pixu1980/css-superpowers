@@ -26,12 +26,8 @@ $c59feeaa91a608c4$exports = "@layer pix {\n  @layer themes {\n    :root {\n     
 
 
 const $6820ce0a6d1281bf$var$rgbToHex = (c)=>{
-    function componentToHex(part) {
-        var hex = part.toString(16);
-        return hex.length == 1 ? "0" + hex : hex;
-    }
     const [r, g, b] = c.replace('rgb(', '').replace(')', '').split(', ').map((part)=>parseInt(part));
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+    return `#${r.toString(16).padStart('0', 2)}${g.toString(16).padStart('0', 2)}${b.toString(16).padStart('0', 2)}`;
 };
 const $6820ce0a6d1281bf$var$updateColorPicker = ()=>{
     const markComputedStyle = getComputedStyle(document.querySelector('mark'));
@@ -72,4 +68,4 @@ document.querySelector('.dropdown.color-scheme').addEventListener('change', (e)=
 $6820ce0a6d1281bf$var$updateColorScheme($6820ce0a6d1281bf$var$colorSchemes.auto);
 
 
-//# sourceMappingURL=pix.9b5e37d0.js.map
+//# sourceMappingURL=pix.b4d730f8.js.map

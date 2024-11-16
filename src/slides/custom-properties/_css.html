@@ -4,13 +4,13 @@
   <pre>
     <code class="hljs scss" data-trim data-line-numbers>
 :root {
-  --primary-color: #3498db;
-  --font-size-base: 16px;
+  --text-color: #34eadb;
+  --font-size: 16px;
 }
 
 body {
-  color: var(--primary-color);
-  font-size: var(--font-size-base);
+  color: var(--text-color);
+  font-size: var(--font-size);
 }
     </code>
   </pre>
@@ -21,15 +21,15 @@ body {
   <pre>
     <code class="hljs scss" data-trim data-line-numbers>
 :root {
-  --primary-color: #3498db;
-  --font-size-base: 16px;
+  --text-color: #34eadb;
+  --font-size: 16px;
 }
 
 body {
-  --font-size-base: 18px;
+  --font-size: 18px;
 
-  color: var(--primary-color);
-  font-size: var(--font-size-base);
+  color: var(--text-color);
+  font-size: var(--font-size);
 }
     </code>
   </pre>
@@ -40,18 +40,20 @@ body {
   <pre>
     <code class="hljs scss" data-trim data-line-numbers>
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
+  --text-color: #202020;
+  --background-color: #efefef;
 }
 
 @media (prefers-color-scheme: dark) {
-  --background-color: #000000;
-  --text-color: #ffffff;
+  :root {
+    --text-color: #efefef;
+    --background-color: #202020;
+  }
 }
 
 body {
-  background-color: var(--background-color);
   color: var(--text-color);
+  background-color: var(--background-color);
 }
     </code>
   </pre>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>CSS Superpowers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.f6d1221e.css">
+    <link rel="stylesheet" href="index.40ed50bc.css">
   </head>
   <body>
     <div class="reveal">
@@ -39,11 +39,23 @@
 
 <section>
   <section>
-  <h4>In this talk we will explore a way to <mark>expose a CSS APIs</mark> for our products</h4>
+  <h4>Let's talk about exposing <mark>CSS APIs</mark> for our products</h4>
 </section>
 
 <section>
-  <h4><mark>combining</mark> CSS Layers + Custom Properties and <mark>over-engineering</mark> our CSS codebase</h4>
+  <h4><mark>over-engineering</mark> and <mark>combining</mark> CSS Layers + Custom Properties</h4>
+</section>
+
+<section>
+  <h4>
+    <mark>easing</mark> common<br>
+    business cases, such as:
+  </h4>
+  <ul>
+    <li class="fragment">Multi-Tenant</li>
+    <li class="fragment">Re-Selling</li>
+    <li class="fragment">Re-Branding</li>
+  </ul>
 </section>
 
 </section>
@@ -58,8 +70,8 @@
 
 <section>
   <blockquote>
-    Over-engineering is the act of <mark>designing a product</mark>, or <mark>providing a solution</mark> to a problem,
-    that is complicated in a way that <mark>provides no value</mark> or could have been designed to be simpler.
+    Over-engineering is the act of <mark>designing a product</mark>, or <mark>providing a solution</mark> to a problem, that is complicated in a way that <mark>provides no value</mark> or could have
+    been designed to be simpler.
   </blockquote>
   <small>
     <a href="https://en.wikipedia.org/wiki/Overengineering" target="_blank" rel="noopener noreferrer"> Wikipedia </a>
@@ -75,15 +87,20 @@
 </section>
 
 <section>
-  <img src="family-guy.06ff7d67.gif">
-  <br>
-  <h4>not like this... I'm promise 😄!!!</h4>
+  <h4>not like this...</h4>
+  <img src="family-guy.06ff7d67.gif" style="width: 25vw">
+  <h4 class="fragment">... I'm promise 😄!!!</h4>
 </section>
 
   <section>
   <h4>
-    Yes, <mark>I mean it!</mark><br>Over-engineering<br>
-    <span class="fragment">with an <mark>eye on the future</mark></span>
+    So... <mark>over-engineering</mark> uh?
+  </h4>
+</section>
+
+<section>
+  <h4>
+    Yep! with an <mark>eye on the future</mark>
   </h4>
 </section>
 
@@ -95,16 +112,16 @@
         <img src="doc-brown.4bed2164.jpg" alt="DOC Brown">
       </picture>
     </figure>
-    Please excuse the crudity of this model: <mark>I didn't have time</mark> to build it to scale or paint it.
+  <small>"Marty, excuse me for the crudity of this model: <mark>I didn't have time</mark> to build it to scale and paint it."</small>
   </blockquote>
   <p><small>Doc. Emmet L. Brown (1955)</small></p>
 </section>
 
 <section>
-  <p>
+  <h4>
     here's the catch frase: <br>
     <mark>I didn't have time</mark>
-  </p>
+  </h4>
 </section>
 
 <section>
@@ -207,13 +224,13 @@
   <pre>
     <code class="hljs scss" data-trim="" data-line-numbers="">
 :root {
-  --primary-color: #3498db;
-  --font-size-base: 16px;
+  --text-color: #34eadb;
+  --font-size: 16px;
 }
 
 body {
-  color: var(--primary-color);
-  font-size: var(--font-size-base);
+  color: var(--text-color);
+  font-size: var(--font-size);
 }
     </code>
   </pre>
@@ -224,15 +241,15 @@ body {
   <pre>
     <code class="hljs scss" data-trim="" data-line-numbers="">
 :root {
-  --primary-color: #3498db;
-  --font-size-base: 16px;
+  --text-color: #34eadb;
+  --font-size: 16px;
 }
 
 body {
-  --font-size-base: 18px;
+  --font-size: 18px;
 
-  color: var(--primary-color);
-  font-size: var(--font-size-base);
+  color: var(--text-color);
+  font-size: var(--font-size);
 }
     </code>
   </pre>
@@ -243,18 +260,20 @@ body {
   <pre>
     <code class="hljs scss" data-trim="" data-line-numbers="">
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
+  --text-color: #202020;
+  --background-color: #efefef;
 }
 
 @media (prefers-color-scheme: dark) {
-  --background-color: #000000;
-  --text-color: #ffffff;
+  :root {
+    --text-color: #efefef;
+    --background-color: #202020;
+  }
 }
 
 body {
-  background-color: var(--background-color);
   color: var(--text-color);
+  background-color: var(--background-color);
 }
     </code>
   </pre>
@@ -284,7 +303,10 @@ body {
   <section>
   <h4>Javascript interaction</h4>
   <small>
-    <p>Common js "CRUD" operations with CSS custom properties<br></p>
+    <p>
+      Common js "CRUD" operations<br>
+      with CSS custom properties
+    </p>
   </small>
 </section>
 
@@ -294,9 +316,9 @@ body {
     <code class="hljs javascript" data-trim="" data-line-numbers="">
 const button = document.querySelector('button');
 
-// sets the "--primary-color" value
+// sets the "--text-color" value
 // to the element's CSSStyleDeclaration
-button.style.setProperty('--primary-color', '#e74c3c');
+button.style.setProperty('--text-color', '#e74c3c');
     </code>
   </pre>
 </section>
@@ -307,47 +329,47 @@ button.style.setProperty('--primary-color', '#e74c3c');
     <code class="hljs javascript" data-trim="" data-line-numbers="">
 const root = document.documentElement;
 
-// sets the "--primary-color" value 
+// sets the "--text-color" value 
 // to the root element's CSSStyleDeclaration
-root.style.setProperty('--primary-color', '#e74c3c');
+root.style.setProperty('--text-color', '#e74c3c');
     </code>
   </pre>
 </section>
 
 <section>
-  <p>Reading a variable from an element (C<mark>R</mark>UD)</p>
+  <h4>Reading a variable from an element (C<mark>R</mark>UD)</h4>
   <pre>
     <code class="hljs javascript" data-trim="" data-line-numbers="">
 const button = document.querySelector('button');
 
-// gets the "--primary-color" value
+// gets the "--text-color" value
 // from element's CSSStyleDeclaration
 
 //! may be null if the variable is not defined on the element itself
-button.style.getPropertyValue('--primary-color');
+button.style.getPropertyValue('--text-color');
 
-// gets the "--primary-color" value
+// gets the "--text-color" value
 // from the element's ComputedStyle, 
 // so with inherited values too
 
 //! may be an empty string if the variable is not defined on 
 //! the element itself nor any of its ancestors
-getComputedStyle(button).getPropertyValue('--primary-color');
+getComputedStyle(button).getPropertyValue('--text-color');
     </code>
   </pre>
 </section>
 
 <section>
-  <p>Reading a variable from :root (C<mark>R</mark>UD)</p>
+  <h4>Reading a variable from :root (C<mark>R</mark>UD)</h4>
   <pre>
     <code class="hljs javascript" data-trim="" data-line-numbers="">
 const root = document.documentElement;
 
-// gets the "--primary-color" value
+// gets the "--text-color" value
 // from the root element's ComputedStyle
 
 //! may be an empty string if the variable is not defined
-getComputedStyle(root).getPropertyValue('--primary-color');
+getComputedStyle(root).getPropertyValue('--text-color');
     </code>
   </pre>
 </section>
@@ -358,9 +380,9 @@ getComputedStyle(root).getPropertyValue('--primary-color');
     <code class="hljs javascript" data-trim="" data-line-numbers="">
 const button = document.querySelector('button');
 
-// deletes the "--primary-color" variable
+// deletes the "--text-color" variable
 // from the element's CSSStyleDeclaration
-button.style.removeProperty('--primary-color');
+button.style.removeProperty('--text-color');
     </code>
   </pre>
 </section>
@@ -371,9 +393,9 @@ button.style.removeProperty('--primary-color');
     <code class="hljs javascript" data-trim="" data-line-numbers="">
 const root = document.documentElement;
 
-// deletes the "--primary-color" variable
+// deletes the "--text-color" variable
 // from the root element's CSSStyleDeclaration
-root.style.removeProperty('--primary-color');
+root.style.removeProperty('--text-color');
     </code>
   </pre>
 </section>
@@ -386,15 +408,11 @@ root.style.removeProperty('--primary-color');
     <small>
       <p>
         <mark>@property</mark>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" target="_blank" rel="noopener noreferrer">
-          (MDN docs)
-        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" target="_blank" rel="noopener noreferrer"> (MDN docs) </a>
       </p>
       <p>
         and the <mark>CSS Properties and Values API</mark>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API" target="_blank" rel="noopener noreferrer">
-          (MDN docs)
-        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API" target="_blank" rel="noopener noreferrer"> (MDN docs) </a>
       </p>
     </small>
     <small class="fragment">
@@ -406,71 +424,56 @@ root.style.removeProperty('--primary-color');
     </small>
   </section>
   <section>
-  <h4>Registering a property via CSS</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <h4>
+      What's the difference
+      <br>
+      between <mark>--*</mark> and <mark>@property</mark>?
+    </h4>
+    <small>
+      <ul>
+        <li class="fragment">@property is <mark>typed</mark></li>
+        <li class="fragment">@property can disable <mark>inheritance</mark></li>
+        <li class="fragment">
+          @property is <mark>animatable</mark><br>
+          and <mark>transitionable</mark>
+        </li>
+      </ul>
+    </small>
+  </section>
+  <section>
+  <h4>Registering a property</h4>
+  <comparison links="">
+    <left>
+      <small>via CSS</small>
+      <pre>
+        <code class="hljs scss" data-trim="" data-line-numbers="">
 @property --coffee-color {
   syntax: "&lt;color&gt;";
   inherits: false;
   initial-value: #c0ffee;
 }
-    </code>
-  </pre>
-</section>
-
-<section>
-  <h4>Registering a property via JS</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+//
+        </code>
+      </pre>
+    </left>
+    <right>
+      <small>via JS</small>
+      <pre>
+        <code class="hljs javascript" data-trim="" data-line-numbers="">
 window.CSS.registerProperty({
   name: "--coffee-color",
   syntax: "&lt;color&gt;",
   inherits: false,
   initialValue: "#c0ffee",
 });
-    </code>
-  </pre>
+        </code>
+      </pre>
+    </right>
+  </comparison>
 </section>
 
   <section>
-  <h4>
-    What is the difference
-    <br>
-    between <mark>--*</mark> and <mark>@property</mark>?
-  </h4>
-</section>
-
-<section>
-  <p>Registered properties are <mark>typed</mark></p>
-  <small>
-    According to
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" target="_blank" rel="noopener noreferrer">
-      MDN
-    </a>
-    supported type are: <br>
-    'length', 'number', 'percentage', 'length-percentage', 'color', 'image', 'url', 'integer', 'angle', 'time',
-    'resolution', 'transform-function', or 'custom-ident'
-  </small>
-</section>
-
-<section>
-  <p>
-    Registered properties can <br>
-    <mark>inherit</mark> or <mark>not</mark>
-  </p>
-</section>
-
-<section>
-  <p>
-    Registered properties are <br>
-    <mark>animatable</mark> and <mark>transitionable</mark>
-  </p>
-</section>
-
-<section>
-  <p>
-    For instance...
-  </p>
+  <h4>For instance...</h4>
 </section>
 
 <section>
@@ -542,7 +545,7 @@ button.registered {
 
     <section>
   <section>
-    <h4>Let's see some <mark>examples</mark></h4>
+    <h4>Let's see some fancy <mark>examples</mark></h4>
   </section>
   <section intro="">
   <h4>Superpowers with @property</h4>
@@ -652,7 +655,7 @@ button.registered {
   </section>
   
 <section>
-  <p>CSS Layers Example</p>
+  <h4>CSS Layers Example</h4>
   <pre>
     <code class="hljs scss" data-trim="" data-line-numbers="">
 @layer reset {
@@ -683,7 +686,7 @@ button.registered {
 </section>
 
   <section>
-  <p>Layers Order</p>
+  <h4>Layers Order</h4>
   <pre>
     <code class="hljs scss" data-trim="" data-line-numbers="">
 @layer reset, layout, components;
@@ -692,7 +695,7 @@ button.registered {
 </section>
 
   <section>
-  <p>Layers depths levels</p>
+  <h4>Layers depths levels</h4>
   <pre>
     <code class="hljs scss" data-trim="" data-line-numbers="">
 @layer ui {
@@ -721,7 +724,7 @@ button.registered {
 </section>
 
   <section>
-  <p>Reverse Cascade</p>
+  <h4>Reverse Cascade</h4>
   <pre>
     <code class="hljs scss" data-trim="" data-line-numbers="">
 :root {
@@ -766,8 +769,11 @@ button.registered {
 </section>
 
   <section>
-  <h4>That's awesome, but...</h4>
-  <p class="fragment">What about <mark>old CSS codebase</mark> and <mark>third party dependencies</mark>?</p>
+  <h4>That's awesome, but ...</h4>
+</section>
+
+<section>
+  <h4>... what about <mark>old CSS</mark> codebase and <mark>un-layered third-party</mark> deps?</h4>
 </section>
 
 <section>
@@ -803,7 +809,8 @@ button.registered {
 
   <section>
     <h4>
-      Let's <mark>"seed"</mark> a Design System codebase,<br>
+      Let's <mark>"seed"</mark><br>
+      a Design System codebase,<br>
       combining <mark>--*</mark> and <mark>@layer</mark>
     </h4>
   </section>
@@ -927,18 +934,18 @@ button.registered {
   </section>
 
   <section>
+    <h4>That's it!</h4>
+  </section>
+
+  <section>
     <h4>
-      <mark>That's it!</mark><br>
       Your brand new CSS APIs<br>
       are now <mark>ready to use</mark>
     </h4>
   </section>
 
   <section>
-    <p>
-      Every variable defined in a <mark>layered :root {}</mark> selector can be easily overridden into an
-      <mark>un-layered :root {}</mark> selector
-    </p>
+    <h4><mark>layered</mark> selectors and values will be overridden by <mark>un-layered</mark> ones</h4>
   </section>
 
   <section>
@@ -970,46 +977,45 @@ button.registered {
   </section>
 
   <section>
-    <h4>Let's take a look at the <a href="pix.html" target="_blank">pixCSS example</a></h4>
+    <h4>
+      Let's take a look at the <br>
+      <a href="pix.html" target="_blank">pixCSS example</a>
+    </h4>
   </section>
 </section>
 
     <!-- <include src="./slides/case-studies/case-studies.html"></include> -->
     <!-- <include src="./slides/css-apis-approach/_ten-ways.html"></include> -->
     <section>
-  <section>
+  <section data-transition="convex">
   <h4>Wrapping up</h4>
 </section>
-<section>
-  <p>
-    CSS Custom Properties and CSS Layers are <mark>fundamental tools</mark> for effectively addressing the needs of
-    re-branding, re-selling, and multi-tenant.
-  </p>
+<section data-transition="convex">
+  <comparison>
+    <left>
+      <h4>Pros</h4>
+      <small>
+        <ul>
+          <li class="fragment">Proactive Strategy</li>
+          <li class="fragment">Efficiency and Modularity</li>
+          <li class="fragment">Maintainability</li>
+          <li class="fragment">Progressive Enhancement</li>
+        </ul>
+      </small>
+    </left>
+    <right>
+      <h4>Cons</h4>
+      <small>
+        <ul>
+          <li class="fragment">Learning & Practice Curve</li>
+          <li class="fragment">Bootstrapping projects is harder</li>
+          <li class="fragment">Minimum impact on inspector performances</li>
+        </ul>
+      </small>
+    </right>
+  </comparison>
 </section>
-<section>
-  <h4>Pros</h4>
-  <small>
-    <ul>
-      <li class="fragment">Proactive Strategy</li>
-      <li class="fragment">Efficiency</li>
-      <li class="fragment">Modularity</li>
-      <li class="fragment">Maintainability</li>
-      <li class="fragment">Progressive Enhancement</li>
-      <li class="fragment">Visual Bug Hunting time reduction</li>
-    </ul>
-  </small>
-</section>
-<section>
-  <h4>Cons</h4>
-  <small>
-    <ul>
-      <li class="fragment">Learning & Practice Curve</li>
-      <li class="fragment">Bootstrapping projects initially more complex</li>
-      <li class="fragment">Minimum impact on performances</li>
-    </ul>
-  </small>
-</section>
-<section>
+<section data-transition="convex">
   <h4>Conclusions</h4>
   <small>
     <ul>
@@ -1022,7 +1028,7 @@ button.registered {
 
 </section>
 <section>
-  <section>
+  <section data-transition="convex">
   <h4>Slides Links</h4>
   <comparison links="">
     <figure>
@@ -1046,7 +1052,7 @@ button.registered {
   </comparison>
 </section>
 
-<section>
+<section data-transition="convex">
   <h4>Personal Links</h4>
   <comparison links="">
     <figure>
@@ -1139,7 +1145,7 @@ button.registered {
   </aside>
 </section>
 
-  <section>
+  <section data-transition="convex">
   <figure pixu="">
     <picture>
       <source srcset="pixu.ea6d4c65.webp" type="image/webp">
@@ -1154,6 +1160,6 @@ button.registered {
   </div>
 </div>
 
-    <script src="index.57e3d9e7.js" type="module"></script>
+    <script src="index.7cc3dbc9.js" type="module"></script>
   </body>
 </html>

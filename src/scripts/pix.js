@@ -10,16 +10,8 @@ import themePurple from 'bundle-text:../styles/pix/themes/_purple.scss';
 import themeSand from 'bundle-text:../styles/pix/themes/_sand.scss';
 
 const rgbToHex = (c) => {
-
-  function componentToHex(part) {
-    var hex = part.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-  }
-
   const [r, g, b] = c.replace('rgb(', '').replace(')', '').split(', ').map((part) => parseInt(part));
-
-  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-
+  return `#${r.toString(16).padStart('0', 2)}${g.toString(16).padStart('0', 2)}${b.toString(16).padStart('0', 2)}`;
 }
 
 const updateColorPicker = () => {

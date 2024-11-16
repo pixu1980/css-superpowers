@@ -49360,6 +49360,7 @@ const $ce2ab6a3784a12d8$var$slides = (0, $ef6d0cb1bf5eee6a$export$2e2bcd8739ae03
         highlightOnLoad: true,
         tabReplace: '  '
     },
+    navigationMode: 'linear',
     ...window.location.href.includes('?print-pdf') && {
         pdfSeparateFragments: false
     },
@@ -49380,4 +49381,4 @@ $ce2ab6a3784a12d8$var$slides.configure({
 $ce2ab6a3784a12d8$var$slides.initialize();
 
 
-//# sourceMappingURL=index.57e3d9e7.js.map
+//# sourceMappingURL=index.7cc3dbc9.js.map

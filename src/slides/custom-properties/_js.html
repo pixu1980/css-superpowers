@@ -1,7 +1,10 @@
 <section>
   <h4>Javascript interaction</h4>
   <small>
-    <p>Common js "CRUD" operations with CSS custom properties<br /></p>
+    <p>
+      Common js "CRUD" operations<br />
+      with CSS custom properties
+    </p>
   </small>
 </section>
 
@@ -11,9 +14,9 @@
     <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
-// sets the "--primary-color" value
+// sets the "--text-color" value
 // to the element's CSSStyleDeclaration
-button.style.setProperty('--primary-color', '#e74c3c');
+button.style.setProperty('--text-color', '#e74c3c');
     </code>
   </pre>
 </section>
@@ -24,47 +27,47 @@ button.style.setProperty('--primary-color', '#e74c3c');
     <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
-// sets the "--primary-color" value 
+// sets the "--text-color" value 
 // to the root element's CSSStyleDeclaration
-root.style.setProperty('--primary-color', '#e74c3c');
+root.style.setProperty('--text-color', '#e74c3c');
     </code>
   </pre>
 </section>
 
 <section>
-  <p>Reading a variable from an element (C<mark>R</mark>UD)</p>
+  <h4>Reading a variable from an element (C<mark>R</mark>UD)</h4>
   <pre>
     <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
-// gets the "--primary-color" value
+// gets the "--text-color" value
 // from element's CSSStyleDeclaration
 
 //! may be null if the variable is not defined on the element itself
-button.style.getPropertyValue('--primary-color');
+button.style.getPropertyValue('--text-color');
 
-// gets the "--primary-color" value
+// gets the "--text-color" value
 // from the element's ComputedStyle, 
 // so with inherited values too
 
 //! may be an empty string if the variable is not defined on 
 //! the element itself nor any of its ancestors
-getComputedStyle(button).getPropertyValue('--primary-color');
+getComputedStyle(button).getPropertyValue('--text-color');
     </code>
   </pre>
 </section>
 
 <section>
-  <p>Reading a variable from :root (C<mark>R</mark>UD)</p>
+  <h4>Reading a variable from :root (C<mark>R</mark>UD)</h4>
   <pre>
     <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
-// gets the "--primary-color" value
+// gets the "--text-color" value
 // from the root element's ComputedStyle
 
 //! may be an empty string if the variable is not defined
-getComputedStyle(root).getPropertyValue('--primary-color');
+getComputedStyle(root).getPropertyValue('--text-color');
     </code>
   </pre>
 </section>
@@ -75,9 +78,9 @@ getComputedStyle(root).getPropertyValue('--primary-color');
     <code class="hljs javascript" data-trim data-line-numbers>
 const button = document.querySelector('button');
 
-// deletes the "--primary-color" variable
+// deletes the "--text-color" variable
 // from the element's CSSStyleDeclaration
-button.style.removeProperty('--primary-color');
+button.style.removeProperty('--text-color');
     </code>
   </pre>
 </section>
@@ -88,9 +91,9 @@ button.style.removeProperty('--primary-color');
     <code class="hljs javascript" data-trim data-line-numbers>
 const root = document.documentElement;
 
-// deletes the "--primary-color" variable
+// deletes the "--text-color" variable
 // from the root element's CSSStyleDeclaration
-root.style.removeProperty('--primary-color');
+root.style.removeProperty('--text-color');
     </code>
   </pre>
 </section>

@@ -2615,15 +2615,6 @@
     line-height: 1.3;
   }
 
-  .reveal side-by-side {
-    gap: 3rem;
-    display: flex;
-  }
-
-  .reveal side-by-side:first-child, .reveal side-by-side:last-child {
-    width: calc(50% - 1.5rem);
-  }
-
   .hljs-ln td {
     padding: 0 0 0 1rem !important;
   }
@@ -3701,4 +3692,4 @@
     }
   }
 }
-/*# sourceMappingURL=index.f6d1221e.css.map */
+/*# sourceMappingURL=index.40ed50bc.css.map */
