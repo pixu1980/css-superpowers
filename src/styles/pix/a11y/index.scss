@@ -1,0 +1,16 @@
+@layer a11y {
+  [aria-controls] {
+    cursor: pointer;
+  }
+  [aria-disabled='true'],
+  [disabled] {
+    cursor: not-allowed;
+  }
+  [aria-hidden='false'][hidden] {
+    display: initial;
+  }
+  [aria-hidden='false'][hidden]:not(:focus) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+  }
+}

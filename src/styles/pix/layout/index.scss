@@ -1,0 +1,71 @@
+
+@layer layout {
+  body {
+    display: grid;
+
+    grid-template:
+      'header aside' 5.5rem
+      'content aside' 1fr
+      'footer aside' 4rem
+      / 60vw 40vw;
+
+    > header {
+      grid-area: header;
+
+      position: sticky;
+      top: 0;
+      z-index: 1;
+
+      background-color: var(--pix--background-color);
+      color: var(--pix--color);
+      box-shadow: 0 0 50px -30px rgba(255, 255, 255, 0.35);
+
+      padding-inline: var(--pix--spacing);
+    }
+
+    > main {
+      grid-area: content;
+
+      display: block;
+
+      padding-inline: var(--pix--spacing);
+    }
+
+    > footer {
+      grid-area: footer;
+
+      padding-inline: var(--pix--spacing);
+    }
+
+    > aside {
+      grid-area: aside;
+    }
+
+    > :where(header, main, footer) {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      padding: var(--pix--block-spacing-vertical) var(--pix--block-spacing-horizontal);
+
+      @media (min-width: 576px) {
+        max-width: 510px;
+      }
+
+      @media (min-width: 768px) {
+        max-width: 700px;
+      }
+
+      @media (min-width: 1024px) {
+        max-width: 950px;
+      }
+
+      @media (min-width: 1280px) {
+        max-width: 1200px;
+      }
+
+      @media (min-width: 1536px) {
+        max-width: 1450px;
+      }
+    }
+  }
+}

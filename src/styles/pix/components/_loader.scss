@@ -1,0 +1,29 @@
+@layer loader {
+  [aria-busy='true']:not(input, select, textarea, html) {
+    white-space: nowrap;
+  }
+  [aria-busy='true']:not(input, select, textarea, html)::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: var(--pix--icon-loading);
+    background-size: 1em auto;
+    background-repeat: no-repeat;
+    content: '';
+    vertical-align: -0.125em;
+  }
+  [aria-busy='true']:not(input, select, textarea, html):not(:empty)::before {
+    margin-inline-end: calc(var(--pix--spacing) * 0.5);
+  }
+  [aria-busy='true']:not(input, select, textarea, html):empty {
+    text-align: center;
+  }
+  [role='button'][aria-busy='true'],
+  [type='button'][aria-busy='true'],
+  [type='reset'][aria-busy='true'],
+  [type='submit'][aria-busy='true'],
+  a[aria-busy='true'],
+  button[aria-busy='true'] {
+    pointer-events: none;
+  }
+}

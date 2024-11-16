@@ -1,0 +1,177 @@
+@layer dropdown {
+  details.dropdown summary:not([role='button']) {
+    --pix--outline-width: 0.0625rem;
+  }
+
+  nav details.dropdown summary:focus-visible {
+    --pix--outline-width: 0.125rem;
+  }
+
+  /**
+* Dropdown (details.dropdown)
+*/
+  details.dropdown {
+    position: relative;
+    border-bottom: none;
+
+    background-color: var(--pix--background-color);
+    color: var(--pix--color);
+  }
+  details.dropdown summary::after,
+  details.dropdown > button::after,
+  details.dropdown > a::after {
+    display: block;
+    width: 1rem;
+    height: calc(1rem * var(--pix--line-height, 1.5));
+    margin-inline-start: 0.25rem;
+    float: right;
+    transform: rotate(0deg) translateX(0.2rem);
+    background-image: var(--pix--icon-chevron);
+    background-position: right center;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+    content: '';
+  }
+
+  nav details.dropdown {
+    margin-bottom: 0;
+  }
+
+  details.dropdown summary:not([role]) {
+    height: calc(1rem * var(--pix--line-height) + var(--pix--form-element-spacing-vertical) * 2 + var(--pix--border-width) * 2);
+    padding: var(--pix--form-element-spacing-vertical) var(--pix--form-element-spacing-horizontal);
+    border: var(--pix--border-width) solid var(--pix--form-element-border-color);
+    border-radius: var(--pix--border-radius);
+    background-color: var(--pix--form-element-background-color);
+    color: var(--pix--form-element-placeholder-color);
+    line-height: inherit;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transition: background-color var(--pix--transition), border-color var(--pix--transition), color var(--pix--transition), box-shadow var(--pix--transition);
+  }
+  details.dropdown summary:not([role]):active,
+  details.dropdown summary:not([role]):focus {
+    border-color: var(--pix--form-element-active-border-color);
+    background-color: var(--pix--form-element-active-background-color);
+  }
+  details.dropdown summary:not([role]):focus {
+    box-shadow: 0 0 0 var(--pix--outline-width) var(--pix--form-element-focus-color);
+  }
+  details.dropdown summary:not([role]):focus-visible {
+    outline: none;
+  }
+  details.dropdown summary:not([role])[aria-invalid='false'] {
+    --pix--form-element-border-color: var(--pix--form-element-valid-border-color);
+    --pix--form-element-active-border-color: var(--pix--form-element-valid-focus-color);
+    --pix--form-element-focus-color: var(--pix--form-element-valid-focus-color);
+  }
+  details.dropdown summary:not([role])[aria-invalid='true'] {
+    --pix--form-element-border-color: var(--pix--form-element-invalid-border-color);
+    --pix--form-element-active-border-color: var(--pix--form-element-invalid-focus-color);
+    --pix--form-element-focus-color: var(--pix--form-element-invalid-focus-color);
+  }
+
+  nav details.dropdown {
+    display: inline;
+    margin: calc(var(--pix--nav-element-spacing-vertical) * -1) 0;
+  }
+  nav details.dropdown summary::after {
+    transform: rotate(0deg) translateX(0);
+  }
+  nav details.dropdown summary:not([role]) {
+    height: calc(1rem * var(--pix--line-height) + var(--pix--nav-link-spacing-vertical) * 2);
+    padding: calc(var(--pix--nav-link-spacing-vertical) - var(--pix--border-width) * 2) var(--pix--nav-link-spacing-horizontal);
+  }
+  nav details.dropdown summary:not([role]):focus-visible {
+    box-shadow: 0 0 0 var(--pix--outline-width) var(--pix--primary-focus);
+  }
+
+  details.dropdown summary + menu {
+    display: flex;
+    z-index: 99;
+    position: absolute;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    margin: 0;
+    margin-top: var(--pix--outline-width);
+    padding: 0;
+    border: var(--pix--border-width) solid var(--pix--dropdown-border-color);
+    border-radius: var(--pix--border-radius);
+    background-color: var(--pix--dropdown-background-color);
+    box-shadow: var(--pix--dropdown-box-shadow);
+    color: var(--pix--dropdown-color);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity var(--pix--transition), transform 0s ease-in-out 1s;
+  }
+  details.dropdown summary + menu[dir='rtl'] {
+    right: 0;
+    left: auto;
+  }
+  details.dropdown summary + menu label {
+    width: 100%;
+    margin-bottom: 0;
+    padding: calc(var(--pix--form-element-spacing-vertical) * 0.5) var(--pix--form-element-spacing-horizontal);
+    list-style: none;
+  }
+  details.dropdown summary + menu label:first-of-type {
+    margin-top: calc(var(--pix--form-element-spacing-vertical) * 0.5);
+  }
+  details.dropdown summary + menu label:last-of-type {
+    margin-bottom: calc(var(--pix--form-element-spacing-vertical) * 0.5);
+  }
+  details.dropdown summary + menu label a {
+    display: block;
+    margin: calc(var(--pix--form-element-spacing-vertical) * -0.5) calc(var(--pix--form-element-spacing-horizontal) * -1);
+    padding: calc(var(--pix--form-element-spacing-vertical) * 0.5) var(--pix--form-element-spacing-horizontal);
+    overflow: hidden;
+    border-radius: 0;
+    color: var(--pix--dropdown-color);
+    text-decoration: none;
+    text-overflow: ellipsis;
+  }
+  details.dropdown summary + menu label a:hover,
+  details.dropdown summary + menu label a:focus,
+  details.dropdown summary + menu label a:active,
+  details.dropdown summary + menu label a:focus-visible,
+  details.dropdown summary + menu label a[aria-current]:not([aria-current='false']) {
+    background-color: var(--pix--dropdown-hover-background-color);
+  }
+  details.dropdown summary + menu label label {
+    width: 100%;
+  }
+  details.dropdown summary + menu label:has(a):hover {
+    background-color: var(--pix--dropdown-hover-background-color);
+  }
+
+  details.dropdown[open] summary {
+    margin-bottom: 0;
+  }
+
+  details.dropdown[open] summary + menu {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: opacity var(--pix--transition), transform 0s ease-in-out 0s;
+  }
+
+  details.dropdown[open] summary::before {
+    display: block;
+    z-index: 1;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    inset: 0;
+    background: none;
+    content: '';
+    cursor: default;
+  }
+
+  label > details.dropdown {
+    margin-top: calc(var(--pix--spacing) * 0.25);
+  }
+}

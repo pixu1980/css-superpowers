@@ -1,0 +1,516 @@
+@layer reset {
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+  }
+
+  ::after,
+  ::before {
+    text-decoration: inherit;
+    vertical-align: inherit;
+  }
+
+  :where(:root) {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: var(--pix--background-color);
+    color: var(--pix--color);
+    font-weight: var(--pix--font-weight);
+    font-size: var(--pix--font-size);
+    line-height: var(--pix--line-height);
+    font-family: var(--pix--font-family);
+    text-underline-offset: var(--pix--text-underline-offset);
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+  }
+
+  html {
+    // font-size: 10px;
+  }
+
+  body {
+    width: 100%;
+    margin: 0;
+
+    // font-size: 1.6rem;
+  }
+
+  :root {
+    --pix--scrollbar-width: 0px;
+  }
+
+  [tabindex],
+  a,
+  area,
+  button,
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    -ms-touch-action: manipulation;
+  }
+
+  [dir='rtl'] {
+    direction: rtl;
+  }
+
+  @layer semantic-elements {
+    hr {
+      height: 0;
+      margin: var(--pix--typography-spacing-vertical) 0;
+      border: 0;
+      border-top: 1px solid var(--pix--muted-border-color);
+      color: inherit;
+    }
+
+    [hidden],
+    template {
+      display: none !important;
+    }
+
+    section {
+      margin-bottom: var(--pix--block-spacing-vertical);
+    }
+
+    article {
+      margin-bottom: var(--pix--block-spacing-vertical);
+      padding: var(--pix--block-spacing-vertical) var(--pix--block-spacing-horizontal);
+      border-radius: var(--pix--border-radius);
+      background: var(--pix--card-background-color);
+      box-shadow: var(--pix--card-box-shadow);
+
+      > :where(header, footer) {
+        margin-right: calc(var(--pix--block-spacing-horizontal) * -1);
+        margin-left: calc(var(--pix--block-spacing-horizontal) * -1);
+        padding: calc(var(--pix--block-spacing-vertical) * 0.66) var(--pix--block-spacing-horizontal);
+        background-color: var(--pix--card-sectioning-background-color);
+      }
+
+      > header {
+        margin-top: calc(var(--pix--block-spacing-vertical) * -1);
+        margin-bottom: var(--pix--block-spacing-vertical);
+        border-bottom: var(--pix--border-width) solid var(--pix--card-border-color);
+        border-top-right-radius: var(--pix--border-radius);
+        border-top-left-radius: var(--pix--border-radius);
+      }
+
+      > footer {
+        margin-top: var(--pix--block-spacing-vertical);
+        margin-bottom: calc(var(--pix--block-spacing-vertical) * -1);
+        border-top: var(--pix--border-width) solid var(--pix--card-border-color);
+        border-bottom-right-radius: var(--pix--border-radius);
+        border-bottom-left-radius: var(--pix--border-radius);
+      }
+    }
+  }
+
+  @layer nav {
+    :where(nav li)::before {
+      float: left;
+      content: '​';
+    }
+
+    nav,
+    nav ul {
+      display: flex;
+    }
+    nav {
+      justify-content: space-between;
+      overflow: visible;
+    }
+    nav ol,
+    nav ul {
+      align-items: center;
+      margin-bottom: 0;
+      padding: 0;
+      list-style: none;
+    }
+    nav ol:first-of-type,
+    nav ul:first-of-type {
+      margin-left: calc(var(--pix--nav-element-spacing-horizontal) * -1);
+    }
+    nav ol:last-of-type,
+    nav ul:last-of-type {
+      margin-right: calc(var(--pix--nav-element-spacing-horizontal) * -1);
+    }
+    nav li {
+      display: inline-block;
+      margin: 0;
+      padding: var(--pix--nav-element-spacing-vertical) var(--pix--nav-element-spacing-horizontal);
+    }
+    nav li :where(a, [role='link']) {
+      display: inline-block;
+      margin: calc(var(--pix--nav-link-spacing-vertical) * -1) calc(var(--pix--nav-link-spacing-horizontal) * -1);
+      padding: var(--pix--nav-link-spacing-vertical) var(--pix--nav-link-spacing-horizontal);
+      border-radius: var(--pix--border-radius);
+    }
+    nav li :where(a, [role='link']):not(:hover) {
+      text-decoration: none;
+    }
+    nav li [role='button'],
+    nav li [type='button'],
+    nav li button,
+    nav li input:not([type='checkbox'], [type='radio'], [type='range'], [type='file']),
+    nav li select {
+      height: auto;
+      margin-right: inherit;
+      margin-bottom: 0;
+      margin-left: inherit;
+      padding: calc(var(--pix--nav-link-spacing-vertical) - var(--pix--border-width) * 2) var(--pix--nav-link-spacing-horizontal);
+    }
+    nav[aria-label='breadcrumb'] {
+      align-items: center;
+      justify-content: start;
+    }
+    nav[aria-label='breadcrumb'] ul li:not(:first-child) {
+      margin-inline-start: var(--pix--nav-link-spacing-horizontal);
+    }
+    nav[aria-label='breadcrumb'] ul li a {
+      margin: calc(var(--pix--nav-link-spacing-vertical) * -1) 0;
+      margin-inline-start: calc(var(--pix--nav-link-spacing-horizontal) * -1);
+    }
+    nav[aria-label='breadcrumb'] ul li:not(:last-child)::after {
+      display: inline-block;
+      position: absolute;
+      width: calc(var(--pix--nav-link-spacing-horizontal) * 4);
+      margin: 0 calc(var(--pix--nav-link-spacing-horizontal) * -1);
+      content: var(--pix--nav-breadcrumb-divider);
+      color: var(--pix--muted-color);
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    nav[aria-label='breadcrumb'] a[aria-current]:not([aria-current='false']) {
+      background-color: transparent;
+      color: inherit;
+      text-decoration: none;
+      pointer-events: none;
+    }
+    [dir='rtl'] nav[aria-label='breadcrumb'] ul li:not(:last-child) ::after {
+      content: '\\';
+    }
+  }
+
+  @layer aside {
+    aside li,
+    aside nav,
+    aside ol,
+    aside ul {
+      display: block;
+    }
+    aside li {
+      padding: calc(var(--pix--nav-element-spacing-vertical) * 0.5) var(--pix--nav-element-spacing-horizontal);
+    }
+    aside li a {
+      display: block;
+    }
+    aside li [role='button'] {
+      margin: inherit;
+    }
+  }
+
+  @layer spacings {
+    :where(address, blockquote, dl, ol, p, pre, table, ul) {
+      margin-top: 0;
+      margin-bottom: var(--pix--typography-spacing-vertical);
+      color: var(--pix--color);
+      font-style: normal;
+      font-weight: var(--pix--font-weight);
+    }
+
+    :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
+      margin-top: var(--pix--typography-spacing-top);
+    }
+  }
+
+  @layer phrasings {
+    b,
+    strong {
+      font-weight: bolder;
+    }
+
+    sub,
+    sup {
+      position: relative;
+      font-size: 0.75em;
+      line-height: 0;
+      vertical-align: baseline;
+    }
+
+    sub {
+      bottom: -0.25em;
+    }
+
+    sup {
+      top: -0.5em;
+    }
+
+    :where(h1, h2, h3, h4, h5, h6) {
+      margin-top: 0;
+      margin-bottom: var(--pix--typography-spacing-vertical);
+      color: var(--pix--color);
+      font-weight: var(--pix--font-weight);
+      font-size: var(--pix--font-size);
+      line-height: var(--pix--line-height);
+      font-family: var(--pix--font-family);
+    }
+
+    h1 {
+      --pix--color: var(--pix--h1-color);
+    }
+
+    h2 {
+      --pix--color: var(--pix--h2-color);
+    }
+
+    h3 {
+      --pix--color: var(--pix--h3-color);
+    }
+
+    h4 {
+      --pix--color: var(--pix--h4-color);
+    }
+
+    h5 {
+      --pix--color: var(--pix--h5-color);
+    }
+
+    h6 {
+      --pix--color: var(--pix--h6-color);
+    }
+
+    p {
+      margin-bottom: var(--pix--typography-spacing-vertical);
+    }
+
+    hgroup {
+      margin-bottom: var(--pix--typography-spacing-vertical);
+    }
+
+    hgroup > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    hgroup > :not(:first-child):last-child {
+      --pix--color: var(--pix--muted-color);
+      --pix--font-weight: unset;
+      font-size: 1rem;
+    }
+
+    mark {
+      padding: 0.125rem 0.25rem;
+      background-color: var(--pix--mark-background-color);
+      color: var(--pix--mark-color);
+      vertical-align: baseline;
+    }
+
+    blockquote {
+      display: block;
+      margin: var(--pix--typography-spacing-vertical) 0;
+      padding: var(--pix--spacing);
+      border-right: none;
+      border-left: 0.25rem solid var(--pix--blockquote-border-color);
+      border-inline-start: 0.25rem solid var(--pix--blockquote-border-color);
+      border-inline-end: none;
+
+      footer {
+        margin-top: calc(var(--pix--typography-spacing-vertical) * 0.5);
+        color: var(--pix--blockquote-footer-color);
+      }
+    }
+
+    abbr[title] {
+      border-bottom: 1px dotted;
+      text-decoration: none;
+      cursor: help;
+    }
+
+    ins {
+      color: var(--pix--ins-color);
+      text-decoration: none;
+    }
+
+    del {
+      color: var(--pix--del-color);
+    }
+  }
+
+  @layer lists {
+    :where(ol, ul) li {
+      margin-bottom: calc(var(--pix--typography-spacing-vertical) * 0.25);
+    }
+
+    :where(dl, ol, ul) :where(dl, ol, ul) {
+      margin: 0;
+      margin-top: calc(var(--pix--typography-spacing-vertical) * 0.25);
+    }
+
+    ul li {
+      list-style: square;
+    }
+  }
+
+  @layer selection {
+    ::-moz-selection {
+      background-color: var(--pix--text-selection-color);
+    }
+
+    ::selection {
+      background-color: var(--pix--text-selection-color);
+    }
+  }
+
+  @layer links {
+    :where(a:not([role='button']), [role='link']) {
+      --pix--color: var(--pix--primary);
+      --pix--background-color: transparent;
+      --pix--underline: var(--pix--primary-underline);
+
+      outline: 0;
+      background-color: var(--pix--background-color);
+      color: var(--pix--color);
+      text-decoration: var(--pix--text-decoration);
+      text-decoration-color: var(--pix--underline);
+      text-underline-offset: 0.125em;
+      transition: background-color var(--pix--transition), color var(--pix--transition), text-decoration var(--pix--transition), box-shadow var(--pix--transition);
+    }
+
+    :where(a:not([role='button'])):is([aria-current]:not([aria-current='false']), :hover, :active, :focus),
+    [role='link']:is([aria-current]:not([aria-current='false']), :hover, :active, :focus) {
+      --pix--color: var(--pix--primary-hover);
+      --pix--underline: var(--pix--primary-hover-underline);
+      --pix--text-decoration: underline;
+    }
+
+    :where(a:not([role='button'])):focus-visible,
+    [role='link']:focus-visible {
+      box-shadow: 0 0 0 var(--pix--outline-width) var(--pix--primary-focus);
+    }
+  }
+
+  @layer tables {
+    :where(table) {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      text-indent: 0;
+    }
+    td,
+    th {
+      padding: calc(var(--pix--spacing) / 2) var(--pix--spacing);
+      border-bottom: var(--pix--border-width) solid var(--pix--table-border-color);
+      background-color: var(--pix--background-color);
+      color: var(--pix--color);
+      font-weight: var(--pix--font-weight);
+      text-align: left;
+      text-align: start;
+    }
+    tfoot td,
+    tfoot th {
+      border-top: var(--pix--border-width) solid var(--pix--table-border-color);
+      border-bottom: 0;
+    }
+    table.striped tbody tr:nth-child(odd) td,
+    table.striped tbody tr:nth-child(odd) th {
+      background-color: var(--pix--table-row-stripped-background-color);
+    }
+  }
+
+  @layer media {
+    figure {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    figure figcaption {
+      padding: calc(var(--pix--spacing) * 0.5) 0;
+      color: var(--pix--muted-color);
+    }
+    canvas {
+      display: inline-block;
+    }
+
+    :where(audio, canvas, iframe, img, svg, video) {
+      vertical-align: middle;
+    }
+    audio,
+    video {
+      display: inline-block;
+    }
+    audio:not([controls]) {
+      display: none;
+      height: 0;
+    }
+    :where(iframe) {
+      border-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-style: none;
+    }
+    :where(svg:not([fill])) {
+      fill: currentColor;
+    }
+    svg:not(:root) {
+      overflow: hidden;
+    }
+  }
+
+  @layer code {
+    code,
+    kbd,
+    pre,
+    samp {
+      font-size: 0.875em;
+      font-family: var(--pix--font-family);
+    }
+    pre code {
+      font-size: inherit;
+      font-family: inherit;
+    }
+    pre {
+      -ms-overflow-style: scrollbar;
+      overflow: auto;
+    }
+    code,
+    kbd,
+    pre {
+      border-radius: var(--pix--border-radius);
+      background: var(--pix--code-background-color);
+      color: var(--pix--code-color);
+      font-weight: var(--pix--font-weight);
+      line-height: initial;
+    }
+    code,
+    kbd {
+      display: inline-block;
+      padding: 0.375rem;
+    }
+    pre {
+      display: block;
+      margin-bottom: var(--pix--spacing);
+      overflow-x: auto;
+    }
+    pre > code {
+      display: block;
+      padding: var(--pix--spacing);
+      background: 0 0;
+      line-height: var(--pix--line-height);
+    }
+    kbd {
+      background-color: var(--pix--code-kbd-background-color);
+      color: var(--pix--code-kbd-color);
+      vertical-align: baseline;
+    }
+  }
+}

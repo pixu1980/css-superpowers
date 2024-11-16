@@ -5,25 +5,15 @@
 
 @import 'reveal';
 
-@import 'intro.properties';
-@import 'unregistered-vs-registered.properties';
-@import 'ball-throw.properties';
-@import 'loading-border.properties';
-@import 'counter.properties';
-@import 'stop-watch.properties';
+@import 'examples/index.properties';
 
 @layer talk {
   @import 'palette';
   @import 'typography';
   @import 'code';
   @import 'comparison';
-  @import 'intro';
-  @import 'intro.animations';
-  @import 'ball-throw';
-  @import 'loading-border';
-  @import 'counter';
-  @import 'stop-watch';
   @import 'pixu';
-  @import 'unregistered-vs-registered';
+  @import 'examples/index';
   @import 'outro';
+
 }

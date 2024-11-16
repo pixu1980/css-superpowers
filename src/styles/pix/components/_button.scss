@@ -1,0 +1,104 @@
+@layer button {
+  a[role='button'] {
+    display: inline-block;
+  }
+  button {
+    margin: 0;
+    overflow: visible;
+    font-family: inherit;
+    text-transform: none;
+  }
+  [type='button'],
+  [type='reset'],
+  [type='submit'],
+  button {
+    -webkit-appearance: button;
+  }
+  [role='button'],
+  [type='button'],
+  [type='file']::file-selector-button,
+  [type='reset'],
+  [type='submit'],
+  button {
+    --pix--background-color: var(--pix--primary-background);
+    --pix--border-color: var(--pix--primary-border);
+    --pix--color: var(--pix--primary-inverse);
+    --pix--box-shadow: var(--pix--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+
+    padding: var(--pix--form-element-spacing-vertical) var(--pix--form-element-spacing-horizontal);
+    border: var(--pix--border-width) solid var(--pix--border-color);
+    border-radius: var(--pix--border-radius);
+    outline: 0;
+    background-color: var(--pix--background-color);
+    box-shadow: var(--pix--box-shadow);
+    color: var(--pix--color);
+    font-weight: var(--pix--font-weight);
+    font-size: 1rem;
+    line-height: var(--pix--line-height);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transition: background-color var(--pix--transition), border-color var(--pix--transition), color var(--pix--transition), box-shadow var(--pix--transition);
+  }
+  [role='button']:is(:hover, :active, :focus),
+  [role='button']:is([aria-current]:not([aria-current='false'])),
+  [type='button']:is(:hover, :active, :focus),
+  [type='button']:is([aria-current]:not([aria-current='false'])),
+  [type='file']::file-selector-button:is(:hover, :active, :focus),
+  [type='file']::file-selector-button:is([aria-current]:not([aria-current='false'])),
+  [type='reset']:is(:hover, :active, :focus),
+  [type='reset']:is([aria-current]:not([aria-current='false'])),
+  [type='submit']:is(:hover, :active, :focus),
+  [type='submit']:is([aria-current]:not([aria-current='false'])),
+  button:is(:hover, :active, :focus),
+  button:is([aria-current]:not([aria-current='false'])) {
+    --pix--background-color: var(--pix--primary-hover-background);
+    --pix--border-color: var(--pix--primary-hover-border);
+    --pix--box-shadow: var(--pix--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    --pix--color: var(--pix--primary-inverse);
+  }
+  [role='button']:focus,
+  [role='button']:is([aria-current]:not([aria-current='false'])):focus,
+  [type='button']:focus,
+  [type='button']:is([aria-current]:not([aria-current='false'])):focus,
+  [type='file']::file-selector-button:focus,
+  [type='file']::file-selector-button:is([aria-current]:not([aria-current='false'])):focus,
+  [type='reset']:focus,
+  [type='reset']:is([aria-current]:not([aria-current='false'])):focus,
+  [type='submit']:focus,
+  [type='submit']:is([aria-current]:not([aria-current='false'])):focus,
+  button:focus,
+  button:is([aria-current]:not([aria-current='false'])):focus {
+    --pix--box-shadow: var(--pix--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pix--outline-width) var(--pix--primary-focus);
+  }
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
+    margin-bottom: var(--pix--spacing);
+  }
+  [type='file']::file-selector-button,
+  [type='reset'] {
+    --pix--background-color: var(--pix--secondary-background);
+    --pix--border-color: var(--pix--secondary-border);
+    --pix--color: var(--pix--secondary-inverse);
+    cursor: pointer;
+  }
+  [type='file']::file-selector-button:is([aria-current]:not([aria-current='false']), :hover, :active, :focus),
+  [type='reset']:is([aria-current]:not([aria-current='false']), :hover, :active, :focus) {
+    --pix--background-color: var(--pix--secondary-hover-background);
+    --pix--border-color: var(--pix--secondary-hover-border);
+    --pix--color: var(--pix--secondary-inverse);
+  }
+  [type='file']::file-selector-button:focus,
+  [type='reset']:focus {
+    --pix--box-shadow: var(--pix--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pix--outline-width) var(--pix--secondary-focus);
+  }
+  :where(button, [type='submit'], [type='reset'], [type='button'], [role='button'])[disabled],
+  :where(fieldset[disabled]) :is(button, [type='submit'], [type='button'], [type='reset'], [role='button']) {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

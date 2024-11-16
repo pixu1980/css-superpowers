@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>pixCSS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="stylesheet" href="./styles/pix/pix.scss" />
     <!-- <link rel="stylesheet" href="example-form.themes.sand.scss" /> -->
     <!-- <link rel="stylesheet" href="example-form.themes.amber.scss" /> -->
@@ -16,46 +17,55 @@
       <nav>
         <hgroup>
           <h1>pixCSS</h1>
-          <p>A 0-dependency, mostly class-less, UI library</p>
+          <p>A pure CSS 0-dependency UI library</p>
         </hgroup>
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">Services</a></li>
           <li>
-            <details class="dropdown accent">
-              <summary>Pick an accent</summary>
-              <ul dir="rtl" style="text-align: right">
-                <li>
-                  <label>
-                    <input type="radio" name="accent" value="default" checked aria-checked="true" />
-                    Default
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="radio" name="accent" value="amber" />
-                    Amber
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="radio" name="accent" value="jade" />
-                    Jade
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="radio" name="accent" value="purple" />
-                    Purple
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    <input type="radio" name="accent" value="sand" />
-                    Sand
-                  </label>
-                </li>
-              </ul>
+            <details class="dropdown theme">
+              <summary>Pick an theme</summary>
+              <menu>
+                <label>
+                  <input type="radio" name="theme" value="default" checked aria-checked="true" />
+                  Default
+                </label>
+                <label>
+                  <input type="radio" name="theme" value="amber" />
+                  Amber
+                </label>
+                <label>
+                  <input type="radio" name="theme" value="jade" />
+                  Jade
+                </label>
+                <label>
+                  <input type="radio" name="theme" value="purple" />
+                  Purple
+                </label>
+                <label>
+                  <input type="radio" name="theme" value="sand" />
+                  Sand
+                </label>
+              </menu>
+            </details>
+          </li>
+          <li>
+            <details class="dropdown color-scheme">
+              <summary>Pick an color-scheme</summary>
+              <menu>
+                <label>
+                  <input type="radio" name="color-scheme" value="auto" checked="" aria-checked="true" />
+                  Auto
+                </label>
+                <label>
+                  <input type="radio" name="color-scheme" value="light" />
+                  Light
+                </label>
+                <label>
+                  <input type="radio" name="color-scheme" value="dark" />
+                  Dark
+                </label>
+              </menu>
             </details>
           </li>
         </ul>
@@ -65,31 +75,13 @@
 
     <!-- Main -->
     <main>
-      <nav>
-        <ul>
-          <li><a href="#" data-theme-switcher="auto">Auto</a></li>
-          <li><a href="#" data-theme-switcher="light">Light</a></li>
-          <li><a href="#" data-theme-switcher="dark">Dark</a></li>
-        </ul>
-      </nav>
-
       <!-- Preview -->
       <section id="preview">
         <h2>Preview</h2>
-        <p>
-          Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit
-          pharetra egestas.
-        </p>
+        <p>Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit pharetra egestas.</p>
         <form>
           <input type="text" name="firstname" placeholder="First name" aria-label="First name" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            aria-label="Email address"
-            autocomplete="email"
-            required
-          />
+          <input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required />
           <button type="submit">Subscribe</button>
           <fieldset>
             <label for="terms">
@@ -105,10 +97,7 @@
       <!-- Typography-->
       <section id="typography">
         <h2>Typography</h2>
-        <p>
-          Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat. Vivamus porta nunc a erat
-          mattis, mattis feugiat turpis pretium. Quisque sed tristique felis.
-        </p>
+        <p>Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium. Quisque sed tristique felis.</p>
 
         <!-- Blockquote-->
         <blockquote>
@@ -130,38 +119,26 @@
         <!-- Inline text elements-->
         <h3>Inline text elements</h3>
         <p>
-          We should start considering inline text elements like <a href="#" onclick="event.preventDefault()">Links</a>,
-          the text can be <strong>Bold</strong>, <em>Italic</em> or <u>Underline</u>. But you can also may need
-          <del>Deleted</del>, <ins>Inserted</ins> or <s>Strikethrough</s> texts. An rarely you may need the text to be
-          <small>Smaller</small> or <sub>Sub</sub> rather than <sup>Sup</sup>. Finally there are more
-          editorial/typography related contents like
-          <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>, keyboard hotkeys like
+          We should start considering inline text elements like <a href="#" onclick="event.preventDefault()">Links</a>, the text can be <strong>Bold</strong>, <em>Italic</em> or <u>Underline</u>. But
+          you can also may need <del>Deleted</del>, <ins>Inserted</ins> or <s>Strikethrough</s> texts. An rarely you may need the text to be <small>Smaller</small> or <sub>Sub</sub> rather than
+          <sup>Sup</sup>. Finally there are more editorial/typography related contents like <abbr title="Abbreviation" data-tooltip="Abbreviation">Abbr.</abbr>, keyboard hotkeys like
           <kbd>CMD + R</kbd> or <mark>Marked</mark> text
         </p>
 
         <!-- Headings-->
         <h3>Heading 3</h3>
         <p>
-          Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis ipsum, at efficitur sem scelerisque vel.
-          Aliquam auctor diam ut purus cursus fringilla. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos.
+          Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis ipsum, at efficitur sem scelerisque vel. Aliquam auctor diam ut purus cursus fringilla. Class aptent taciti sociosqu ad
+          litora torquent per conubia nostra, per inceptos himenaeos.
         </p>
         <h4>Heading 4</h4>
-        <p>
-          Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac fermentum felis.
-          Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus.
-        </p>
+        <p>Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac fermentum felis. Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus.</p>
         <h5>Heading 5</h5>
-        <p>
-          Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi
-          euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam sem.
-        </p>
+        <p>Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam sem.</p>
         <h6>Heading 6</h6>
         <p>
-          Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut tortor posuere, vitae
-          malesuada tortor molestie. Sed nec interdum dolor. Vestibulum id auctor nisi, a efficitur sem. Aliquam
-          sollicitudin efficitur turpis, sollicitudin hendrerit ligula semper id. Nunc risus felis, egestas eu tristique
-          eget, convallis in velit.
+          Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut tortor posuere, vitae malesuada tortor molestie. Sed nec interdum dolor. Vestibulum id auctor nisi, a
+          efficitur sem. Aliquam sollicitudin efficitur turpis, sollicitudin hendrerit ligula semper id. Nunc risus felis, egestas eu tristique eget, convallis in velit.
         </p>
 
         <!-- Medias-->
@@ -307,11 +284,9 @@
         <details name="accordion">
           <summary>Accordion 1</summary>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta sed,
-            auctor id velit. Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo. Nulla non mauris ipsum.
-            Aliquam eu posuere orci. Nulla convallis lectus rutrum quam hendrerit, in facilisis elit sollicitudin.
-            Mauris pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit
-            amet, congue turpis.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae tempus quam
+            commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar mi, dictum tristique elit
+            auctor quis. Maecenas ac ipsum ultrices, porta turpis sit amet, congue turpis.
           </p>
         </details>
         <details open name="accordion">
@@ -330,9 +305,8 @@
       <article id="article">
         <h2>Article</h2>
         <p>
-          Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies dolor non ante vulputate
-          hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc placerat
-          facilisis cursus. Sed vestibulum metus eget dolor pharetra rutrum.
+          Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit pharetra
+          egestas. Nunc placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra rutrum.
         </p>
         <footer>
           <small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
@@ -401,10 +375,7 @@
           <button aria-label="Close" rel="prev" onclick="modalExample.close()"></button>
           <h3>Confirm your action!</h3>
         </header>
-        <p>
-          Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue finibus pellentesque. Nullam finibus
-          risus non semper euismod.
-        </p>
+        <p>Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue finibus pellentesque. Nullam finibus risus non semper euismod.</p>
         <footer>
           <button role="button" onclick="modalExample.close()">Cancel</button>
           <button autofocus role="button" onclick="modalExample.close()">Confirm</button>

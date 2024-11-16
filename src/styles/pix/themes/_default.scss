@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*!
+ * pixCSS ✨ v0.0.1 (https://pix-css.dev)
+ * Copyright 2024 - Licensed under MIT
+ *
+ * Default theme
+ */
+
+ @layer pix {
+  @layer themes {
+    :root {
+      --pix--default--light--color: #373c44;
+      --pix--default--light--background-color: #fff;
+
+      --pix--default--dark--color: #c2c7d0;
+      --pix--default--dark--background-color: #13171f;
+
+      --pix--color: light-dark(var(--pix--default--light--color), var(--pix--default--dark--color));
+
+      --pix--background-color: light-dark(var(--pix--default--light--background-color), var(--pix--default--dark--background-color));
+
+      --pix--default--light--primary: #0172ad;
+      --pix--default--light--primary-background: #0172ad;
+      --pix--default--light--primary-underline: rgba(1, 114, 173, 0.5);
+      --pix--default--light--primary-hover: #015887;
+      --pix--default--light--primary-hover-background: #02659a;
+      --pix--default--light--primary-focus: rgba(2, 154, 232, 0.5);
+      --pix--default--light--text-selection-color: rgba(2, 154, 232, 0.25);
+
+      --pix--default--dark--primary: #01aaff;
+      --pix--default--dark--primary-background: #0172ad;
+      --pix--default--dark--primary-underline: rgba(1, 170, 255, 0.5);
+      --pix--default--dark--primary-hover: #79c0ff;
+      --pix--default--dark--primary-hover-background: #017fc0;
+      --pix--default--dark--primary-focus: rgba(1, 170, 255, 0.375);
+      --pix--default--dark--text-selection-color: rgba(1, 170, 255, 0.1875);
+
+      --pix--primary: light-dark(var(--pix--default--light--primary), var(--pix--default--dark--primary));
+      --pix--primary-background: light-dark(var(--pix--default--light--primary-background), var(--pix--default--dark--primary-background));
+      --pix--primary-underline: light-dark(var(--pix--default--light--primary-underline), var(--pix--default--dark--primary-underline));
+      --pix--primary-hover: light-dark(var(--pix--default--light--primary-hover), var(--pix--default--dark--primary-hover));
+      --pix--primary-hover-background: light-dark(var(--pix--default--light--primary-hover-background), var(--pix--default--dark--primary-hover-background));
+      --pix--primary-focus: light-dark(var(--pix--default--light--primary-focus), var(--pix--default--dark--primary-focus));
+      --pix--text-selection-color: light-dark(var(--pix--default--light--text-selection-color), var(--pix--default--dark--text-selection-color));
+    }
+  }
+}

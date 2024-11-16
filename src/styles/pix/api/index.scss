@@ -1,0 +1,51 @@
+@layer api {
+  :root {
+    --pix--font-family-emoji: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --pix--font-family-sans-serif: system-ui, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, 'Helvetica Neue', sans-serif, var(--pix--font-family-emoji);
+    --pix--font-family-monospace: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace, var(--pix--font-family-emoji);
+    --pix--font-family: var(--pix--font-family-sans-serif);
+    --pix--line-height: 1.5;
+    --pix--font-weight: 400;
+    --pix--font-size: 100%;
+    --pix--text-underline-offset: 0.1rem;
+    --pix--border-radius: 0.25rem;
+    --pix--border-width: 0.0625rem;
+    --pix--outline-width: 0.125rem;
+    --pix--transition: 0.2s ease-in-out;
+    --pix--spacing: 1rem;
+    --pix--typography-spacing-vertical: 1rem;
+    --pix--block-spacing-vertical: var(--pix--spacing);
+    --pix--block-spacing-horizontal: var(--pix--spacing);
+    --pix--form-element-spacing-vertical: 0.75rem;
+    --pix--form-element-spacing-horizontal: 1rem;
+    --pix--group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --pix--group-box-shadow-focus-with-button: 0 0 0 var(--pix--outline-width) var(--pix--primary-focus);
+    --pix--group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--pix--form-element-border-color);
+    --pix--modal-overlay-backdrop-filter: blur(0.375rem);
+    --pix--nav-element-spacing-vertical: 1rem;
+    --pix--nav-element-spacing-horizontal: 0.5rem;
+    --pix--nav-link-spacing-vertical: 0.5rem;
+    --pix--nav-link-spacing-horizontal: 0.5rem;
+    --pix--nav-breadcrumb-divider: '>';
+
+    @media (min-width: 576px) {
+      --pix--font-size: 106.25%;
+    }
+
+    @media (min-width: 768px) {
+      --pix--font-size: 112.5%;
+    }
+
+    @media (min-width: 1024px) {
+      --pix--font-size: 118.75%;
+    }
+
+    @media (min-width: 1280px) {
+      --pix--font-size: 125%;
+    }
+
+    @media (min-width: 1536px) {
+      --pix--font-size: 131.25%;
+    }
+  }
+}

@@ -1,112 +1,76 @@
 /*!
  * pixCSS ✨ v0.0.1 (https://pix-css.dev)
  * Copyright 2024 - Licensed under MIT
- *
- * Minimal theme switcher
- *
- * Pico CSS ✨ v2.0.6 (https://picocss.com)
- * Copyright 2019-2024 - Licensed under MIT
  */
-import defaultStyle from 'bundle-text:../styles/pix/pix.themes.default.scss';
-import amber from 'bundle-text:../styles/pix/pix.themes.amber.scss';
-import jade from 'bundle-text:../styles/pix/pix.themes.jade.scss';
-import purple from 'bundle-text:../styles/pix/pix.themes.purple.scss';
-import sand from 'bundle-text:../styles/pix/pix.themes.sand.scss';
 
-const accents = {
-  default: defaultStyle,
-  amber,
-  jade,
-  purple,
-  sand
+import themeDefault from 'bundle-text:../styles/pix/themes/_default.scss';
+import themeAmber from 'bundle-text:../styles/pix/themes/_amber.scss';
+import themeJade from 'bundle-text:../styles/pix/themes/_jade.scss';
+import themePurple from 'bundle-text:../styles/pix/themes/_purple.scss';
+import themeSand from 'bundle-text:../styles/pix/themes/_sand.scss';
+
+const rgbToHex = (c) => {
+
+  function componentToHex(part) {
+    var hex = part.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+  }
+
+  const [r, g, b] = c.replace('rgb(', '').replace(')', '').split(', ').map((part) => parseInt(part));
+
+  return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+
 }
 
-const themeSwitcher = {
-  // Config
-  _scheme: "auto",
-  menuTarget: "details.dropdown",
-  buttonsTarget: "a[data-theme-switcher]",
-  buttonAttribute: "data-theme-switcher",
-  rootAttribute: "data-theme",
-  localStorageKey: "picoPreferredColorScheme",
+const updateColorPicker = () => {
+  const markComputedStyle = getComputedStyle(document.querySelector('mark'));
 
-  // Init
-  init() {
-    this.scheme = this.schemeFromLocalStorage;
-    this.initSwitchers();
-  },
-
-  // Get color scheme from local storage
-  get schemeFromLocalStorage() {
-    return window.localStorage?.getItem(this.localStorageKey) ?? this._scheme;
-  },
-
-  // Preferred color scheme
-  get preferredColorScheme() {
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  },
-
-  // Init switchers
-  initSwitchers() {
-    const buttons = document.querySelectorAll(this.buttonsTarget);
-    buttons.forEach((button) => {
-      button.addEventListener(
-        "click",
-        (event) => {
-          event.preventDefault();
-          // Set scheme
-          this.scheme = button.getAttribute(this.buttonAttribute);
-          // Close dropdown
-          document.querySelector(this.menuTarget)?.removeAttribute("open");
-        },
-        false
-      );
-    });
-  },
-
-  // Set scheme
-  set scheme(scheme) {
-    if (scheme == "auto") {
-      this._scheme = this.preferredColorScheme;
-    } else if (scheme == "dark" || scheme == "light") {
-      this._scheme = scheme;
-    }
-    this.applyScheme();
-    this.schemeToLocalStorage();
-  },
-
-  // Get scheme
-  get scheme() {
-    return this._scheme;
-  },
-
-  // Apply scheme
-  applyScheme() {
-    document.querySelector("html")?.setAttribute(this.rootAttribute, this.scheme);
-  },
-
-  // Store scheme to local storage
-  schemeToLocalStorage() {
-    window.localStorage?.setItem(this.localStorageKey, this.scheme);
-  },
+  document.querySelector('input[type="color"]').value = rgbToHex(markComputedStyle.backgroundColor);
 }
 
-// Init
-themeSwitcher.init();
-
-const updateThemeAccent = (accent) => {
-  document.querySelector('aside style').innerHTML = accent;
-
-  requestAnimationFrame(() => {
-    const rootComputedStyle = getComputedStyle(document.documentElement);
-
-    document.querySelector('input[type="color"]').value = rootComputedStyle.getPropertyValue('--pix--primary');
-  });
+const themes = {
+  default: themeDefault,
+  amber: themeAmber,
+  jade: themeJade,
+  purple: themePurple,
+  sand: themeSand
 }
 
-document.querySelector('.dropdown.accent').addEventListener('change', (e) => {
-  updateThemeAccent(accents[e.target.value]);
+const updateTheme = (theme) => {
+  document.querySelector('aside style').innerHTML = theme;
+
+  requestAnimationFrame(() => updateColorPicker());
+
+  localStorage.setItem('pix-theme', theme);
+}
+
+document.querySelector('.dropdown.theme').addEventListener('change', (e) => {
+  e.currentTarget.querySelector('summary').textContent = `Theme: ${e.target.value}`;
+  updateTheme(themes[e.target.value]);
 });
 
-updateThemeAccent(accents.default);
+updateTheme(themes.default);
+
+const colorSchemes = {
+  auto: 'light dark',
+  light: 'light',
+  dark: 'dark'
+}
+
+const updateColorScheme = (colorScheme) => {
+  const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
+  metaColorScheme?.setAttribute('content', colorScheme);
+
+  requestAnimationFrame(() => updateColorPicker());
+
+  localStorage.setItem('pix-color-scheme', colorScheme)
+}
+
+
+document.querySelector('.dropdown.color-scheme').addEventListener('change', (e) => {
+  e.currentTarget.querySelector('summary').textContent = `Color-scheme: ${e.target.value}`;
+  updateColorScheme(colorSchemes[e.target.value]);
+});
+
+updateColorScheme(colorSchemes.auto);
 
