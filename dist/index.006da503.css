@@ -3517,10 +3517,6 @@
     }
   }
 
-  @import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
-
-  @import url("http://fonts.cdnfonts.com/css/digital-numbers");
-
   @layer time-circuits {
     :root {
       --bttf--gray--100: #98a3ba;
@@ -4068,4 +4064,4 @@
     }
   }
 }
-/*# sourceMappingURL=index.4b12c1c0.css.map */
+/*# sourceMappingURL=index.006da503.css.map */
