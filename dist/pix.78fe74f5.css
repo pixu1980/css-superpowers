@@ -561,6 +561,36 @@
     }
   }
 
+  @layer typography {
+    :root {
+      --pix--t--ratio: 1.125;
+    }
+
+    :root h1 {
+      font-size: calc(1em * pow(var(--pix--t--ratio), 6));
+    }
+
+    :root h2 {
+      font-size: calc(1em * pow(var(--pix--t--ratio), 5));
+    }
+
+    :root h3 {
+      font-size: calc(1em * pow(var(--pix--t--ratio), 4));
+    }
+
+    :root h4 {
+      font-size: calc(1em * pow(var(--pix--t--ratio), 3));
+    }
+
+    :root h5 {
+      font-size: calc(1em * pow(var(--pix--t--ratio), 2));
+    }
+
+    :root h6 {
+      font-size: calc(1em * pow(var(--pix--t--ratio), 1));
+    }
+  }
+
   @layer themes {
     :root {
       --pix--dark--color: #c2c7d0;
@@ -2416,4 +2446,4 @@ style[type="text/css"] {
 .dropdown.color-scheme {
   width: 12rem;
 }
-/*# sourceMappingURL=pix.3a2e5dde.css.map */
+/*# sourceMappingURL=pix.78fe74f5.css.map */
