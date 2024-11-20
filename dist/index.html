@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/digital-numbers">
-    <link rel="stylesheet" href="index.006da503.css">
+    <link rel="stylesheet" href="index.91e318d0.css">
   </head>
   <body>
     <div class="reveal">
@@ -534,7 +534,7 @@ const button = document.querySelector('button');
 // gets the "--text-color" value
 // from element's CSSStyleDeclaration
 //! may be null-ish if the variable is not defined on the element itself
-button.style.getPropertyValue('--text-color');
+button.style.getPropertyValue('--text-color');  
 
 // gets the "--text-color" value
 // from the element's ComputedStyle, 
@@ -632,7 +632,7 @@ root.style.removeProperty('--text-color');
     <left>
       <small>via CSS</small>
       <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="">
+        <code class="hljs scss" data-trim="" data-line-numbers="|2|3|4">
 @property --coffee-color {
   syntax: "&lt;color&gt;";
   inherits: false;
@@ -645,7 +645,7 @@ root.style.removeProperty('--text-color');
     <right>
       <small>via JS</small>
       <pre>
-        <code class="hljs javascript" data-trim="" data-line-numbers="">
+        <code class="hljs javascript" data-trim="" data-line-numbers="|3|4|5">
 window.CSS.registerProperty({
   name: "--coffee-color",
   syntax: "&lt;color&gt;",
@@ -1039,31 +1039,31 @@ button.registered {
   <section cascade="">
     <small>
       <p>
-        Here are the declarations ordered by <mark>precedence</mark><br>
-        (lower to higher priority)
+        Here are the declarations<br>
+        ordered by <mark>precedence</mark> (lower to higher priority)
       </p>
       <ol>
         <li class="fragment">user-agent declarations</li>
         <li class="fragment">user declarations</li>
         <li class="fragment">author and inline declarations</li>
         <li class="fragment">@keyframe animations</li>
-        <li class="fragment">!important (😞) author and inline declarations</li>
-        <li class="fragment">!important (😢) user declarations</li>
-        <li class="fragment">!important (😭) user-agent declarations</li>
+        <li class="fragment">!important 😞 author and inline declarations</li>
+        <li class="fragment">!important 😢 user declarations</li>
+        <li class="fragment">!important 😭 user-agent declarations</li>
         <li class="fragment">transitions</li>
       </ol>
     </small>
   </section>
   <section>
-    <h4>How the @layer integrates into this?</h4>
+    <h4>How the @layer <mark>integrates into this</mark>?</h4>
   </section>
   <section cascade="">
     <small>
       <p>
-        Here are the author declarations ordered by <mark>precedence</mark><br>
-        (lower to higher priority)
+        Here are the author declarations<br>
+        ordered by <mark>precedence</mark> (lower to higher priority)
       </p>
-      <ol>
+      <ol>]
         <li class="fragment">@layer 1 declarations</li>
         <li class="fragment">@layer ... declarations</li>
         <li class="fragment">@layer N declarations</li>
@@ -1073,20 +1073,20 @@ button.registered {
     </small>
   </section>
   <section>
-    <h4>What about @layer and !important?</h4>
+    <h4>What about <mark>@layer and !important</mark>?</h4>
   </section>
   <section cascade="">
     <small>
       <p>
-        Here are the author !important declarations ordered by <mark>precedence</mark><br>
-        (lower to higher priority)
+        Here are the author !important declarations<br>
+        ordered by <mark>precedence</mark> (lower to higher priority)
       </p>
       <ol>
-        <li class="fragment">!important (😟) un-layered declarations</li>
-        <li class="fragment">!important (😢) @layer N declarations</li>
-        <li class="fragment">!important (😭) @layer ... declarations</li>
-        <li class="fragment">!important (😡) @layer 1 declarations</li>
-        <li class="fragment">!important (🤬) inline declarations</li>
+        <li class="fragment">!important 😟 un-layered declarations</li>
+        <li class="fragment">!important 😢 @layer N declarations</li>
+        <li class="fragment">!important 😭 @layer ... declarations</li>
+        <li class="fragment">!important 😡 @layer 1 declarations</li>
+        <li class="fragment">!important 🤬 inline declarations</li>
       </ol>
     </small>
   </section>
@@ -1111,17 +1111,17 @@ button.registered {
         </li>
         <li class="fragment">@keyframe animations</li>
         <li class="fragment">
-          !important (😞) author and inline declarations
+          !important 😞 author and inline declarations
           <ol>
-            <li class="fragment">!important (😟) un-layered declarations</li>
-            <li class="fragment">!important (😢) @layer N declarations</li>
-            <li class="fragment">!important (😭) @layer ... declarations</li>
-            <li class="fragment">!important (😡) @layer 1 declarations</li>
-            <li class="fragment">!important (🤬) inline declarations</li>
+            <li class="fragment">!important 😟 un-layered declarations</li>
+            <li class="fragment">!important 😢 @layer N declarations</li>
+            <li class="fragment">!important 😭 @layer ... declarations</li>
+            <li class="fragment">!important 😡 @layer 1 declarations</li>
+            <li class="fragment">!important 🤬 inline declarations</li>
           </ol>
         </li>
-        <li class="fragment">!important (😢) user declarations</li>
-        <li class="fragment">!important (😭) user-agent declarations</li>
+        <li class="fragment">!important 😢 user declarations</li>
+        <li class="fragment">!important 😭 user-agent declarations</li>
         <li class="fragment">transitions</li>
       </ol>
     </small>
@@ -1145,7 +1145,7 @@ button.registered {
   <section>
     <h4><mark>reset</mark> layer</h4>
     <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="">
+        <code class="hljs scss" data-trim="" data-line-numbers="|2-7">
 @layer design-system {
   @layer reset {
     * {
@@ -1163,7 +1163,7 @@ button.registered {
   <section>
     <h4><mark>color palette and elevations</mark> layers</h4>
     <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="">
+        <code class="hljs scss" data-trim="" data-line-numbers="|4-17|19-34">
 @layer design-system {
   ...
     
@@ -1206,7 +1206,7 @@ button.registered {
   <section>
     <h4><mark>typography and iconography</mark> layers</h4>
     <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="">
+        <code class="hljs scss" data-trim="" data-line-numbers="|4-23|25">
 @layer design-system {
   ...
     
@@ -1240,7 +1240,7 @@ button.registered {
   <section>
     <h4><mark>components</mark> layer</h4>
     <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="">
+        <code class="hljs scss" data-trim="" data-line-numbers="|4-14|5-7|9|10|11">
 @layer design-system {
   ...
   
@@ -1278,7 +1278,7 @@ button.registered {
   <section>
     <h4>Example Overriding the Design System CSS APIs codebase</h4>
     <pre>
-      <code class="hljs scss" data-trim="" data-line-numbers="">
+      <code class="hljs scss" data-trim="" data-line-numbers="|1-7|9-20">
 @layer design-system {
   ...
   
