@@ -1,0 +1,123 @@
+<section>
+  <section>
+    <h4>How <mark>the cascade works</mark>?</h4>
+  </section>
+  <section>
+    <blockquote>
+      <p>
+        The <mark>Cascade</mark> is an <mark>algorithm</mark>
+        that defines how user agents combine property values originating from different sources.
+      </p>
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade" target="_blank" rel="noopener noreferrer">MDN</a></p>
+    </blockquote>
+  </section>
+  <section>
+    <h4>
+      What are the <mark>players</mark> involved<br />
+      in the algorithm?
+    </h4>
+  </section>
+  <section>
+    <small>
+      <p>Here are the <mark>origin types</mark> of stylesheets</p>
+      <ul>
+        <li class="fragment">user-agent stylesheets</li>
+        <li class="fragment">user stylesheets</li>
+        <li class="fragment">author stylesheets <span class="fragment">(+ inline styles)</span></li>
+      </ul>
+    </small>
+  </section>
+  <section>
+    <h4>How the cascade algorithm handles the <mark>precedence of declarations</mark>?</h4>
+  </section>
+  <section cascade>
+    <small>
+      <p>
+        Here are the declarations ordered by <mark>precedence</mark><br />
+        (lower to higher priority)
+      </p>
+      <ol>
+        <li class="fragment">user-agent declarations</li>
+        <li class="fragment">user declarations</li>
+        <li class="fragment">author and inline declarations</li>
+        <li class="fragment">@keyframe animations</li>
+        <li class="fragment">!important (😞) author and inline declarations</li>
+        <li class="fragment">!important (😢) user declarations</li>
+        <li class="fragment">!important (😭) user-agent declarations</li>
+        <li class="fragment">transitions</li>
+      </ol>
+    </small>
+  </section>
+  <section>
+    <h4>How the @layer integrates into this?</h4>
+  </section>
+  <section cascade>
+    <small>
+      <p>
+        Here are the author declarations ordered by <mark>precedence</mark><br />
+        (lower to higher priority)
+      </p>
+      <ol>
+        <li class="fragment">@layer 1 declarations</li>
+        <li class="fragment">@layer ... declarations</li>
+        <li class="fragment">@layer N declarations</li>
+        <li class="fragment">un-layered declarations</li>
+        <li class="fragment">inline declarations</li>
+      </ol>
+    </small>
+  </section>
+  <section>
+    <h4>What about @layer and !important?</h4>
+  </section>
+  <section cascade>
+    <small>
+      <p>
+        Here are the author !important declarations ordered by <mark>precedence</mark><br />
+        (lower to higher priority)
+      </p>
+      <ol>
+        <li class="fragment">!important (😟) un-layered declarations</li>
+        <li class="fragment">!important (😢) @layer N declarations</li>
+        <li class="fragment">!important (😭) @layer ... declarations</li>
+        <li class="fragment">!important (😡) @layer 1 declarations</li>
+        <li class="fragment">!important (🤬) inline declarations</li>
+      </ol>
+    </small>
+  </section>
+  <section>
+    <h4>So in the end...</h4>
+  </section>
+  <section cascade>
+    <small>
+      <p>Order (lower to higher priority)</p>
+      <ol>
+        <li class="fragment">user-agent declarations</li>
+        <li class="fragment">user declarations</li>
+        <li class="fragment">
+          author declarations
+          <ol>
+            <li class="fragment">@layer 1 declarations</li>
+            <li class="fragment">@layer ... declarations</li>
+            <li class="fragment">@layer N declarations</li>
+            <li class="fragment">un-layered declarations</li>
+            <li class="fragment">inline declarations</li>
+          </ol>
+        </li>
+        <li class="fragment">@keyframe animations</li>
+        <li class="fragment">
+          !important (😞) author and inline declarations
+          <ol>
+            <li class="fragment">!important (😟) un-layered declarations</li>
+            <li class="fragment">!important (😢) @layer N declarations</li>
+            <li class="fragment">!important (😭) @layer ... declarations</li>
+            <li class="fragment">!important (😡) @layer 1 declarations</li>
+            <li class="fragment">!important (🤬) inline declarations</li>
+          </ol>
+        </li>
+        <li class="fragment">!important (😢) user declarations</li>
+        <li class="fragment">!important (😭) user-agent declarations</li>
+        <li class="fragment">transitions</li>
+      </ol>
+    </small>
+  </section>
+</section>

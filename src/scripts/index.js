@@ -3,6 +3,9 @@ import Reveal from 'reveal.js';
 import Notes from 'reveal.js/plugin/notes/notes';
 import Highlight from 'reveal.js/plugin/highlight/highlight';
 
+import './_dive-in';
+import './_time-circuits';
+
 // reveal.js initialization
 const slides = Reveal({
   plugins: [Notes, Highlight],

@@ -8,14 +8,16 @@
 @import 'examples/index.properties';
 
 @layer talk {
+  @import 'reset';
   @import 'palette';
   @import 'typography';
   @import 'code';
   @import 'comparison';
   @import 'pixu';
-  @import 'examples/index';
+  @import 'intro';
+  @import 'cascade';
+  @import 'examples';
   @import 'outro';
-
 }
 
 // https://blogs.halodoc.io/best-practices-that-we-follow-to-avoid-specificity-issues/#:~:text=Below%20are%20the%20order%20of,These%20selectors%20has%20lowest%20priority.

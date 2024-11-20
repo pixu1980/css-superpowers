@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>CSS Superpowers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.40ed50bc.css">
+    <link rel="stylesheet" href="index.4b12c1c0.css">
   </head>
   <body>
     <div class="reveal">
@@ -48,7 +48,7 @@
 
 <section>
   <h4>
-    <mark>easing</mark> common<br>
+    with the purpose of <mark>easing</mark> common<br>
     business cases, such as:
   </h4>
   <ul>
@@ -65,7 +65,10 @@
 </section>
 
 <section>
-  <h4>What does <mark>over-engineering</mark> means?</h4>
+  <h4>
+    What does exactly<br>
+    <mark>over-engineering</mark> means?
+  </h4>
 </section>
 
 <section>
@@ -88,13 +91,13 @@
 
 <section>
   <h4>not like this...</h4>
-  <img src="family-guy.06ff7d67.gif" style="width: 25vw">
+  <img src="family-guy.06ff7d67.gif" style="width: 30vw; min-width: 30rem">
   <h4 class="fragment">... I'm promise 😄!!!</h4>
 </section>
 
   <section>
   <h4>
-    So... <mark>over-engineering</mark> uh?
+    So... <mark>over-engineering</mark> uh 🤔?
   </h4>
 </section>
 
@@ -124,35 +127,206 @@
   </h4>
 </section>
 
-<section>
+<section data-transition="convex">
   <blockquote>
     "<mark>I didn’t have time</mark> to create a complete design system, so I just put the components together as best I
     could."
   </blockquote>
 </section>
 
-<section>
+<section data-transition="convex">
   <blockquote>
     "<mark>There wasn’t time</mark> for a structured approach: I wrote selectors and named the classes on the fly."
   </blockquote>
 </section>
 
-<section>
+<section data-transition="convex">
   <blockquote>
     "I didn’t use CSS variables; <mark>it was faster</mark> to set colors, typography and spacings directly."
   </blockquote>
 </section>
 
-<section>
+<section data-transition="convex">
   <blockquote>"We developed it for desktop; <mark>there wasn’t time</mark> to think about responsiveness."</blockquote>
 </section>
 
-<section>
+<section data-transition="convex">
   <blockquote>
     "I didn’t test it on all browsers; it worked on the one we usually use, and <mark>I didn't have time</mark> to check
     the others."
   </blockquote>
 </section>
+
+<section data-transition="convex">
+  <!-- destination time -->
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" type="text/css">
+
+  <link href="http://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" type="text/css">
+
+  <!-- destination time -->
+  <div time-circuits="">
+    <div class="outer destination">
+      <div class="row">
+        <div class="header-label">MONTH</div>
+        <div class="header-label">DAY</div>
+        <div class="header-label">YEAR</div>
+        <div class="header-label">HOUR</div>
+        <div class="header-label">MIN</div>
+      </div>
+      <div class="row">
+        <div class="display month">
+          <p class="destination time">nov</p>
+        </div>
+
+        <div class="display">
+          <p class="destination time">05</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="display">
+          <p class="destination time">1955</p>
+          <p class="number-back">8888</p>
+        </div>
+
+        <div class="led-time-separator-container">
+          <div class="ampm-label am-label">AM</div>
+          <div class="led led-destination-on"></div>
+          <div class="ampm-label pm-label">PM</div>
+          <div class="led led-destination"></div>
+        </div>
+
+        <div class="display">
+          <p class="destination time">06</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="led-unit-separator-container">
+          <div class="led led-destination-on"></div>
+          <div class="led led-destination-on"></div>
+          <div class="led led-destination"></div>
+          <div class="led led-destination"></div>
+        </div>
+
+        <div class="display">
+          <p class="destination time">00</p>
+          <p class="number-back">88</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer-label">DESTINATION TIME</div>
+      </div>
+    </div>
+
+    <!-- present time -->
+
+    <div class="outer present">
+      <div class="row">
+        <div class="header-label">MONTH</div>
+        <div class="header-label">DAY</div>
+        <div class="header-label">YEAR</div>
+        <div class="header-label">HOUR</div>
+        <div class="header-label">MIN</div>
+      </div>
+      <div class="row">
+        <div class="display month">
+          <p id="present-month" class="present time">OCT</p>
+        </div>
+
+        <div class="display">
+          <p id="present-day" class="present time">21</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="display">
+          <p id="present-year" class="present time">1985</p>
+          <p class="number-back">8888</p>
+        </div>
+
+        <div class="led-time-separator-container">
+          <div class="ampm-label am-label">AM</div>
+          <div id="present-am-led" class="led led-present"></div>
+          <div class="ampm-label pm-label">PM</div>
+          <div id="present-pm-led" class="led led-present"></div>
+        </div>
+
+        <div class="display">
+          <p id="present-hour" class="present time">01</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="led-unit-separator-container">
+          <div class="led led-present-on"></div>
+          <div class="led led-present-on"></div>
+          <div class="led led-present"></div>
+          <div class="led led-present"></div>
+        </div>
+
+        <div class="present display">
+          <p id="present-minute" class="present time">22</p>
+          <p class="number-back">88</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer-label">PRESENT TIME</div>
+      </div>
+    </div>
+
+    <!-- departed time -->
+
+    <div class="outer departed">
+      <div class="row">
+        <div class="header-label">MONTH</div>
+        <div class="header-label">DAY</div>
+        <div class="header-label">YEAR</div>
+        <div class="header-label">HOUR</div>
+        <div class="header-label">MIN</div>
+      </div>
+      <div class="row">
+        <div class="display month">
+          <p class="departed time">OCT</p>
+        </div>
+
+        <div class="display">
+          <p class="departed time">21</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="display">
+          <p class="departed time">1985</p>
+          <p class="number-back">8888</p>
+        </div>
+
+        <div class="led-time-separator-container">
+          <div class="ampm-label am-label">AM</div>
+          <div class="led led-departed-on"></div>
+          <div class="ampm-label pm-label">PM</div>
+          <div class="led led-departed"></div>
+        </div>
+
+        <div class="display">
+          <p class="departed time">01</p>
+          <p class="number-back">88</p>
+        </div>
+
+        <div class="led-unit-separator-container">
+          <div class="led led-departed-on"></div>
+          <div class="led led-departed-on"></div>
+          <div class="led led-departed"></div>
+          <div class="led led-departed"></div>
+        </div>
+
+        <div class="display">
+          <p class="departed time">20</p>
+          <p class="number-back">88</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="footer-label">LAST TIME DEPARTED</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 </section>
 
@@ -200,6 +374,19 @@
 </section>
 
 </section>
+<section class="slide-dive-in" data-auto-animate="">
+  <div sr-only="" data-menu-title="">Let's dive in</div>
+  <dive-in>
+    <stack-container>
+      <stack-item>Let's <mark>dive</mark> in</stack-item>
+      <stack-item>Let's <mark>dive</mark> in</stack-item>
+      <stack-item>Let's <mark>dive</mark> in</stack-item>
+      <stack-item>Let's <mark>dive</mark> in</stack-item>
+      <stack-item>Let's <mark>dive</mark> in</stack-item>
+    </stack-container>
+  </dive-in>
+</section>
+
 
     <section>
   <section>
@@ -222,7 +409,7 @@
 <section>
   <h4><mark>Centralizing</mark> values</h4>
   <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <code class="hljs scss" data-trim="" data-line-numbers="|2,3|7,8">
 :root {
   --text-color: #34eadb;
   --font-size: 16px;
@@ -239,7 +426,7 @@ body {
 <section>
   <h4>Flowing with the <mark>cascade</mark></h4>
   <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <code class="hljs scss" data-trim="" data-line-numbers="|7">
 :root {
   --text-color: #34eadb;
   --font-size: 16px;
@@ -258,7 +445,7 @@ body {
 <section>
   <h4><mark>Dynamic</mark> and <mark>Conditional</mark> overrides...</h4>
   <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <code class="hljs scss" data-trim="" data-line-numbers="|6-11">
 :root {
   --text-color: #202020;
   --background-color: #efefef;
@@ -282,7 +469,7 @@ body {
 <section>
   <h4>...the same goes for <mark>Responsive</mark></h4>
   <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <code class="hljs scss" data-trim="" data-line-numbers="|5-9">
 :root {
   --padding: 8px;
 }
@@ -313,7 +500,7 @@ body {
 <section>
   <h4>Writing a variable to an element (<mark>C</mark>R<mark>U</mark>D)</h4>
   <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const button = document.querySelector('button');
 
 // sets the "--text-color" value
@@ -326,7 +513,7 @@ button.style.setProperty('--text-color', '#e74c3c');
 <section>
   <h4>Writing a variable to :root (<mark>C</mark>R<mark>U</mark>D)</h4>
   <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const root = document.documentElement;
 
 // sets the "--text-color" value 
@@ -339,20 +526,18 @@ root.style.setProperty('--text-color', '#e74c3c');
 <section>
   <h4>Reading a variable from an element (C<mark>R</mark>UD)</h4>
   <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4|5|8-10|11-12">
 const button = document.querySelector('button');
 
 // gets the "--text-color" value
 // from element's CSSStyleDeclaration
-
-//! may be null if the variable is not defined on the element itself
+//! may be null-ish if the variable is not defined on the element itself
 button.style.getPropertyValue('--text-color');
 
 // gets the "--text-color" value
 // from the element's ComputedStyle, 
 // so with inherited values too
-
-//! may be an empty string if the variable is not defined on 
+//! may be null-ish if the variable is not defined on 
 //! the element itself nor any of its ancestors
 getComputedStyle(button).getPropertyValue('--text-color');
     </code>
@@ -362,13 +547,12 @@ getComputedStyle(button).getPropertyValue('--text-color');
 <section>
   <h4>Reading a variable from :root (C<mark>R</mark>UD)</h4>
   <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4|5">
 const root = document.documentElement;
 
 // gets the "--text-color" value
 // from the root element's ComputedStyle
-
-//! may be an empty string if the variable is not defined
+//! may be null-ish if the variable is not defined
 getComputedStyle(root).getPropertyValue('--text-color');
     </code>
   </pre>
@@ -377,7 +561,7 @@ getComputedStyle(root).getPropertyValue('--text-color');
 <section>
   <h4>Deleting a variable from an element (CRU<mark>D</mark>)</h4>
   <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const button = document.querySelector('button');
 
 // deletes the "--text-color" variable
@@ -390,7 +574,7 @@ button.style.removeProperty('--text-color');
 <section>
   <h4>Deleting a variable from :root (CRU<mark>D</mark>)</h4>
   <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="">
+    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const root = document.documentElement;
 
 // deletes the "--text-color" variable
@@ -405,23 +589,23 @@ root.style.removeProperty('--text-color');
     <section>
   <section>
     <h4>CSS Custom Properties</h4>
-    <small>
-      <p>
+    <p>
+      <small>
         <mark>@property</mark>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@property" target="_blank" rel="noopener noreferrer"> (MDN docs) </a>
-      </p>
-      <p>
-        and the <mark>CSS Properties and Values API</mark>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API" target="_blank" rel="noopener noreferrer"> (MDN docs) </a>
-      </p>
-    </small>
-    <small class="fragment">
-      <p>
+        <!-- <p>
+          and the <mark>CSS Properties and Values API</mark>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/API/CSS_Properties_and_Values_API" target="_blank" rel="noopener noreferrer"> (MDN docs) </a>
+        </p> -->
+      </small>
+    </p>
+    <p>
+      <small class="fragment">
         Introduced by Chrome in August 2020,<br>
         and fully supported across browsers<br>
         since <mark>July 2024</mark>
-      </p>
-    </small>
+      </small>
+    </p>
   </section>
   <section>
     <h4>
@@ -431,10 +615,10 @@ root.style.removeProperty('--text-color');
     </h4>
     <small>
       <ul>
-        <li class="fragment">@property is <mark>typed</mark></li>
+        <li class="fragment">@property are <mark>typed</mark></li>
         <li class="fragment">@property can disable <mark>inheritance</mark></li>
         <li class="fragment">
-          @property is <mark>animatable</mark><br>
+          @property are <mark>animatable</mark><br>
           and <mark>transitionable</mark>
         </li>
       </ul>
@@ -634,6 +818,7 @@ button.registered {
 
 
 
+  <!-- <include src="./slides/examples/_desktop-fan.html"></include> -->
 </section>
 
     <section>
@@ -657,10 +842,8 @@ button.registered {
 <section>
   <h4>CSS Layers Example</h4>
   <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <code class="hljs scss" data-trim="" data-line-numbers="|1-6|8-12|14-22">
 @layer reset {
-  // https://css-tricks.com/css-remedy/        
-
   * {
     box-sizing: border-box;
     ...
@@ -697,7 +880,7 @@ button.registered {
   <section>
   <h4>Layers depths levels</h4>
   <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <code class="hljs scss" data-trim="" data-line-numbers="|2-10|3-5|12-20|13-15">
 @layer ui {
   @layer button {
     :root {
@@ -724,9 +907,44 @@ button.registered {
 </section>
 
   <section>
-  <h4>Reverse Cascade</h4>
+  <h4>That's awesome, but ...</h4>
+</section>
+
+<section>
+  <h4>... what about <mark>old CSS</mark> codebase and <mark>un-layered third-party</mark> deps?</h4>
+</section>
+
+<section>
+  <h4>
+    The <mark>layer()</mark> function will be<br>
+    your best friend
+  </h4>
+</section>
+
+<section>
+  <h4>@import ... layer() pattern</h4>
   <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+    <code class="hljs scss" data-trim="" data-line-numbers="|1|2|3|5-7|9">
+@import 'path-to-old-dependency.css' layer(old-dependency);
+@import 'path-to-old-dependency.theme.css' layer(old-dependency.theme);
+@import 'path-to-other-old-dependency.css' layer(other-old-dependency);
+      
+@layer new-library {
+  ...
+}
+
+// un-layered code
+    </code>
+  </pre>
+</section>
+
+  <section>
+  <h4>Reverse Cascade</h4>
+</section>
+<section>
+  <h4>Which <mark>--ui--font--size</mark> wins?</h4>
+  <pre>
+    <code class="hljs scss" data-trim="" data-line-numbers="|1-3">
 :root {
   --ui--font-size: 10px;
 }
@@ -760,47 +978,154 @@ button.registered {
   </pre>
 </section>
 <section>
-  <img src="reverse-cascade.ce6dd5ac.gif" style="width: 50%">
+  <img src="reverse-cascade.ce6dd5ac.gif" style="width: 25vw; min-width: 30rem">
   <br>
   <h4>
     Look at me Ma'...<br>
-    I'm <mark>reversing waterfalls</mark> like Shiryu
+    I'm <mark>reversing waterfalls</mark>
   </h4>
 </section>
-
-  <section>
-  <h4>That's awesome, but ...</h4>
-</section>
-
-<section>
-  <h4>... what about <mark>old CSS</mark> codebase and <mark>un-layered third-party</mark> deps?</h4>
-</section>
-
 <section>
   <h4>
-    The <mark>layer()</mark> function will be<br>
-    your best friend
+    So CSS layers are actually<br>
+    <mark>breaking</mark> the cascade?
+  </h4>
+</section>
+<section>
+  <h4>
+    Ehm... no!<br>
+    <span class="fragment">
+      They're actually <mark>flowing</mark><br>
+      with the cascade.
+    </span>
   </h4>
 </section>
 
+</section>
 <section>
-  <h4>@import ... layer() pattern</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
-@import 'path-to-old-dependency.css' layer(old-dependency);
-@import 'path-to-old-dependency.theme.css' layer(old-dependency.theme);
-@import 'path-to-other-old-dependency.css' layer(other-old-dependency);
-      
-@layer new-library {
-  ...
-}
-
-// un-layered code
-    </code>
-  </pre>
+  <section>
+    <h4>How <mark>the cascade works</mark>?</h4>
+  </section>
+  <section>
+    <blockquote>
+      <p>
+        The <mark>Cascade</mark> is an <mark>algorithm</mark>
+        that defines how user agents combine property values originating from different sources.
+      </p>
+      <p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade" target="_blank" rel="noopener noreferrer">MDN</a></p>
+    </blockquote>
+  </section>
+  <section>
+    <h4>
+      What are the <mark>players</mark> involved<br>
+      in the algorithm?
+    </h4>
+  </section>
+  <section>
+    <small>
+      <p>Here are the <mark>origin types</mark> of stylesheets</p>
+      <ul>
+        <li class="fragment">user-agent stylesheets</li>
+        <li class="fragment">user stylesheets</li>
+        <li class="fragment">author stylesheets <span class="fragment">(+ inline styles)</span></li>
+      </ul>
+    </small>
+  </section>
+  <section>
+    <h4>How the cascade algorithm handles the <mark>precedence of declarations</mark>?</h4>
+  </section>
+  <section cascade="">
+    <small>
+      <p>
+        Here are the declarations ordered by <mark>precedence</mark><br>
+        (lower to higher priority)
+      </p>
+      <ol>
+        <li class="fragment">user-agent declarations</li>
+        <li class="fragment">user declarations</li>
+        <li class="fragment">author and inline declarations</li>
+        <li class="fragment">@keyframe animations</li>
+        <li class="fragment">!important (😞) author and inline declarations</li>
+        <li class="fragment">!important (😢) user declarations</li>
+        <li class="fragment">!important (😭) user-agent declarations</li>
+        <li class="fragment">transitions</li>
+      </ol>
+    </small>
+  </section>
+  <section>
+    <h4>How the @layer integrates into this?</h4>
+  </section>
+  <section cascade="">
+    <small>
+      <p>
+        Here are the author declarations ordered by <mark>precedence</mark><br>
+        (lower to higher priority)
+      </p>
+      <ol>
+        <li class="fragment">@layer 1 declarations</li>
+        <li class="fragment">@layer ... declarations</li>
+        <li class="fragment">@layer N declarations</li>
+        <li class="fragment">un-layered declarations</li>
+        <li class="fragment">inline declarations</li>
+      </ol>
+    </small>
+  </section>
+  <section>
+    <h4>What about @layer and !important?</h4>
+  </section>
+  <section cascade="">
+    <small>
+      <p>
+        Here are the author !important declarations ordered by <mark>precedence</mark><br>
+        (lower to higher priority)
+      </p>
+      <ol>
+        <li class="fragment">!important (😟) un-layered declarations</li>
+        <li class="fragment">!important (😢) @layer N declarations</li>
+        <li class="fragment">!important (😭) @layer ... declarations</li>
+        <li class="fragment">!important (😡) @layer 1 declarations</li>
+        <li class="fragment">!important (🤬) inline declarations</li>
+      </ol>
+    </small>
+  </section>
+  <section>
+    <h4>So in the end...</h4>
+  </section>
+  <section cascade="">
+    <small>
+      <p>Order (lower to higher priority)</p>
+      <ol>
+        <li class="fragment">user-agent declarations</li>
+        <li class="fragment">user declarations</li>
+        <li class="fragment">
+          author declarations
+          <ol>
+            <li class="fragment">@layer 1 declarations</li>
+            <li class="fragment">@layer ... declarations</li>
+            <li class="fragment">@layer N declarations</li>
+            <li class="fragment">un-layered declarations</li>
+            <li class="fragment">inline declarations</li>
+          </ol>
+        </li>
+        <li class="fragment">@keyframe animations</li>
+        <li class="fragment">
+          !important (😞) author and inline declarations
+          <ol>
+            <li class="fragment">!important (😟) un-layered declarations</li>
+            <li class="fragment">!important (😢) @layer N declarations</li>
+            <li class="fragment">!important (😭) @layer ... declarations</li>
+            <li class="fragment">!important (😡) @layer 1 declarations</li>
+            <li class="fragment">!important (🤬) inline declarations</li>
+          </ol>
+        </li>
+        <li class="fragment">!important (😢) user declarations</li>
+        <li class="fragment">!important (😭) user-agent declarations</li>
+        <li class="fragment">transitions</li>
+      </ol>
+    </small>
+  </section>
 </section>
 
-</section>
 
     <section>
   <section>
@@ -1160,6 +1485,6 @@ button.registered {
   </div>
 </div>
 
-    <script src="index.7cc3dbc9.js" type="module"></script>
+    <script src="index.2f43ef5f.js" type="module"></script>
   </body>
 </html>

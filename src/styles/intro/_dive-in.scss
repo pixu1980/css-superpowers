@@ -1,0 +1,59 @@
+dive-in {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--heading-font);
+  font-size: 10rem;
+  font-weight: 600;
+  line-height: 1.2;
+
+  stack-container {
+    --mouse-x: 0;
+    --mouse-y: 0;
+
+    display: block;
+    position: absolute;
+    margin: auto;
+    width: 49rem;
+    height: 8rem;
+    // padding: 3rem;
+    // border: 0.2rem dashed black;
+    // border-radius: 0.5rem;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+
+    stack-item {
+      --threshold: 0.1 * var(--index);
+      --inverse-threshold: 0.1 * (4 - var(--index));
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      padding: 0;
+      transition: font-size 0.4s ease-in-out, filter 1s ease-in-out, text-shadow 0.5s ease-in-out;
+      transform: translate(-50%, -50%);
+      font-size: 10rem;
+      filter: blur(100%);
+      white-space: nowrap;
+      opacity: calc(1 - (0.2 * var(--index)));
+      pointer-events: none;
+      will-change: font-size, filter, text-shadow;
+    }
+
+    &:hover {
+      width: 117rem;
+      height: 50rem;
+
+      stack-item {
+        top: calc(50% + (var(--mouse-y) * var(--threshold)));
+        left: calc(50% + (var(--mouse-x) * var(--threshold)));
+        font-size: calc(15rem - (1rem * var(--index)));
+        transition: font-size 0.5s ease-in-out, filter 0.2s ease-in-out, text-shadow 0.5s ease-in-out;
+        text-shadow: 1px 2px 1px rgba(50, 50, 50, 1);
+        filter: blur(calc(0.1rem * var(--index)));
+      }
+    }
+  }
+}

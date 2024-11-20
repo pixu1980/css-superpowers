@@ -14,4 +14,10 @@
   .hljs-ln-numbers {
     min-width: 2ch;
   }
+  
+  .highlight-line {
+    .hljs-comment {
+      color: hsl(50, 45%, 41%);
+    }
+  }
 }

@@ -49349,6 +49349,80 @@ var $64e7f54992ce4b7d$exports = {};
 });
 
 
+addEventListener('DOMContentLoaded', ()=>{
+    const diveIn = document.querySelector('dive-in');
+    const stackContainer = diveIn && diveIn.querySelector('stack-container');
+    if (stackContainer) {
+        const stackItems = [
+            ...stackContainer.querySelectorAll('stack-item')
+        ].reverse();
+        for(let i = 0; i < stackItems.length; i++)stackItems[i].style.setProperty('--index', i);
+        document.addEventListener('mousemove', (e)=>{
+            let vw = window.innerWidth;
+            let vh = window.innerHeight;
+            let vc = {
+                x: vw / 2,
+                y: vh / 2
+            };
+            let x = e.clientX;
+            let y = e.clientY;
+            let transformOffset = {
+                x: `${-(x <= vc.x ? -(vc.x - x) : x - vc.x)}px`,
+                y: `${-(y <= vc.y ? -(vc.y - y) : y - vc.y)}px`
+            };
+            stackContainer.style.setProperty('--mouse-x', transformOffset.x);
+            stackContainer.style.setProperty('--mouse-y', transformOffset.y);
+        });
+    }
+});
+
+
+addEventListener('DOMContentLoaded', ()=>{
+    const renderTime = ()=>{
+        const d = new Date();
+        let year = d.getFullYear();
+        let month = d.toLocaleString('en-uk', {
+            month: 'short'
+        }).substr(0, 3);
+        let day = d.getDate();
+        let hours = d.getHours();
+        let minutes = d.getMinutes();
+        let ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        let formatHours = hours < 10 ? '0' + hours : hours;
+        let formatMinutes = minutes < 10 ? '0' + minutes : minutes;
+        let formatDays = day < 10 ? '0' + day : day;
+        document.querySelector('#present-day').innerHTML = formatDays;
+        document.querySelector('#present-month').innerHTML = month;
+        document.querySelector('#present-year').innerHTML = year;
+        document.querySelector('#present-minute').innerHTML = formatMinutes;
+        document.querySelector('#present-hour').innerHTML = formatHours;
+        if (ampm === 'pm') {
+            document.querySelector('#present-am-led').classList.remove('led-present-on');
+            document.querySelector('#present-pm-led').classList.add('led-present-on');
+        }
+        if (ampm === 'am') {
+            document.querySelector('#present-am-led').classList.add('led-present-on');
+            document.querySelector('#present-pm-led').classList.remove('led-present-on');
+        }
+    };
+    const renderTimeError = ()=>{
+        document.querySelector('#present-month').innerHTML = 'JAN';
+        document.querySelector('#present-day').innerHTML = '01';
+        document.querySelector('#present-year').innerHTML = '1885';
+        document.querySelector('#present-hour').innerHTML = '12';
+        document.querySelector('#present-minute').innerHTML = '00';
+        document.querySelector('#present-am-led').classList.add('led-present-on');
+        document.querySelector('#present-pm-led').classList.remove('led-present-on');
+    };
+    renderTime();
+    renderTimeError();
+    setInterval(renderTime, 1000);
+    setInterval(renderTimeError, 750);
+});
+
+
 // reveal.js initialization
 const $ce2ab6a3784a12d8$var$slides = (0, $ef6d0cb1bf5eee6a$export$2e2bcd8739ae039)({
     plugins: [
@@ -49381,4 +49455,4 @@ $ce2ab6a3784a12d8$var$slides.configure({
 $ce2ab6a3784a12d8$var$slides.initialize();
 
 
-//# sourceMappingURL=index.7cc3dbc9.js.map
+//# sourceMappingURL=index.2f43ef5f.js.map

@@ -1,0 +1,21 @@
+@layer links {
+  div:is([links]) {
+    display: flex;
+    gap: 0;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-block-start: 10rem;
+
+    figure {
+      flex-grow: 1;
+      flex-shrink: 0;
+
+      img {
+        width: 13rem;
+        aspect-ratio: 1;
+      }
+    }
+  }
+
+
+}

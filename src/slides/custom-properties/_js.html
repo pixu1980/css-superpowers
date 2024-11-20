@@ -11,7 +11,7 @@
 <section>
   <h4>Writing a variable to an element (<mark>C</mark>R<mark>U</mark>D)</h4>
   <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
+    <code class="hljs javascript" data-trim data-line-numbers="|3-4">
 const button = document.querySelector('button');
 
 // sets the "--text-color" value
@@ -24,7 +24,7 @@ button.style.setProperty('--text-color', '#e74c3c');
 <section>
   <h4>Writing a variable to :root (<mark>C</mark>R<mark>U</mark>D)</h4>
   <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
+    <code class="hljs javascript" data-trim data-line-numbers="|3-4">
 const root = document.documentElement;
 
 // sets the "--text-color" value 
@@ -37,20 +37,18 @@ root.style.setProperty('--text-color', '#e74c3c');
 <section>
   <h4>Reading a variable from an element (C<mark>R</mark>UD)</h4>
   <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
+    <code class="hljs javascript" data-trim data-line-numbers="|3-4|5|8-10|11-12">
 const button = document.querySelector('button');
 
 // gets the "--text-color" value
 // from element's CSSStyleDeclaration
-
-//! may be null if the variable is not defined on the element itself
+//! may be null-ish if the variable is not defined on the element itself
 button.style.getPropertyValue('--text-color');
 
 // gets the "--text-color" value
 // from the element's ComputedStyle, 
 // so with inherited values too
-
-//! may be an empty string if the variable is not defined on 
+//! may be null-ish if the variable is not defined on 
 //! the element itself nor any of its ancestors
 getComputedStyle(button).getPropertyValue('--text-color');
     </code>
@@ -60,13 +58,12 @@ getComputedStyle(button).getPropertyValue('--text-color');
 <section>
   <h4>Reading a variable from :root (C<mark>R</mark>UD)</h4>
   <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
+    <code class="hljs javascript" data-trim data-line-numbers="|3-4|5">
 const root = document.documentElement;
 
 // gets the "--text-color" value
 // from the root element's ComputedStyle
-
-//! may be an empty string if the variable is not defined
+//! may be null-ish if the variable is not defined
 getComputedStyle(root).getPropertyValue('--text-color');
     </code>
   </pre>
@@ -75,7 +72,7 @@ getComputedStyle(root).getPropertyValue('--text-color');
 <section>
   <h4>Deleting a variable from an element (CRU<mark>D</mark>)</h4>
   <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
+    <code class="hljs javascript" data-trim data-line-numbers="|3-4">
 const button = document.querySelector('button');
 
 // deletes the "--text-color" variable
@@ -88,7 +85,7 @@ button.style.removeProperty('--text-color');
 <section>
   <h4>Deleting a variable from :root (CRU<mark>D</mark>)</h4>
   <pre>
-    <code class="hljs javascript" data-trim data-line-numbers>
+    <code class="hljs javascript" data-trim data-line-numbers="|3-4">
 const root = document.documentElement;
 
 // deletes the "--text-color" variable
