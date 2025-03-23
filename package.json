@@ -1,6 +1,6 @@
 {
   "name": "css-over-engineering",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "license": "MIT",
   "scripts": {
     "clear:cache": "rm -rf .parcel-cache",
