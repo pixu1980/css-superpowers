@@ -1,0 +1,82 @@
+@import './_intro.animations.css' layer(intro);
+
+@layer intro {
+  :root {
+    --intro--color--purple-400: #b19cd8;
+    --intro--color--cyan-400: #87dbff;
+    --intro--color--green-400: #4fd4ae;
+    --intro--color--yellow-400: #fdd45b;
+    --intro--color--red-400: #e86a58;
+
+    /* // --intro--color--purple-h: 261;
+    // --intro--color--purple-s: 43%;
+    // --intro--color--purple-l: 73%;
+    // --intro--color--cyan-h: 198;
+    // --intro--color--cyan-s: 100%;
+    // --intro--color--cyan-l: 76%;
+    // --intro--color--green-h: 163;
+    // --intro--color--green-s: 61%;
+    // --intro--color--green-l: 57%;
+    // --intro--color--yellow-h: 45;
+    // --intro--color--yellow-s: 98%;
+    // --intro--color--yellow-l: 67%;
+    // --intro--color--red-h: 8;
+    // --intro--color--red-s: 76%;
+    // --intro--color--red-l: 63%; */
+  }
+
+  [intro] {
+    h2 {
+      --stagger--delay: 300ms;
+      --stagger--index: 0;
+
+      span {
+        color: var(--intro--color--fade);
+        animation: intro 5s linear calc(var(--stagger--delay) * var(--stagger--index)) infinite alternate;
+
+        &:nth-child(1) {
+          --stagger--index: 0;
+        } /* S */
+        &:nth-child(2) {
+          --stagger--index: 1;
+        } /* u */
+        &:nth-child(3) {
+          --stagger--index: 2;
+        } /* p */
+        &:nth-child(4) {
+          --stagger--index: 3;
+        } /* e */
+        &:nth-child(5) {
+          --stagger--index: 4;
+        } /* r */
+        &:nth-child(6) {
+          --stagger--index: 5;
+        } /* p */
+        &:nth-child(7) {
+          --stagger--index: 6;
+        } /* o */
+        &:nth-child(8) {
+          --stagger--index: 7;
+        } /* w */
+        &:nth-child(9) {
+          --stagger--index: 8;
+        } /* e */
+        &:nth-child(10) {
+          --stagger--index: 9;
+        } /* r */
+        &:nth-child(11) {
+          --stagger--index: 10;
+        } /* s */
+      }
+    }
+
+    &[hsl] {
+      h2 {
+        span {
+          color: hsl(var(--intro--color--fade-h), var(--intro--color--fade-s), var(--intro--color--fade-l));
+          animation: introHSL 5s linear calc(var(--stagger--delay) * var(--stagger--index)) infinite alternate;
+        }
+      }
+    }
+  }
+}

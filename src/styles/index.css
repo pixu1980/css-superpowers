@@ -1,0 +1,20 @@
+@import 'npm:@pixu-talks/fonts';
+@import 'npm:@pixu-talks/theme';
+
+@import './examples/index.properties';
+
+@import './examples/index.css' layer(talk.examples);
+@import './_cascade.css' layer(talk.cascade);
+
+/*
+
+https://blogs.halodoc.io/best-practices-that-we-follow-to-avoid-specificity-issues/#:~:text=Below%20are%20the%20order%20of,These%20selectors%20has%20lowest%20priority.
+https://css-tricks.com/dont-fight-the-cascade-control-it/
+https://css-tricks.com/popping-comments-with-css-anchor-positioning-and-view-driven-animations/
+https://css-tricks.com/anchoreum-a-new-game-for-learning-anchor-positioning/
+https://css-tricks.com/the-different-and-modern-ways-to-toggle-content/
+https://vecta.io/blog/definitive-guide-to-css-styling-order
+https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade
+https://sking7.github.io/articles/572118798.html
+
+*/

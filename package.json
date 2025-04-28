@@ -2,6 +2,7 @@
   "name": "css-over-engineering",
   "version": "1.2.10",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "clear:cache": "rm -rf .parcel-cache",
     "clear:dist": "rm -rf dist",
@@ -15,14 +16,20 @@
     "rel:minor": "yarn build && yarn version --minor && yarn rel:push",
     "rel:patch": "yarn build && yarn version --patch && yarn rel:push"
   },
+  "workspaces": [
+    "../talks-libraries/packages/*"
+  ],
   "dependencies": {
-    "reveal.js": "5.2.0"
+    "@pixu-talks/core": "0.1.6",
+    "@pixu-talks/fonts": "0.1.6",
+    "@pixu-talks/theme": "0.1.6",
+    "reveal.js": "5.2.1"
   },
   "devDependencies": {
-    "@parcel/transformer-inline-string": "2.14.1",
-    "@parcel/transformer-sass": "2.14.1",
+    "@parcel/transformer-inline-string": "2.14.4",
+    "@parcel/transformer-sass": "2.14.4",
     "lightningcss": "1.29.3",
-    "parcel": "2.14.1",
+    "parcel": "2.14.4",
     "posthtml-include": "2.0.1",
     "sharp": "0.33.5",
     "svgo": "3.3.2"
