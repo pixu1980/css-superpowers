@@ -3,8 +3,25 @@
 
 @import './examples/index.properties';
 
-@import './examples/index.css' layer(talk.examples);
-@import './_cascade.css' layer(talk.cascade);
+@import './examples/index.css' layer(pixu-talk.examples);
+@import './_cascade.css' layer(pixu-talk.cascade);
+
+@layer pixu-talk {
+  @layer brand {
+    [brand] {
+      position: fixed;
+      inset: auto auto 3rem 3rem;
+
+      img {
+        inline-size: 15rem;
+        aspect-ratio: 1;
+
+        border: 2px rebeccapurple;
+        border-radius: 2rem;
+      }
+    }
+  }
+}
 
 /*
 

@@ -126,6 +126,20 @@
       }
     }
   }
+
+  @layer brand {
+    [brand] {
+      position: fixed;
+      inset: auto auto 3rem 3rem;
+
+      & img {
+        aspect-ratio: 1;
+        border: 2px #639;
+        border-radius: 2rem;
+        inline-size: 15rem;
+      }
+    }
+  }
 }
 
 @layer pixu-talk.iconography.draft-ui-icons {
@@ -15272,7 +15286,7 @@
   initial-value: 0;
 }
 
-@layer talk.examples {
+@layer pixu-talk.examples {
   @layer unregistered-vs-registered {
     [unregistered-vs-registered] {
       place-content: center;
@@ -16154,7 +16168,7 @@
   }
 }
 
-@layer talk.examples.intro {
+@layer pixu-talk.examples.intro {
   @keyframes intro {
     0% {
       --intro--color--fade: var(--intro--color--purple-400);
@@ -16178,7 +16192,7 @@
   }
 }
 
-@layer talk.cascade {
+@layer pixu-talk.cascade {
   @layer cascade {
     [cascade] {
       & ol {
@@ -16201,4 +16215,4 @@
     }
   }
 }
-/*# sourceMappingURL=css-superpowers.d6d3561e.css.map */
+/*# sourceMappingURL=css-superpowers.6b521e91.css.map */
