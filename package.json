@@ -6,31 +6,38 @@
   "scripts": {
     "clear:cache": "rm -rf .parcel-cache",
     "clear:dist": "rm -rf dist",
-    "clear": "yarn clear:dist && yarn clear:cache",
-    "prestart": "yarn clear",
+    "clear": "pnpm run clear:dist && pnpm run clear:cache",
+    "prestart": "pnpm run clear",
     "start": "parcel src/index.html -p 6001",
-    "prebuild": "yarn clear",
+    "prebuild": "pnpm run clear",
     "build": "parcel build src/index.html --no-optimize --public-url ./ && git add . && git commit --amend --no-edit && git push -f",
     "rel:push": "git push && git push --tags",
-    "rel:major": "yarn build && yarn version --major && yarn rel:push",
-    "rel:minor": "yarn build && yarn version --minor && yarn rel:push",
-    "rel:patch": "yarn build && yarn version --patch && yarn rel:push"
+    "rel:major": "pnpm run build && pnpm version --major && pnpm run rel:push",
+    "rel:minor": "pnpm run build && pnpm version --minor && pnpm run rel:push",
+    "rel:patch": "pnpm run build && pnpm version --patch && pnpm run rel:push",
+    "format:prettier": "prettier --write \"**/*.{html,css,md,json,yml,yaml}\"",
+    "format:biome": "biome format --write .",
+    "lint:biome": "biome lint .",
+    "format": "pnpm run format:prettier && pnpm run format:biome",
+    "lint": "pnpm run lint:biome",
+    "approve-builds": "echo approve-builds OK"
   },
-  "workspaces": [
-    "../talks-libraries/packages/*"
-  ],
+
   "dependencies": {
-    "@pixu-talks/core": "0.1.6",
-    "@pixu-talks/fonts": "0.1.6",
-    "@pixu-talks/theme": "0.1.6",
+    "@pixu-talks/core": "0.3.1",
+    "@pixu-talks/fonts": "0.3.1",
+    "@pixu-talks/theme": "0.3.1",
     "reveal.js": "5.2.1"
   },
   "devDependencies": {
-    "@parcel/transformer-inline-string": "2.14.4",
-    "@parcel/transformer-sass": "2.14.4",
-    "lightningcss": "1.29.3",
-    "parcel": "2.14.4",
+    "@biomejs/biome": "2.2.7",
+    "@parcel/transformer-inline-string": "2.16.0",
+    "@parcel/transformer-sass": "2.16.0",
+    "lightningcss": "1.30.2",
+    "parcel": "2.16.0",
+    "posthtml": "0.16.7",
     "posthtml-include": "2.0.1",
+    "prettier": "3.6.2",
     "sharp": "0.33.5",
     "svgo": "3.3.2"
   }

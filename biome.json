@@ -1,0 +1,10 @@
+{
+  "files": {
+    "includes": [
+      "src/**",
+      "README.md",
+      "package.json",
+      ".github/**"
+    ]
+  }
+}

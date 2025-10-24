@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="it">
-  <head>
+<!DOCTYPE html><html lang="it"><head>
     <meta charset="utf-8">
     <title>CSS Superpowers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/digital-numbers">
-    <link rel="stylesheet" href="css-superpowers.6b521e91.css">
+    <link rel="stylesheet" href="/css-superpowers.ebeadb08.css">
   </head>
   <body>
     <main class="reveal">
@@ -22,8 +20,8 @@
 <section pixu="">
   <figure>
     <picture>
-      <source srcset="pixu.ea6d4c65.webp" type="image/webp">
-      <img src="pixu.06482de6.jpg" alt="Pixu">
+      <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
+      <img src="/pixu.8cd71433.jpg" alt="Pixu">
     </picture>
   </figure>
   <h3>Emiliano <mark>Pisu</mark></h3>
@@ -94,7 +92,7 @@
 
 <section>
   <h4>not like this...</h4>
-  <img src="family-guy.06ff7d67.gif" style="width: 30vw; min-width: 30rem">
+  <img src="/family-guy.582dbce9.gif" style="width: 30vw; min-width: 30rem">
   <h4 class="fragment">... I'm promise 😄!!!</h4>
 </section>
 
@@ -114,8 +112,8 @@
   <blockquote>
     <figure>
       <picture>
-        <source srcset="doc-brown.47498daa.webp" type="image/webp">
-        <img src="doc-brown.4bed2164.jpg" alt="DOC Brown">
+        <source srcset="/doc-brown.624a163c.webp" type="image/webp">
+        <img src="/doc-brown.13385c3b.jpg" alt="DOC Brown">
       </picture>
     </figure>
   <small>"Marty, excuse me for the crudity of this model: <mark>I didn't have time</mark> to build it to scale and paint it."</small>
@@ -162,7 +160,7 @@
 
 <section data-transition="convex">
   <!-- destination time -->
-  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&amp;display=swap" rel="stylesheet" type="text/css">
 
   <link href="http://fonts.cdnfonts.com/css/digital-numbers" rel="stylesheet" type="text/css">
 
@@ -411,8 +409,7 @@
   
 <section>
   <h4><mark>Centralizing</mark> values</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|2,3|7,8">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|2,3|7,8">
 :root {
   --text-color: #34eadb;
   --font-size: 16px;
@@ -428,8 +425,7 @@ body {
 
 <section>
   <h4>Flowing with the <mark>cascade</mark></h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|7">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|7">
 :root {
   --text-color: #34eadb;
   --font-size: 16px;
@@ -447,8 +443,7 @@ body {
 
 <section>
   <h4><mark>Dynamic</mark> and <mark>Conditional</mark> overrides...</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|6-11">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|6-11">
 :root {
   --text-color: #202020;
   --background-color: #efefef;
@@ -471,8 +466,7 @@ body {
 
 <section>
   <h4>...the same goes for <mark>Responsive</mark></h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|5-9">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|5-9">
 :root {
   --padding: 8px;
 }
@@ -502,8 +496,7 @@ body {
 
 <section>
   <h4>Writing a variable to an element (<mark>C</mark>R<mark>U</mark>D)</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
+  <pre>    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const button = document.querySelector('button');
 
 // sets the "--text-color" value
@@ -515,8 +508,7 @@ button.style.setProperty('--text-color', '#e74c3c');
 
 <section>
   <h4>Writing a variable to :root (<mark>C</mark>R<mark>U</mark>D)</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
+  <pre>    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const root = document.documentElement;
 
 // sets the "--text-color" value 
@@ -528,8 +520,7 @@ root.style.setProperty('--text-color', '#e74c3c');
 
 <section>
   <h4>Reading a variable from an element (C<mark>R</mark>UD)</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4|5|8-10|11-12">
+  <pre>    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4|5|8-10|11-12">
 const button = document.querySelector('button');
 
 // gets the "--text-color" value
@@ -549,8 +540,7 @@ getComputedStyle(button).getPropertyValue('--text-color');
 
 <section>
   <h4>Reading a variable from :root (C<mark>R</mark>UD)</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4|5">
+  <pre>    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4|5">
 const root = document.documentElement;
 
 // gets the "--text-color" value
@@ -563,8 +553,7 @@ getComputedStyle(root).getPropertyValue('--text-color');
 
 <section>
   <h4>Deleting a variable from an element (CRU<mark>D</mark>)</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
+  <pre>    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const button = document.querySelector('button');
 
 // deletes the "--text-color" variable
@@ -576,8 +565,7 @@ button.style.removeProperty('--text-color');
 
 <section>
   <h4>Deleting a variable from :root (CRU<mark>D</mark>)</h4>
-  <pre>
-    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
+  <pre>    <code class="hljs javascript" data-trim="" data-line-numbers="|3-4">
 const root = document.documentElement;
 
 // deletes the "--text-color" variable
@@ -632,8 +620,7 @@ root.style.removeProperty('--text-color');
   <comparison links="">
     <left>
       <small>via CSS</small>
-      <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="|2|3|4">
+      <pre>        <code class="hljs scss" data-trim="" data-line-numbers="|2|3|4">
 @property --coffee-color {
   syntax: "&lt;color&gt;";
   inherits: false;
@@ -645,8 +632,7 @@ root.style.removeProperty('--text-color');
     </left>
     <right>
       <small>via JS</small>
-      <pre>
-        <code class="hljs javascript" data-trim="" data-line-numbers="|3|4|5">
+      <pre>        <code class="hljs javascript" data-trim="" data-line-numbers="|3|4|5">
 window.CSS.registerProperty({
   name: "--coffee-color",
   syntax: "&lt;color&gt;",
@@ -667,15 +653,13 @@ window.CSS.registerProperty({
   <comparison unregistered-vs-registered="">
     <left>
       <button class="unregistered">Unregistered</button>
-      <pre>
-        <code class="hljs html" data-trim="" data-line-numbers="">
+      <pre>        <code class="hljs html" data-trim="" data-line-numbers="">
 &lt;button class="unregistered"&gt;
   Unregistered
 &lt;/button&gt;
         </code>
       </pre>
-      <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="">
+      <pre>        <code class="hljs scss" data-trim="" data-line-numbers="">
 button.unregistered {
   --unregistered-coffee-color: #202020;
   --unregistered-coffee-background-color: #c0ffee;
@@ -687,7 +671,7 @@ button.unregistered {
   transition: --unregistered-coffee-color 1s ease-in-out,
     --unregistered-coffee-background-color 1s ease-in-out;
 
-  &:hover, &:focus {
+  &amp;:hover, &amp;:focus {
     --unregistered-coffee-color: #c0ffee;
     --unregistered-coffee-background-color: #b4d455;
   }
@@ -697,15 +681,13 @@ button.unregistered {
     </left>
     <right>
       <button class="registered">Registered</button>
-      <pre>
-        <code class="hljs html" data-trim="" data-line-numbers="">
+      <pre>        <code class="hljs html" data-trim="" data-line-numbers="">
 &lt;button class="registered"&gt;
   Registered
 &lt;/button&gt;
         </code>
       </pre>
-      <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="">
+      <pre>        <code class="hljs scss" data-trim="" data-line-numbers="">
 button.registered {
   --coffee-color: #202020;
   --coffee-background-color: #c0ffee;
@@ -717,7 +699,7 @@ button.registered {
   transition: --coffee-color 1s ease-in-out,
     --coffee-background-color 1s ease-in-out;
 
-  &:hover, &:focus {
+  &amp;:hover, &amp;:focus {
     --coffee-color: #c0ffee;
     --coffee-background-color: #b4d455;
   }
@@ -738,7 +720,7 @@ button.registered {
   <h4>Superpowers with @property</h4>
   <small>
     <a codepen="" href="https://codepen.io/pixu1980/pen/yLmazjV" target="_blank" rel="noopener noreferrer">
-      Check this on <img src="codepen.4d0df27c.svg">
+      Check this on <img src="/codepen.b46a659b.svg">
     </a>
   </small>
   <h2>
@@ -750,7 +732,7 @@ button.registered {
   <h4>Ball Throw with @property</h4>
   <small>
     <a codepen="" href="https://codepen.io/pixu1980/pen/vYoKjdd" target="_blank" rel="noopener noreferrer">
-      Check this on <img src="codepen.4d0df27c.svg">
+      Check this on <img src="/codepen.b46a659b.svg">
     </a>
   </small>
   <div ball-throw="">
@@ -764,7 +746,7 @@ button.registered {
   <h4>Loading Border with @property</h4>
   <small>
     <a codepen="" href="https://codepen.io/pixu1980/pen/bGXejgR" target="_blank" rel="noopener noreferrer">
-      Check this on <img src="codepen.4d0df27c.svg">
+      Check this on <img src="/codepen.b46a659b.svg">
     </a>
   </small>
   <div loading-border="">
@@ -776,7 +758,7 @@ button.registered {
   <h4>Milliseconds Counter with @property</h4>
   <small>
     <a codepen="" href="https://codepen.io/pixu1980/pen/jOgrpyY" target="_blank" rel="noopener noreferrer">
-      Check this on <img src="codepen.4d0df27c.svg">
+      Check this on <img src="/codepen.b46a659b.svg">
     </a>
   </small>
   <div counter=""></div>
@@ -786,7 +768,7 @@ button.registered {
   <h4>Stop Watch with @property</h4>
   <small>
     <a codepen="" href="https://codepen.io/pixu1980/pen/wvVWxgd" target="_blank" rel="noopener noreferrer">
-      Check this on <img src="codepen.4d0df27c.svg">
+      Check this on <img src="/codepen.b46a659b.svg">
     </a>
   </small>
   <div stop-watch="">
@@ -844,8 +826,7 @@ button.registered {
   
 <section>
   <h4>CSS Layers Example</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|1-6|8-12|14-22">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|1-6|8-12|14-22">
 @layer reset {
   * {
     box-sizing: border-box;
@@ -873,8 +854,7 @@ button.registered {
 
   <section>
   <h4>Layers Order</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="">
 @layer reset, layout, components;
     </code>
   </pre>
@@ -882,8 +862,7 @@ button.registered {
 
   <section>
   <h4>Layers depths levels</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|2-10|3-5|12-20|13-15">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|2-10|3-5|12-20|13-15">
 @layer ui {
   @layer button {
     :root {
@@ -926,8 +905,7 @@ button.registered {
 
 <section>
   <h4>@import ... layer() pattern</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|1|2|3|5-7|9">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|1|2|3|5-7|9">
 @import 'path-to-old-dependency.css' layer(old-dependency);
 @import 'path-to-old-dependency.theme.css' layer(old-dependency.theme);
 @import 'path-to-other-old-dependency.css' layer(other-old-dependency);
@@ -946,8 +924,7 @@ button.registered {
 </section>
 <section>
   <h4>Which <mark>--ui--font--size</mark> wins?</h4>
-  <pre>
-    <code class="hljs scss" data-trim="" data-line-numbers="|1-3">
+  <pre>    <code class="hljs scss" data-trim="" data-line-numbers="|1-3">
 :root {
   /* 
     16px/10px = 0.625, expressed in em
@@ -987,7 +964,7 @@ allowing to use rems as a simple division base-10 value
   </pre>
 </section>
 <section>
-  <img src="reverse-cascade.ce6dd5ac.gif" style="width: 25vw; min-width: 30rem">
+  <img src="/reverse-cascade.be96b91e.gif" style="width: 25vw; min-width: 30rem">
   <br>
   <h4>
     Look at me Ma'...<br>
@@ -1151,8 +1128,7 @@ allowing to use rems as a simple division base-10 value
 
   <section>
     <h4><mark>reset</mark> layer</h4>
-    <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="|2-7">
+    <pre>        <code class="hljs scss" data-trim="" data-line-numbers="|2-7">
 @layer design-system {
   @layer reset {
     * {
@@ -1169,8 +1145,7 @@ allowing to use rems as a simple division base-10 value
 
   <section>
     <h4><mark>color palette and elevations</mark> layers</h4>
-    <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="|4-17|19-34">
+    <pre>        <code class="hljs scss" data-trim="" data-line-numbers="|4-17|19-34">
 @layer design-system {
   ...
     
@@ -1212,8 +1187,7 @@ allowing to use rems as a simple division base-10 value
 
   <section>
     <h4><mark>typography and iconography</mark> layers</h4>
-    <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="|4-23|25">
+    <pre>        <code class="hljs scss" data-trim="" data-line-numbers="|4-23|25">
 @layer design-system {
   ...
     
@@ -1246,8 +1220,7 @@ allowing to use rems as a simple division base-10 value
 
   <section>
     <h4><mark>components</mark> layer</h4>
-    <pre>
-        <code class="hljs scss" data-trim="" data-line-numbers="|4-14|5-7|9|10|11">
+    <pre>        <code class="hljs scss" data-trim="" data-line-numbers="|4-14|5-7|9|10|11">
 @layer design-system {
   ...
   
@@ -1284,8 +1257,7 @@ allowing to use rems as a simple division base-10 value
 
   <section>
     <h4>Example Overriding the Design System CSS APIs codebase</h4>
-    <pre>
-      <code class="hljs scss" data-trim="" data-line-numbers="|1-7|9-20">
+    <pre>      <code class="hljs scss" data-trim="" data-line-numbers="|1-7|9-20">
 @layer design-system {
   ...
   
@@ -1341,7 +1313,7 @@ allowing to use rems as a simple division base-10 value
       <h4>Cons</h4>
       <small>
         <ul>
-          <li class="fragment">Learning & Practice Curve</li>
+          <li class="fragment">Learning &amp; Practice Curve</li>
           <li class="fragment">Bootstrapping projects is harder</li>
           <li class="fragment">Minimum impact on inspector performances</li>
         </ul>
@@ -1355,7 +1327,7 @@ allowing to use rems as a simple division base-10 value
     <ul>
       <li class="fragment">Over-engineering as strategic investment</li>
       <li class="fragment">Being prepared to future evolutions of CSS</li>
-      <li class="fragment"><strong>Invite to Action:</strong> Experiment & Share</li>
+      <li class="fragment"><strong>Invite to Action:</strong> Experiment &amp; Share</li>
     </ul>
   </small>
 </section>
@@ -1367,8 +1339,8 @@ allowing to use rems as a simple division base-10 value
   <comparison links="">
     <figure>
       <picture>
-        <source srcset="slides.78e3599d.webp" type="image/webp">
-        <img src="slides.0030d39b.png" alt="Slides">
+        <source srcset="/slides.edab5ca8.webp" type="image/webp">
+        <img src="/slides.1deb7d95.png" alt="Slides">
       </picture>
       <figcaption>
         <small>Slides</small>
@@ -1376,8 +1348,8 @@ allowing to use rems as a simple division base-10 value
     </figure>
     <figure>
       <picture>
-        <source srcset="slides-repo.e17dba76.webp" type="image/webp">
-        <img src="slides-repo.666c2b4d.png" alt="Slides Repo on Github">
+        <source srcset="/slides-repo.0d605d4e.webp" type="image/webp">
+        <img src="/slides-repo.fe295744.png" alt="Slides Repo on Github">
       </picture>
       <figcaption>
         <small>Slides Repo</small>
@@ -1391,8 +1363,8 @@ allowing to use rems as a simple division base-10 value
   <comparison links="">
     <figure>
       <picture>
-        <source srcset="pixu-dev.78fd730f.webp" type="image/webp">
-        <img src="pixu-dev.deaa6f1c.png" alt="Pixu.dev">
+        <source srcset="/pixu-dev.2695fc16.webp" type="image/webp">
+        <img src="/pixu-dev.eb9169a4.png" alt="Pixu.dev">
       </picture>
       <figcaption>
         <small>pixu.dev</small>
@@ -1400,8 +1372,8 @@ allowing to use rems as a simple division base-10 value
     </figure>
     <figure>
       <picture>
-        <source srcset="linkedin.ba7af5d7.webp" type="image/webp">
-        <img src="linkedin.0ce1d20b.png" alt="LinkedIn Profile">
+        <source srcset="/linkedin.64f9af3d.webp" type="image/webp">
+        <img src="/linkedin.70ec7f8e.png" alt="LinkedIn Profile">
       </picture>
       <figcaption>
         <small>LinkedIn</small>
@@ -1422,7 +1394,7 @@ allowing to use rems as a simple division base-10 value
 
   <section class="slide-outro-taf" data-transition="convex">
   <!-- <div sr-only data-menu-title>That's All Folks</div> -->
-  <audio data-autoplay="" src="taf.f9b512b9.mp3"></audio>
+  <audio data-autoplay="" src="/taf.d3b3531a.mp3"></audio>
   <div class="taf-wrapper">
     <div class="circles">
       <div class="circle one"></div>
@@ -1431,7 +1403,7 @@ allowing to use rems as a simple division base-10 value
       <div class="circle four"></div>
       <div class="circle five"></div>
       <div class="circle six"></div>
-      <small>&copy; 1987-2024 - Warner Bros. Entertainment Inc.</small>
+      <small>© 1987-2024 - Warner Bros. Entertainment Inc.</small>
     </div>
     <svg style="isolation: isolate" viewBox="0 0 566.44 157.5">
       <g id="thats-all-folks">
@@ -1482,8 +1454,8 @@ allowing to use rems as a simple division base-10 value
   <section data-transition="convex">
   <figure pixu="">
     <picture>
-      <source srcset="pixu.ea6d4c65.webp" type="image/webp">
-      <img src="pixu.06482de6.jpg" alt="Pixu">
+      <source srcset="/pixu.8dc4bcd7.webp" type="image/webp">
+      <img src="/pixu.8cd71433.jpg" alt="Pixu">
     </picture>
   </figure>
   <h2>Grazie ❤️!</h2>
@@ -1495,11 +1467,12 @@ allowing to use rems as a simple division base-10 value
       </div>
       <a brand="" href="https://www.devdojo.it" target="_blank" rel="noopener noreferrer">
   <figure>
-    <img src="dev-dojo.3f2f430c.png" alt="Dev Dojo IT Logo">
+    <img src="/dev-dojo.2f055838.png" alt="Dev Dojo IT Logo">
   </figure>
 </a>
 
     </main>
-    <script src="css-superpowers.cc291813.js" type="module"></script>
-  </body>
-</html>
+    <script src="/css-superpowers.c6396971.js" type="module"></script>
+  
+
+</body></html>
