@@ -22,17 +22,17 @@
     "lint": "pnpm run lint:biome",
     "approve-builds": "echo approve-builds OK"
   },
-
   "dependencies": {
-    "@pixu-talks/core": "0.3.1",
-    "@pixu-talks/fonts": "0.3.1",
-    "@pixu-talks/theme": "0.3.1",
+    "@pixu-talks/core": "0.3.3",
+    "@pixu-talks/fonts": "0.3.3",
+    "@pixu-talks/theme": "0.3.3",
     "reveal.js": "5.2.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.7",
+    "@biomejs/biome": "2.3.1",
     "@parcel/transformer-inline-string": "2.16.0",
     "@parcel/transformer-sass": "2.16.0",
+    "@swc/core": "1.13.5",
     "lightningcss": "1.30.2",
     "parcel": "2.16.0",
     "posthtml": "0.16.7",
