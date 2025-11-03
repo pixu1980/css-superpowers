@@ -1,4 +1,4 @@
-@layer pixu-talk.typography.fira-code {
+@layer pixu-talks.typography.fira-code {
   @font-face {
     font-family: Fira Code;
     src: local(Fira Code Light), local(FiraCode-Light), url("FiraCode-200.0979ba40.woff2") format("woff2"), url("FiraCode-200.40a6c1d2.woff") format("woff");
@@ -55,7 +55,7 @@
   }
 }
 
-@layer pixu-talk.typography.rec-vf {
+@layer pixu-talks.typography.rec-vf {
   @font-face {
     font-family: RecVF;
     src: url("RecVF.e71349f6.woff2") format("woff2 supports variations"), url("RecVF.e71349f6.woff2") format("woff2-variations");
@@ -65,7 +65,7 @@
   }
 }
 
-@layer pixu-talk {
+@layer pixu-talks {
   @layer iconography {
     [class*="icon"] {
       display: inline;
@@ -154,7 +154,7 @@
   }
 }
 
-@layer pixu-talk.iconography.draft-ui-icons {
+@layer pixu-talks.iconography.draft-ui-icons {
   @font-face {
     font-family: draft-ui-icons;
     src: url("draft-ui-icons.171ad3c7.ttf") format("truetype"), url("draft-ui-icons.f35d360b.woff") format("woff"), url("draft-ui-icons.a2bd967c.svg#draft-ui-icons") format("svg");
@@ -500,7 +500,7 @@
   }
 }
 
-@layer pixu-talk.iconography.space-icons {
+@layer pixu-talks.iconography.space-icons {
   @font-face {
     font-family: space-icons;
     src: url("space-icons.9578aaab.ttf") format("truetype"), url("space-icons.e5497c7a.woff") format("woff"), url("space-icons.f9432e71.svg#space-icons") format("svg");
@@ -11112,7 +11112,7 @@
   }
 }
 
-@layer pixu-talk.iconography.anicons {
+@layer pixu-talks.iconography.anicons {
   @font-face {
     font-family: anicons;
     src: url("anicons.44b7a8d8.woff2") format("woff2 supports variations"), url("anicons.44b7a8d8.woff2") format("woff2-variations");
@@ -11261,7 +11261,7 @@
   }
 }
 
-@layer pixu-talk.reveal.original {
+@layer pixu-talks.reveal.original {
   html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, main, menu, nav, output, ruby, section, summary, time, mark, audio, video {
     font-size: 100%;
     font: inherit;
@@ -13928,9 +13928,9 @@
   }
 }
 
-@layer pixu-talk.reveal {
+@layer pixu-talks.reveal {
   @layer media {
-    img, video, iframe {
+    :where(img, video, iframe) {
       max-width: 95%;
       max-height: 95%;
     }
@@ -13965,7 +13965,7 @@
   }
 
   @layer lists {
-    ol, dl, ul {
+    :is(ol, dl, ul) {
       text-align: left;
       margin: 0 0 0 1em;
       display: inline-block;
@@ -13992,7 +13992,7 @@
       display: block;
     }
 
-    å dt {
+    dt {
       font-weight: bold;
     }
 
@@ -14081,7 +14081,7 @@
   }
 }
 
-@layer pixu-talk.helpers {
+@layer pixu-talks.helpers {
   @layer align {
     :where([align], [valign]) {
       text-align: var(--t--align);
@@ -14202,7 +14202,7 @@
   }
 }
 
-@layer pixu-talk.core {
+@layer pixu-talks.core {
   @layer variables {
     :root {
       --font-family--fallback: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
@@ -14333,7 +14333,7 @@
   }
 }
 
-@layer pixu-talk.animations.fade-in {
+@layer pixu-talks.animations.fade-in {
   @layer fade-in {
     [animation] {
       --ani--duration: .4s;
@@ -14367,7 +14367,7 @@
   }
 }
 
-@layer pixu-talk.animations.stagger {
+@layer pixu-talks.animations.stagger {
   @layer stagger {
     stagger {
       --stagger--delay: .4s;
@@ -14393,7 +14393,7 @@
   }
 }
 
-@layer pixu-talk.components {
+@layer pixu-talks.components {
   @layer code {
     [codepen] {
       justify-content: start;
@@ -15225,7 +15225,7 @@
   }
 }
 
-@layer pixu-talk.components.taf {
+@layer pixu-talks.components.taf {
   @keyframes show-up {
     to {
       opacity: 1;
@@ -15343,7 +15343,7 @@
   initial-value: 0;
 }
 
-@layer pixu-talk.examples {
+@layer pixu-talks.examples {
   @layer unregistered-vs-registered {
     [unregistered-vs-registered] {
       place-content: center;
@@ -16225,7 +16225,7 @@
   }
 }
 
-@layer pixu-talk.examples.intro {
+@layer pixu-talks.examples.intro {
   @keyframes intro {
     0% {
       --intro--color--fade: var(--intro--color--purple-400);
@@ -16249,7 +16249,7 @@
   }
 }
 
-@layer pixu-talk.cascade {
+@layer pixu-talks.cascade {
   @layer cascade {
     [cascade] {
       & ol {
@@ -16272,4 +16272,4 @@
     }
   }
 }
-/*# sourceMappingURL=css-superpowers.c02b7464.css.map */
+/*# sourceMappingURL=css-superpowers.d68d6aa2.css.map */

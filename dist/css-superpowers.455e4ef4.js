@@ -3,7 +3,7 @@ function $parcel$interopDefault(a) {
   return a && a.__esModule ? a.default : a;
 }
 (function() {
-    'use strict';
+    "use strict";
     var attributesObserver = (whenDefined, MutationObserver1)=>{
         const attributeChanged = (records)=>{
             for(let i = 0, { length: length } = records; i < length; i++)dispatch(records[i]);
@@ -46,16 +46,16 @@ function $parcel$interopDefault(a) {
             for(let i = 0; i < length; i++)ignore.has(i) || (element[key[i]] = value[i]);
         };
     };
-    /*! (c) Andrea Giammarchi - ISC */ const TRUE = true, FALSE = false, QSA$1 = 'querySelectorAll';
+    /*! (c) Andrea Giammarchi - ISC */ const TRUE = true, FALSE = false, QSA$1 = "querySelectorAll";
     /**
-   * Start observing a generic document or root element.
-   * @param {(node:Element, connected:boolean) => void} callback triggered per each dis/connected element
-   * @param {Document|Element} [root=document] by default, the global document to observe
-   * @param {Function} [MO=MutationObserver] by default, the global MutationObserver
-   * @param {string[]} [query=['*']] the selectors to use within nodes
-   * @returns {MutationObserver}
-   */ const notify = (callback, root = document, MO = MutationObserver, query = [
-        '*'
+	 * Start observing a generic document or root element.
+	 * @param {(node:Element, connected:boolean) => void} callback triggered per each dis/connected element
+	 * @param {Document|Element} [root=document] by default, the global document to observe
+	 * @param {Function} [MO=MutationObserver] by default, the global MutationObserver
+	 * @param {string[]} [query=['*']] the selectors to use within nodes
+	 * @returns {MutationObserver}
+	 */ const notify = (callback, root = document, MO = MutationObserver, query = [
+        "*"
     ])=>{
         const loop = (nodes, selectors, added, removed, connected, pass)=>{
             for (const node of nodes)if (pass || QSA$1 in node) {
@@ -75,7 +75,7 @@ function $parcel$interopDefault(a) {
         };
         const mo = new MO((records)=>{
             if (query.length) {
-                const selectors = query.join(',');
+                const selectors = query.join(",");
                 const added = new Set(), removed = new Set();
                 for (const { addedNodes: addedNodes, removedNodes: removedNodes } of records){
                     loop(removedNodes, selectors, added, removed, FALSE, FALSE);
@@ -90,7 +90,7 @@ function $parcel$interopDefault(a) {
             }))(root);
         return mo;
     };
-    const QSA = 'querySelectorAll';
+    const QSA = "querySelectorAll";
     const { document: document$2, Element: Element$1, MutationObserver: MutationObserver$2, Set: Set$2, WeakMap: WeakMap$1 } = self;
     const elements = (element)=>QSA in element;
     const { filter: filter } = [];
@@ -176,7 +176,7 @@ function $parcel$interopDefault(a) {
                 redefine();
             }
         }
-        const method = `${connected ? '' : 'dis'}connectedCallback`;
+        const method = `${connected ? "" : "dis"}connectedCallback`;
         if (method in proto) element[method]();
     };
     const { parse: parse } = qsaObserver({
@@ -219,17 +219,17 @@ function $parcel$interopDefault(a) {
         const HTMLElement = self[k];
         function HTMLBuiltIn() {
             const { constructor: constructor } = this;
-            if (!classes.has(constructor)) throw new TypeError('Illegal constructor');
+            if (!classes.has(constructor)) throw new TypeError("Illegal constructor");
             const { is: is, tag: tag } = classes.get(constructor);
             if (is) {
                 if (override) return augment(override, is);
                 const element = createElement.call(document$1, tag);
-                element.setAttribute('is', is);
+                element.setAttribute("is", is);
                 return augment(setPrototypeOf(element, constructor.prototype), is);
             } else return construct.call(this, HTMLElement, [], constructor);
         }
         setPrototypeOf(HTMLBuiltIn, HTMLElement);
-        defineProperty(HTMLBuiltIn.prototype = HTMLElement.prototype, 'constructor', {
+        defineProperty(HTMLBuiltIn.prototype = HTMLElement.prototype, "constructor", {
             value: HTMLElement
         });
         defineProperty(self, k, {
@@ -243,13 +243,13 @@ function $parcel$interopDefault(a) {
             if (Class && classes.get(Class).tag === name) return new Class();
         }
         const element = createElement.call(document$1, name);
-        if (is) element.setAttribute('is', is);
+        if (is) element.setAttribute("is", is);
         return element;
     };
     customElements.get = getCE;
     customElements.whenDefined = whenDefined;
     customElements.upgrade = function(element) {
-        const is = element.getAttribute('is');
+        const is = element.getAttribute("is");
         if (is) {
             const constructor = registry.get(is);
             if (constructor) {
@@ -270,7 +270,7 @@ function $parcel$interopDefault(a) {
             is: is,
             tag: tag
         } : {
-            is: '',
+            is: "",
             tag: is
         });
         if (tag) {
@@ -299,12 +299,40 @@ function $parcel$interopDefault(a) {
 })();
 
 
+/**
+ * String prototype polyfills: startsWith and endsWith
+ *
+ * Why: Provide minimal fallbacks for environments that lack these ES6 methods.
+ * Scope: Adds non-standard-compliant but practical implementations only if the
+ * methods are not already defined by the runtime.
+ *
+ * Notes:
+ * - This file conditionally extends the String prototype. We scope our changes
+ *   behind feature checks to avoid overriding native implementations.
+ * - These implementations are intentionally simple and cover the common cases
+ *   used by this codebase. They are not meant to be spec-perfect.
+ *
+ * References:
+ * - MDN String.prototype.startsWith
+ *   https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+ * - MDN String.prototype.endsWith
+ *   https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+ */ // eslint-disable-next-line no-extend-native
 !String.prototype.startsWith && (String.prototype.startsWith = function(searchString, position) {
-    return this.substr(position || 0, searchString.length) === searchString;
+    /**
+		 * @param {string} searchString - Substring to match from the start.
+		 * @param {number} [position=0] - Start index for comparison.
+		 * @returns {boolean} True if this string starts at position with searchString.
+		 */ return this.substring(position || 0, searchString.length) === searchString;
 });
-!String.prototype.endsWith && (String.prototype.endsWith = function(search, this_len) {
-    (this_len === undefined || this_len > this.length) && (this_len = this.length);
-    return this.substring(this_len - search.length, this_len) === search;
+// eslint-disable-next-line no-extend-native
+!String.prototype.endsWith && (String.prototype.endsWith = function(searchString, length) {
+    /**
+		 * @param {string} search - Substring to match at the end.
+		 * @param {number} [length] - Optional length to treat as the string end.
+		 * @returns {boolean} True if this string ends with the given search substring.
+		 */ (length === undefined || length > this.length) && (length = this.length);
+    return this.substring(length - searchString.length, length) === searchString;
 });
 
 
@@ -51244,6 +51272,22 @@ var $47b02048c6e74b64$exports = {};
 
 
 /**
+ * Reveal.js Header plugin
+ *
+ * Keeps a slide-specific <header> element visually pinned and cross-faded
+ * between slide transitions.
+ *
+ * How it works:
+ * - On slidechanged: positions previous slide's header off-canvas and hides it,
+ *   while the new slide's header is positioned fixed and faded in.
+ * - On slidetransitionend: ensures the current slide's header is fully opaque.
+ *
+ * Notes:
+ * - The plugin manipulates inline styles to ensure predictable behavior across
+ *   different themes.
+ * - This does not create or inject header elements, it only enhances those
+ *   already present in slides.
+
  * Handles opening of and synchronization with the reveal.js
  * notes window.
  *
@@ -51253,57 +51297,85 @@ var $47b02048c6e74b64$exports = {};
  * 2. Notes window responds with 'connected' when it is available
  * 3. This window proceeds to send the current presentation state
  *    to the notes window
- * 
+ *
  * Copyright (c) 2025 Emiliano "pixu1980" Pisu
- */ const $542e9a98d9f8978a$var$HeaderPlugin = ()=>{
+
+* @returns {{ id: string, init: function, update: function }} A Reveal plugin definition.
+ */ const $0976c5f31f3e09d2$var$HeaderPlugin = ()=>{
     let deck;
     const headerPlugin = {
-        id: 'header',
-        init: (reveal)=>{
+        id: "header",
+        /**
+		 * Initialize the plugin with the Reveal deck instance.
+		 * @param {import('reveal.js').default} reveal - Reveal instance
+		 */ init: (reveal)=>{
             deck = reveal;
-            deck.addEventListener('slidechanged', (e)=>{
+            deck.addEventListener("slidechanged", (e)=>{
+                // Move previous header out of view and reset inline bounds
                 if (e.previousSlide) {
-                    const prevHeaderElement = e.previousSlide.querySelector('header');
+                    const prevHeaderElement = e.previousSlide.querySelector("header");
                     if (!!prevHeaderElement) {
-                        prevHeaderElement.style.position = 'fixed';
+                        prevHeaderElement.style.position = "fixed";
                         prevHeaderElement.style.top = 0;
                         prevHeaderElement.style.left = 0;
                         prevHeaderElement.style.right = 0;
                         prevHeaderElement.style.opacity = 0;
-                        prevHeaderElement.style.width = '100vw';
+                        prevHeaderElement.style.width = "100vw";
                     }
                 }
                 if (e.currentSlide) {
-                    const headerElement = e.currentSlide.querySelector('header');
+                    const headerElement = e.currentSlide.querySelector("header");
                     if (!!headerElement) {
-                        headerElement.style.position = 'fixed !important';
-                        headerElement.style.top = '0 !important';
-                        headerElement.style.left = '0 !important';
-                        headerElement.style.right = '0 !important';
-                        headerElement.style.width = '100vw !important';
+                        // Pin the current header and cross-fade it into view
+                        headerElement.style.position = "fixed !important";
+                        headerElement.style.top = "0 !important";
+                        headerElement.style.left = "0 !important";
+                        headerElement.style.right = "0 !important";
+                        headerElement.style.width = "100vw !important";
                         headerElement.style.opacity = !e.previousSlide;
-                        headerElement.style.transition = 'opacity .2s ease-in-out';
+                        headerElement.style.transition = "opacity .2s ease-in-out";
                     }
                 }
             });
-            deck.addEventListener('slidetransitionend', (e)=>{
-                const headerElement = e.currentSlide.querySelector('header');
-                if (!!headerElement) headerElement.style.opacity = 1;
+            deck.addEventListener("slidetransitionend", (e)=>{
+                const headerElement = e.currentSlide.querySelector("header");
+                if (!!headerElement) // Ensure final state is fully visible
+                headerElement.style.opacity = 1;
             });
         },
-        update: (e)=>{}
+        /**
+		 * Optional external update hook.
+		 * @param {any} e - Event or payload
+		 */ update: (e)=>{}
     };
     return headerPlugin;
 };
-var $542e9a98d9f8978a$export$2e2bcd8739ae039 = $542e9a98d9f8978a$var$HeaderPlugin;
+var $0976c5f31f3e09d2$export$2e2bcd8739ae039 = $0976c5f31f3e09d2$var$HeaderPlugin;
 
 
-/*
- * Reveal.js menu plugin
- * MIT licensed
- * 
+/**
+ * Reveal.js Menu Plugin
+ *
+ * Provides a slide navigation side menu with panels for slides, themes, and settings.
+ *
+ * Features:
+ * - Keyboard navigation and toggling
+ * - Mouse navigation with selection management
+ * - Sticky and auto open options
+ * - Panelized UI (slides, themes, transitions, help)
+ * - Highlights the current slide and keeps items visible on selection
+ *
+ * Usage:
+ * - Register this plugin with Reveal and configure via `menu` settings.
+ * - Default settings are defined in the `defaults` object.
+ *
+ * Notes:
+ * - The plugin manipulates DOM elements within a container added to the Reveal root.
+ * - Several helper methods operate on `this.dom` to manage the menu lifecycle.
+ * - For very long slide decks, consider debouncing UI updates.
+
  * Copyright (c) 2025 Emiliano "pixu1980" Pisu
- */ const $ee33314e39800510$var$defaults = {
+*/ const $b6ef7ad0a036bafb$var$defaults = {
     side: 'right',
     numbers: false,
     titleSelector: 'h1, h2, h3, h4, h5',
@@ -51326,7 +51398,7 @@ var $542e9a98d9f8978a$export$2e2bcd8739ae039 = $542e9a98d9f8978a$var$HeaderPlugi
     delayInit: false,
     openOnInit: false
 };
-class $ee33314e39800510$var$Menu {
+class $b6ef7ad0a036bafb$var$Menu {
     deck;
     dom = {
         reveal: null,
@@ -52007,38 +52079,48 @@ class $ee33314e39800510$var$Menu {
     constructor(deck){
         this.deck = deck;
         this.settings = {
-            ...$ee33314e39800510$var$defaults,
+            ...$b6ef7ad0a036bafb$var$defaults,
             ...deck.getConfig()?.menu
         };
         this.init();
     }
 }
-const $ee33314e39800510$var$Plugin = ()=>{
+const $b6ef7ad0a036bafb$var$Plugin = ()=>{
     let instance;
     return {
         id: 'menu',
         init: (deck)=>{
-            instance = new $ee33314e39800510$var$Menu(deck);
+            instance = new $b6ef7ad0a036bafb$var$Menu(deck);
         },
         toggleMenu: ()=>{
             instance.toggle();
         }
     };
 };
-var $ee33314e39800510$export$2e2bcd8739ae039 = $ee33314e39800510$var$Plugin;
+var $b6ef7ad0a036bafb$export$2e2bcd8739ae039 = $b6ef7ad0a036bafb$var$Plugin;
 
 
-/*
+/**
  * Reveal.js toolbar plugin
- * MIT licensed
+ * Toolbar plugin defaults.
  *
+ * @typedef {Object} ToolbarOptions
+ * @property {'top'|'bottom'} [position='top'] - Toolbar position in the viewport
+ * @property {boolean|Object} [fullscreen=true] - Enable fullscreen button or pass options
+ * @property {boolean|Object} [colorScheme=true] - Enable color scheme switcher button
+ * @property {boolean|Object} [overview=true] - Enable overview toggle button
+ * @property {boolean|Object} [pause=false] - Enable pause toggle button
+ * @property {boolean|Object} [notes=false] - Enable speaker notes button (hidden in notes view)
+ * @property {boolean|Object} [help=true] - Enable help overlay toggle
+ * @property {boolean|Object} [menu=true] - Enable menu toggle (requires menu plugin)
+ * 
  * Copyright (c) 2025 Emiliano "pixu1980" Pisu
  */ /* TODO:
  * - Notes ?
  * - PDF export ?
  * - tooltips
- */ const $705fa02b7751a3e9$var$defaults = {
-    position: 'top',
+ */ const $54e182845fe1ee39$var$defaults = {
+    position: "top",
     fullscreen: true,
     colorScheme: true,
     overview: true,
@@ -52047,7 +52129,7 @@ var $ee33314e39800510$export$2e2bcd8739ae039 = $ee33314e39800510$var$Plugin;
     help: true,
     menu: true
 };
-class $705fa02b7751a3e9$var$Toolbar {
+class $54e182845fe1ee39$var$Toolbar {
     deck;
     dom = {
         reveal: null,
@@ -52055,18 +52137,27 @@ class $705fa02b7751a3e9$var$Toolbar {
         buttons: []
     };
     settings = {};
-    addActionButton(settings) {
-        const button = document.createElement('button');
-        button.setAttribute('type', 'button');
-        button.classList.add('reveal-toolbar-button');
+    /**
+	 * Add a generic button to the toolbar.
+	 * @param {{class?: string, caption?: string, content?: string, handler?: (e:MouseEvent)=>void}} settings
+	 */ addActionButton(settings) {
+        const button = document.createElement("button");
+        button.setAttribute("type", "button");
+        button.classList.add("reveal-toolbar-button");
         settings.class && button.classList.add(settings.class);
         settings.caption && (button.innerText = settings.caption);
         settings.content && (button.innerHTML = settings.content);
-        settings.handler && button.addEventListener('click', settings.handler);
+        settings.handler && button.addEventListener("click", settings.handler);
         this.dom.buttons.push(button);
         this.dom.toolbar.appendChild(button);
     }
-    addAction(name, caption, options, handler) {
+    /**
+	 * Add a named action button with default styling and event dispatch.
+	 * @param {string} name - Action name, used for classes and events
+	 * @param {string} caption - Text caption for the button
+	 * @param {Object|boolean} options - Extra options or boolean to enable/disable
+	 * @param {(e:MouseEvent)=>void} handler - Click handler
+	 */ addAction(name, caption, options, handler) {
         const defaults = {
             class: `reveal-toolbar-button-${name}`,
             caption: caption,
@@ -52074,7 +52165,7 @@ class $705fa02b7751a3e9$var$Toolbar {
         };
         const settings = {
             ...defaults,
-            ...Object.prototype.toString.call(options) === '[object Object]' && options,
+            ...Object.prototype.toString.call(options) === "[object Object]" && options,
             handler: (e)=>{
                 handler && handler(e);
                 this.deck.dispatchEvent(`toolbar-${name}-action`, this, true);
@@ -52082,171 +52173,262 @@ class $705fa02b7751a3e9$var$Toolbar {
         };
         this.addActionButton(settings);
     }
-    toggleColorScheme() {
+    /**
+	 * Cycle through color scheme meta values: 'light' -> 'dark' -> 'light dark'.
+	 * Updates a toolbar icon class accordingly.
+	 */ toggleColorScheme() {
         let meta = document.querySelector('meta[name="color-scheme"]');
         if (!meta) {
-            document.head.insertAdjacentHTML('beforeend', '<meta name="color-scheme" content="light dark" />');
+            document.head.insertAdjacentHTML("beforeend", '<meta name="color-scheme" content="light dark" />');
             meta = document.querySelector('meta[name="color-scheme"]');
         }
         const values = [
-            'light',
-            'dark',
-            'light dark'
+            "light",
+            "dark",
+            "light dark"
         ];
         const icons = Object.freeze({
-            light: 'sun',
-            dark: 'moon',
-            'light dark': 'computer'
+            light: "sun",
+            dark: "moon",
+            "light dark": "computer"
         });
         const current = meta.content.trim();
         // Applica il nuovo valore
         meta.content = values[(values.indexOf(current) + 1) % values.length];
-        const icon = this.dom.toolbar.querySelector('button.reveal-toolbar-button-colorScheme icon');
-        icon.setAttribute('class', `draft-ui-icon-${icons[meta.content]}`);
+        const icon = this.dom.toolbar.querySelector("button.reveal-toolbar-button-colorScheme icon");
+        icon.setAttribute("class", `draft-ui-icon-${icons[meta.content]}`);
     }
-    init() {
-        this.dom.toolbar = document.createElement('div');
-        this.dom.toolbar.classList.add('reveal-toolbar');
-        this.dom.toolbar.classList.add(this.settings.position == 'top' ? 'reveal-toolbar-top' : 'reveal-toolbar-bottom');
-        this.dom.reveal = document.querySelector('.reveal');
+    /**
+	 * Initialize toolbar DOM, attach to Reveal container and register default buttons.
+	 */ init() {
+        this.dom.toolbar = document.createElement("div");
+        this.dom.toolbar.classList.add("reveal-toolbar");
+        this.dom.toolbar.classList.add(this.settings.position == "top" ? "reveal-toolbar-top" : "reveal-toolbar-bottom");
+        this.dom.reveal = document.querySelector(".reveal");
         this.dom.reveal.appendChild(this.dom.toolbar);
-        this.settings.menu && this.addAction('menu', 'M', this.settings.menu, (e)=>{
-            this.deck.getPlugin('menu')?.toggleMenu();
+        this.settings.menu && this.addAction("menu", "M", this.settings.menu, (e)=>{
+            this.deck.getPlugin("menu")?.toggleMenu();
         });
-        this.settings.help && this.addAction('help', '?', this.settings.help, (e)=>{
+        this.settings.help && this.addAction("help", "?", this.settings.help, (e)=>{
             this.deck.toggleHelp();
-            this.dom.reveal.querySelector('.overlay-help header .close').remove();
-            this.dom.reveal.querySelector('.overlay-help table tr:nth-child(2) td:first-child').innerText = 'SPACE';
-            this.dom.reveal.querySelector('.overlay-help table tr:nth-child(3) td:first-child').innerText = 'BACKSPACE';
-            this.dom.reveal.querySelectorAll('.overlay-help header, .overlay-help .viewport').forEach((item)=>{
-                item.addEventListener('click', (e)=>{
+            this.dom.reveal.querySelector(".overlay-help header .close").remove();
+            this.dom.reveal.querySelector(".overlay-help table tr:nth-child(2) td:first-child").innerText = "SPACE";
+            this.dom.reveal.querySelector(".overlay-help table tr:nth-child(3) td:first-child").innerText = "BACKSPACE";
+            this.dom.reveal.querySelectorAll(".overlay-help header, .overlay-help .viewport").forEach((item)=>{
+                item.addEventListener("click", (e)=>{
                     this.deck.toggleHelp();
                 }, {
                     once: true
                 });
             });
         });
-        this.settings.colorScheme && this.addAction('colorScheme', 'C', this.settings.colorScheme, (e)=>{
+        this.settings.colorScheme && this.addAction("colorScheme", "C", this.settings.colorScheme, (e)=>{
             this.toggleColorScheme();
         });
-        this.settings.overview && this.addAction('overview', 'O', this.settings.overview, (e)=>{
+        this.settings.overview && this.addAction("overview", "O", this.settings.overview, (e)=>{
             this.deck.toggleOverview();
         });
-        this.settings.notes && !this.deck.isSpeakerNotes() && this.addAction('notes', 'N', this.settings.notes, (e)=>{
-            this.deck.getPlugin('notes')?.open();
+        this.settings.notes && !this.deck.isSpeakerNotes() && this.addAction("notes", "N", this.settings.notes, (e)=>{
+            this.deck.getPlugin("notes")?.open();
         });
-        this.settings.fullscreen && this.addAction('fullscreen', 'F', this.settings.fullscreen, (e)=>{
+        this.settings.fullscreen && this.addAction("fullscreen", "F", this.settings.fullscreen, (e)=>{
             var fullscreenElement = document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
             !document.exitFullscreen && (document.exitFullscreen = document.mozExitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen);
             fullscreenElement ? document.exitFullscreen() : this.deck.triggerKey(70);
         });
-        this.settings.pause && this.addAction('pause', 'P', this.settings.pause, (e)=>{
+        this.settings.pause && this.addAction("pause", "P", this.settings.pause, (e)=>{
             this.deck.togglePause();
-            this.deck.addEventListener('paused', function() {
+            this.deck.addEventListener("paused", function() {
             // var icon = dom.pauseButton.querySelector('i');
             // icon.classList.remove('fa-eye-slash');
             // icon.classList.add('fa-eye');
             });
-            this.deck.addEventListener('resumed', function() {
+            this.deck.addEventListener("resumed", function() {
             // var icon = dom.pauseButton.querySelector('i');
             // icon.classList.remove('fa-eye');
             // icon.classList.add('fa-eye-slash');
             });
         });
     }
-    constructor(deck){
+    /**
+	 * Create a Toolbar instance.
+	 * @param {import('reveal.js').default} deck - Reveal instance
+	 */ constructor(deck){
         this.deck = deck;
         this.settings = {
-            ...$705fa02b7751a3e9$var$defaults,
+            ...$54e182845fe1ee39$var$defaults,
             ...deck.getConfig()?.toolbar
         };
         this.init();
-        this.deck.dispatchEvent('toolbar-ready', this, true);
+        this.deck.dispatchEvent("toolbar-ready", this, true);
     }
 }
-const $705fa02b7751a3e9$var$Plugin = ()=>{
+/**
+ * Toolbar plugin factory for Reveal.js.
+ * @returns {{ id: string, init: (deck:any)=>void }} Plugin definition
+ */ const $54e182845fe1ee39$var$Plugin = ()=>{
     return {
-        id: 'toolbar',
+        id: "toolbar",
         init: (deck)=>{
-            new $705fa02b7751a3e9$var$Toolbar(deck);
+            new $54e182845fe1ee39$var$Toolbar(deck);
         }
     };
 };
-var $705fa02b7751a3e9$export$2e2bcd8739ae039 = $705fa02b7751a3e9$var$Plugin;
+var $54e182845fe1ee39$export$2e2bcd8739ae039 = $54e182845fe1ee39$var$Plugin;
 
 
 
 
-// DiveIn stacked container component
-addEventListener('DOMContentLoaded', ()=>{
-    const diveIn = document.querySelector('dive-in');
-    const stackContainer = diveIn && diveIn.querySelector('stack-container');
+/**
+ * DiveIn stacked container component
+ *
+ * Enhances a `<dive-in>` element that contains a `<stack-container>` with
+ * several `<stack-item>` children.
+ *
+ * Behavior:
+ * - Assigns a sequential CSS custom property `--index` to each `stack-item`
+ *   (reversed order), which can be used from CSS to create depth and staggered
+ *   visual effects.
+ * - Listens for mouse movements and computes an offset from the viewport center.
+ *   The computed values are written to `--mouse-x` and `--mouse-y` on the
+ *   `stack-container`, enabling CSS driven parallax/tilt effects.
+ *
+ * Performance notes:
+ * - The `mousemove` handler writes CSS variables on every event. For complex
+ *   scenes consider throttling with requestAnimationFrame.
+ */ // DiveIn stacked container component
+addEventListener("DOMContentLoaded", ()=>{
+    const diveIn = document.querySelector("dive-in");
+    const stackContainer = diveIn && diveIn.querySelector("stack-container");
     if (stackContainer) {
         const stackItems = [
-            ...stackContainer.querySelectorAll('stack-item')
+            ...stackContainer.querySelectorAll("stack-item")
         ].reverse();
-        for(let i = 0; i < stackItems.length; i++)stackItems[i].style.setProperty('--index', i);
-        document.addEventListener('mousemove', (e)=>{
+        for(let i = 0; i < stackItems.length; i++)// Expose a stable index to CSS for transforms/filters/z layering
+        stackItems[i].style.setProperty("--index", i);
+        document.addEventListener("mousemove", (e)=>{
+            // Viewport dimensions
             let vw = window.innerWidth;
             let vh = window.innerHeight;
+            // Viewport center
             let vc = {
                 x: vw / 2,
                 y: vh / 2
             };
+            // Cursor coordinates
             let x = e.clientX;
             let y = e.clientY;
+            // Signed offset from center: left/up are negative, right/down positive
             let transformOffset = {
                 x: `${-(x <= vc.x ? -(vc.x - x) : x - vc.x)}px`,
                 y: `${-(y <= vc.y ? -(vc.y - y) : y - vc.y)}px`
             };
-            stackContainer.style.setProperty('--mouse-x', transformOffset.x);
-            stackContainer.style.setProperty('--mouse-y', transformOffset.y);
+            // Feed CSS variables for parallax-like effects
+            stackContainer.style.setProperty("--mouse-x", transformOffset.x);
+            stackContainer.style.setProperty("--mouse-y", transformOffset.y);
         });
     }
 });
 
 
-// Stagger animation components
-addEventListener('DOMContentLoaded', ()=>{
+/**
+ * Stagger animation components
+ *
+ * Enhances `<stagger>` containers by assigning a per-child CSS variable
+ * `--stagger--index` to allow staggered effects in CSS.
+ *
+ * Usage:
+ * ```html
+ * <stagger>
+ *   <div>Item A</div>
+ *   <div>Item B</div>
+ *   <div>Item C</div>
+ * </stagger>
+ * ```
+ * Then in CSS you can refer to `--stagger--index` to offset animations/timings.
+ *
+ * Notes:
+ * - This script runs after DOMContentLoaded and does not observe dynamic DOM
+ *   changes. If children are added later, you will need to re-run the logic.
+ * - Known issue: the original implementation contained two bugs (left intact
+ *   to avoid behavioral changes). See TODOs below.
+ */ // Stagger animation components
+addEventListener("DOMContentLoaded", ()=>{
     const staggers = [
-        ...document.querySelectorAll('stagger')
+        ...document.querySelectorAll("stagger")
     ];
     for (const stagger of staggers){
         const staggerItems = [
-            ...stagger.querySelectorAll(':scope > *')
+            ...stagger.querySelectorAll(":scope > *")
         ];
-        for (const staggerItem of staggerItems)staggerItems.style.setProperty('--stagger--index', i);
+        // Assign a per-child index for staggering via CSS
+        staggerItems.forEach((el, i)=>{
+            el.style.setProperty("--stagger--index", i);
+        });
     }
 });
 
 
-// Tabs component
-addEventListener('DOMContentLoaded', ()=>{
-    const tabsComponents = document.querySelectorAll('tabs');
+/**
+ * Tabs component
+ *
+ * Enhances a semantic HTML structure:
+ *
+ * ```html
+ * <tabs>
+ *   <tabs-list>
+ *     <a href="#panel-1" role="tab">Tab 1</a>
+ *     <a href="#panel-2" role="tab">Tab 2</a>
+ *   </tabs-list>
+ *   <tabs-panels>
+ *     <tab-panel id="panel-1" role="tabpanel">...</tab-panel>
+ *     <tab-panel id="panel-2" role="tabpanel">...</tab-panel>
+ *   </tabs-panels>
+ * </tabs>
+ * ```
+ *
+ * Behavior:
+ * - Manages roving tabindex for tabs.
+ * - Sets `aria-selected` on the active tab and `aria-hidden` on inactive panels.
+ * - Supports arrow key navigation within the tab list.
+ * - Click on a tab activates the linked panel.
+ *
+ * Accessibility:
+ * - Uses ARIA roles and attributes expected by screen readers.
+ * - On keyboard navigation, prevents default browser behavior when handling arrows.
+ *
+ * Notes:
+ * - This component assumes a static DOM structure.
+ * - There are potential issues in the original code (kept to avoid behavior changes):
+ *   - `currentTabIndex = [...tabs].indexOf(tab);` references `tab` which is not defined in the click handler scope.
+ *   - `document.querySelector(tab.getAttribute('href'))` searches the whole document; a scoped query within the tabs component may be preferable.
+ */ // Tabs component
+addEventListener("DOMContentLoaded", ()=>{
+    const tabsComponents = document.querySelectorAll("tabs");
     for (const tabsComponent of tabsComponents){
         let currentTabIndex = 0;
-        const tabs = tabsComponent.querySelectorAll('tabs-list > a');
-        const tabsPanels = tabsComponent.querySelectorAll('tabs-panels > tab-panel');
+        const tabs = tabsComponent.querySelectorAll("tabs-list > a");
+        const tabsPanels = tabsComponent.querySelectorAll("tabs-panels > tab-panel");
         const resetTabsTabIndex = ()=>{
             // undo tab control selected state,
             // and make them not selectable with the tab key
             // (all tabs)
-            for (const tab1 of tabs){
-                tab1.setAttribute('tabindex', '-1');
-                tab1.setAttribute('aria-selected', 'false');
+            for (const tab of tabs){
+                tab.setAttribute("tabindex", "-1");
+                tab.setAttribute("aria-selected", "false");
             }
         };
         const resetTabsPanelsVisibility = ()=>{
             // hide all tab panels.
-            for (const tabPanel of tabsPanels)tabPanel.setAttribute('aria-hidden', 'true');
+            for (const tabPanel of tabsPanels)tabPanel.setAttribute("aria-hidden", "true");
         };
         const setCurrentTabTabIndex = ()=>{
             // make the selected tab the selected one, shift focus to it
-            tabs[currentTabIndex].setAttribute('tabindex', '0');
-            tabs[currentTabIndex].setAttribute('aria-selected', 'true');
+            tabs[currentTabIndex].setAttribute("tabindex", "0");
+            tabs[currentTabIndex].setAttribute("aria-selected", "true");
             tabs[currentTabIndex].focus();
         };
-        tabsComponent.addEventListener('keydown', (e)=>{
+        tabsComponent.addEventListener("keydown", (e)=>{
             // on keydown,
             // determine which tab to select
             var LEFT_ARROW = 37;
@@ -52271,20 +52453,23 @@ addEventListener('DOMContentLoaded', ()=>{
                 return false;
             }
         });
-        tabsComponent.addEventListener('click', (e)=>{
-            // just make the clicked tab the selected one
+        tabsComponent.addEventListener("click", (e)=>{
+            // Determine the clicked tab anchor within this tabs component
+            const target = e.target.closest("a");
+            if (!target || !tabsComponent.contains(target)) return;
+            // Make the clicked tab the selected one
             currentTabIndex = [
                 ...tabs
-            ].indexOf(tab);
+            ].indexOf(target);
             resetTabsTabIndex();
             resetTabsPanelsVisibility();
             setCurrentTabTabIndex();
             // // handle parent <li> current class (for coloring the tabs)
             // document.querySelector($tabs.get(index)).parent().siblings().removeClass('current');
             // document.querySelector($tabs.get(index)).parent().addClass('current');
-            // add a current class also to the tab panel
-            // controlled by the clicked tab
-            document.querySelector(tab.getAttribute('href')).setAttribute('aria-hidden', 'false');
+            // Show the associated panel (scoped within this tabs component)
+            const panel = tabsComponent.querySelector(target.getAttribute("href"));
+            panel && panel.setAttribute("aria-hidden", "false");
             e.preventDefault();
             e.stopPropagation();
             return false;
@@ -52405,9 +52590,9 @@ window.pixuTalks = {
 };
 
 
-addEventListener('DOMContentLoaded', ()=>{
-    let deck = new (0, $a743dcaa04719fb8$export$2e2bcd8739ae039)(document.querySelector('.reveal'), {
-        ...window.location.href.includes('?print-pdf') && {
+addEventListener("DOMContentLoaded", ()=>{
+    let deck = new (0, $a743dcaa04719fb8$export$2e2bcd8739ae039)(document.querySelector(".reveal"), {
+        ...window.location.href.includes("?print-pdf") && {
             pdfSeparateFragments: false
         },
         hash: true,
@@ -52418,18 +52603,18 @@ addEventListener('DOMContentLoaded', ()=>{
             (0, (/*@__PURE__*/$parcel$interopDefault($4002db5decd7789a$exports))),
             (0, (/*@__PURE__*/$parcel$interopDefault($076471d7064f32b1$exports))),
             (0, (/*@__PURE__*/$parcel$interopDefault($47b02048c6e74b64$exports))),
-            (0, $705fa02b7751a3e9$export$2e2bcd8739ae039)
+            (0, $54e182845fe1ee39$export$2e2bcd8739ae039)
         ],
-        navigationMode: 'linear',
+        navigationMode: "linear",
         menu: {
             // Specifies which side of the presentation the menu will
             // be shown. Use 'left' or 'right'.
-            side: 'left',
+            side: "left",
             // Specifies the width of the menu.
             // Can be one of the following:
             // 'normal', 'wide', 'third', 'half', 'full', or
             // any valid css length value
-            width: 'normal',
+            width: "normal",
             // Add slide numbers to the titles in the slide list.
             // Use 'true' or format string (same as reveal.js slide numbers)
             numbers: true,
@@ -52440,7 +52625,7 @@ addEventListener('DOMContentLoaded', ()=>{
             // element will be used.
             // Note: that a section data-menu-title attribute or an element
             // with a menu-title class will take precedence over this option
-            titleSelector: 'h1, h2, h3, h4, h5, h6',
+            titleSelector: "h1, h2, h3, h4, h5, h6",
             // If slides do not have a matching title, attempt to use the
             // start of the text content as the title instead
             useTextContentForMissingTitles: false,
@@ -52526,7 +52711,7 @@ addEventListener('DOMContentLoaded', ()=>{
         },
         toolbar: {
             // Specifies where the toolbar will be shown: 'top' or 'bottom'
-            position: 'top',
+            position: "top",
             // // If true, the reveal.js-menu will be moved into the toolbar.
             // // Set to false to leave the menu on its own.
             // menu: {
@@ -52558,7 +52743,7 @@ addEventListener('DOMContentLoaded', ()=>{
     // keyboard nav configuration
     deck.configure({
         keyboard: {
-            8: 'prev',
+            8: "prev",
             // 27: null,
             78: null
         }
@@ -52617,4 +52802,4 @@ addEventListener('DOMContentLoaded', ()=>{
 
 
 
-//# sourceMappingURL=css-superpowers.945b0de1.js.map
+//# sourceMappingURL=css-superpowers.455e4ef4.js.map

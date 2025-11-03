@@ -3,10 +3,10 @@
 
 @import './examples/index.properties';
 
-@import './examples/index.css' layer(pixu-talk.examples);
-@import './_cascade.css' layer(pixu-talk.cascade);
+@import './examples/index.css' layer(pixu-talks.examples);
+@import './_cascade.css' layer(pixu-talks.cascade);
 
-@layer pixu-talk {
+@layer pixu-talks {
   @layer brand {
     [brand] {
       position: fixed;

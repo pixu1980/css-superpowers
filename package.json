@@ -12,24 +12,23 @@
     "prebuild": "pnpm run clear",
     "build": "parcel build src/index.html --no-optimize --public-url ./ && git add . && git commit --amend --no-edit && git push -f",
     "rel:push": "git push && git push --tags",
-    "rel:major": "pnpm run build && pnpm version --major && pnpm run rel:push",
-    "rel:minor": "pnpm run build && pnpm version --minor && pnpm run rel:push",
-    "rel:patch": "pnpm run build && pnpm version --patch && pnpm run rel:push",
+    "rel:major": "pnpm run build && pnpm version major -m \"rel(%s)\" && pnpm run rel:push",
+    "rel:minor": "pnpm run build && pnpm version minor -m \"rel(%s)\" && pnpm run rel:push",
+    "rel:patch": "pnpm run build && pnpm version patch -m \"rel(%s)\" && pnpm run rel:push",
     "format:prettier": "prettier --write \"**/*.{html,css,md,json,yml,yaml}\"",
     "format:biome": "biome format --write .",
     "lint:biome": "biome lint .",
     "format": "pnpm run format:prettier && pnpm run format:biome",
-    "lint": "pnpm run lint:biome",
-    "approve-builds": "echo approve-builds OK"
+    "lint": "pnpm run lint:biome"
   },
   "dependencies": {
-    "@pixu-talks/core": "0.3.3",
-    "@pixu-talks/fonts": "0.3.3",
-    "@pixu-talks/theme": "0.3.3",
+    "@pixu-talks/core": "0.3.5",
+    "@pixu-talks/fonts": "0.3.5",
+    "@pixu-talks/theme": "0.3.5",
     "reveal.js": "5.2.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.1",
+    "@biomejs/biome": "2.3.3",
     "@parcel/transformer-inline-string": "2.16.0",
     "@parcel/transformer-sass": "2.16.0",
     "@swc/core": "1.13.5",
