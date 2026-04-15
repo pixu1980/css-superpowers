@@ -1,3 +1,3 @@
-import '@pixu-talks/core';
+import "@pixu-talks/core";
 
-import './_time-circuits';
+import "./_time-circuits";

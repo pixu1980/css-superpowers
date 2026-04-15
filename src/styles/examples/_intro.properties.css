@@ -1,7 +1,7 @@
 @property --intro--color--fade {
-  initial-value: #b19cd8;
-  inherits: false;
-  syntax: '<color>';
+	initial-value: #b19cd8;
+	inherits: false;
+	syntax: "<color>";
 }
 
 /* // @property --intro--color--fade-h {

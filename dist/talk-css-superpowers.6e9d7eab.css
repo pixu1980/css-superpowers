@@ -15439,7 +15439,8 @@
 
         & span {
           color: var(--intro--color--fade);
-          animation: intro 5s linear calc(var(--stagger--delay) * var(--stagger--index)) infinite alternate;
+          animation: intro 5s linear
+					calc(var(--stagger--delay) * var(--stagger--index)) infinite alternate;
 
           &:first-child {
             --stagger--index: 0;
@@ -15490,8 +15491,12 @@
       &[hsl] {
         & h2 {
           & span {
-            color: hsl(var(--intro--color--fade-h), var(--intro--color--fade-s), var(--intro--color--fade-l));
-            animation: introHSL 5s linear calc(var(--stagger--delay) * var(--stagger--index)) infinite alternate;
+            color: hsl(var(--intro--color--fade-h),
+						var(--intro--color--fade-s),
+						var(--intro--color--fade-l));
+            animation: introHSL 5s linear
+						calc(var(--stagger--delay) * var(--stagger--index)) infinite
+						alternate;
           }
         }
       }
@@ -15550,8 +15555,8 @@
           border-style: solid;
           border-width: .5vmin;
           border-image: conic-gradient(var(--loading-border--charge) var(--loading-border--a),
-            transparent calc(var(--loading-border--a) + .5deg))
-          25;
+						transparent calc(var(--loading-border--a) + .5deg))
+					25;
           padding: 2rem 4rem;
           font-family: monospace;
           font-size: 2rem;
@@ -15719,9 +15724,14 @@
           }
 
           &:after {
-            background: repeating-linear-gradient(90deg, transparent 0 18%, var(--stroke) 18% 22%) 50% 0/100% 30%
-              no-repeat,
-            repeating-linear-gradient(90deg, transparent 0 18%, var(--stroke) 18% 22%) 50% 100%/100% 30% no-repeat;
+            background: repeating-linear-gradient(90deg,
+							transparent 0 18%,
+							var(--stroke) 18% 22%)
+						50% 0 / 100% 30% no-repeat,
+						repeating-linear-gradient(90deg,
+							transparent 0 18%,
+							var(--stroke) 18% 22%)
+						50% 100% / 100% 30% no-repeat;
             content: "";
             width: 100%;
             height: 100%;
@@ -15767,8 +15777,8 @@
           --size: 7rem;
           height: var(--size);
           width: var(--size);
-          transform: translate(-50%, -50%) rotate(var(--rotation, 0deg)) translate(0, -20.5rem)
-          translateY(calc(var(--y, 0) * 1%));
+          transform: translate(-50%, -50%) rotate(var(--rotation, 0deg))
+					translate(0, -20.5rem) translateY(calc(var(--y, 0) * 1%));
           z-index: 10;
           transition: transform 50ms;
           position: absolute;
@@ -15783,7 +15793,8 @@
         & .stopwatch__restart:before {
           content: "";
           border: .5vmin solid var(--stroke);
-          background: linear-gradient(90deg, var(--restart-two) 0 80%, transparent 81%) 50% 50%/100% 100% no-repeat;
+          background: linear-gradient(90deg, var(--restart-two) 0 80%, transparent 81%) 50%
+					50% / 100% 100% no-repeat;
           background-color: var(--restart);
           z-index: -1;
           width: 60%;
@@ -15860,10 +15871,10 @@
           &:after {
             content: "";
             background: linear-gradient(transparent 0 15%,
-            var(--glare) 16% 35%,
-            transparent 36% 40%,
-            var(--glare) 41% 45%,
-            transparent 46%);
+						var(--glare) 16% 35%,
+						transparent 36% 40%,
+						var(--glare) 41% 45%,
+						transparent 46%);
             width: 100%;
             height: 100%;
             position: absolute;
@@ -15889,8 +15900,10 @@
         & .digit {
           color: #0000;
           counter-reset: var(--counter-name) var(--counter-variable);
-          -webkit-animation: var(--name, none) var(--duration, 1s) infinite steps(var(--steps)) var(--state);
-          animation: var(--name, none) var(--duration, 1s) infinite steps(var(--steps)) var(--state);
+          -webkit-animation: var(--name, none) var(--duration, 1s) infinite
+					steps(var(--steps)) var(--state);
+          animation: var(--name, none) var(--duration, 1s) infinite
+					steps(var(--steps)) var(--state);
           position: relative;
 
           &:after {
@@ -16008,13 +16021,13 @@
       & .outer {
         background: var(--bttf--gray--400);
         background: linear-gradient(74deg,
-        var(--bttf--gray--400) 13%,
-        var(--bttf--gray--100) 24%,
-        var(--bttf--gray--400) 37%,
-        var(--bttf--gray--200) 47%,
-        var(--bttf--gray--500) 62%,
-        var(--bttf--gray--300) 79%,
-        var(--bttf--gray--400) 100%);
+				var(--bttf--gray--400) 13%,
+				var(--bttf--gray--100) 24%,
+				var(--bttf--gray--400) 37%,
+				var(--bttf--gray--200) 47%,
+				var(--bttf--gray--500) 62%,
+				var(--bttf--gray--300) 79%,
+				var(--bttf--gray--400) 100%);
         box-sizing: border-box;
         border: 1px solid #000;
         min-height: 180px;
@@ -16323,4 +16336,4 @@
     }
   }
 }
-/*# sourceMappingURL=css-superpowers.8c21868b.css.map */
+/*# sourceMappingURL=talk-css-superpowers.6e9d7eab.css.map */

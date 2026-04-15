@@ -1,44 +1,46 @@
 {
-  "name": "css-over-engineering",
-  "version": "1.4.1",
-  "license": "MIT",
-  "private": true,
-  "scripts": {
-    "clear:cache": "rm -rf .parcel-cache",
-    "clear:dist": "rm -rf dist",
-    "clear": "pnpm run clear:dist && pnpm run clear:cache",
-    "prestart": "pnpm run clear",
-    "start": "parcel src/index.html -p 6001",
-    "prebuild": "pnpm run clear",
-    "build": "parcel build src/index.html --no-optimize --public-url ./ && git add . && git commit --amend --no-edit && git push -f",
-    "rel:push": "git push && git push --tags",
-    "rel:major": "pnpm run build && pnpm version major -m \"rel(%s)\" && pnpm run rel:push",
-    "rel:minor": "pnpm run build && pnpm version minor -m \"rel(%s)\" && pnpm run rel:push",
-    "rel:patch": "pnpm run build && pnpm version patch -m \"rel(%s)\" && pnpm run rel:push",
-    "format:prettier": "prettier --write \"**/*.{html,css,md,json,yml,yaml}\"",
-    "format:biome": "biome format --write .",
-    "lint:biome": "biome lint .",
-    "format": "pnpm run format:prettier && pnpm run format:biome",
-    "lint": "pnpm run lint:biome"
-  },
-  "dependencies": {
-    "@pixu-talks/core": "0.4.1",
-    "@pixu-talks/fonts": "0.4.1",
-    "@pixu-talks/theme": "0.4.1",
-    "reveal.js": "6.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.4.10",
-    "@parcel/transformer-inline-string": "2.16.4",
-    "@parcel/transformer-sass": "2.16.4",
-    "@swc/core": "1.15.21",
-    "baseline-browser-mapping": "2.10.13",
-    "lightningcss": "1.32.0",
-    "parcel": "2.16.4",
-    "posthtml": "0.16.7",
-    "posthtml-include": "2.0.1",
-    "prettier": "3.8.1",
-    "sharp": "0.33.5",
-    "svgo": "4.0.1"
-  }
+	"name": "css-over-engineering",
+	"version": "1.4.1",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"clear:cache": "rm -rf .parcel-cache",
+		"clear:dist": "rm -rf dist",
+		"clear": "pnpm run clear:dist && pnpm run clear:cache",
+		"predev": "pnpm run clear",
+		"dev": "parcel src/index.html -p 6001",
+		"deps": "pnpm up -r --latest",
+		"deps:push": "git add . && git commit -m \"build(deps): bumped external dependencies\" && git push",
+		"prebuild": "pnpm run clear",
+		"build": "parcel build src/index.html --no-optimize --public-url ./",
+		"rel:push": "git push && git push --tags",
+		"rel:major": "pnpm run build && git add . && pnpm version major --force -m \"rel(%s)\" && pnpm run rel:push",
+		"rel:minor": "pnpm run build && git add . && pnpm version minor --force -m \"rel(%s)\" && pnpm run rel:push",
+		"rel:patch": "pnpm run build && git add . && pnpm version patch --force -m \"rel(%s)\" && pnpm run rel:push",
+		"format:prettier": "prettier --write \"**/*.{html,css,md,json,yml,yaml}\"",
+		"format:biome": "biome format --write .",
+		"lint:biome": "biome lint .",
+		"format": "pnpm run format:prettier && pnpm run format:biome",
+		"lint": "pnpm run lint:biome"
+	},
+	"dependencies": {
+		"@pixu-talks/core": "0.4.1",
+		"@pixu-talks/fonts": "0.4.1",
+		"@pixu-talks/theme": "0.4.1",
+		"reveal.js": "6.0.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.12",
+		"@parcel/transformer-inline-string": "2.16.4",
+		"@parcel/transformer-sass": "2.16.4",
+		"@swc/core": "1.15.26",
+		"baseline-browser-mapping": "2.10.19",
+		"lightningcss": "1.32.0",
+		"parcel": "2.16.4",
+		"posthtml": "0.16.7",
+		"posthtml-include": "2.0.1",
+		"prettier": "3.8.3",
+		"sharp": "0.33.5",
+		"svgo": "4.0.1"
+	}
 }

@@ -1,5 +1,6 @@
 # css-superpowers
-CSS Superpowers with --*, @property and @layer
+
+CSS Superpowers with --\*, @property and @layer
 
 Check the slides here
 
