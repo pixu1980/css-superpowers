@@ -6,7 +6,7 @@
 @import "./examples/index.css" layer(pixu-talks.examples);
 @import "./_cascade.css" layer(pixu-talks.cascade);
 
-@layer pixu-talks {
+@layer speaker-talks {
 	@layer brand {
 		[brand] {
 			position: fixed;

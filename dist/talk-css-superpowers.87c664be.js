@@ -58619,22 +58619,22 @@ var $b83afb9d4de6065d$export$2e2bcd8739ae039 = $b83afb9d4de6065d$var$Plugin;
         stackContainer.style.setProperty('--mouse-y', `${offsetY}px`);
     }
 }
-if (!customElements.get('pix-dive-in')) customElements.define('pix-dive-in', $073ecf3bdee2b7c9$var$DiveInElement);
+if (!customElements.get('dive-in')) customElements.define('dive-in', $073ecf3bdee2b7c9$var$DiveInElement);
 
 
 /**
  * Stagger animation components
  *
- * Enhances `<stagger>` containers by assigning a per-child CSS variable
+ * Enhances `<stagger-container>` containers by assigning a per-child CSS variable
  * `--stagger--index` to allow staggered effects in CSS.
  *
  * Usage:
  * ```html
- * <stagger>
+ * <stagger-container>
  *   <div>Item A</div>
  *   <div>Item B</div>
  *   <div>Item C</div>
- * </stagger>
+ * </stagger-container>
  * ```
  * Then in CSS you can refer to `--stagger--index` to offset animations/timings.
  *
@@ -58654,7 +58654,7 @@ if (!customElements.get('pix-dive-in')) customElements.define('pix-dive-in', $07
         });
     }
 }
-if (!customElements.get('pix-stagger')) customElements.define('pix-stagger', $9a1b779f45043108$var$StaggerElement);
+if (!customElements.get('stagger-container')) customElements.define('stagger-container', $9a1b779f45043108$var$StaggerElement);
 
 
 /**
@@ -58663,7 +58663,7 @@ if (!customElements.get('pix-stagger')) customElements.define('pix-stagger', $9a
  * Enhances a semantic HTML structure:
  *
  * ```html
- * <tabs>
+ * <tabs-container>
  *   <tabs-list>
  *     <a href="#panel-1" role="tab">Tab 1</a>
  *     <a href="#panel-2" role="tab">Tab 2</a>
@@ -58672,7 +58672,7 @@ if (!customElements.get('pix-stagger')) customElements.define('pix-stagger', $9a
  *     <tab-panel id="panel-1" role="tabpanel">...</tab-panel>
  *     <tab-panel id="panel-2" role="tabpanel">...</tab-panel>
  *   </tabs-panels>
- * </tabs>
+ * </tabs-container>
  * ```
  *
  * Behavior:
@@ -58760,7 +58760,7 @@ if (!customElements.get('pix-stagger')) customElements.define('pix-stagger', $9a
         event.stopPropagation();
     }
 }
-if (!customElements.get('pix-tabs')) customElements.define('pix-tabs', $6cd398e673baf594$var$TabsElement);
+if (!customElements.get('tabs-container')) customElements.define('tabs-container', $6cd398e673baf594$var$TabsElement);
 
 
 

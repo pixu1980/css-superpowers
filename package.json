@@ -24,17 +24,17 @@
 		"lint": "pnpm run lint:biome"
 	},
 	"dependencies": {
-		"@pixu-talks/core": "0.4.1",
-		"@pixu-talks/fonts": "0.4.1",
-		"@pixu-talks/theme": "0.4.1",
+		"@pixu-talks/core": "workspace:*",
+		"@pixu-talks/fonts": "workspace:*",
+		"@pixu-talks/theme": "workspace:*",
 		"reveal.js": "6.0.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.12",
+		"@biomejs/biome": "2.4.13",
 		"@parcel/transformer-inline-string": "2.16.4",
 		"@parcel/transformer-sass": "2.16.4",
-		"@swc/core": "1.15.26",
-		"baseline-browser-mapping": "2.10.19",
+		"@swc/core": "1.15.30",
+		"baseline-browser-mapping": "2.10.21",
 		"lightningcss": "1.32.0",
 		"parcel": "2.16.4",
 		"posthtml": "0.16.7",
