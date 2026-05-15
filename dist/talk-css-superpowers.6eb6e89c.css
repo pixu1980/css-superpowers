@@ -12033,19 +12033,19 @@
   }
 
   .reveal .slides > section[data-transition="default"].past, .reveal .slides > section[data-transition~="default-out"].past, .reveal.default .slides > section:not([data-transition]).past {
-    transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
+    transform: translate(-100%) rotateY(-90deg) translate(-100%);
   }
 
   .reveal .slides > section[data-transition="default"].future, .reveal .slides > section[data-transition~="default-in"].future, .reveal.default .slides > section:not([data-transition]).future {
-    transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+    transform: translate(100%) rotateY(90deg) translate(100%);
   }
 
   .reveal .slides > section > section[data-transition="default"].past, .reveal .slides > section > section[data-transition~="default-out"].past, .reveal.default .slides > section > section:not([data-transition]).past {
-    transform: translate3d(0, -300px, 0) rotateX(70deg) translate3d(0, -300px, 0);
+    transform: translateY(-300px) rotateX(70deg) translateY(-300px);
   }
 
   .reveal .slides > section > section[data-transition="default"].future, .reveal .slides > section > section[data-transition~="default-in"].future, .reveal.default .slides > section > section:not([data-transition]).future {
-    transform: translate3d(0, 300px, 0) rotateX(-70deg) translate3d(0, 300px, 0);
+    transform: translateY(300px) rotateX(-70deg) translateY(300px);
   }
 
   .reveal .slides section[data-transition="convex"].stack, .reveal.convex .slides section.stack {
@@ -12053,19 +12053,19 @@
   }
 
   .reveal .slides > section[data-transition="convex"].past, .reveal .slides > section[data-transition~="convex-out"].past, .reveal.convex .slides > section:not([data-transition]).past {
-    transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
+    transform: translate(-100%) rotateY(-90deg) translate(-100%);
   }
 
   .reveal .slides > section[data-transition="convex"].future, .reveal .slides > section[data-transition~="convex-in"].future, .reveal.convex .slides > section:not([data-transition]).future {
-    transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+    transform: translate(100%) rotateY(90deg) translate(100%);
   }
 
   .reveal .slides > section > section[data-transition="convex"].past, .reveal .slides > section > section[data-transition~="convex-out"].past, .reveal.convex .slides > section > section:not([data-transition]).past {
-    transform: translate3d(0, -300px, 0) rotateX(70deg) translate3d(0, -300px, 0);
+    transform: translateY(-300px) rotateX(70deg) translateY(-300px);
   }
 
   .reveal .slides > section > section[data-transition="convex"].future, .reveal .slides > section > section[data-transition~="convex-in"].future, .reveal.convex .slides > section > section:not([data-transition]).future {
-    transform: translate3d(0, 300px, 0) rotateX(-70deg) translate3d(0, 300px, 0);
+    transform: translateY(300px) rotateX(-70deg) translateY(300px);
   }
 
   .reveal .slides section[data-transition="concave"].stack, .reveal.concave .slides section.stack {
@@ -12073,19 +12073,19 @@
   }
 
   .reveal .slides > section[data-transition="concave"].past, .reveal .slides > section[data-transition~="concave-out"].past, .reveal.concave .slides > section:not([data-transition]).past {
-    transform: translate3d(-100%, 0, 0) rotateY(90deg) translate3d(-100%, 0, 0);
+    transform: translate(-100%) rotateY(90deg) translate(-100%);
   }
 
   .reveal .slides > section[data-transition="concave"].future, .reveal .slides > section[data-transition~="concave-in"].future, .reveal.concave .slides > section:not([data-transition]).future {
-    transform: translate3d(100%, 0, 0) rotateY(-90deg) translate3d(100%, 0, 0);
+    transform: translate(100%) rotateY(-90deg) translate(100%);
   }
 
   .reveal .slides > section > section[data-transition="concave"].past, .reveal .slides > section > section[data-transition~="concave-out"].past, .reveal.concave .slides > section > section:not([data-transition]).past {
-    transform: translate3d(0, -80%, 0) rotateX(-70deg) translate3d(0, -80%, 0);
+    transform: translateY(-80%) rotateX(-70deg) translateY(-80%);
   }
 
   .reveal .slides > section > section[data-transition="concave"].future, .reveal .slides > section > section[data-transition~="concave-in"].future, .reveal.concave .slides > section > section:not([data-transition]).future {
-    transform: translate3d(0, 80%, 0) rotateX(70deg) translate3d(0, 80%, 0);
+    transform: translateY(80%) rotateX(70deg) translateY(80%);
   }
 
   .reveal .slides section[data-transition="zoom"], .reveal.zoom .slides section:not([data-transition]) {
@@ -12161,22 +12161,22 @@
 
   .reveal.cube .slides > section.past {
     transform-origin: 100% 0;
-    transform: translate3d(-100%, 0, 0) rotateY(-90deg);
+    transform: translate(-100%) rotateY(-90deg);
   }
 
   .reveal.cube .slides > section.future {
     transform-origin: 0 0;
-    transform: translate3d(100%, 0, 0) rotateY(90deg);
+    transform: translate(100%) rotateY(90deg);
   }
 
   .reveal.cube .slides > section > section.past {
     transform-origin: 0 100%;
-    transform: translate3d(0, -100%, 0) rotateX(90deg);
+    transform: translateY(-100%) rotateX(90deg);
   }
 
   .reveal.cube .slides > section > section.future {
     transform-origin: 0 0;
-    transform: translate3d(0, 100%, 0) rotateX(-90deg);
+    transform: translateY(100%) rotateX(-90deg);
   }
 
   .reveal.page .slides {
@@ -12229,22 +12229,22 @@
 
   .reveal.page .slides > section.past {
     transform-origin: 0 0;
-    transform: translate3d(-40%, 0, 0) rotateY(-80deg);
+    transform: translate(-40%) rotateY(-80deg);
   }
 
   .reveal.page .slides > section.future {
     transform-origin: 100% 0;
-    transform: translateZ(0);
+    transform: translate(0);
   }
 
   .reveal.page .slides > section > section.past {
     transform-origin: 0 0;
-    transform: translate3d(0, -40%, 0) rotateX(80deg);
+    transform: translateY(-40%) rotateX(80deg);
   }
 
   .reveal.page .slides > section > section.future {
     transform-origin: 0 100%;
-    transform: translateZ(0);
+    transform: translate(0);
   }
 
   .reveal .slides section[data-transition="fade"], .reveal.fade .slides section:not([data-transition]), .reveal.fade .slides > section > section:not([data-transition]) {
@@ -12391,42 +12391,42 @@
 
   .reveal[data-background-transition="convex"] > .backgrounds .slide-background.past:not([data-background-transition]), .reveal > .backgrounds .slide-background.past[data-background-transition="convex"] {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0) rotateY(-90deg) translate3d(-100%, 0, 0);
+    transform: translate(-100%) rotateY(-90deg) translate(-100%);
   }
 
   .reveal[data-background-transition="convex"] > .backgrounds .slide-background.future:not([data-background-transition]), .reveal > .backgrounds .slide-background.future[data-background-transition="convex"] {
     opacity: 0;
-    transform: translate3d(100%, 0, 0) rotateY(90deg) translate3d(100%, 0, 0);
+    transform: translate(100%) rotateY(90deg) translate(100%);
   }
 
   .reveal[data-background-transition="convex"] > .backgrounds .slide-background > .slide-background.past:not([data-background-transition]), .reveal > .backgrounds .slide-background > .slide-background.past[data-background-transition="convex"] {
     opacity: 0;
-    transform: translate3d(0, -100%, 0) rotateX(90deg) translate3d(0, -100%, 0);
+    transform: translateY(-100%) rotateX(90deg) translateY(-100%);
   }
 
   .reveal[data-background-transition="convex"] > .backgrounds .slide-background > .slide-background.future:not([data-background-transition]), .reveal > .backgrounds .slide-background > .slide-background.future[data-background-transition="convex"] {
     opacity: 0;
-    transform: translate3d(0, 100%, 0) rotateX(-90deg) translate3d(0, 100%, 0);
+    transform: translateY(100%) rotateX(-90deg) translateY(100%);
   }
 
   .reveal[data-background-transition="concave"] > .backgrounds .slide-background.past:not([data-background-transition]), .reveal > .backgrounds .slide-background.past[data-background-transition="concave"] {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0) rotateY(90deg) translate3d(-100%, 0, 0);
+    transform: translate(-100%) rotateY(90deg) translate(-100%);
   }
 
   .reveal[data-background-transition="concave"] > .backgrounds .slide-background.future:not([data-background-transition]), .reveal > .backgrounds .slide-background.future[data-background-transition="concave"] {
     opacity: 0;
-    transform: translate3d(100%, 0, 0) rotateY(-90deg) translate3d(100%, 0, 0);
+    transform: translate(100%) rotateY(-90deg) translate(100%);
   }
 
   .reveal[data-background-transition="concave"] > .backgrounds .slide-background > .slide-background.past:not([data-background-transition]), .reveal > .backgrounds .slide-background > .slide-background.past[data-background-transition="concave"] {
     opacity: 0;
-    transform: translate3d(0, -100%, 0) rotateX(-90deg) translate3d(0, -100%, 0);
+    transform: translateY(-100%) rotateX(-90deg) translateY(-100%);
   }
 
   .reveal[data-background-transition="concave"] > .backgrounds .slide-background > .slide-background.future:not([data-background-transition]), .reveal > .backgrounds .slide-background > .slide-background.future[data-background-transition="concave"] {
     opacity: 0;
-    transform: translate3d(0, 100%, 0) rotateX(90deg) translate3d(0, 100%, 0);
+    transform: translateY(100%) rotateX(90deg) translateY(100%);
   }
 
   .reveal[data-background-transition="zoom"] > .backgrounds .slide-background:not([data-background-transition]), .reveal > .backgrounds .slide-background[data-background-transition="zoom"] {
@@ -12591,7 +12591,7 @@
     right: var(--r-overlay-margin);
     bottom: var(--r-overlay-margin);
     left: var(--r-overlay-margin);
-    border-radius: min(var(--r-overlay-margin),6px);
+    border-radius: min(var(--r-overlay-margin), 6px);
     z-index: 99;
     backdrop-filter: blur(10px);
     color: #fff;
@@ -12891,7 +12891,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate3d(0, 110%, 0) rotateX(-90deg);
+    transform: translateY(110%) rotateX(-90deg);
   }
 
   .reveal aside.notes {
@@ -13138,7 +13138,7 @@
     width: var(--slide-width) !important;
     height: var(--slide-height) !important;
     opacity: 1 !important;
-    transform: scale(var(--slide-scale)) translate(-50%,-50%) !important;
+    transform: scale(var(--slide-scale)) translate(-50%, -50%) !important;
     transform-style: flat !important;
     transform-origin: 0 0 !important;
     display: block !important;
@@ -13209,7 +13209,7 @@
     width: var(--r-scrollbar-width);
     height: var(--r-scrollbar-width);
     border-radius: var(--r-scrollbar-width);
-    background-color: rgba(var(--r-overlay-element-bg-color),1);
+    background-color: rgba(var(--r-overlay-element-bg-color), 1);
     z-index: 11;
     transition: background-color .2s;
     position: absolute;
@@ -13218,9 +13218,9 @@
   }
 
   .reveal-viewport.reveal-scroll .scrollbar .scrollbar-slide {
-    background-color: rgba(var(--r-overlay-element-bg-color),.2);
+    background-color: rgba(var(--r-overlay-element-bg-color), .2);
     width: 100%;
-    box-shadow: 0 0 0 1px rgba(var(--r-overlay-element-fg-color),.1);
+    box-shadow: 0 0 0px 1px rgba(var(--r-overlay-element-fg-color), .1);
     border-radius: var(--r-scrollbar-width);
     transition: background-color .2s;
     position: absolute;
@@ -13238,7 +13238,7 @@
   }
 
   .reveal-viewport.reveal-scroll .scrollbar .scrollbar-slide:hover, .reveal-viewport.reveal-scroll .scrollbar .scrollbar-slide.active {
-    background-color: rgba(var(--r-overlay-element-bg-color),.4);
+    background-color: rgba(var(--r-overlay-element-bg-color), .4);
   }
 
   .reveal-viewport.reveal-scroll .scrollbar .scrollbar-trigger {
@@ -13248,7 +13248,7 @@
   }
 
   .reveal-viewport.reveal-scroll .scrollbar .scrollbar-slide.active.has-triggers {
-    background-color: rgba(var(--r-overlay-element-bg-color),.4);
+    background-color: rgba(var(--r-overlay-element-bg-color), .4);
     z-index: 10;
   }
 
@@ -13256,7 +13256,7 @@
     content: "";
     width: var(--r-scrollbar-trigger-size);
     height: var(--r-scrollbar-trigger-size);
-    background-color: rgba(var(--r-overlay-element-bg-color),1);
+    background-color: rgba(var(--r-overlay-element-bg-color), 1);
     opacity: .4;
     border-radius: 20px;
     transition: transform .2s, opacity .2s;
@@ -13271,8 +13271,8 @@
   }
 
   .reveal-viewport.reveal-scroll .scrollbar .scrollbar-slide.active .scrollbar-trigger ~ .scrollbar-trigger.active:after {
-    transform: translate(calc(var(--r-scrollbar-width) * -2));
-    background-color: rgba(var(--r-overlay-element-bg-color),1);
+    transform: translate(calc(var(--r-scrollbar-width) * -2), 0);
+    background-color: rgba(var(--r-overlay-element-bg-color), 1);
   }
 
   html.reveal-print * {
@@ -14373,7 +14373,7 @@
       }
     }
 
-    stagger[animation="fade-in"] {
+    stagger-container[animation="fade-in"] {
       --ani--name: fade-in;
 
       & > * {
@@ -14391,7 +14391,7 @@
 
 @layer pixu-talks.animations.stagger {
   @layer stagger {
-    stagger {
+    stagger-container {
       --stagger--delay: .4s;
       display: block;
 
@@ -14727,8 +14727,8 @@
     }
   }
 
-  @layer pixu {
-    [pixu] {
+  @layer speaker {
+    [speaker] {
       & img {
         border-radius: 50%;
         inline-size: 20rem;
@@ -14786,7 +14786,7 @@
   }
 
   @layer tabs {
-    tabs {
+    tabs-container {
       margin-top: 1rem;
       display: block;
 
@@ -14949,7 +14949,7 @@
         }
       }
 
-      & [pixu] {
+      & [speaker] {
         aspect-ratio: 1;
         inline-size: 18rem;
         margin: auto;
@@ -16338,4 +16338,4 @@
     }
   }
 }
-/*# sourceMappingURL=talk-css-superpowers.c064f6c8.css.map */
+/*# sourceMappingURL=talk-css-superpowers.6eb6e89c.css.map */
