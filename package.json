@@ -30,11 +30,11 @@
 		"reveal.js": "6.0.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.4.13",
+		"@biomejs/biome": "2.4.15",
 		"@parcel/transformer-inline-string": "2.16.4",
 		"@parcel/transformer-sass": "2.16.4",
-		"@swc/core": "1.15.30",
-		"baseline-browser-mapping": "2.10.21",
+		"@swc/core": "1.15.33",
+		"baseline-browser-mapping": "2.10.29",
 		"lightningcss": "1.32.0",
 		"parcel": "2.16.4",
 		"posthtml": "0.16.7",
